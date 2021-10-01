@@ -1,0 +1,232 @@
+//* Сетки
+.grid-nav,
+.grid-main {
+	display: grid;
+	grid-template-columns: repeat(5, 150px) minmax(300px, 1fr) repeat(3, 150px);
+}
+
+// Меню
+.grid-nav {
+	grid-template-rows: 80px;
+
+	&-new {
+		grid-column-start: 1;
+		grid-column-end: 2;
+	}
+
+	&-profile {
+		grid-column-start: 2;
+		grid-column-end: 3;
+	}
+
+	&-options {
+		grid-column-start: 3;
+		grid-column-end: 4;
+	}
+
+	&-help {
+		grid-column-start: 4;
+		grid-column-end: 5;
+	}
+
+	&-find {
+		grid-column-start: 6;
+		grid-column-end: 8;
+	}
+
+	&-total {
+		grid-column-start: 9;
+		grid-column-end: 10;
+	}
+}
+
+// Основная таблица
+.grid-main {
+	grid-template-rows: 40px;
+	border-bottom: 1px solid #698ccc;
+	background: $paper;
+
+	&-status {
+		grid-column-start: 1;
+		grid-column-end: 2;
+	}
+
+	&-name {
+		grid-column-start: 2;
+		grid-column-end: 4;
+	}
+
+	&-planed {
+		grid-column-start: 4;
+		grid-column-end: 5;
+	}
+
+	&-set {
+		grid-column-start: 5;
+		grid-column-end: 6;
+	}
+
+	&-note {
+		grid-column-start: 6;
+		grid-column-end: 7;
+		// background: skyblue;
+	}
+
+	&-price {
+		grid-column-start: 7;
+		grid-column-end: 8;
+	}
+
+	&-type {
+		grid-column-start: 8;
+		grid-column-end: 9;
+	}
+
+	&-account {
+		grid-column-start: 9;
+		grid-column-end: 10;
+	}
+
+	&:hover {
+		background: $paper-hover;
+	}
+}
+
+// Заголовок таблицы
+.header {
+	grid-template-rows: 60px;
+}
+
+// Заголовок внутри таблицы
+.title {
+	background: $paper-title;
+}
+
+// Основная таблица для категорий
+.grid-category {
+	display: grid;
+	grid-template-rows: 40px;
+	grid-template-columns: repeat(5, 150px) minmax(300px, 1fr);
+	border-bottom: 1px solid #698ccc;
+	background: $paper;
+
+	&:hover {
+		background: $paper-hover;
+	}
+}
+
+
+//* Адаптация
+@media (max-width: 1665px) {
+
+	.grid-nav,
+	.grid-main {
+		grid-template-columns: repeat(5, 150px) minmax(300px, 1fr) 150px;
+	}
+
+	.grid-nav {
+
+		&-find {
+			grid-column-start: 6;
+			grid-column-end: 7;
+		}
+
+		&-total {
+			grid-column-start: 7;
+			grid-column-end: 8;
+		}
+	}
+
+	.grid-main {
+
+		&-type,
+		&-account {
+			display: none;
+		}
+	}
+
+}
+
+@media (max-width: 1350px) {
+
+	.grid-nav,
+	.grid-main {
+		grid-template-columns: repeat(5, 150px) minmax(300px, 1fr);
+	}
+
+	.grid-nav {
+
+		&-total {
+			display: none;
+		}
+	}
+
+	.grid-main {
+
+		&-price {
+			display: none;
+		}
+	}
+
+}
+
+@media (max-width: 1050px) {
+
+	.grid-nav {
+		grid-template-columns: repeat(4, 150px) minmax(150px, 1fr);
+
+		&-find {
+			grid-column-start: 5;
+			grid-column-end: 6;
+		}
+	}
+
+	.grid-main,
+	.grid-category {
+		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px);
+	}
+
+	.grid-main {
+		&-note {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 750px) {
+
+	.grid-nav {
+		grid-template-columns: repeat(4, 1fr);
+		position: relative;
+
+		&-find {
+			position: absolute;
+			right: 0;
+		}
+	}
+
+	.grid-main,
+	.grid-category {
+		grid-template-columns: 150px repeat(2, 1fr) 150px;
+	}
+
+	.grid-main {
+
+		&-planed {
+			display: none;
+		}
+
+		&-set {
+			grid-column-start: 4;
+			grid-column-end: 5;
+		}
+	}
+}
+
+@media (max-width: 600px) {
+
+	.grid-main,
+	.grid-category {
+		grid-template-columns: 50px repeat(2, 1fr) 50px;
+	}
+}
