@@ -1,169 +1,244 @@
 //* Сетки
-.grid-nav,
-.grid-main {
-	display: grid;
-	grid-template-columns: repeat(5, 150px) minmax(300px, 1fr) repeat(3, 150px);
-}
-
 // Меню
 .grid-nav {
+	display: grid;
 	grid-template-rows: 80px;
+	grid-template-columns: repeat(6, 150px) repeat(2, 1fr) repeat(2, 150px);
+	grid-template-areas: "new profile options help . . find find . total";
 
-	&-new {
-		grid-column-start: 1;
-		grid-column-end: 2;
+	&__new {
+		grid-area: new;
 	}
 
-	&-profile {
-		grid-column-start: 2;
-		grid-column-end: 3;
+	&__profile {
+		grid-area: profile;
 	}
 
-	&-options {
-		grid-column-start: 3;
-		grid-column-end: 4;
+	&__options {
+		grid-area: options;
 	}
 
-	&-help {
-		grid-column-start: 4;
-		grid-column-end: 5;
+	&__help {
+		grid-area: help;
 	}
 
-	&-find {
-		grid-column-start: 6;
-		grid-column-end: 8;
+	&__find {
+		grid-area: find;
 	}
 
-	&-total {
-		grid-column-start: 9;
-		grid-column-end: 10;
+	&__total {
+		grid-area: total;
 	}
 }
 
 // Основная таблица
 .grid-main {
+	position: relative;
+	display: grid;
 	grid-template-rows: 40px;
+	grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr) repeat(3, 150px);
+	grid-template-areas: "status name name planed set note note price type account";
 	border-bottom: 1px solid #698ccc;
 	background: $paper;
 
-	&-status {
-		grid-column-start: 1;
-		grid-column-end: 2;
+	&__status {
+		grid-area: status;
 	}
 
-	&-name {
-		grid-column-start: 2;
-		grid-column-end: 4;
+	&__name {
+		grid-area: name;
 	}
 
-	&-planed {
-		grid-column-start: 4;
-		grid-column-end: 5;
+	&__planed {
+		grid-area: planed;
 	}
 
-	&-set {
-		grid-column-start: 5;
-		grid-column-end: 6;
+	&__set {
+		grid-area: set;
 	}
 
-	&-note {
-		grid-column-start: 6;
-		grid-column-end: 7;
-		// background: skyblue;
+	&__note {
+		grid-area: note;
 	}
 
-	&-price {
-		grid-column-start: 7;
-		grid-column-end: 8;
+	&__price {
+		grid-area: price;
 	}
 
-	&-type {
-		grid-column-start: 8;
-		grid-column-end: 9;
+	&__type {
+		grid-area: type;
 	}
 
-	&-account {
-		grid-column-start: 9;
-		grid-column-end: 10;
+	&__account {
+		grid-area: account;
 	}
 
 	&:hover {
 		background: $paper-hover;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		left: 150px;
+		height: 100%;
+		width: 1px;
+		background: #ff7f7f;
 	}
 }
 
 // Заголовок таблицы
 .header {
 	grid-template-rows: 60px;
+
+	&:hover {
+		background: $paper;
+	}
 }
 
 // Заголовок внутри таблицы
 .title {
 	background: $paper-title;
-}
-
-// Основная таблица для категорий
-.grid-category {
-	display: grid;
-	grid-template-rows: 40px;
-	grid-template-columns: repeat(5, 150px) minmax(300px, 1fr);
-	border-bottom: 1px solid #698ccc;
-	background: $paper;
 
 	&:hover {
-		background: $paper-hover;
+		background: $paper-title;
 	}
+}
+
+// Категории
+.category {
+	grid-template-areas: "status name name planed set note note note note note";
 }
 
 
 //* Адаптация
 @media (max-width: 1665px) {
 
-	.grid-nav,
-	.grid-main {
-		grid-template-columns: repeat(5, 150px) minmax(300px, 1fr) 150px;
-	}
-
 	.grid-nav {
+		grid-template-columns: repeat(5, 150px) repeat(2, 1fr) 150px;
+		grid-template-areas: "new profile options help . find find total";
 
-		&-find {
-			grid-column-start: 6;
-			grid-column-end: 7;
+		&__new {
+			grid-area: new;
 		}
 
-		&-total {
-			grid-column-start: 7;
-			grid-column-end: 8;
+		&__profile {
+			grid-area: profile;
+		}
+
+		&__options {
+			grid-area: options;
+		}
+
+		&__help {
+			grid-area: help;
+		}
+
+		&__find {
+			grid-area: find;
+		}
+
+		&__total {
+			grid-area: total;
 		}
 	}
 
 	.grid-main {
+		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr) 150px;
+		grid-template-areas: "status name name planed set note note price";
 
-		&-type,
-		&-account {
+		&__status {
+			grid-area: status;
+		}
+
+		&__name {
+			grid-area: name;
+		}
+
+		&__planed {
+			grid-area: planed;
+		}
+
+		&__set {
+			grid-area: set;
+		}
+
+		&__note {
+			grid-area: note;
+		}
+
+		&__price {
+			grid-area: price;
+		}
+
+		&__type,
+		&__account {
 			display: none;
 		}
 	}
 
+	.category {
+		grid-template-areas: "status name name planed set note note note";
+	}
 }
 
 @media (max-width: 1350px) {
 
-	.grid-nav,
-	.grid-main {
-		grid-template-columns: repeat(5, 150px) minmax(300px, 1fr);
-	}
-
 	.grid-nav {
+		grid-template-columns: repeat(5, 150px) repeat(2, 1fr);
+		grid-template-areas: "new profile options help . find find";
 
-		&-total {
+		&__new {
+			grid-area: new;
+		}
+
+		&__profile {
+			grid-area: profile;
+		}
+
+		&__options {
+			grid-area: options;
+		}
+
+		&__help {
+			grid-area: help;
+		}
+
+		&__find {
+			grid-area: find;
+		}
+
+		&__total {
 			display: none;
 		}
 	}
 
-	.grid-main {
+	.grid-main,
+	.category {
+		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr);
+		grid-template-areas: "status name name planed set note note";
 
-		&-price {
+		&__status {
+			grid-area: status;
+		}
+
+		&__name {
+			grid-area: name;
+		}
+
+		&__planed {
+			grid-area: planed;
+		}
+
+		&__set {
+			grid-area: set;
+		}
+
+		&__note {
+			grid-area: note;
+		}
+
+		&__price {
 			display: none;
 		}
 	}
@@ -173,21 +248,51 @@
 @media (max-width: 1050px) {
 
 	.grid-nav {
-		grid-template-columns: repeat(4, 150px) minmax(150px, 1fr);
+		grid-template-columns: repeat(5, 150px) 1fr;
+		grid-template-areas: "new profile options help find";
 
-		&-find {
-			grid-column-start: 5;
-			grid-column-end: 6;
+		&__new {
+			grid-area: new;
+		}
+
+		&__profile {
+			grid-area: profile;
+		}
+
+		&__options {
+			grid-area: options;
+		}
+
+		&__help {
+			grid-area: help;
+		}
+
+		&__find {
+			grid-area: find;
 		}
 	}
 
-	.grid-main,
-	.grid-category {
-		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px);
-	}
-
 	.grid-main {
-		&-note {
+		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px);
+		grid-template-areas: "status name name planed set";
+
+		&__status {
+			grid-area: status;
+		}
+
+		&__name {
+			grid-area: name;
+		}
+
+		&__planed {
+			grid-area: planed;
+		}
+
+		&__set {
+			grid-area: set;
+		}
+
+		&__note {
 			display: none;
 		}
 	}
@@ -196,37 +301,57 @@
 @media (max-width: 750px) {
 
 	.grid-nav {
-		grid-template-columns: repeat(4, 1fr);
 		position: relative;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-areas: "new profile options help";
 
-		&-find {
+		&__new {
+			grid-area: new;
+		}
+
+		&__profile {
+			grid-area: profile;
+		}
+
+		&__options {
+			grid-area: options;
+		}
+
+		&__help {
+			grid-area: help;
+		}
+
+		&__find {
 			position: absolute;
 			right: 0;
 		}
 	}
 
-	.grid-main,
-	.grid-category {
-		grid-template-columns: 150px repeat(2, 1fr) 150px;
-	}
-
 	.grid-main {
+		grid-template-columns: 150px repeat(2, 1fr) 150px;
+		grid-template-areas: "status name name set";
 
-		&-planed {
+		&__status {
+			grid-area: status;
+		}
+
+		&__name {
+			grid-area: name;
+		}
+
+		&__planed {
 			display: none;
 		}
 
-		&-set {
-			grid-column-start: 4;
-			grid-column-end: 5;
+		&__set {
+			grid-area: set;
 		}
 	}
 }
 
 @media (max-width: 600px) {
 
-	.grid-main,
-	.grid-category {
+	.grid-main {
 		grid-template-columns: 50px repeat(2, 1fr) 50px;
 	}
 }
