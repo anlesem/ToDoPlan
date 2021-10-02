@@ -2,7 +2,7 @@
 // Меню
 .grid-nav {
 	display: grid;
-	grid-template-rows: 80px;
+	grid-template-rows: $height-header;
 	grid-template-columns: repeat(6, 150px) repeat(2, 1fr) repeat(2, 150px);
 	grid-template-areas: "new profile options help . . find find . total";
 
@@ -32,7 +32,7 @@
 }
 
 // Основная таблица
-.grid-main {
+.grid-table {
 	position: relative;
 	display: grid;
 	grid-template-rows: 40px;
@@ -73,10 +73,6 @@
 		grid-area: account;
 	}
 
-	&:hover {
-		background: $paper-hover;
-	}
-
 	&::after {
 		content: "";
 		position: absolute;
@@ -87,22 +83,18 @@
 	}
 }
 
+main .grid-table:hover {
+	background: $paper-hover;
+}
+
 // Заголовок таблицы
 .header {
 	grid-template-rows: 60px;
-
-	&:hover {
-		background: $paper;
-	}
 }
 
 // Заголовок внутри таблицы
 .title {
 	background: $paper-title;
-
-	&:hover {
-		background: $paper-title;
-	}
 }
 
 // Категории
@@ -143,7 +135,7 @@
 		}
 	}
 
-	.grid-main {
+	.grid-table {
 		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr) 150px;
 		grid-template-areas: "status name name planed set note note price";
 
@@ -213,7 +205,7 @@
 		}
 	}
 
-	.grid-main,
+	.grid-table,
 	.category {
 		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr);
 		grid-template-areas: "status name name planed set note note";
@@ -272,7 +264,7 @@
 		}
 	}
 
-	.grid-main {
+	.grid-table {
 		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px);
 		grid-template-areas: "status name name planed set";
 
@@ -327,7 +319,7 @@
 		}
 	}
 
-	.grid-main {
+	.grid-table {
 		grid-template-columns: 150px repeat(2, 1fr) 150px;
 		grid-template-areas: "status name name set";
 
@@ -351,7 +343,7 @@
 
 @media (max-width: 600px) {
 
-	.grid-main {
+	.grid-table {
 		grid-template-columns: 50px repeat(2, 1fr) 50px;
 	}
 }
