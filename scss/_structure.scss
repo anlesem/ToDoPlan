@@ -1,4 +1,36 @@
 //* Сетки
+// Структура
+.grid-main {
+	display: grid;
+	grid-template-columns: 5% 1fr 5%;
+	grid-template-areas: ". header aside"
+		". main aside";
+}
+
+header {
+	grid-area: header;
+	height: calc($height-header + 180px);
+}
+
+main {
+	grid-area: main;
+	height: calc(100% - $height-header - 180px);
+	overflow: scroll;
+}
+
+aside {
+	grid-area: aside;
+	position: absolute;
+	right: 0;
+	width: 50px;
+	height: 100%;
+	background: #000;
+
+	&:hover {
+		width: 500px;
+	}
+}
+
 // Меню
 .grid-nav {
 	display: grid;
@@ -31,7 +63,7 @@
 	}
 }
 
-// Основная таблица
+// Таблица
 .grid-table {
 	position: relative;
 	display: grid;
@@ -175,6 +207,9 @@ main .grid-table:hover {
 }
 
 @media (max-width: 1350px) {
+	.grid-main {
+		grid-template-columns: 30px 1fr 30px;
+	}
 
 	.grid-nav {
 		grid-template-columns: repeat(5, 150px) repeat(2, 1fr);
@@ -237,10 +272,10 @@ main .grid-table:hover {
 
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1100px) {
 
 	.grid-nav {
-		grid-template-columns: repeat(5, 150px) 1fr;
+		grid-template-columns: repeat(4, 150px) 1fr;
 		grid-template-areas: "new profile options help find";
 
 		&__new {
@@ -290,7 +325,11 @@ main .grid-table:hover {
 	}
 }
 
-@media (max-width: 750px) {
+@media (max-width: 800px) {
+
+	.grid-main {
+		grid-template-columns: 0px 1fr 0px;
+	}
 
 	.grid-nav {
 		position: relative;
@@ -339,11 +378,19 @@ main .grid-table:hover {
 			grid-area: set;
 		}
 	}
+
+	aside {
+		width: 0px;
+	}
 }
 
 @media (max-width: 600px) {
 
 	.grid-table {
 		grid-template-columns: 50px repeat(2, 1fr) 50px;
+
+		&::after {
+			left: 50px;
+		}
 	}
 }
