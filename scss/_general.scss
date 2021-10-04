@@ -28,6 +28,10 @@ body {
 	font-style: normal;
 	font-weight: 400;
 	line-height: 19px;
+
+	&>input {
+		display: none;
+	}
 }
 
 .container {

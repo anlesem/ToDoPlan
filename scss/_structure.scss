@@ -1,33 +1,43 @@
 //* Сетки
 // Структура
 .grid-main {
+	height: 100%;
 	display: grid;
+	grid-template-columns: 5% 2fr 1fr;
+	grid-template-areas: ". header aside"
+		". main aside";
+
+	header {
+		grid-area: header;
+		height: calc($height-header + 180px);
+	}
+
+	main {
+		grid-area: main;
+		height: calc(100% - $height-header - 180px);
+		overflow: scroll;
+	}
+
+	aside {
+		grid-area: aside;
+		background: linear-gradient(to top left, #D9CAAD 0%, #E5D6B8 100%);
+	}
+}
+
+#pay:checked~.grid-main {
 	grid-template-columns: 5% 1fr 5%;
 	grid-template-areas: ". header aside"
 		". main aside";
-}
 
-header {
-	grid-area: header;
-	height: calc($height-header + 180px);
-}
+	aside {
+		position: absolute;
+		right: 0;
+		width: 50px;
+		height: 100%;
 
-main {
-	grid-area: main;
-	height: calc(100% - $height-header - 180px);
-	overflow: scroll;
-}
-
-aside {
-	grid-area: aside;
-	position: absolute;
-	right: 0;
-	width: 50px;
-	height: 100%;
-	background: #000;
-
-	&:hover {
-		width: 500px;
+		&:hover {
+			width: 500px;
+		}
 	}
 }
 
@@ -35,8 +45,8 @@ aside {
 .grid-nav {
 	display: grid;
 	grid-template-rows: $height-header;
-	grid-template-columns: repeat(6, 150px) repeat(2, 1fr) repeat(2, 150px);
-	grid-template-areas: "new profile options help . . find find . total";
+	grid-template-columns: repeat(5, 150px) repeat(2, 1fr);
+	grid-template-areas: "new profile options help . find find";
 
 	&__new {
 		grid-area: new;
@@ -60,6 +70,16 @@ aside {
 
 	&__total {
 		grid-area: total;
+		display: none;
+	}
+}
+
+#pay:checked~.grid-main .grid-nav {
+	grid-template-columns: repeat(6, 150px) repeat(2, 1fr) repeat(2, 150px);
+	grid-template-areas: "new profile options help . . find find . total";
+
+	&__total {
+		display: block;
 	}
 }
 
@@ -68,8 +88,8 @@ aside {
 	position: relative;
 	display: grid;
 	grid-template-rows: 40px;
-	grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr) repeat(3, 150px);
-	grid-template-areas: "status name name planed set note note price type account";
+	grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr);
+	grid-template-areas: "status name name planed set note note";
 	border-bottom: 1px solid #698ccc;
 	background: $paper;
 
@@ -95,14 +115,17 @@ aside {
 
 	&__price {
 		grid-area: price;
+		display: none;
 	}
 
 	&__type {
 		grid-area: type;
+		display: none;
 	}
 
 	&__account {
 		grid-area: account;
+		display: none;
 	}
 
 	&::after {
@@ -112,6 +135,17 @@ aside {
 		height: 100%;
 		width: 1px;
 		background: #ff7f7f;
+	}
+}
+
+#pay:checked~.grid-main .grid-table {
+	grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr) repeat(3, 150px);
+	grid-template-areas: "status name name planed set note note price type account";
+
+	&__price,
+	&__type,
+	&__account {
+		display: block;
 	}
 }
 
@@ -131,16 +165,55 @@ main .grid-table:hover {
 
 // Категории
 .category {
+	grid-template-areas: "status name name planed set note note";
+}
+
+#pay:checked~.grid-main .category {
 	grid-template-areas: "status name name planed set note note note note note";
 }
 
+.aside-swap {
+	position: absolute;
+	bottom: 10%;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 5;
+	display: none;
+}
 
 //* Адаптация
+// Плавающая панель или отключаются 2 последних столбца
 @media (max-width: 1665px) {
 
+	.grid-main {
+		grid-template-columns: 5% 1fr 5%;
+		grid-template-areas: ". header aside"
+			". main aside";
+
+		header {
+			grid-area: header;
+		}
+
+		main {
+			grid-area: main;
+		}
+
+		aside {
+			grid-area: aside;
+			position: absolute;
+			right: 0;
+			width: 50px;
+			height: 100%;
+
+			&:hover {
+				width: 500px;
+			}
+		}
+	}
+
 	.grid-nav {
-		grid-template-columns: repeat(5, 150px) repeat(2, 1fr) 150px;
-		grid-template-areas: "new profile options help . find find total";
+		grid-template-columns: repeat(5, 150px) repeat(2, 1fr);
+		grid-template-areas: "new profile options help . find find";
 
 		&__new {
 			grid-area: new;
@@ -167,9 +240,14 @@ main .grid-table:hover {
 		}
 	}
 
+	#pay:checked~.grid-main .grid-nav {
+		grid-template-columns: repeat(5, 150px) repeat(2, 1fr) 150px;
+		grid-template-areas: "new profile options help . find find total";
+	}
+
 	.grid-table {
-		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr) 150px;
-		grid-template-areas: "status name name planed set note note price";
+		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr);
+		grid-template-areas: "status name name planed set note note";
 
 		&__status {
 			grid-area: status;
@@ -190,9 +268,15 @@ main .grid-table:hover {
 		&__note {
 			grid-area: note;
 		}
+	}
+
+	#pay:checked~.grid-main .grid-table {
+		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr) 150px;
+		grid-template-areas: "status name name planed set note note price";
 
 		&__price {
 			grid-area: price;
+			display: block;
 		}
 
 		&__type,
@@ -202,16 +286,24 @@ main .grid-table:hover {
 	}
 
 	.category {
+		grid-template-areas: "status name name planed set note note";
+	}
+
+	#pay:checked~.grid-main.category {
 		grid-template-areas: "status name name planed set note note note";
 	}
 }
 
+// Отключается 3й из финансового блока столбец
 @media (max-width: 1350px) {
-	.grid-main {
+
+	.grid-main,
+	#pay:checked~.grid-main {
 		grid-template-columns: 30px 1fr 30px;
 	}
 
-	.grid-nav {
+	.grid-nav,
+	#pay:checked~.grid-main .grid-nav {
 		grid-template-columns: repeat(5, 150px) repeat(2, 1fr);
 		grid-template-areas: "new profile options help . find find";
 
@@ -241,7 +333,9 @@ main .grid-table:hover {
 	}
 
 	.grid-table,
-	.category {
+	.category,
+	#pay:checked~.grid-main .grid-table,
+	#pay:checked~.grid-main.category {
 		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr);
 		grid-template-areas: "status name name planed set note note";
 
@@ -272,9 +366,11 @@ main .grid-table:hover {
 
 }
 
+// Отключается "Примечание"
 @media (max-width: 1100px) {
 
-	.grid-nav {
+	.grid-nav,
+	#pay:checked~.grid-main .grid-nav {
 		grid-template-columns: repeat(4, 150px) 1fr;
 		grid-template-areas: "new profile options help find";
 
@@ -299,7 +395,10 @@ main .grid-table:hover {
 		}
 	}
 
-	.grid-table {
+	.grid-table,
+	.category,
+	#pay:checked~.grid-main .grid-table,
+	#pay:checked~.grid-main.category {
 		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px);
 		grid-template-areas: "status name name planed set";
 
@@ -325,13 +424,42 @@ main .grid-table:hover {
 	}
 }
 
+// Мобильная версия (2 части)
 @media (max-width: 800px) {
 
-	.grid-main {
-		grid-template-columns: 0px 1fr 0px;
+	#aside-table:checked~.grid-main,
+	#pay:checked~.grid-main {
+		grid-template-columns: 1fr;
+		grid-template-areas: "header"
+			"main";
+
+		header {
+			grid-area: header;
+		}
+
+		main {
+			grid-area: main;
+		}
+
+		aside {
+			width: 0px;
+		}
 	}
 
-	.grid-nav {
+	#aside-panel:checked~.grid-main,
+	#pay:checked~.grid-main {
+		grid-template-columns: 1fr;
+		grid-template-areas: "aside"
+			"aside";
+
+		aside {
+			grid-area: aside;
+			width: 100%;
+		}
+	}
+
+	.grid-nav,
+	#pay:checked~.grid-main .grid-nav {
 		position: relative;
 		grid-template-columns: repeat(4, 1fr);
 		grid-template-areas: "new profile options help";
@@ -358,7 +486,10 @@ main .grid-table:hover {
 		}
 	}
 
-	.grid-table {
+	.grid-table,
+	.category,
+	#pay:checked~.grid-main .grid-table,
+	#pay:checked~.grid-main.category {
 		grid-template-columns: 150px repeat(2, 1fr) 150px;
 		grid-template-areas: "status name name set";
 
@@ -379,14 +510,18 @@ main .grid-table:hover {
 		}
 	}
 
-	aside {
-		width: 0px;
+	.aside-swap {
+		display: block;
 	}
 }
 
+// Минимальный вариант
 @media (max-width: 600px) {
 
-	.grid-table {
+	.grid-table,
+	.category,
+	#pay:checked~.grid-main .grid-table,
+	#pay:checked~.grid-main.category {
 		grid-template-columns: 50px repeat(2, 1fr) 50px;
 
 		&::after {
