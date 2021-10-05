@@ -9,18 +9,16 @@
 
 	header {
 		grid-area: header;
-		height: calc($height-header + 180px);
+		overflow-y: scroll;
 	}
 
 	main {
 		grid-area: main;
-		height: calc(100% - $height-header - 180px);
-		overflow: scroll;
+		overflow-y: scroll;
 	}
 
 	aside {
 		grid-area: aside;
-		background: linear-gradient(to top left, #D9CAAD 0%, #E5D6B8 100%);
 	}
 }
 
@@ -28,25 +26,15 @@
 	grid-template-columns: 5% 1fr 5%;
 	grid-template-areas: ". header aside"
 		". main aside";
-
-	aside {
-		position: absolute;
-		right: 0;
-		width: 50px;
-		height: 100%;
-
-		&:hover {
-			width: 500px;
-		}
-	}
 }
 
 // Меню
-.grid-nav {
+.grid-menu {
 	display: grid;
-	grid-template-rows: $height-header;
+	grid-template-rows: $height-menu;
 	grid-template-columns: repeat(5, 150px) repeat(2, 1fr);
 	grid-template-areas: "new profile options help . find find";
+	place-items: center;
 
 	&__new {
 		grid-area: new;
@@ -74,7 +62,7 @@
 	}
 }
 
-#pay:checked~.grid-main .grid-nav {
+#pay:checked~.grid-main .grid-menu {
 	grid-template-columns: repeat(6, 150px) repeat(2, 1fr) repeat(2, 150px);
 	grid-template-areas: "new profile options help . . find find . total";
 
@@ -90,8 +78,7 @@
 	grid-template-rows: 40px;
 	grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr);
 	grid-template-areas: "status name name planed set note note";
-	border-bottom: 1px solid #698ccc;
-	background: $paper;
+	place-items: center;
 
 	&__status {
 		grid-area: status;
@@ -127,15 +114,6 @@
 		grid-area: account;
 		display: none;
 	}
-
-	&::after {
-		content: "";
-		position: absolute;
-		left: 150px;
-		height: 100%;
-		width: 1px;
-		background: #ff7f7f;
-	}
 }
 
 #pay:checked~.grid-main .grid-table {
@@ -149,19 +127,11 @@
 	}
 }
 
-main .grid-table:hover {
-	background: $paper-hover;
-}
-
 // Заголовок таблицы
 .header {
 	grid-template-rows: 60px;
 }
 
-// Заголовок внутри таблицы
-.title {
-	background: $paper-title;
-}
 
 // Категории
 .category {
@@ -170,15 +140,6 @@ main .grid-table:hover {
 
 #pay:checked~.grid-main .category {
 	grid-template-areas: "status name name planed set note note note note note";
-}
-
-.aside-swap {
-	position: absolute;
-	bottom: 10%;
-	left: 50%;
-	transform: translateX(-50%);
-	z-index: 5;
-	display: none;
 }
 
 //* Адаптация
@@ -200,18 +161,10 @@ main .grid-table:hover {
 
 		aside {
 			grid-area: aside;
-			position: absolute;
-			right: 0;
-			width: 50px;
-			height: 100%;
-
-			&:hover {
-				width: 500px;
-			}
 		}
 	}
 
-	.grid-nav {
+	.grid-menu {
 		grid-template-columns: repeat(5, 150px) repeat(2, 1fr);
 		grid-template-areas: "new profile options help . find find";
 
@@ -240,7 +193,7 @@ main .grid-table:hover {
 		}
 	}
 
-	#pay:checked~.grid-main .grid-nav {
+	#pay:checked~.grid-main .grid-menu {
 		grid-template-columns: repeat(5, 150px) repeat(2, 1fr) 150px;
 		grid-template-areas: "new profile options help . find find total";
 	}
@@ -302,8 +255,8 @@ main .grid-table:hover {
 		grid-template-columns: 30px 1fr 30px;
 	}
 
-	.grid-nav,
-	#pay:checked~.grid-main .grid-nav {
+	.grid-menu,
+	#pay:checked~.grid-main .grid-menu {
 		grid-template-columns: repeat(5, 150px) repeat(2, 1fr);
 		grid-template-areas: "new profile options help . find find";
 
@@ -369,8 +322,8 @@ main .grid-table:hover {
 // Отключается "Примечание"
 @media (max-width: 1100px) {
 
-	.grid-nav,
-	#pay:checked~.grid-main .grid-nav {
+	.grid-menu,
+	#pay:checked~.grid-main .grid-menu {
 		grid-template-columns: repeat(4, 150px) 1fr;
 		grid-template-areas: "new profile options help find";
 
@@ -440,10 +393,6 @@ main .grid-table:hover {
 		main {
 			grid-area: main;
 		}
-
-		aside {
-			width: 0px;
-		}
 	}
 
 	#aside-panel:checked~.grid-main,
@@ -454,12 +403,11 @@ main .grid-table:hover {
 
 		aside {
 			grid-area: aside;
-			width: 100%;
 		}
 	}
 
-	.grid-nav,
-	#pay:checked~.grid-main .grid-nav {
+	.grid-menu,
+	#pay:checked~.grid-main .grid-menu {
 		position: relative;
 		grid-template-columns: repeat(4, 1fr);
 		grid-template-areas: "new profile options help";
@@ -509,10 +457,6 @@ main .grid-table:hover {
 			grid-area: set;
 		}
 	}
-
-	.aside-swap {
-		display: block;
-	}
 }
 
 // Минимальный вариант
@@ -523,9 +467,5 @@ main .grid-table:hover {
 	#pay:checked~.grid-main .grid-table,
 	#pay:checked~.grid-main.category {
 		grid-template-columns: 50px repeat(2, 1fr) 50px;
-
-		&::after {
-			left: 50px;
-		}
 	}
 }

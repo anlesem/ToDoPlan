@@ -1,0 +1,108 @@
+aside {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+
+	min-height: 0;
+	margin: auto 0;
+	height: 95%;
+	padding: 40px 0;
+	border-top-left-radius: 40px;
+	border-bottom-left-radius: 40px;
+	background: linear-gradient(to top right, #d9CAAD 0%, #eedebe 100%);
+	box-shadow: $shadow;
+
+	outline: $brown dashed 2px;
+	outline-offset: -10px;
+
+	transition: all 300ms;
+}
+
+#pay:checked~.grid-main {
+
+	aside {
+		position: absolute;
+		right: 0;
+		width: 50px;
+		height: 95%;
+
+		&:hover {
+			width: 500px;
+		}
+	}
+}
+
+.aside-swap {
+	position: absolute;
+	bottom: 10%;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 5;
+	display: none;
+}
+
+//* -----------------------------------------------
+.date {
+	width: 65%;
+	height: 200px;
+	margin: 0 auto;
+	background: #faf6e1;
+}
+
+//* -----------------------------------------------
+.todo {
+	width: 65%;
+	height: calc(100% - 200px - 40px);
+	margin: 0 auto;
+	overflow-y: scroll;
+
+	background: linear-gradient(to top right, #faf4d4 0%, #faf6e1 100%);
+}
+
+
+//* -----------------------------------------------
+
+@media (max-width: 1665px) {
+
+	.grid-main {
+
+		aside {
+			position: absolute;
+			right: 0;
+			width: 50px;
+			height: 95%;
+
+			&:hover {
+				width: 500px;
+			}
+		}
+	}
+}
+
+@media (max-width: 800px) {
+
+	#aside-table:checked~.grid-main,
+	#pay:checked~.grid-main {
+
+		aside {
+			width: 0px;
+		}
+	}
+
+	#aside-panel:checked~.grid-main,
+	#pay:checked~.grid-main {
+
+		aside {
+			width: 100%;
+			height: 100%;
+
+			&:hover {
+				width: 100%;
+			}
+		}
+	}
+
+	.aside-swap {
+		display: block;
+	}
+}

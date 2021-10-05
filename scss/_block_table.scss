@@ -1,0 +1,52 @@
+.grid-table {
+	margin-left: 5px;
+	border-bottom: 1px solid #698ccc;
+	background: $paper;
+	box-shadow: $shadow;
+
+	&::before {
+		content: "";
+		position: absolute;
+		left: 70%;
+		transform: translateX(-50%);
+		height: 100%;
+		width: 10px;
+		background: linear-gradient(to left, #ddd 0%, transparent 100%);
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 150px;
+		height: 100%;
+		width: 1px;
+		background: #ff7f7f;
+	}
+}
+
+#pay:checked~.grid-main .grid-table::before {
+	left: 50%;
+}
+
+@media (max-width: 1665px) {
+
+	.grid-table::before {
+		content: none;
+	}
+}
+
+main .grid-table:hover {
+	background: $paper-hover;
+}
+
+// Заголовок таблицы (высота в структуре)
+.header {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+// Заголовок внутри таблицы
+.title {
+	background: $paper-title;
+}

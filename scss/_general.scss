@@ -29,6 +29,35 @@ body {
 	font-weight: 400;
 	line-height: 19px;
 
+	position: relative;
+	z-index: -5;
+
+	background-color: rgba(#d4be94, 0.9);
+	background-image: url(../img/texture-skin.svg);
+
+	&::after,
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		width: 40%;
+		height: 100%;
+		z-index: -1;
+		background-color: #fff6e5;
+		background-image: url(../img/texture-wood.svg);
+		background-size: contain;
+	}
+
+	&::after {
+		left: 0;
+		border-top-right-radius: $height-menu;
+	}
+
+	&::before {
+		right: 0;
+		border-top-left-radius: $height-menu;
+	}
+
 	&>input {
 		display: none;
 	}
