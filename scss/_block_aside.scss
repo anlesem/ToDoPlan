@@ -9,7 +9,8 @@ aside {
 	padding: 40px 0;
 	border-top-left-radius: 40px;
 	border-bottom-left-radius: 40px;
-	background: linear-gradient(to top right, #d9CAAD 0%, #eedebe 100%);
+	background: #eedebe;
+	background-image: url(../img/texture-panel.svg);
 	box-shadow: $shadow;
 
 	outline: $brown dashed 2px;
@@ -25,6 +26,7 @@ aside {
 		right: 0;
 		width: 50px;
 		height: 95%;
+		overflow: hidden;
 
 		&:hover {
 			width: 500px;
@@ -43,20 +45,75 @@ aside {
 
 //* -----------------------------------------------
 .date {
-	width: 65%;
+	width: $width-todo;
 	height: 200px;
 	margin: 0 auto;
-	background: #faf6e1;
+	border-radius: $border-radius;
+	outline: $brown dashed 2px;
+	outline-offset: 5px;
+	background: $paper-todo;
+	box-shadow: inset $shadow;
+
+	&__week {
+		height: 40px;
+	}
 }
 
 //* -----------------------------------------------
 .todo {
-	width: 65%;
+	position: relative;
+	z-index: 3;
+	width: $width-todo;
 	height: calc(100% - 200px - 40px);
 	margin: 0 auto;
-	overflow-y: scroll;
+	padding: 0 10px;
+	border-radius: $border-radius;
 
-	background: linear-gradient(to top right, #faf4d4 0%, #faf6e1 100%);
+	background: $paper-todo;
+	box-shadow: $shadow;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: $todo-head;
+		z-index: -1;
+		border-top-left-radius: $border-radius;
+		border-top-right-radius: $border-radius;
+		background: $paper-title;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: $todo-head - 2px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: -2;
+		width: 380px;
+		border-bottom: $brown dashed 2px;
+	}
+
+	&__head {
+		height: $todo-head;
+		border-bottom: 1px solid #b8b8cc;
+	}
+
+	&__list {
+		height: calc(100% - #{$todo-head});
+		overflow-y: scroll;
+	}
+
+	&__task {
+		height: 40px;
+		border-bottom: 1px solid #b8b8cc;
+
+		&:hover {
+			background: $paper-hover;
+		}
+	}
 }
 
 

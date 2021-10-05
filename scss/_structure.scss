@@ -3,6 +3,7 @@
 .grid-main {
 	height: 100%;
 	display: grid;
+	grid-template-rows: 244px calc(100% - 245px);
 	grid-template-columns: 5% 2fr 1fr;
 	grid-template-areas: ". header aside"
 		". main aside";

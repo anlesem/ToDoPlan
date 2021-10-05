@@ -42,8 +42,8 @@ main .grid-table:hover {
 
 // Заголовок таблицы (высота в структуре)
 .header {
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+	border-top-left-radius: $border-radius;
+	border-top-right-radius: $border-radius;
 }
 
 // Заголовок внутри таблицы
