@@ -1,71 +1,38 @@
-//* Сетки
+//* Сетка
 // Структура
 .grid-main {
 	height: 100%;
 	display: grid;
-	grid-template-rows: 244px calc(100% - 245px);
-	grid-template-columns: 5% 2fr 1fr;
-	grid-template-areas: ". header aside"
-		". main aside";
+	grid-template-columns: 5% 1fr 5%;
+	grid-template-areas: ". header ."
+		". main .";
+
+	@include grid-main;
 
 	header {
-		grid-area: header;
 		overflow-y: scroll;
 	}
 
 	main {
-		grid-area: main;
 		overflow-y: scroll;
 	}
-
-	aside {
-		grid-area: aside;
-	}
-}
-
-#pay:checked~.grid-main {
-	grid-template-columns: 5% 1fr 5%;
-	grid-template-areas: ". header aside"
-		". main aside";
 }
 
 // Меню
 .grid-menu {
 	display: grid;
-	grid-template-rows: $height-menu;
-	grid-template-columns: repeat(5, 150px) repeat(2, 1fr);
-	grid-template-areas: "new profile options help . find find";
-	place-items: center;
+	grid-template-columns: repeat(5, 150px) repeat(2, 1fr) repeat(3, 150px);
+	grid-template-areas: "new profile options help . find find . . .";
 
-	&__new {
-		grid-area: new;
-	}
-
-	&__profile {
-		grid-area: profile;
-	}
-
-	&__options {
-		grid-area: options;
-	}
-
-	&__help {
-		grid-area: help;
-	}
-
-	&__find {
-		grid-area: find;
-	}
+	@include grid-menu;
 
 	&__total {
-		grid-area: total;
 		display: none;
 	}
 }
 
 #pay:checked~.grid-main .grid-menu {
-	grid-template-columns: repeat(6, 150px) repeat(2, 1fr) repeat(2, 150px);
-	grid-template-areas: "new profile options help . . find find . total";
+	grid-template-areas: "new profile options help .  find find . . total";
 
 	&__total {
 		display: block;
@@ -76,49 +43,25 @@
 .grid-table {
 	position: relative;
 	display: grid;
-	grid-template-rows: 40px;
-	grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr);
-	grid-template-areas: "status name name planed set note note";
-	place-items: center;
+	grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr) repeat(3, 150px);
+	grid-template-areas: "status name name planed set note note . . .";
 
-	&__status {
-		grid-area: status;
-	}
-
-	&__name {
-		grid-area: name;
-	}
-
-	&__planed {
-		grid-area: planed;
-	}
-
-	&__set {
-		grid-area: set;
-	}
-
-	&__note {
-		grid-area: note;
-	}
+	@include grid-table;
 
 	&__price {
-		grid-area: price;
 		display: none;
 	}
 
 	&__type {
-		grid-area: type;
 		display: none;
 	}
 
 	&__account {
-		grid-area: account;
 		display: none;
 	}
 }
 
 #pay:checked~.grid-main .grid-table {
-	grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr) repeat(3, 150px);
 	grid-template-areas: "status name name planed set note note price type account";
 
 	&__price,
@@ -128,108 +71,39 @@
 	}
 }
 
-// Заголовок таблицы
-.header {
-	grid-template-rows: 60px;
-}
-
-
 // Категории
 .category {
-	grid-template-areas: "status name name planed set note note";
+	grid-template-areas: "status name name planed set note note . . .";
 }
 
-#pay:checked~.grid-main .category {
-	grid-template-areas: "status name name planed set note note note note note";
-}
 
-//* Адаптация
-// Плавающая панель или отключаются 2 последних столбца
-@media (max-width: 1665px) {
+//! ------------------------   Адаптивность
 
-	.grid-main {
-		grid-template-columns: 5% 1fr 5%;
-		grid-template-areas: ". header aside"
-			". main aside";
-
-		header {
-			grid-area: header;
-		}
-
-		main {
-			grid-area: main;
-		}
-
-		aside {
-			grid-area: aside;
-		}
-	}
+@media (max-width: $widthHD) {
 
 	.grid-menu {
-		grid-template-columns: repeat(5, 150px) repeat(2, 1fr);
-		grid-template-areas: "new profile options help . find find";
+		grid-template-columns: repeat(5, 150px) repeat(2, 1fr) 150px;
+		grid-template-areas: "new profile options help . find find .";
 
-		&__new {
-			grid-area: new;
-		}
-
-		&__profile {
-			grid-area: profile;
-		}
-
-		&__options {
-			grid-area: options;
-		}
-
-		&__help {
-			grid-area: help;
-		}
-
-		&__find {
-			grid-area: find;
-		}
-
-		&__total {
-			grid-area: total;
-		}
+		@include grid-menu;
 	}
 
 	#pay:checked~.grid-main .grid-menu {
-		grid-template-columns: repeat(5, 150px) repeat(2, 1fr) 150px;
 		grid-template-areas: "new profile options help . find find total";
 	}
 
-	.grid-table {
-		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr);
-		grid-template-areas: "status name name planed set note note";
+	.grid-table,
+	.category {
+		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr) 150px;
+		grid-template-areas: "status name name planed set note note note";
 
-		&__status {
-			grid-area: status;
-		}
-
-		&__name {
-			grid-area: name;
-		}
-
-		&__planed {
-			grid-area: planed;
-		}
-
-		&__set {
-			grid-area: set;
-		}
-
-		&__note {
-			grid-area: note;
-		}
+		@include grid-table;
 	}
 
 	#pay:checked~.grid-main .grid-table {
-		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr) 150px;
 		grid-template-areas: "status name name planed set note note price";
 
 		&__price {
-			grid-area: price;
 			display: block;
 		}
 
@@ -239,20 +113,15 @@
 		}
 	}
 
-	.category {
-		grid-template-areas: "status name name planed set note note";
-	}
-
 	#pay:checked~.grid-main.category {
 		grid-template-areas: "status name name planed set note note note";
 	}
 }
 
-// Отключается 3й из финансового блока столбец
-@media (max-width: 1350px) {
+//! ------------------------   1350
+@media (max-width: $widthPC) {
 
-	.grid-main,
-	#pay:checked~.grid-main {
+	.grid-main {
 		grid-template-columns: 30px 1fr 30px;
 	}
 
@@ -261,25 +130,7 @@
 		grid-template-columns: repeat(5, 150px) repeat(2, 1fr);
 		grid-template-areas: "new profile options help . find find";
 
-		&__new {
-			grid-area: new;
-		}
-
-		&__profile {
-			grid-area: profile;
-		}
-
-		&__options {
-			grid-area: options;
-		}
-
-		&__help {
-			grid-area: help;
-		}
-
-		&__find {
-			grid-area: find;
-		}
+		@include grid-menu;
 
 		&__total {
 			display: none;
@@ -288,89 +139,37 @@
 
 	.grid-table,
 	.category,
-	#pay:checked~.grid-main .grid-table,
-	#pay:checked~.grid-main.category {
+	#pay:checked~.grid-main .grid-table {
 		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr);
 		grid-template-areas: "status name name planed set note note";
 
-		&__status {
-			grid-area: status;
-		}
-
-		&__name {
-			grid-area: name;
-		}
-
-		&__planed {
-			grid-area: planed;
-		}
-
-		&__set {
-			grid-area: set;
-		}
-
-		&__note {
-			grid-area: note;
-		}
+		@include grid-table;
 
 		&__price {
 			display: none;
 		}
 	}
-
 }
 
-// Отключается "Примечание"
-@media (max-width: 1100px) {
+//! ------------------------   1100
+
+@media (max-width: $widthLT) {
 
 	.grid-menu,
 	#pay:checked~.grid-main .grid-menu {
 		grid-template-columns: repeat(4, 150px) 1fr;
 		grid-template-areas: "new profile options help find";
 
-		&__new {
-			grid-area: new;
-		}
-
-		&__profile {
-			grid-area: profile;
-		}
-
-		&__options {
-			grid-area: options;
-		}
-
-		&__help {
-			grid-area: help;
-		}
-
-		&__find {
-			grid-area: find;
-		}
+		@include grid-menu;
 	}
 
 	.grid-table,
 	.category,
-	#pay:checked~.grid-main .grid-table,
-	#pay:checked~.grid-main.category {
+	#pay:checked~.grid-main .grid-table {
 		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px);
 		grid-template-areas: "status name name planed set";
 
-		&__status {
-			grid-area: status;
-		}
-
-		&__name {
-			grid-area: name;
-		}
-
-		&__planed {
-			grid-area: planed;
-		}
-
-		&__set {
-			grid-area: set;
-		}
+		@include grid-table;
 
 		&__note {
 			display: none;
@@ -378,56 +177,23 @@
 	}
 }
 
-// Мобильная версия (2 части)
-@media (max-width: 800px) {
+//! ------------------------   800
+@media (max-width: $widthTab) {
 
-	#aside-table:checked~.grid-main,
-	#pay:checked~.grid-main {
+	.grid-main {
 		grid-template-columns: 1fr;
 		grid-template-areas: "header"
 			"main";
 
-		header {
-			grid-area: header;
-		}
-
-		main {
-			grid-area: main;
-		}
-	}
-
-	#aside-panel:checked~.grid-main,
-	#pay:checked~.grid-main {
-		grid-template-columns: 1fr;
-		grid-template-areas: "aside"
-			"aside";
-
-		aside {
-			grid-area: aside;
-		}
+		@include grid-main;
 	}
 
 	.grid-menu,
 	#pay:checked~.grid-main .grid-menu {
-		position: relative;
 		grid-template-columns: repeat(4, 1fr);
 		grid-template-areas: "new profile options help";
 
-		&__new {
-			grid-area: new;
-		}
-
-		&__profile {
-			grid-area: profile;
-		}
-
-		&__options {
-			grid-area: options;
-		}
-
-		&__help {
-			grid-area: help;
-		}
+		@include grid-menu;
 
 		&__find {
 			position: absolute;
@@ -437,36 +203,25 @@
 
 	.grid-table,
 	.category,
-	#pay:checked~.grid-main .grid-table,
-	#pay:checked~.grid-main.category {
+	#pay:checked~.grid-main .grid-table {
 		grid-template-columns: 150px repeat(2, 1fr) 150px;
 		grid-template-areas: "status name name set";
 
-		&__status {
-			grid-area: status;
-		}
-
-		&__name {
-			grid-area: name;
-		}
+		@include grid-table;
 
 		&__planed {
 			display: none;
 		}
 
-		&__set {
-			grid-area: set;
-		}
 	}
 }
 
-// Минимальный вариант
-@media (max-width: 600px) {
+//! ------------------------   600
+@media (max-width: $widthMob) {
 
 	.grid-table,
 	.category,
-	#pay:checked~.grid-main .grid-table,
-	#pay:checked~.grid-main.category {
+	#pay:checked~.grid-main .grid-table {
 		grid-template-columns: 50px repeat(2, 1fr) 50px;
 	}
 }

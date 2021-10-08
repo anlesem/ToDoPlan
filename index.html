@@ -10,6 +10,7 @@
 
 <body class="container">
 	<input type="checkbox" id="pay">
+	<input type="checkbox" id="filters">
 	<input type="radio" name="aside" class="aside__radio" id="aside-table" checked>
 	<input type="radio" name="aside" class="aside__radio" id="aside-panel">
 	<div class="aside-swap">
@@ -20,23 +21,26 @@
 			Панель
 		</label>
 	</div>
-	<div class="preferences">
-		<label class="" for="pay">
-			Финансы
-		</label>
-	</div>
 	<div class="grid-main">
 		<header>
-			<div class="grid-menu">
-				<div class="grid-menu__new">Создать</div>
-				<div class="grid-menu__profile">Профиль</div>
-				<div class="grid-menu__options">Настройки</div>
-				<div class="grid-menu__help">Помощь</div>
-				<div class="grid-menu__find">Найти</div>
-				<div class="grid-menu__total">Итого</div>
-			</div>
+			<ul class="grid-menu">
+				<li class="grid-menu__new">Создать
+				</li>
+				<li class="grid-menu__profile">Профиль
+				</li>
+				<li class="grid-menu__options">Настройки
+				</li>
+				<li class="grid-menu__help">Помощь
+				</li>
+				<li class="grid-menu__find">Найти</li>
+				<li class="grid-menu__total">Итого</li>
+			</ul>
 			<div class="grid-table header">
-				<div class="grid-table__status">Иконки</div>
+				<div class="grid-table__status">
+					<label class="" for="filters">
+						Ф
+					</label>
+				</div>
 				<div class="grid-table__name">Ежедневник</div>
 				<div class="grid-table__planed">Закладки</div>
 				<div class="grid-table__set">Управление</div>
@@ -45,7 +49,7 @@
 				<div class="grid-table__type">1 500 000</div>
 				<div class="grid-table__account">423 500</div>
 			</div>
-			<div class="grid-table">
+			<div class="grid-table filters">
 				<div class="grid-table__status">Иконки</div>
 				<div class="grid-table__name">Наименования</div>
 				<div class="grid-table__planed">План</div>
@@ -55,7 +59,7 @@
 				<div class="grid-table__type">Операция</div>
 				<div class="grid-table__account">Контрагент</div>
 			</div>
-			<div class="grid-table">
+			<div class="grid-table filters">
 				<div class="grid-table__status">Иконки</div>
 				<div class="grid-table__name">Наименования</div>
 				<div class="grid-table__planed">План</div>
@@ -294,6 +298,11 @@
 			</section>
 		</aside>
 	</div>
+	<section class="frame">
+		<label class="" for="pay">
+			Финансы
+		</label>
+	</section>
 	<footer>
 
 	</footer>

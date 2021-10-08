@@ -49,3 +49,105 @@
 	bottom: 0;
 	left: 0;
 }
+
+
+@mixin widthHD {
+	@media (max-width:$widthHD) {
+		@content;
+	}
+}
+
+@mixin widthPC {
+	@media (max-width: $widthPC) {
+		@content;
+	}
+}
+
+@mixin widthLT {
+	@media (max-width: $widthLT) {
+		@content;
+	}
+}
+
+@mixin widthTab {
+	@media (max-width: $widthTab) {
+		@content;
+	}
+}
+
+@mixin widthMob {
+	@media (max-width: $widthMob) {
+		@content;
+	}
+}
+
+
+@mixin grid-main {
+	header {
+		grid-area: header;
+	}
+
+	main {
+		grid-area: main;
+	}
+}
+
+@mixin grid-menu {
+	&__new {
+		grid-area: new;
+	}
+
+	&__profile {
+		grid-area: profile;
+	}
+
+	&__options {
+		grid-area: options;
+	}
+
+	&__help {
+		grid-area: help;
+	}
+
+	&__find {
+		grid-area: find;
+	}
+
+	&__total {
+		grid-area: total;
+	}
+}
+
+@mixin grid-table {
+	&__status {
+		grid-area: status;
+	}
+
+	&__name {
+		grid-area: name;
+	}
+
+	&__planed {
+		grid-area: planed;
+	}
+
+	&__set {
+		grid-area: set;
+	}
+
+	&__note {
+		grid-area: note;
+	}
+
+	&__price {
+		grid-area: price;
+	}
+
+	&__type {
+		grid-area: type;
+	}
+
+	&__account {
+		grid-area: account;
+	}
+}

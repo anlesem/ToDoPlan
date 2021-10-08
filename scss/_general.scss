@@ -35,6 +35,12 @@ body {
 	background-color: rgba(#d4be94, 0.9);
 	background-image: url(../img/texture-skin.svg);
 
+	@include widthLT {
+		background-color: #fff6e5;
+		background-image: url(../img/texture-wood.svg);
+		background-size: contain;
+	}
+
 	&::after,
 	&::before {
 		content: "";
@@ -46,6 +52,10 @@ body {
 		background-color: #fff6e5;
 		background-image: url(../img/texture-wood.svg);
 		background-size: contain;
+
+		@include widthLT {
+			content: none;
+		}
 	}
 
 	&::after {
