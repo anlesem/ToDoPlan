@@ -11,8 +11,7 @@
 <body class="container">
 	<input type="checkbox" id="pay">
 	<input type="checkbox" id="filters">
-	<input type="radio" name="info" id="info-off">
-	<input type="radio" name="info" id="info">
+	<input type="checkbox" id="set">
 	<input type="radio" name="frame" id="frame-off" checked>
 	<input type="radio" name="frame" id="frame-new">
 	<input type="radio" name="frame" id="frame-profile">
@@ -63,8 +62,8 @@
 					<label class="" for="filters">
 						Фил
 					</label>
-					<label class="" for="info">
-						Инф
+					<label class="" for="set">
+						Уст
 					</label>
 					<label class="" for="pay">
 						Фин
@@ -339,7 +338,17 @@
 		</label>
 	</section>
 	<footer>
-		<div class="info"></div>
+		<div class="ready"></div>
+		<div class="set">
+			<div class="grid-table__status">Иконки</div>
+			<div class="grid-table__name">Наименования</div>
+			<div class="grid-table__planed">План</div>
+			<div class="grid-table__set">Управление</div>
+			<div class="grid-table__note">Примечание</div>
+			<div class="grid-table__price">Стоимость</div>
+			<div class="grid-table__type">Операция</div>
+			<div class="grid-table__account">Контрагент</div>
+		</div>
 	</footer>
 	<script src="./js/scritps.js"></script>
 </body>

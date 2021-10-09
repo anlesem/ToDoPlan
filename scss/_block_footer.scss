@@ -4,25 +4,90 @@ footer {
 	left: 0;
 	right: 0;
 	z-index: 5;
-	height: 20px;
 	background: rgba(#000, 0.6);
 
 	transition: height $timeout;
 }
 
-#info:checked~footer {
-	height: 150px;
+.ready {
+	height: 7px;
+	margin: 7px auto;
+	max-width: calc(900px + 80px + 80px);
+	background-color: $blue;
 
-	& .info {
-		display: flex;
+	@include widthPC {
+		max-width: none;
+		width: calc(70% + 80px + 80px);
+	}
+
+	@include widthTab {
+		width: calc(100% - 20px - 20px);
+	}
+
+	@include widthMob {
+		width: calc(100% - 10px - 10px);
 	}
 }
 
-.info {
+.set {
 	display: none;
+	position: relative;
 
-	width: 50%;
-	height: 100%;
-	margin: 20px auto 0;
-	background: #f2efe6;
+	max-width: 900px;
+	min-height: 150px;
+	margin: 0px auto;
+	padding: 20px 10px 0;
+	background-color: #f2efe6;
+	background-image: url(../img/texture-spots.svg);
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+
+	@include widthPC {
+		max-width: none;
+		width: 70%;
+	}
+
+	@include widthTab {
+		width: calc(100% - 20px - 20px - 40px - 80px);
+		margin: 0 100px 0 60px;
+		background-size: contain;
+	}
+
+	@include widthMob {
+		width: calc(100% - 10px - 10px - 40px - 80px);
+		margin: 0 90px 0 50px;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 100%;
+		z-index: -1;
+		width: 80px;
+		height: 100%;
+		background: url(../img/texture-paper1.svg) top right no-repeat;
+
+		@include widthTab {
+			transform: translateX(40px);
+		}
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 100%;
+		z-index: -1;
+		width: 80px;
+		height: 100%;
+		background: url(../img/texture-paper2.svg) top left no-repeat;
+	}
+}
+
+#set:checked~footer {
+	& .set {
+		display: flex;
+	}
 }
