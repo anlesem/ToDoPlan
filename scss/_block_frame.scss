@@ -1,9 +1,37 @@
 .frame {
 	position: absolute;
 	top: $height-menu;
-	// bottom: 0;
-	// left: 0;
-	// right: 0;
-	// z-index: 10;
-	// background: rgba(#fff, 0.95);
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	background: $frame-bg;
+
+	&>div {
+		display: none;
+	}
+}
+
+#frame-off:checked~.frame {
+	display: none;
+}
+
+#frame-new:checked~.frame .frame__new {
+	display: block;
+}
+
+#frame-profile:checked~.frame .frame__profile {
+	display: block;
+}
+
+#frame-options:checked~.frame .frame__options {
+	display: block;
+}
+
+#frame-help:checked~.frame .frame__help {
+	display: block;
+}
+
+#frame-stat:checked~.frame .frame__stat {
+	display: block;
 }

@@ -4,6 +4,25 @@ footer {
 	left: 0;
 	right: 0;
 	z-index: 5;
-	height: 15px;
+	height: 20px;
 	background: rgba(#000, 0.6);
+
+	transition: height $timeout;
+}
+
+#info:checked~footer {
+	height: 150px;
+
+	& .info {
+		display: flex;
+	}
+}
+
+.info {
+	display: none;
+
+	width: 50%;
+	height: 100%;
+	margin: 20px auto 0;
+	background: #f2efe6;
 }

@@ -1,17 +1,114 @@
 .grid-menu {
+	height: $height-menu;
+	place-items: center;
 	font-size: 16px;
 	font-weight: 700;
 	color: $brown;
 
-	line-height: $height-menu;
+	& li {
+		width: 100%;
+		height: $height-menu;
+
+		& label {
+			display: block;
+			width: 100%;
+			height: calc(#{$height-menu} - 20px);
+			margin: 10px 0;
+			text-align: center;
+			line-height: calc(#{$height-menu} - 20px);
+
+			&:hover {
+				// background: $frame-bg;
+				color: #ccc;
+			}
+		}
+	}
+
+	&__find {
+		width: 100%;
+		height: $height-menu;
+		text-align: right;
+		line-height: $height-menu;
+	}
 }
 
-.grid-menu li {
-	width: 100%;
-	height: 100%;
-	text-align: center;
+#frame-new:checked~.grid-main .grid-menu__new label,
+#frame-profile:checked~.grid-main .grid-menu__profile label,
+#frame-options:checked~.grid-main .grid-menu__options label,
+#frame-help:checked~.grid-main .grid-menu__help label,
+#frame-stat:checked~.grid-main .grid-menu__stat label {
+	height: calc(#{$height-menu} - 10px);
+	margin: 10px 0 0 0;
+	border-radius: 0px;
+	border-top-left-radius: $border-radius;
+	border-top-right-radius: $border-radius;
+	background: $frame-bg;
+	color: #aaa;
+}
 
-	&:hover {
-		background: rgba(#fff, 0.95);
+// Заголовок таблицы (высота в структуре)
+.header {
+	height: $height-header;
+	border-top-left-radius: $border-radius;
+	border-top-right-radius: $border-radius;
+}
+
+// Фильтры
+.filters {
+	height: 0px;
+	border-bottom: none;
+	overflow: hidden;
+	transition: height $timeout;
+}
+
+#filters:checked~.grid-main .filters {
+	height: 40px;
+	border-bottom: 1px solid #698ccc;
+}
+
+// Заголовок внутри таблицы
+.title {
+	background: $paper-title;
+}
+
+//! ------------------------   800
+@media (max-width: $widthTab) {
+
+	.grid-menu li.grid-menu__find {
+		position: absolute;
+		top: $height-header;
+		right: 10px;
+		z-index: 1;
+		width: 150px;
 	}
+
+	#filters:checked~.grid-main .filters {
+		border-bottom: none;
+	}
+
+	.header {
+		background: $paper-title;
+
+		& .grid-table__set {
+			display: none;
+		}
+	}
+
+	.title {
+		display: none;
+	}
+}
+
+//! ------------------------   height
+
+@media (max-height: $height) {
+
+	.header {
+		background: $paper-title;
+	}
+
+	.title {
+		display: none;
+	}
+
 }

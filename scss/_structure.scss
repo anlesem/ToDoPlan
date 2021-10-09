@@ -194,25 +194,15 @@
 		grid-template-areas: "new profile options help";
 
 		@include grid-menu;
-
-		&__find {
-			position: absolute;
-			right: 0;
-		}
 	}
 
 	.grid-table,
 	.category,
 	#pay:checked~.grid-main .grid-table {
-		grid-template-columns: 150px repeat(2, 1fr) 150px;
-		grid-template-areas: "status name name set";
+		grid-template-columns: 50px repeat(2, 1fr) 20% 50px;
+		grid-template-areas: "status name name planed set";
 
 		@include grid-table;
-
-		&__planed {
-			display: none;
-		}
-
 	}
 }
 
@@ -223,5 +213,12 @@
 	.category,
 	#pay:checked~.grid-main .grid-table {
 		grid-template-columns: 50px repeat(2, 1fr) 50px;
+		grid-template-areas: "status name name set";
+
+		@include grid-table;
+
+		&__planed {
+			display: none;
+		}
 	}
 }

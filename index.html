@@ -11,8 +11,16 @@
 <body class="container">
 	<input type="checkbox" id="pay">
 	<input type="checkbox" id="filters">
-	<input type="radio" name="aside" class="aside__radio" id="aside-table" checked>
-	<input type="radio" name="aside" class="aside__radio" id="aside-panel">
+	<input type="radio" name="info" id="info-off">
+	<input type="radio" name="info" id="info">
+	<input type="radio" name="frame" id="frame-off" checked>
+	<input type="radio" name="frame" id="frame-new">
+	<input type="radio" name="frame" id="frame-profile">
+	<input type="radio" name="frame" id="frame-options">
+	<input type="radio" name="frame" id="frame-help">
+	<input type="radio" name="frame" id="frame-stat">
+	<input type="radio" name="aside" id="aside-table" checked>
+	<input type="radio" name="aside" id="aside-panel">
 	<div class="aside-swap">
 		<label class="" for="aside-table">
 			Таблица
@@ -24,21 +32,42 @@
 	<div class="grid-main">
 		<header>
 			<ul class="grid-menu">
-				<li class="grid-menu__new">Создать
+				<li class="grid-menu__new">
+					<label for="frame-new">
+						Создать
+					</label>
 				</li>
-				<li class="grid-menu__profile">Профиль
+				<li class="grid-menu__profile">
+					<label for="frame-profile">
+						Профиль
+					</label>
 				</li>
-				<li class="grid-menu__options">Настройки
+				<li class="grid-menu__options">
+					<label for="frame-options">
+						Настройки
+					</label>
 				</li>
-				<li class="grid-menu__help">Помощь
+				<li class="grid-menu__help">
+					<label for="frame-help">
+						Помощь
+					</label>
 				</li>
 				<li class="grid-menu__find">Найти</li>
-				<li class="grid-menu__total">Итого</li>
+				<li class="grid-menu__total">
+					<label for="frame-stat">
+						Итого
+					</label></li>
 			</ul>
 			<div class="grid-table header">
 				<div class="grid-table__status">
 					<label class="" for="filters">
-						Ф
+						Фил
+					</label>
+					<label class="" for="info">
+						Инф
+					</label>
+					<label class="" for="pay">
+						Фин
 					</label>
 				</div>
 				<div class="grid-table__name">Ежедневник</div>
@@ -299,12 +328,18 @@
 		</aside>
 	</div>
 	<section class="frame">
-		<label class="" for="pay">
-			Финансы
+		<div class="frame__new">Создание нового проекта</div>
+		<div class="frame__profile">Персональные данные</div>
+		<div class="frame__options">Настройки
+		</div>
+		<div class="frame__help">Помощь</div>
+		<div class="frame__stat">Статистика доходов и расходов</div>
+		<label class="" for="frame-off">
+			Закрыть
 		</label>
 	</section>
 	<footer>
-
+		<div class="info"></div>
 	</footer>
 	<script src="./js/scritps.js"></script>
 </body>

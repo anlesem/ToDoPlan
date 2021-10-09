@@ -5,6 +5,7 @@ aside {
 
 	position: absolute;
 	right: 0;
+	z-index: 3;
 	width: 500px;
 	height: 95%;
 	overflow: hidden;
@@ -201,4 +202,18 @@ aside {
 	.aside-swap {
 		display: block;
 	}
+}
+
+//! ------------------------   height
+
+@media (max-height: $height) {
+
+	.date {
+		display: none;
+	}
+
+	.todo {
+		height: 100%;
+	}
+
 }

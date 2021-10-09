@@ -2,7 +2,9 @@ $widthHD: 1665px; // Плавающая панель или отключаютс
 $widthPC: 1350px; // Отключается 3й из финансового блока столбец
 $widthLT: 1100px; // Отключается "Примечание"
 $widthTab: 800px; // Мобильная версия (2 части)
-$widthMob: 600px; // Минимальный вариант
+$widthMob: 500px; // Минимальный вариант
+
+$height: 700px;
 
 
 
@@ -17,13 +19,15 @@ $brown: #592800;
 
 
 //* Зависимые переменные
-$height-menu: 60px;
-$height-header: 60px;
+$height-menu: 50px;
+$height-header: 50px;
 
 $width-todo: 300px;
 $todo-head: 50px;
 
 $timeout: 300ms;
+
+$frame-bg: rgba(#fff, 0.95);
 
 
 //* Прочее

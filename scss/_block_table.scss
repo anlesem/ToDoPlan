@@ -6,9 +6,14 @@
 	background: $paper;
 	box-shadow: $shadow;
 
+	&>div {
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
 	@include widthTab {
 		margin: 0;
-		padding: 0 2%;
+		padding: 0 10px;
 		border-bottom: none;
 		box-shadow: none;
 	}
@@ -32,7 +37,7 @@
 			bottom: 0;
 			transform: translateX(-50%);
 			height: 1px;
-			width: 96%;
+			width: calc(100% - 20px);
 			border-bottom: 1px solid #698ccc;
 		}
 	}
@@ -45,34 +50,13 @@
 		height: 100%;
 		width: 1px;
 		background: #ff7f7f;
+
+		@include widthTab {
+			left: 60px;
+		}
 	}
 }
 
 main .grid-table:hover {
 	background: $paper-hover;
-}
-
-// Заголовок таблицы (высота в структуре)
-.header {
-	height: $height-header;
-	border-top-left-radius: $border-radius;
-	border-top-right-radius: $border-radius;
-}
-
-// Фильтры
-.filters {
-	height: 0px;
-	border-bottom: none;
-	overflow: hidden;
-	transition: all $timeout;
-}
-
-#filters:checked~.grid-main .filters {
-	height: 40px;
-	border-bottom: 1px solid #698ccc;
-}
-
-// Заголовок внутри таблицы
-.title {
-	background: $paper-title;
 }
