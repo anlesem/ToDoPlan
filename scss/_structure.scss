@@ -1,11 +1,14 @@
 //* Сетка
 // Структура
 .grid-main {
+	position: relative;
+	width: 90%;
 	height: 100%;
+	margin: 0 auto;
 	display: grid;
-	grid-template-columns: 5% 1fr 5%;
-	grid-template-areas: ". header ."
-		". main .";
+	grid-template-columns: 1fr;
+	grid-template-areas: "header"
+		"main";
 
 	@include grid-main;
 
@@ -122,7 +125,7 @@
 @media (max-width: $widthPC) {
 
 	.grid-main {
-		grid-template-columns: 30px 1fr 30px;
+		width: calc(100% - 30px - 30px);
 	}
 
 	.grid-menu,
@@ -181,11 +184,7 @@
 @media (max-width: $widthTab) {
 
 	.grid-main {
-		grid-template-columns: 1fr;
-		grid-template-areas: "header"
-			"main";
-
-		@include grid-main;
+		width: 100%;
 	}
 
 	.grid-menu,

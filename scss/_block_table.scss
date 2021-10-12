@@ -57,6 +57,15 @@
 	}
 }
 
+#frame-pass:checked~.grid-main .grid-table,
+#frame-new:checked~.grid-main .grid-table,
+#frame-profile:checked~.grid-main .grid-table,
+#frame-options:checked~.grid-main .grid-table,
+#frame-help:checked~.grid-main .grid-table,
+#frame-stat:checked~.grid-main .grid-table {
+	display: none;
+}
+
 main .grid-table:hover {
 	background: $paper-hover;
 }

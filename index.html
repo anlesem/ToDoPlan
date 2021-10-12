@@ -12,7 +12,8 @@
 	<input type="checkbox" id="pay">
 	<input type="checkbox" id="filters">
 	<input type="checkbox" id="set">
-	<input type="radio" name="frame" id="frame-off" checked>
+	<input type="radio" name="frame" id="frame-pass" checked>
+	<input type="radio" name="frame" id="frame-off">
 	<input type="radio" name="frame" id="frame-new">
 	<input type="radio" name="frame" id="frame-profile">
 	<input type="radio" name="frame" id="frame-options">
@@ -20,6 +21,36 @@
 	<input type="radio" name="frame" id="frame-stat">
 	<input type="radio" name="aside" id="aside-table" checked>
 	<input type="radio" name="aside" id="aside-panel">
+	<svg class="visually-hidden">
+		<symbol id="icon__close" viewBox="0 0 256 256">
+			<path
+				d="M204.24268,195.75732a6.00006,6.00006,0,0,1-8.48536,8.48536L128,136.48535,60.24268,204.24268a6.00006,6.00006,0,0,1-8.48536-8.48536L119.51465,128,51.75732,60.24268a6.00006,6.00006,0,0,1,8.48536-8.48536L128,119.51465l67.75732-67.75733a6.00006,6.00006,0,0,1,8.48536,8.48536L136.48535,128Z" />
+		</symbol>
+		<symbol id="icon__todo" viewBox="0 0 352.3 349.9">
+			<path d="M320.8,178.4l18.6-2.8h4.5l0.1-1.4l-23.1-3.5c-2.2-76.4-64.1-138-140.5-139.8l-2.8-18.6V7.9l-1.4-0.1L172.6,31
+			c-76.3,2.1-138,64-139.8,140.5l-18.6,2.8H9.8l-0.1,1.4l23.1,3.5c2.2,76.4,64.1,138,140.5,139.8l2.8,18.6v4.5l1.4,0.1l3.5-23.1
+			C257.3,316.7,318.9,254.8,320.8,178.4z M93.1,260.1l64.3-48.2l12.3,82.3C139.9,292.4,113,279.7,93.1,260.1z M57.6,182.8l82.6,12.3
+			L93.8,257l-1.9,1.9C72.2,239,59.5,212.4,57.6,182.8z M91.6,91.2l48.2,64.3l-82.3,12.3C59.3,138,72,111.2,91.6,91.2z M168.9,55.7
+			l-12.3,82.6L94.7,91.9L92.8,90C112.7,70.4,139.3,57.7,168.9,55.7z M260.5,89.8L196.2,138l-12.3-82.3
+			C213.7,57.5,240.5,70.2,260.5,89.8z M296,167.1l-82.6-12.3l46.4-61.9l1.9-1.9C281.3,110.8,294,137.5,296,167.1z M261.9,258.6
+			l-48.2-64.3L296,182C294.3,211.8,281.6,238.7,261.9,258.6z M192.4,184.2l20,10.9l43.8,58.4l-66.1-66.1
+			C191,186.4,191.8,185.3,192.4,184.2z M189,161.8c-0.9-0.9-1.9-1.7-3-2.3l11-20.2l58.4-43.8L189,161.8z M163.1,162.3
+			c-0.9,1-1.8,2-2.5,3.2L141,154.9L97.3,96.5L163.1,162.3z M163.9,188.8c1,0.9,2.1,1.7,3.3,2.4l-10.6,19.4l-58.4,43.8L163.9,188.8z
+			 M197,211.5l61.9,46.4l1.9,1.9c-19.8,19.6-46.5,32.4-76.1,34.3L197,211.5z M184.2,296.9c10.1-0.6,19.9-2.5,29.3-5.4l8.7,17.2
+			c-12.9,4.4-26.6,7-40.8,7.4L184.2,296.9z M257.6,290.7l-8.7-17.2c12.7-9.3,23.5-21,31.8-34.3l17.8,7.3
+			C288.2,264.1,274.2,279.1,257.6,290.7z M313.7,209.9l-17.8-7.3c1.6-6.8,2.6-13.7,3-20.9l19.2-2.9
+			C317.7,189.5,316.2,199.9,313.7,209.9z M194.7,174.2c-0.1-2.6-0.8-5.1-1.9-7.3L213,156l121.4,18.1L194.7,174.2L194.7,174.2z
+			 M298.8,167.5c-0.3-5.8-1.1-11.4-2.2-16.9l18-6.9c2,8.6,3.1,17.5,3.4,26.7L298.8,167.5z M300.4,106.6l-18,6.9
+			c-8.5-14.6-19.9-27.2-33.5-37.1l8.7-17.2C275.2,71.5,289.9,87.7,300.4,106.6z M222.2,41.2l-8.7,17.2c-9.5-3-19.6-4.9-30-5.4
+			l-2.9-19.2C195.1,34.1,209.1,36.7,222.2,41.2z M176.1,156.7c-2.7,0-5.2,0.7-7.5,1.7L158,138.6l18.1-121.4V156.7z M169.3,52.9
+			c-10.1,0.6-19.9,2.5-29.3,5.4l-8.7-17.2c12.9-4.4,26.6-7,40.8-7.4L169.3,52.9z M96,59.1l8.7,17.2c-12.7,9.3-23.5,21-31.8,34.3
+			l-17.8-7.3C65.4,85.8,79.4,70.7,96,59.1z M39.9,140l17.8,7.3c-1.6,6.8-2.6,13.7-3,20.9l-19.2,2.9C35.9,160.4,37.3,150,39.9,140z
+			 M157.9,175.6c0.1,2.8,0.8,5.4,1.9,7.7l-19.3,10.4L19.1,175.6H157.9z M54.8,182.4c0.3,5.8,1.1,11.4,2.2,16.9l-18,6.9
+			c-2-8.6-3.1-17.5-3.4-26.7L54.8,182.4z M53.2,243.3l18-6.9c8.5,14.6,19.9,27.2,33.5,37.1L96,290.7C78.3,278.4,63.7,262.2,53.2,243.3
+			z M131.4,308.7l8.7-17.2c9.5,3,19.6,4.9,30,5.5l2.9,19.2C158.4,315.7,144.5,313.2,131.4,308.7z M177.5,193.5
+			c2.7-0.2,5.3-0.9,7.5-2.1l10.6,19.8l-18.1,121.4V193.5z" />
+		</symbol>
+	</svg>
 	<div class="aside-swap">
 		<label class="" for="aside-table">
 			Таблица
@@ -109,6 +140,29 @@
 			</div>
 		</header>
 		<main>
+			<section class="frame">
+				<figure>
+					<h1>Ежедневник</h1>
+					<img src="img/texture-avatar.svg" alt="Рисунок">
+					<div class="copyright light">&copy; 2021 <span class="copyright__full">Все права защищены. </span> </div>
+				</figure>
+				<article>
+					<div class="frame__pass">Войти
+					</div>
+					<div class="frame__new">Создание нового проекта</div>
+					<div class="frame__profile">Персональные данные</div>
+					<div class="frame__options">Настройки
+					</div>
+					<div class="frame__help">Помощь</div>
+					<div class="frame__stat">Статистика доходов и расходов</div>
+				</article>
+				<label class="close" for="frame-off">
+					<span>Закрыть</span>
+					<svg width="20" height="20" viewBox="0 0 20 20">
+						<use href="#icon__close" />
+					</svg>
+				</label>
+			</section>
 			<div class="grid-table">
 				<div class="grid-table__status">Иконки</div>
 				<div class="grid-table__name">Наименования</div>
@@ -245,98 +299,87 @@
 			<div class="grid-table">
 			</div>
 		</main>
-		<aside>
-			<section class="date">
-				<div class="date__week">Неделя</div>
-				<div class="date__week">Неделя</div>
-				<div class="date__week">Неделя</div>
-				<div class="date__week">Неделя</div>
-				<div class="date__week">Неделя</div>
-			</section>
-			<section class="todo">
-				<div class="todo__head">Задачи</div>
-				<ul class="todo__list">
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-					<li class="todo__task">Задача</li>
-				</ul>
-			</section>
-		</aside>
 	</div>
-	<section class="frame">
-		<div class="frame__new">Создание нового проекта</div>
-		<div class="frame__profile">Персональные данные</div>
-		<div class="frame__options">Настройки
-		</div>
-		<div class="frame__help">Помощь</div>
-		<div class="frame__stat">Статистика доходов и расходов</div>
-		<label class="" for="frame-off">
-			Закрыть
-		</label>
-	</section>
+	<aside>
+		<section class="date">
+			<div class="date__week">Неделя</div>
+			<div class="date__week">Неделя</div>
+			<div class="date__week">Неделя</div>
+			<div class="date__week">Неделя</div>
+			<div class="date__week">Неделя</div>
+		</section>
+		<section class="todo">
+			<div class="todo__head">Задачи</div>
+			<ul class="todo__list">
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+				<li class="todo__task">Задача</li>
+			</ul>
+		</section>
+	</aside>
 	<footer>
 		<div class="ready"></div>
 		<div class="set">

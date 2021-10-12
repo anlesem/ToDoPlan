@@ -4,34 +4,131 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
-	z-index: 10;
-	background: $frame-bg;
+	z-index: 3;
 
-	&>div {
-		display: none;
+	display: flex;
+	justify-content: space-between;
+
+	& figure {
+		position: relative;
+		width: 50%;
+		height: 100%;
+		order: 2;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+
+		border-radius: $border-radius;
+		background-color: #c4ab8d;
+		box-shadow: $shadow;
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 10px;
+			width: 8px;
+			background: linear-gradient(to left, #333 0%, transparent 100%);
+			opacity: 0.5;
+		}
+
+		&::before {
+			content: "";
+			@include position-size-parent;
+			background-image: url(../img/texture-skin.svg);
+			opacity: 0.5;
+		}
+
+		& img {
+			width: 80%;
+		}
+
+	}
+
+	& article {
+		width: 40%;
+		height: 100%;
+		order: 1;
+
+		background-color: $paper-title;
+
+		&>div {
+			display: none;
+		}
 	}
 }
 
-#frame-off:checked~.frame {
+// Кнопка Закрыть при управлении мышкой + большие экраны
+.close {
+	position: absolute;
+	top: 20px;
+	left: 40%;
+	width: 30px;
+	height: 30px;
+	line-height: 25px;
+	border: 1px solid $close;
+	border-radius: 15px;
+	background: none;
+	opacity: 0.3;
+	transition: all $timeout;
+
+	// Надпись "Закрыть" в состоянии наведения
+	& span {
+		display: none;
+		overflow: hidden;
+		color: $close;
+	}
+
+	// Х в пассивном режиме
+	& svg {
+		@include position-center;
+		fill: $close;
+	}
+
+	&:hover {
+		width: 80px;
+		opacity: 1;
+		cursor: pointer;
+		border: 1px solid $close;
+		background: #fff;
+
+		& span {
+			display: block;
+		}
+
+		& svg {
+			display: none;
+		}
+	}
+}
+
+#frame-off:checked~.grid-main .frame {
 	display: none;
 }
 
-#frame-new:checked~.frame .frame__new {
+#frame-pass:checked~.grid-main .frame__pass {
 	display: block;
 }
 
-#frame-profile:checked~.frame .frame__profile {
+#frame-new:checked~.grid-main .frame__new {
 	display: block;
 }
 
-#frame-options:checked~.frame .frame__options {
+#frame-profile:checked~.grid-main .frame__profile {
 	display: block;
 }
 
-#frame-help:checked~.frame .frame__help {
+#frame-options:checked~.grid-main .frame__options {
 	display: block;
 }
 
-#frame-stat:checked~.frame .frame__stat {
+#frame-help:checked~.grid-main .frame__help {
+	display: block;
+}
+
+#frame-stat:checked~.grid-main .frame__stat {
 	display: block;
 }
