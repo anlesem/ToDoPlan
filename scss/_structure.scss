@@ -125,7 +125,7 @@
 @media (max-width: $widthPC) {
 
 	.grid-main {
-		width: calc(100% - 30px - 30px);
+		width: calc(100% - #{$marginPC} - #{$marginPC});
 	}
 
 	.grid-menu,

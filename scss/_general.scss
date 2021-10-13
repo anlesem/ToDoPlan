@@ -48,7 +48,7 @@ body {
 		content: "";
 		position: absolute;
 		top: 0;
-		width: 40%;
+		width: 45%;
 		height: 100%;
 		z-index: -1;
 		background-color: #fff6e5;
@@ -63,12 +63,27 @@ body {
 	&::before {
 		left: 0;
 		border-top-right-radius: $height-menu;
+
+		@include widthHD {
+			width: $widthBG-frame;
+		}
+
+		@include widthPC {
+			width: $widthBG-frame - 2 * $marginPC;
+		}
 	}
 
 	&::after {
 		right: 0;
 		border-top-left-radius: $height-menu;
-		box-shadow: $shadow;
+
+		@include widthHD {
+			width: calc(90% - #{$widthBG-frame});
+		}
+
+		@include widthHD {
+			width: calc(90% - #{$widthBG-frame} - 2 * #{$marginPC});
+		}
 	}
 
 	&>input {

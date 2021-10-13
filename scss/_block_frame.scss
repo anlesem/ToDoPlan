@@ -9,6 +9,13 @@
 	display: flex;
 	justify-content: space-between;
 
+	@include widthLT {
+		border-top-left-radius: $border-radius;
+		border-top-right-radius: $border-radius;
+		background: $paper-frame;
+		box-shadow: inset $shadow-frame;
+	}
+
 	& figure {
 		position: relative;
 		width: 50%;
@@ -20,9 +27,31 @@
 		justify-content: space-between;
 		align-items: center;
 
-		border-radius: $border-radius;
+		border-top-left-radius: $border-radius;
+		border-top-right-radius: $border-radius;
 		background-color: #c4ab8d;
 		box-shadow: $shadow;
+
+		@include widthHD {
+			width: 45%;
+		}
+
+		@include widthPC {
+			width: 40%;
+		}
+
+		@include widthLT {
+			position: absolute;
+			@include position-size-parent;
+			width: 100%;
+
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+			background: none;
+			box-shadow: none;
+
+			opacity: 0.1;
+		}
 
 		&::after {
 			content: "";
@@ -33,6 +62,10 @@
 			width: 8px;
 			background: linear-gradient(to left, #333 0%, transparent 100%);
 			opacity: 0.5;
+
+			@include widthLT {
+				content: none;
+			}
 		}
 
 		&::before {
@@ -40,6 +73,10 @@
 			@include position-size-parent;
 			background-image: url(../img/texture-skin.svg);
 			opacity: 0.5;
+
+			@include widthLT {
+				content: none;
+			}
 		}
 
 		& img {
@@ -49,11 +86,24 @@
 	}
 
 	& article {
-		width: 40%;
+		position: relative;
+		width: 600px;
 		height: 100%;
 		order: 1;
 
-		background-color: $paper-title;
+		border-top-left-radius: $border-radius;
+		border-top-right-radius: $border-radius;
+		background: $paper-frame;
+		box-shadow: inset $shadow-frame;
+
+		@include widthLT {
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+			background: none;
+			box-shadow: none;
+
+			width: 100%;
+		}
 
 		&>div {
 			display: none;
@@ -61,11 +111,21 @@
 	}
 }
 
+#frame-new:checked~.grid-main .frame,
+#frame-new:checked~.grid-main .frame article {
+	border-top-left-radius: 0;
+}
+
+#frame-help:checked~.grid-main .frame,
+#frame-help:checked~.grid-main .frame article {
+	border-top-right-radius: 0;
+}
+
 // Кнопка Закрыть при управлении мышкой + большие экраны
 .close {
 	position: absolute;
 	top: 20px;
-	left: 40%;
+	right: 20px;
 	width: 30px;
 	height: 30px;
 	line-height: 25px;
@@ -74,6 +134,10 @@
 	background: none;
 	opacity: 0.3;
 	transition: all $timeout;
+
+	@include widthLT {
+		right: 40px;
+	}
 
 	// Надпись "Закрыть" в состоянии наведения
 	& span {

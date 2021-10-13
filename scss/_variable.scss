@@ -6,6 +6,9 @@ $widthMob: 500px; // Минимальный вариант
 
 $height: 700px;
 
+$widthBG-frame: 750px; // Ширина подложки для окна приветствия и настроек
+
+$marginPC: 30px;
 
 
 //* Цвета
@@ -14,6 +17,7 @@ $paper: #faf9f2;
 $paper-todo: #faf6e1;
 $paper-title: #faf4d4;
 $paper-hover: #fff;
+$paper-frame: rgba(#fff, 0.7);
 
 $brown: #592800;
 $blue: #698ccc;
@@ -22,6 +26,7 @@ $close: #333;
 
 
 //* Зависимые переменные
+
 $height-menu: 50px;
 $height-header: 50px;
 
@@ -30,9 +35,9 @@ $todo-head: 50px;
 
 $timeout: 300ms;
 
-$frame-bg: rgba(#fff, 0.95);
 
 
 //* Прочее
 $border-radius: 5px;
 $shadow: -1px 2px 3px 0px #777;
+$shadow-frame: -1px 1px 2px 0px #aaa;

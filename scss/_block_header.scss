@@ -18,7 +18,6 @@
 			line-height: calc(#{$height-menu} - 20px);
 
 			&:hover {
-				// background: $frame-bg;
 				color: #ccc;
 			}
 		}
@@ -42,7 +41,8 @@
 	border-radius: 0px;
 	border-top-left-radius: $border-radius;
 	border-top-right-radius: $border-radius;
-	background: $frame-bg;
+	background: $paper-frame;
+	box-shadow: inset $shadow-frame;
 	color: #aaa;
 }
 
@@ -81,6 +81,16 @@
 		z-index: 1;
 		width: 150px;
 	}
+
+	#frame-pass:checked~.grid-main li.grid-menu__find,
+	#frame-new:checked~.grid-main li.grid-menu__find,
+	#frame-profile:checked~.grid-main li.grid-menu__find,
+	#frame-options:checked~.grid-main li.grid-menu__find,
+	#frame-help:checked~.grid-main li.grid-menu__find,
+	#frame-stat:checked~.grid-main li.grid-menu__find {
+		display: none;
+	}
+
 
 	#filters:checked~.grid-main .filters {
 		border-bottom: none;
