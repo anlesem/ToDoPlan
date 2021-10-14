@@ -37,3 +37,12 @@
 	font-style: normal;
 	font-weight: 900;
 }
+
+@font-face {
+	font-family: mc;
+	src: url(../fonts/monotype-corsiva.ttf) format("ttf"),
+		url(../fonts/monotype-corsiva.eot) format("eot"),
+		url(../fonts/monotype-corsiva.woff) format("woff"),
+		url(../fonts/monotype-corsiva.woff2) format("woff2");
+	font-style: normal;
+}

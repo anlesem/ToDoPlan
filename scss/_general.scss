@@ -34,12 +34,10 @@ body {
 
 	overflow: hidden;
 
-	background-color: rgba(#d4be94, 0.9);
-	background-image: url(../img/texture-skin.svg);
+	background: url(../img/texture-skin.svg) rgba(#d4be94, 0.9);
 
 	@include widthLT {
-		background-color: #fff6e5;
-		background-image: url(../img/texture-wood.svg);
+		background: url(../img/texture-wood.svg) #fff6e5;
 		background-size: contain;
 	}
 
@@ -51,8 +49,7 @@ body {
 		width: 45%;
 		height: 100%;
 		z-index: -1;
-		background-color: #fff6e5;
-		background-image: url(../img/texture-wood.svg);
+		background: url(../img/texture-wood.svg) #fff6e5;
 		background-size: contain;
 
 		@include widthLT {

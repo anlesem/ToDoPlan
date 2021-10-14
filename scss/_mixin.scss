@@ -81,6 +81,12 @@
 	}
 }
 
+@mixin min-height {
+	@media (max-height: $height) {
+		@content;
+	}
+}
+
 
 @mixin grid-main {
 	header {

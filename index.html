@@ -141,27 +141,36 @@
 		</header>
 		<main>
 			<section class="frame">
-				<figure>
-					<h1>Ежедневник</h1>
-					<img src="img/texture-avatar.svg" alt="Рисунок">
-					<div class="copyright light">&copy; 2021 <span class="copyright__full">Все права защищены. </span> </div>
-				</figure>
-				<article>
-					<div class="frame__pass">Войти
+				<div class="frame__info">
+					<h1 class="frame__info-title">Ежедневник</h1>
+					<img class="frame__info-illustration" src="img/texture-avatar.svg" alt="Рисунок">
+					<div class="frame__info-contact">
+						<svg width="75" height="75" viewBox="0 0 75 75">
+							<use href="#icon__todo" />
+						</svg>
+						<h3>Андрей Семёнов</h3>
+						<a href="mailto:anlesem@mail.ru">anlesem@mail.ru</a>
 					</div>
-					<div class="frame__new">Создание нового проекта</div>
-					<div class="frame__profile">Персональные данные</div>
-					<div class="frame__options">Настройки
+					<div class="frame__info-copyright">&copy; 2021
+						<span class="copyright__full">Все права защищены. </span>
 					</div>
-					<div class="frame__help">Помощь</div>
-					<div class="frame__stat">Статистика доходов и расходов</div>
+				</div>
+				<div class="frame__manage">
+					<div class="frame__manage-pass">Войти
+					</div>
+					<div class="frame__manage-new">Создание нового проекта</div>
+					<div class="frame__manage-profile">Персональные данные</div>
+					<div class="frame__manage-options">Настройки
+					</div>
+					<div class="frame__manage-help">Помощь</div>
+					<div class="frame__manage-stat">Статистика доходов и расходов</div>
 					<label class="close" for="frame-off">
 						<span>Закрыть</span>
 						<svg width="20" height="20" viewBox="0 0 20 20">
 							<use href="#icon__close" />
 						</svg>
 					</label>
-				</article>
+				</div>
 			</section>
 			<div class="grid-table">
 				<div class="grid-table__status">Иконки</div>

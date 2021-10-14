@@ -31,6 +31,10 @@
 	}
 }
 
+#frame-pass:checked~.grid-main .grid-menu {
+	display: none;
+}
+
 #frame-new:checked~.grid-main .grid-menu__new label,
 #frame-profile:checked~.grid-main .grid-menu__profile label,
 #frame-options:checked~.grid-main .grid-menu__options label,

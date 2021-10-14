@@ -5,6 +5,7 @@ footer {
 	right: 0;
 	z-index: 5;
 	background: rgba(#000, 0.6);
+	height: $height-footer;
 
 	transition: height $timeout;
 }
@@ -27,6 +28,10 @@ footer {
 	@include widthMob {
 		width: calc(100% - 10px - 10px);
 	}
+}
+
+#frame-pass:checked~footer .ready {
+	background: rgba(#000, 0.2);
 }
 
 .set {

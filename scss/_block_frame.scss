@@ -16,20 +16,21 @@
 		box-shadow: inset $shadow-frame;
 	}
 
-	& figure {
+	&__info {
 		position: relative;
 		width: 50%;
 		height: 100%;
+		padding: $height-footer;
 		order: 2;
 
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
+		justify-content: space-around;
 		align-items: center;
 
 		border-top-left-radius: $border-radius;
 		border-top-right-radius: $border-radius;
-		background-color: #c4ab8d;
+		background: #cebaa2;
 		box-shadow: $shadow;
 
 		@include widthHD {
@@ -53,6 +54,10 @@
 			opacity: 0.1;
 		}
 
+		@include min-height {
+			justify-content: space-between;
+		}
+
 		&::after {
 			content: "";
 			position: absolute;
@@ -71,7 +76,8 @@
 		&::before {
 			content: "";
 			@include position-size-parent;
-			background-image: url(../img/texture-skin.svg);
+			z-index: 1;
+			background: url(../img/texture-skin.svg);
 			opacity: 0.5;
 
 			@include widthLT {
@@ -79,15 +85,66 @@
 			}
 		}
 
-		& img {
-			width: 80%;
+		&-title {
+			margin-top: 10%;
+			font-family: mc;
+			font-size: 35px;
+			opacity: 0.7;
 		}
 
+		&-illustration {
+			width: 70%;
+			height: 60%;
+
+			@include min-height {
+				@include position-center;
+				width: 90%;
+				height: 80%;
+				opacity: 0.5;
+			}
+		}
+
+		&-contact {
+			position: relative;
+			z-index: 2;
+
+			width: 250px;
+			height: 100px;
+			padding: 10px;
+
+			display: grid;
+			place-items: center;
+			grid-template-columns: 1fr 2fr;
+			grid-template-areas: "art title"
+				"art email";
+			color: $brown;
+
+			background: url(../img/border-contacts.svg);
+
+			& svg {
+				grid-area: art;
+				fill: $brown;
+			}
+
+			& h3 {
+				grid-area: title;
+				font-weight: 700;
+			}
+
+			& a {
+				grid-area: email;
+			}
+		}
+
+		&-copyright {
+			align-self: end;
+			margin-right: 40px;
+		}
 	}
 
-	& article {
+	&__manage {
 		position: relative;
-		width: 600px;
+		width: 40%;
 		height: 100%;
 		order: 1;
 
@@ -95,6 +152,10 @@
 		border-top-right-radius: $border-radius;
 		background: $paper-frame;
 		box-shadow: inset $shadow-frame;
+
+		@include widthHD {
+			width: 600px;
+		}
 
 		@include widthLT {
 			border-top-left-radius: 0;
@@ -112,12 +173,12 @@
 }
 
 #frame-new:checked~.grid-main .frame,
-#frame-new:checked~.grid-main .frame article {
+#frame-new:checked~.grid-main .frame__manage {
 	border-top-left-radius: 0;
 }
 
 #frame-help:checked~.grid-main .frame,
-#frame-help:checked~.grid-main .frame article {
+#frame-help:checked~.grid-main .frame__manage {
 	border-top-right-radius: 0;
 }
 
@@ -143,6 +204,7 @@
 	& span {
 		display: none;
 		overflow: hidden;
+		text-align: center;
 		color: $close;
 	}
 
@@ -173,26 +235,26 @@
 	display: none;
 }
 
-#frame-pass:checked~.grid-main .frame__pass {
+#frame-pass:checked~.grid-main .frame__manage-pass {
 	display: block;
 }
 
-#frame-new:checked~.grid-main .frame__new {
+#frame-new:checked~.grid-main .frame__manage-new {
 	display: block;
 }
 
-#frame-profile:checked~.grid-main .frame__profile {
+#frame-profile:checked~.grid-main .frame__manage-profile {
 	display: block;
 }
 
-#frame-options:checked~.grid-main .frame__options {
+#frame-options:checked~.grid-main .frame__manage-options {
 	display: block;
 }
 
-#frame-help:checked~.grid-main .frame__help {
+#frame-help:checked~.grid-main .frame__manage-help {
 	display: block;
 }
 
-#frame-stat:checked~.grid-main .frame__stat {
+#frame-stat:checked~.grid-main .frame__manage-stat {
 	display: block;
 }
