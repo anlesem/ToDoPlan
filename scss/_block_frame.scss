@@ -14,6 +14,9 @@
 		border-top-right-radius: $border-radius;
 		background: $paper-frame;
 		box-shadow: inset $shadow-frame;
+		overflow-y: auto;
+
+		flex-direction: column;
 	}
 
 	&__info {
@@ -42,16 +45,14 @@
 		}
 
 		@include widthLT {
-			position: absolute;
-			@include position-size-parent;
+			position: static;
 			width: 100%;
+			height: auto;
 
 			border-top-left-radius: 0;
 			border-top-right-radius: 0;
 			background: none;
 			box-shadow: none;
-
-			opacity: 0.1;
 		}
 
 		@include min-height {
@@ -90,6 +91,15 @@
 			font-family: mc;
 			font-size: 35px;
 			opacity: 0.7;
+
+			@include widthLT {
+				position: absolute;
+				top: 0;
+				left: 50%;
+				transform: translateX(-50%);
+
+				opacity: 0.2;
+			}
 		}
 
 		&-illustration {
@@ -98,9 +108,13 @@
 
 			@include min-height {
 				@include position-center;
-				width: 90%;
-				height: 80%;
 				opacity: 0.5;
+			}
+
+			@include widthLT {
+				@include position-center;
+
+				opacity: 0.2;
 			}
 		}
 
@@ -115,7 +129,7 @@
 			display: grid;
 			place-items: center;
 			grid-template-columns: 1fr 2fr;
-			grid-template-areas: "art title"
+			grid-template-areas: "art about"
 				"art email";
 			color: $brown;
 
@@ -126,27 +140,30 @@
 				fill: $brown;
 			}
 
-			& h3 {
-				grid-area: title;
-				font-weight: 700;
+			& .about {
+				grid-area: about;
 			}
 
-			& a {
+			& .email {
 				grid-area: email;
 			}
 		}
 
 		&-copyright {
 			align-self: end;
+			margin-top: 20px;
 			margin-right: 40px;
 		}
 	}
 
 	&__manage {
 		position: relative;
-		width: 40%;
+		width: $width-manage;
 		height: 100%;
+		padding: 20px;
 		order: 1;
+
+		overflow-y: auto;
 
 		border-top-left-radius: $border-radius;
 		border-top-right-radius: $border-radius;
@@ -154,7 +171,7 @@
 		box-shadow: inset $shadow-frame;
 
 		@include widthHD {
-			width: 600px;
+			width: $widthHD-manage;
 		}
 
 		@include widthLT {
@@ -164,14 +181,44 @@
 			box-shadow: none;
 
 			width: 100%;
+			height: auto;
+			overflow-y: visible;
+
 		}
 
 		&>div {
 			display: none;
 		}
+
+		&-pass {
+			width: 450px;
+			margin: 10% auto 0;
+			padding: 25px;
+
+			@include widthMob {
+				width: 100%;
+			}
+
+			& input,
+			& button {
+				display: block;
+				width: 100%;
+				margin-top: 50px;
+				padding: 20px;
+				box-sizing: border-box;
+				border: 1px solid $blue;
+				border-radius: $border-radius;
+				color: $blue;
+			}
+
+			& button {
+				background: $paper-title;
+			}
+		}
 	}
 }
 
+// Отключение "закруглённых углов" 
 #frame-new:checked~.grid-main .frame,
 #frame-new:checked~.grid-main .frame__manage {
 	border-top-left-radius: 0;
@@ -179,14 +226,54 @@
 
 #frame-help:checked~.grid-main .frame,
 #frame-help:checked~.grid-main .frame__manage {
-	border-top-right-radius: 0;
+
+	@include widthHD {
+		border-top-right-radius: 0;
+	}
+}
+
+.pass {
+
+	&__head {
+		width: 100%;
+		color: #999;
+
+		display: flex;
+		justify-content: space-between;
+
+		& label {
+			width: 50%;
+			padding: 15px;
+			border-bottom: 2px solid #eee;
+			text-align: center;
+		}
+	}
+
+	&__enter,
+	&__registration {
+		display: none;
+	}
+
+}
+
+#enter:checked~.grid-main .pass__head-enter,
+#registration:checked~.grid-main .pass__head-registration {
+	border-bottom: 2px solid $ocean;
+	font-size: 18px;
+	font-weight: 700;
+	color: $ocean;
+}
+
+#enter:checked~.grid-main .pass__enter,
+#registration:checked~.grid-main .pass__registration {
+	display: block;
 }
 
 // Кнопка Закрыть при управлении мышкой + большие экраны
 .close {
-	position: absolute;
-	top: 20px;
-	right: 20px;
+	position: fixed;
+	top: 20px + $height-header;
+	right: calc(100% - #{$width-manage});
 	width: 30px;
 	height: 30px;
 	line-height: 25px;
@@ -196,8 +283,16 @@
 	opacity: 0.3;
 	transition: all $timeout;
 
+	@include widthHD {
+		right: calc(100% - #{$widthHD-manage} - #{$marginPC});
+	}
+
+	@include widthPC {
+		right: calc(100% - #{$widthHD-manage});
+	}
+
 	@include widthLT {
-		right: 40px;
+		right: 8%;
 	}
 
 	// Надпись "Закрыть" в состоянии наведения
