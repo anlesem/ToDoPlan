@@ -90,7 +90,8 @@
 			margin-top: 10%;
 			font-family: mc;
 			font-size: 35px;
-			opacity: 0.7;
+			color: $ocean;
+			opacity: 0.4;
 
 			@include widthLT {
 				position: absolute;
@@ -199,6 +200,7 @@
 				width: 100%;
 			}
 
+
 			& input,
 			& button {
 				display: block;
@@ -206,12 +208,14 @@
 				margin-top: 50px;
 				padding: 20px;
 				box-sizing: border-box;
-				border: 1px solid $blue;
+				border: 1px solid $brown;
 				border-radius: $border-radius;
-				color: $blue;
+				font-size: 14px;
+				color: $brown;
 			}
 
 			& button {
+				text-transform: uppercase;
 				background: $paper-title;
 			}
 		}
@@ -258,10 +262,10 @@
 
 #enter:checked~.grid-main .pass__head-enter,
 #registration:checked~.grid-main .pass__head-registration {
-	border-bottom: 2px solid $ocean;
+	border-bottom: 2px solid $brown;
 	font-size: 18px;
 	font-weight: 700;
-	color: $ocean;
+	color: $brown;
 }
 
 #enter:checked~.grid-main .pass__enter,

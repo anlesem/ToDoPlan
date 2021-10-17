@@ -221,3 +221,18 @@
 		}
 	}
 }
+
+//! ------------------------   300 OFF
+@media (max-width: $turn-off),
+(max-height: $turn-off) {
+
+	header,
+	main,
+	footer,
+	aside,
+	.aside-swap,
+	.frame {
+		display: none !important;
+
+	}
+}

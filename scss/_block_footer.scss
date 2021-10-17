@@ -6,8 +6,6 @@ footer {
 	z-index: 5;
 	background: rgba(#000, 0.6);
 	height: $height-footer;
-
-	transition: height $timeout;
 }
 
 .ready {
@@ -35,11 +33,10 @@ footer {
 }
 
 .set {
-	display: none;
 	position: relative;
-
+	display: flex;
 	max-width: 900px;
-	min-height: 150px;
+	height: 0;
 	margin: 0px auto;
 	padding: 20px 10px 0;
 	background-color: #f2efe6;
@@ -47,6 +44,9 @@ footer {
 	background-position: top center;
 	background-repeat: no-repeat;
 	background-size: 100%;
+	overflow: hidden;
+
+	transition: all $timeout;
 
 	@include widthPC {
 		max-width: none;
@@ -91,8 +91,12 @@ footer {
 	}
 }
 
-#set:checked~footer {
+#set:checked~#frame-off:checked~footer {
+
+	height: auto;
+
 	& .set {
-		display: flex;
+		overflow: visible;
+		height: 150px;
 	}
 }

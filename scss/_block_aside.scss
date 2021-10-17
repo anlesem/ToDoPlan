@@ -8,8 +8,7 @@ aside {
 	bottom: 0;
 	right: 0;
 	z-index: 5;
-	transform: translateX(50px);
-	width: 500px;
+	width: 50px;
 	height: 95%;
 	overflow: hidden;
 
@@ -23,10 +22,22 @@ aside {
 	background-image: url(../img/texture-panel.svg);
 	box-shadow: $shadow;
 
-	outline: $brown dashed 2px;
-	outline-offset: -10px;
-
 	transition: all $timeout;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 10px;
+		bottom: 10px;
+		left: 10px;
+		right: 0;
+		z-index: -1;
+		border-top-left-radius: 40px;
+		border-bottom-left-radius: 40px;
+		border-top: $brown dashed 2px;
+		border-bottom: $brown dashed 2px;
+		border-left: $brown dashed 2px;
+	}
 }
 
 .aside-swap {
@@ -40,18 +51,29 @@ aside {
 
 //* -----------------------------------------------
 .date {
-	width: $width-todo;
-	height: 200px;
+	position: relative;
+	width: 0;
+	height: 210px;
 	margin: 0 auto;
+	padding: 5px;
 	border-radius: $border-radius;
-	outline: $brown dashed 2px;
-	outline-offset: 5px;
-	background: $paper-todo;
-	box-shadow: inset $shadow;
+	border: $brown dashed 2px;
+	box-sizing: border-box;
 
-	opacity: 1;
+
+	opacity: 0;
 	overflow: hidden;
 	transition: all $timeout;
+
+	&::before {
+		content: "";
+		@include position-size-parent;
+		z-index: -1;
+		margin: 5px;
+		border-radius: $border-radius;
+		background: $paper-todo;
+		box-shadow: inset $shadow;
+	}
 
 	&__week {
 		height: 40px;
@@ -61,7 +83,7 @@ aside {
 //* -----------------------------------------------
 .todo {
 	position: relative;
-	width: $width-todo;
+	width: 0;
 	height: calc(100% - 200px - 40px);
 	margin: 0 auto;
 	border-radius: $border-radius;
@@ -69,7 +91,7 @@ aside {
 	background: $paper-todo;
 	box-shadow: $shadow;
 
-	opacity: 1;
+	opacity: 0;
 	transition: all $timeout;
 
 	&::after {
@@ -107,35 +129,42 @@ aside {
 	}
 }
 
-#pay:checked~aside {
+#pay:checked~#frame-off:checked~aside {
 
-	width: 100px;
+	width: 50px;
 
 	&:hover {
-		width: 500px;
+		width: 450px;
 	}
 
-	& .date,
-	& .todo {
-		width: 0;
-		opacity: 0;
+	&:hover .date {
+		width: $width-todo + 10px;
+		opacity: 1;
 	}
 
-	&:hover .date,
 	&:hover .todo {
 		width: $width-todo;
 		opacity: 1;
 	}
-}
-
-
-#frame-pass:checked~aside {
-	width: 100px;
 
 	& .date,
 	& .todo {
 		width: 0;
 		opacity: 0;
+	}
+}
+
+#frame-off:checked~aside {
+	width: 450px;
+
+	& .date {
+		width: $width-todo + 10px;
+		opacity: 1;
+	}
+
+	& .todo {
+		width: $width-todo;
+		opacity: 1;
 	}
 }
 
@@ -143,12 +172,12 @@ aside {
 
 @media (max-width: $widthHD) {
 
-	aside {
+	#frame-off:checked~aside {
 		right: 0;
-		width: 100px;
+		width: 50px;
 
 		&:hover {
-			width: 500px;
+			width: 450px;
 		}
 
 		& .date,
@@ -157,7 +186,11 @@ aside {
 			opacity: 0;
 		}
 
-		&:hover .date,
+		&:hover .date {
+			width: $width-todo + 10px;
+			opacity: 1;
+		}
+
 		&:hover .todo {
 			width: $width-todo;
 			opacity: 1;
@@ -169,10 +202,18 @@ aside {
 
 @media (max-width: $widthTab) {
 
-	#aside-table:checked~aside {
+	#pay:checked~#frame-off:checked~aside,
+	aside {
+		width: 20px;
+	}
 
-		width: 70px;
+	#aside-table:checked~aside {
+		width: 20px;
 		height: 98%;
+
+		&:hover {
+			width: 20px;
+		}
 
 		&:hover .date,
 		&:hover .todo {
@@ -181,12 +222,16 @@ aside {
 		}
 	}
 
-	#aside-panel:checked~aside {
+	#frame-off:checked~#aside-panel:checked~aside {
 
-		width: 500px;
+		width: 450px;
 		height: 98%;
 
-		& .date,
+		& .date {
+			width: $width-todo + 10px;
+			opacity: 1;
+		}
+
 		& .todo {
 			width: $width-todo;
 			opacity: 1;
@@ -194,7 +239,7 @@ aside {
 
 	}
 
-	.aside-swap {
+	#frame-off:checked~.aside-swap {
 		display: block;
 	}
 }
