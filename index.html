@@ -21,6 +21,9 @@
 	<input type="radio" name="frame" id="frame-stat">
 	<input type="radio" name="pass" id="enter" checked>
 	<input type="radio" name="pass" id="registration">
+	<input type="radio" name="new" id="project" checked>
+	<input type="radio" name="new" id="task">
+	<input type="radio" name="new" id="event">
 	<input type="radio" name="aside" id="aside-table" checked>
 	<input type="radio" name="aside" id="aside-panel">
 	<svg class="visually-hidden">
@@ -160,26 +163,55 @@
 				<div class="frame__manage">
 					<div class="frame__manage-pass">
 						<div class="pass__head">
-							<label class="pass__head-enter" for="enter">
+							<label class="frame__manage-label label-enter" for="enter">
 								Вход
 							</label>
-							<label class="pass__head-registration" for="registration">
+							<label class="frame__manage-label label-registration" for="registration">
 								Регистрация
 							</label>
 						</div>
 						<form class="pass__enter">
-							<input type="text" placeholder="Логин">
-							<input type="password" placeholder="Пароль">
-							<button type="submit">Войти</button>
+							<input class="frame__manage-input" type="text" placeholder="Логин">
+							<input class="frame__manage-input" type="password" placeholder="Пароль">
+							<button class="frame__manage-button" type="submit">Войти</button>
 						</form>
 						<form class="pass__registration">
-							<input type="text" placeholder="Логин">
-							<input type="password" placeholder="Пароль">
-							<input type="password" placeholder="Пароль">
-							<button type="submit">Зарегистрироваться</button>
+							<input class="frame__manage-input" type="text" placeholder="Логин">
+							<input class="frame__manage-input" type="password" placeholder="Пароль">
+							<input class="frame__manage-input" type="password" placeholder="Пароль">
+							<button class="frame__manage-button" type="submit">Зарегистрироваться</button>
 						</form>
 					</div>
-					<div class="frame__manage-new">Создание нового проекта</div>
+					<div class="frame__manage-new">
+						<div class="new__head">
+							<label class="frame__manage-label label-project" for="project">
+								Проект
+							</label>
+							<label class="frame__manage-label label-task" for="task">
+								Задача
+							</label>
+							<label class="frame__manage-label label-event" for="event">
+								Событие
+							</label>
+						</div>
+						<form class="new__project">
+							<input class="frame__manage-input" type="text" placeholder="Логин">
+							<input class="frame__manage-input" type="password" placeholder="Пароль">
+							<button class="frame__manage-button" type="submit">Создать</button>
+						</form>
+						<form class="new__task">
+							<input class="frame__manage-input" type="text" placeholder="Логин">
+							<input class="frame__manage-input" type="password" placeholder="Пароль">
+							<input class="frame__manage-input" type="password" placeholder="Пароль">
+							<button class="frame__manage-button" type="submit">Создать</button>
+						</form>
+						<form class="new__event">
+							<input class="frame__manage-input" type="text" placeholder="Логин">
+							<input class="frame__manage-input" type="password" placeholder="Пароль">
+							<input class="frame__manage-input" type="password" placeholder="Пароль">
+							<button class="frame__manage-button" type="submit">Создать</button>
+						</form>
+					</div>
 					<div class="frame__manage-profile">Персональные данные</div>
 					<div class="frame__manage-options">Настройки
 					</div>

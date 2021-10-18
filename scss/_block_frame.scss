@@ -90,8 +90,7 @@
 			margin-top: 10%;
 			font-family: mc;
 			font-size: 35px;
-			color: $ocean;
-			opacity: 0.4;
+			opacity: 0.5;
 
 			@include widthLT {
 				position: absolute;
@@ -99,7 +98,7 @@
 				left: 50%;
 				transform: translateX(-50%);
 
-				opacity: 0.2;
+				opacity: 0.1;
 			}
 		}
 
@@ -115,7 +114,7 @@
 			@include widthLT {
 				@include position-center;
 
-				opacity: 0.2;
+				opacity: 0.1;
 			}
 		}
 
@@ -147,6 +146,10 @@
 
 			& .email {
 				grid-area: email;
+			}
+
+			@include widthLT {
+				display: none;
 			}
 		}
 
@@ -187,6 +190,38 @@
 
 		}
 
+		&-label {
+			flex-grow: 1;
+			padding: 15px;
+			border-bottom: 2px solid #eee;
+			color: #999;
+			text-align: center;
+		}
+
+		&-input,
+		&-button {
+			display: block;
+			width: 100%;
+			margin-top: 50px;
+			padding: 20px;
+			box-sizing: border-box;
+			border: 1px solid $brown;
+			border-radius: $border-radius;
+			font-size: 14px;
+			color: $brown;
+		}
+
+		&-button {
+			text-transform: uppercase;
+			background: $paper-title;
+			transition: opacity $timeout;
+
+			&:hover {
+				cursor: pointer;
+				opacity: 0.5;
+			}
+		}
+
 		&>div {
 			display: none;
 		}
@@ -199,24 +234,44 @@
 			@include widthMob {
 				width: 100%;
 			}
+		}
 
+		.pass {
 
-			& input,
-			& button {
-				display: block;
+			&__head {
 				width: 100%;
-				margin-top: 50px;
-				padding: 20px;
-				box-sizing: border-box;
-				border: 1px solid $brown;
-				border-radius: $border-radius;
-				font-size: 14px;
-				color: $brown;
+				display: flex;
+				justify-content: space-between;
 			}
 
-			& button {
-				text-transform: uppercase;
-				background: $paper-title;
+			&__enter,
+			&__registration {
+				display: none;
+			}
+		}
+
+		&-new {
+			width: 90%;
+			margin: 10% auto 0;
+			padding: 25px;
+
+			@include widthMob {
+				width: 100%;
+			}
+		}
+
+		.new {
+
+			&__head {
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+			}
+
+			&__project,
+			&__task,
+			&__event {
+				display: none;
 			}
 		}
 	}
@@ -236,42 +291,22 @@
 	}
 }
 
-.pass {
-
-	&__head {
-		width: 100%;
-		color: #999;
-
-		display: flex;
-		justify-content: space-between;
-
-		& label {
-			width: 50%;
-			padding: 15px;
-			border-bottom: 2px solid #eee;
-			text-align: center;
-		}
-	}
-
-	&__enter,
-	&__registration {
-		display: none;
-	}
-
-}
-
-#enter:checked~.grid-main .pass__head-enter,
-#registration:checked~.grid-main .pass__head-registration {
-	border-bottom: 2px solid $brown;
-	font-size: 18px;
-	font-weight: 700;
-	color: $brown;
+#enter:checked~.grid-main .label-enter,
+#registration:checked~.grid-main .label-registration,
+#project:checked~.grid-main .label-project,
+#task:checked~.grid-main .label-task,
+#event:checked~.grid-main .label-event {
+	@include form-label-checked;
 }
 
 #enter:checked~.grid-main .pass__enter,
-#registration:checked~.grid-main .pass__registration {
+#registration:checked~.grid-main .pass__registration,
+#project:checked~.grid-main .new__project,
+#task:checked~.grid-main .new__task,
+#event:checked~.grid-main .new__event {
 	display: block;
 }
+
 
 // Кнопка Закрыть при управлении мышкой + большие экраны
 .close {
@@ -334,8 +369,20 @@
 	display: none;
 }
 
-#frame-pass:checked~.grid-main .frame__manage-pass {
-	display: block;
+#frame-pass:checked~.grid-main {
+
+	& .frame__info-title,
+	& .frame__info-illustration {
+		opacity: 0.3;
+	}
+
+	& .frame__info-contact {
+		display: grid;
+	}
+
+	& .frame__manage-pass {
+		display: block;
+	}
 }
 
 #frame-new:checked~.grid-main .frame__manage-new {

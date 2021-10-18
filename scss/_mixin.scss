@@ -36,6 +36,7 @@
 
 }
 
+// Положение дочернего блока
 @mixin position-center {
 	position: absolute;
 	top: 50%;
@@ -51,7 +52,7 @@
 	left: 0;
 }
 
-
+// Адаптация
 @mixin widthHD {
 	@media (max-width:$widthHD) {
 		@content;
@@ -88,7 +89,15 @@
 	}
 }
 
+// Форма. Настройки нажатых вкладок
+@mixin form-label-checked {
+	border-bottom: 2px solid $ocean;
+	font-size: 18px;
+	font-weight: 700;
+	color: $ocean;
+}
 
+// Во избежание предупреждения SCSS
 @mixin grid-main {
 	header {
 		grid-area: header;
