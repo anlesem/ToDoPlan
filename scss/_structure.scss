@@ -65,7 +65,7 @@
 }
 
 #pay:checked~.grid-main .grid-table {
-	grid-template-areas: "status name name planed set note note price type account";
+	grid-template-areas: "status name name planed set note note price type partner";
 
 	&__price,
 	&__type,

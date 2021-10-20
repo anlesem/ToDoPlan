@@ -12,6 +12,7 @@
 	<input type="checkbox" id="pay">
 	<input type="checkbox" id="filters">
 	<input type="checkbox" id="set">
+	<input type="checkbox" id="info">
 	<input type="radio" name="frame" id="frame-pass" checked>
 	<input type="radio" name="frame" id="frame-off">
 	<input type="radio" name="frame" id="frame-new">
@@ -27,11 +28,7 @@
 	<input type="radio" name="aside" id="aside-table" checked>
 	<input type="radio" name="aside" id="aside-panel">
 	<svg class="visually-hidden">
-		<symbol id="icon__close" viewBox="0 0 256 256">
-			<path
-				d="M204.24268,195.75732a6.00006,6.00006,0,0,1-8.48536,8.48536L128,136.48535,60.24268,204.24268a6.00006,6.00006,0,0,1-8.48536-8.48536L119.51465,128,51.75732,60.24268a6.00006,6.00006,0,0,1,8.48536-8.48536L128,119.51465l67.75732-67.75733a6.00006,6.00006,0,0,1,8.48536,8.48536L136.48535,128Z" />
-		</symbol>
-		<symbol id="icon__todo" viewBox="0 0 352.3 349.9">
+		<symbol id="logo" viewBox="0 0 352.3 349.9">
 			<path d="M320.8,178.4l18.6-2.8h4.5l0.1-1.4l-23.1-3.5c-2.2-76.4-64.1-138-140.5-139.8l-2.8-18.6V7.9l-1.4-0.1L172.6,31
 			c-76.3,2.1-138,64-139.8,140.5l-18.6,2.8H9.8l-0.1,1.4l23.1,3.5c2.2,76.4,64.1,138,140.5,139.8l2.8,18.6v4.5l1.4,0.1l3.5-23.1
 			C257.3,316.7,318.9,254.8,320.8,178.4z M93.1,260.1l64.3-48.2l12.3,82.3C139.9,292.4,113,279.7,93.1,260.1z M57.6,182.8l82.6,12.3
@@ -54,6 +51,22 @@
 			c-2-8.6-3.1-17.5-3.4-26.7L54.8,182.4z M53.2,243.3l18-6.9c8.5,14.6,19.9,27.2,33.5,37.1L96,290.7C78.3,278.4,63.7,262.2,53.2,243.3
 			z M131.4,308.7l8.7-17.2c9.5,3,19.6,4.9,30,5.5l2.9,19.2C158.4,315.7,144.5,313.2,131.4,308.7z M177.5,193.5
 			c2.7-0.2,5.3-0.9,7.5-2.1l10.6,19.8l-18.1,121.4V193.5z" />
+		</symbol>
+		<symbol id="icon__close" viewBox="0 0 256 256">
+			<path
+				d="M204.24268,195.75732a6.00006,6.00006,0,0,1-8.48536,8.48536L128,136.48535,60.24268,204.24268a6.00006,6.00006,0,0,1-8.48536-8.48536L119.51465,128,51.75732,60.24268a6.00006,6.00006,0,0,1,8.48536-8.48536L128,119.51465l67.75732-67.75733a6.00006,6.00006,0,0,1,8.48536,8.48536L136.48535,128Z" />
+		</symbol>
+		<symbol id="icon__plan" viewBox="0 0 256 256">
+			<path
+				d="M128,230A102,102,0,1,1,230,128,102.11546,102.11546,0,0,1,128,230Zm0-192a90,90,0,1,0,90,90A90.102,90.102,0,0,0,128,38Zm62,90a6,6,0,0,0-6-6H134V72a6,6,0,0,0-12,0v56a6,6,0,0,0,6,6h56A6,6,0,0,0,190,128Z" />
+		</symbol>
+		<symbol id="icon__tabs" viewBox="0 0 256 256">
+			<path
+				d="M72,190a10,10,0,1,1,10-10A10.01146,10.01146,0,0,1,72,190Zm154-26.10742V208a14.01572,14.01572,0,0,1-14,14H72c-.01514,0-.02979-.0022-.04517-.0022l-.0144.00025a41.30784,41.30784,0,0,1-33.77734-17.51758,43.27888,43.27888,0,0,1-7.40137-32.47363L54.94873,34.834A14.0006,14.0006,0,0,1,71.168,23.47754l55.14844,9.72363A14.0006,14.0006,0,0,1,137.67236,49.4209L125.9939,115.65271l63.198-23.00232a14.01513,14.01513,0,0,1,17.94385,8.36719l19.15332,52.623A13.93237,13.93237,0,0,1,226,163.89258ZM123.58789,129.29773,113.36182,187.293a41.42533,41.42533,0,0,1-3.50733,10.855l103.96289-37.83936a2.00257,2.00257,0,0,0,1.19532-2.56347l-19.15332-52.624a2.00179,2.00179,0,0,0-2.56348-1.19433ZM67.36963,209.64062a30.14623,30.14623,0,0,0,34.1748-24.43164L125.855,47.33594a1.99885,1.99885,0,0,0-1.623-2.31641L69.0835,35.2959A1.99513,1.99513,0,0,0,66.76611,36.918L42.5791,174.09082a31.20846,31.20846,0,0,0,5.34717,23.41309A29.38891,29.38891,0,0,0,67.36963,209.64062ZM214,208V173.0116L112.37476,210H212A2.00229,2.00229,0,0,0,214,208Z" />
+		</symbol>
+		<symbol id="icon__marks" viewBox="0 0 256 256">
+			<path
+				d="M160,58H64A14.01572,14.01572,0,0,0,50,72V224a5.99995,5.99995,0,0,0,9.48779,4.88184l52.50537-37.50879,52.51954,37.50976A6.00023,6.00023,0,0,0,174,224V72A14.01572,14.01572,0,0,0,160,58Zm2,154.3418-46.52051-33.22461a5.99928,5.99928,0,0,0-6.97461.001L62,212.33984V72a2.0026,2.0026,0,0,1,2-2h96a2.0026,2.0026,0,0,1,2,2ZM206,40V192a6,6,0,0,1-12,0V40a2.0026,2.0026,0,0,0-2-2H88a6,6,0,0,1,0-12H192A14.01572,14.01572,0,0,1,206,40Z" />
 		</symbol>
 	</svg>
 	<div class="aside-swap">
@@ -104,6 +117,9 @@
 					<label class="" for="pay">
 						Фин
 					</label>
+					<label class="" for="info">
+						Инф
+					</label>
 				</div>
 				<div class="grid-table__name">Ежедневник</div>
 				<div class="grid-table__planed">Закладки</div>
@@ -111,7 +127,7 @@
 				<div class="grid-table__note">6 ноября 2022г.</div>
 				<div class="grid-table__price">2 500 000</div>
 				<div class="grid-table__type">1 500 000</div>
-				<div class="grid-table__account">423 500</div>
+				<div class="grid-table__partner">423 500</div>
 			</div>
 			<div class="grid-table filters">
 				<div class="grid-table__status">Иконки</div>
@@ -121,7 +137,7 @@
 				<div class="grid-table__note">Примечание</div>
 				<div class="grid-table__price">Стоимость</div>
 				<div class="grid-table__type">Операция</div>
-				<div class="grid-table__account">Контрагент</div>
+				<div class="grid-table__partner">Контрагент</div>
 			</div>
 			<div class="grid-table filters">
 				<div class="grid-table__status">Иконки</div>
@@ -131,7 +147,7 @@
 				<div class="grid-table__note">Примечание</div>
 				<div class="grid-table__price">Стоимость</div>
 				<div class="grid-table__type">Операция</div>
-				<div class="grid-table__account">Контрагент</div>
+				<div class="grid-table__partner">Контрагент</div>
 			</div>
 			<div class="grid-table title">
 				<div class="grid-table__status">Статус</div>
@@ -141,22 +157,22 @@
 				<div class="grid-table__note">Примечание</div>
 				<div class="grid-table__price">Стоимость</div>
 				<div class="grid-table__type">Операция</div>
-				<div class="grid-table__account">Контрагент</div>
+				<div class="grid-table__partner">Контрагент</div>
 			</div>
 		</header>
 		<main>
 			<section class="frame">
-				<div class="frame__info">
-					<h1 class="frame__info-title">Ежедневник</h1>
-					<img class="frame__info-illustration" src="img/texture-avatar.svg" alt="Рисунок">
-					<div class="frame__info-contact">
+				<div class="frame__art">
+					<h1 class="frame__art-title">Ежедневник</h1>
+					<img class="frame__art-illustration" src="img/texture-avatar.svg" alt="Рисунок">
+					<div class="frame__art-contact">
 						<svg width="65" height="65" viewBox="0 0 65 65">
-							<use href="#icon__todo" />
+							<use href="#logo" />
 						</svg>
 						<a href="https://anlesem.ru/" target="_blank" class="about">О разработчике</a>
 						<a href="mailto:anlesem@mail.ru" class="email">Связь с разработчиком</a>
 					</div>
-					<div class="frame__info-copyright">&copy; 2021
+					<div class="frame__art-copyright">&copy; 2021
 						<span class="copyright__full">Все права защищены. </span>
 					</div>
 				</div>
@@ -170,16 +186,31 @@
 								Регистрация
 							</label>
 						</div>
-						<form class="pass__enter">
-							<input class="frame__manage-input" type="text" placeholder="Логин">
-							<input class="frame__manage-input" type="password" placeholder="Пароль">
-							<button class="frame__manage-button" type="submit">Войти</button>
+						<form action="" class="pass__enter">
+							<div class="pass__input">
+								<label for="login">Логин</label>
+								<input type="text" name="login" required>
+							</div>
+							<div class="pass__input">
+								<label for="password">Пароль</label>
+								<input type="password" name="password" required>
+							</div>
+							<button class="pass__button" type="submit">Войти</button>
 						</form>
-						<form class="pass__registration">
-							<input class="frame__manage-input" type="text" placeholder="Логин">
-							<input class="frame__manage-input" type="password" placeholder="Пароль">
-							<input class="frame__manage-input" type="password" placeholder="Пароль">
-							<button class="frame__manage-button" type="submit">Зарегистрироваться</button>
+						<form action="" class="pass__registration">
+							<div class="pass__input">
+								<label for="new-login">Логин</label>
+								<input type="text" name="new-login" required>
+							</div>
+							<div class="pass__input">
+								<label for="email">E-mail</label>
+								<input type="email" name="email" required>
+							</div>
+							<div class="pass__input">
+								<label for="new-password">Пароль</label>
+								<input type="password" name="new-password" required>
+							</div>
+							<button class="pass__button" type="submit">Зарегистрироваться</button>
 						</form>
 					</div>
 					<div class="frame__manage-new">
@@ -194,22 +225,68 @@
 								Событие
 							</label>
 						</div>
-						<form class="new__project">
-							<input class="frame__manage-input" type="text" placeholder="Логин">
-							<input class="frame__manage-input" type="password" placeholder="Пароль">
-							<button class="frame__manage-button" type="submit">Создать</button>
+						<form action="" class="new__project">
+							<div class="new__input">
+								<label for="project-name">Наименование:</label>
+								<input type="text" name="project-name" required>
+							</div>
+							<div class="new__input">
+								<label for="project-note">Примечание:</label>
+								<input type="text" name="project-note">
+							</div>
+							<div class="new__set">
+								<svg width="20" height="20" viewBox="0 0 20 20">
+									<use href="#icon__tabs" />
+								</svg>
+								<select>
+									<option></option>
+									<option>Работа</option>
+									<option>Халтура</option>
+									<option>Обучение</option>
+									<option>Личные</option>
+									<option>Прочие</option>
+								</select>
+								<svg width="20" height="20" viewBox="0 0 20 20">
+									<use href="#icon__marks" />
+								</svg>
+								<select>
+									<option></option>
+									<option>Срочно</option>
+									<option>Важно</option>
+									<option>На контроле</option>
+									<option>Документы</option>
+									<option>Общение</option>
+								</select>
+								<svg width="20" height="20" viewBox="0 0 20 20">
+									<use href="#icon__marks" />
+								</svg>
+								<input type="text">
+								<svg width="20" height="20" viewBox="0 0 20 20">
+									<use href="#icon__tabs" />
+								</svg>
+								<input type="text">
+								<svg width="20" height="20" viewBox="0 0 20 20">
+									<use href="#icon__tabs" />
+								</svg>
+								<input type="text">
+								<svg width="20" height="20" viewBox="0 0 20 20">
+									<use href="#icon__tabs" />
+								</svg>
+								<input type="text">
+								<svg width="20" height="20" viewBox="0 0 20 20">
+									<use href="#icon__tabs" />
+								</svg>
+								<input type="text">
+							</div>
+							<div class="new__input-area">
+								<label for="project-comment">Дополнительная информация:</label>
+								<textarea name="project-comment" rows="5"></textarea>
+							</div>
+							<button type="submit">Создать</button>
 						</form>
-						<form class="new__task">
-							<input class="frame__manage-input" type="text" placeholder="Логин">
-							<input class="frame__manage-input" type="password" placeholder="Пароль">
-							<input class="frame__manage-input" type="password" placeholder="Пароль">
-							<button class="frame__manage-button" type="submit">Создать</button>
+						<form action="" class="new__task">
 						</form>
-						<form class="new__event">
-							<input class="frame__manage-input" type="text" placeholder="Логин">
-							<input class="frame__manage-input" type="password" placeholder="Пароль">
-							<input class="frame__manage-input" type="password" placeholder="Пароль">
-							<button class="frame__manage-button" type="submit">Создать</button>
+						<form action="" class="new__event">
 						</form>
 					</div>
 					<div class="frame__manage-profile">Персональные данные</div>
@@ -233,7 +310,7 @@
 				<div class="grid-table__note">Примечание</div>
 				<div class="grid-table__price">Стоимость</div>
 				<div class="grid-table__type">Операция</div>
-				<div class="grid-table__account">Контрагент</div>
+				<div class="grid-table__partner">Контрагент</div>
 			</div>
 			<div class="grid-table">
 				<div class="grid-table__status">Иконки</div>
@@ -242,7 +319,7 @@
 				<div class="grid-table__note">Примечание</div>
 				<div class="grid-table__price">Стоимость</div>
 				<div class="grid-table__type">Операция</div>
-				<div class="grid-table__account">Контрагент</div>
+				<div class="grid-table__partner">Контрагент</div>
 			</div>
 			<div class="grid-table">
 				<div class="grid-table__status">Иконки</div>
@@ -251,7 +328,7 @@
 				<div class="grid-table__note">Примечание</div>
 				<div class="grid-table__price">Стоимость</div>
 				<div class="grid-table__type">Операция</div>
-				<div class="grid-table__account">Контрагент</div>
+				<div class="grid-table__partner">Контрагент</div>
 			</div>
 			<div class="grid-table">
 				<div class="grid-table__status">Иконки</div>
@@ -261,7 +338,7 @@
 				<div class="grid-table__note">Примечание</div>
 				<div class="grid-table__price">Стоимость</div>
 				<div class="grid-table__type">Операция</div>
-				<div class="grid-table__account">Контрагент</div>
+				<div class="grid-table__partner">Контрагент</div>
 			</div>
 			<div class="grid-table">
 				<div class="grid-table__status">Иконки</div>
@@ -284,7 +361,7 @@
 				<div class="grid-table__set">Управление</div>
 				<div class="grid-table__price">Стоимость</div>
 				<div class="grid-table__type">Операция</div>
-				<div class="grid-table__account">Контрагент</div>
+				<div class="grid-table__partner">Контрагент</div>
 			</div>
 			<div class="grid-table">
 				<div class="grid-table__status">Иконки</div>
@@ -293,17 +370,7 @@
 				<div class="grid-table__set">Управление</div>
 				<div class="grid-table__note">Примечание</div>
 				<div class="grid-table__price">Стоимость</div>
-				<div class="grid-table__account">Контрагент</div>
-			</div>
-			<div class="grid-table">
-				<div class="grid-table__status">Иконки</div>
-				<div class="grid-table__name">Наименования</div>
-				<div class="grid-table__planed">План</div>
-				<div class="grid-table__set">Управление</div>
-				<div class="grid-table__note">Примечание</div>
-				<div class="grid-table__price">Стоимость</div>
-				<div class="grid-table__type">Операция</div>
-				<div class="grid-table__account">Контрагент</div>
+				<div class="grid-table__partner">Контрагент</div>
 			</div>
 			<div class="grid-table">
 				<div class="grid-table__status">Иконки</div>
@@ -313,7 +380,7 @@
 				<div class="grid-table__note">Примечание</div>
 				<div class="grid-table__price">Стоимость</div>
 				<div class="grid-table__type">Операция</div>
-				<div class="grid-table__account">Контрагент</div>
+				<div class="grid-table__partner">Контрагент</div>
 			</div>
 			<div class="grid-table">
 				<div class="grid-table__status">Иконки</div>
@@ -322,7 +389,17 @@
 				<div class="grid-table__set">Управление</div>
 				<div class="grid-table__note">Примечание</div>
 				<div class="grid-table__price">Стоимость</div>
-				<div class="grid-table__account">Контрагент</div>
+				<div class="grid-table__type">Операция</div>
+				<div class="grid-table__partner">Контрагент</div>
+			</div>
+			<div class="grid-table">
+				<div class="grid-table__status">Иконки</div>
+				<div class="grid-table__name">Наименования</div>
+				<div class="grid-table__planed">План</div>
+				<div class="grid-table__set">Управление</div>
+				<div class="grid-table__note">Примечание</div>
+				<div class="grid-table__price">Стоимость</div>
+				<div class="grid-table__partner">Контрагент</div>
 			</div>
 			<div class="grid-table">
 			</div>
@@ -452,7 +529,7 @@
 			<div class="grid-table__note">Примечание</div>
 			<div class="grid-table__price">Стоимость</div>
 			<div class="grid-table__type">Операция</div>
-			<div class="grid-table__account">Контрагент</div>
+			<div class="grid-table__partner">Контрагент</div>
 		</div>
 	</footer>
 	<script src="./js/scritps.js"></script>

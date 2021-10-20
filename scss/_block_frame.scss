@@ -19,7 +19,7 @@
 		flex-direction: column;
 	}
 
-	&__info {
+	&__art {
 		position: relative;
 		width: 50%;
 		height: 100%;
@@ -198,41 +198,17 @@
 			text-align: center;
 		}
 
-		&-input,
-		&-button {
-			display: block;
-			width: 100%;
-			margin-top: 50px;
-			padding: 20px;
-			box-sizing: border-box;
-			border: 1px solid $brown;
-			border-radius: $border-radius;
-			font-size: 14px;
-			color: $brown;
-		}
-
-		&-button {
-			text-transform: uppercase;
-			background: $paper-title;
-			transition: opacity $timeout;
-
-			&:hover {
-				cursor: pointer;
-				opacity: 0.5;
-			}
-		}
-
 		&>div {
 			display: none;
 		}
 
 		&-pass {
-			width: 450px;
+			max-width: 450px;
 			margin: 10% auto 0;
 			padding: 25px;
 
-			@include widthMob {
-				width: 100%;
+			@include min-height {
+				margin: 0 auto;
 			}
 		}
 
@@ -248,15 +224,74 @@
 			&__registration {
 				display: none;
 			}
+
+			&__input {
+				position: relative;
+				width: 100%;
+				height: 60px;
+				margin-top: 50px;
+
+				display: flex;
+
+				& label {
+					position: absolute;
+					top: 50%;
+					left: 20px;
+					transform: translateY(-50%);
+
+					font-size: 14px;
+					color: rgba($brown, 0.8);
+
+					transition: all $timeout;
+				}
+
+				&:hover label,
+				& label.fill {
+					position: absolute;
+					top: 5px;
+					left: 20px;
+					transform: translateY(0);
+
+					font-size: 13px;
+					color: rgba($brown, 0.3);
+				}
+
+				& input {
+					width: 100%;
+					padding: 25px 20px 10px;
+					border: 1px solid $brown;
+
+					@include form-input;
+				}
+			}
+
+			&__button {
+				display: block;
+				width: 100%;
+				height: 60px;
+				margin-top: 50px;
+				padding: 20px;
+				text-transform: uppercase;
+
+				@include form-button;
+
+				&:hover {
+					font-size: 12px;
+				}
+			}
 		}
 
 		&-new {
-			width: 90%;
+			width: 95%;
 			margin: 10% auto 0;
 			padding: 25px;
 
 			@include widthMob {
 				width: 100%;
+			}
+
+			@include min-height {
+				margin: 0 auto;
 			}
 		}
 
@@ -272,6 +307,69 @@
 			&__task,
 			&__event {
 				display: none;
+				margin-top: 5%;
+				justify-content: space-between;
+				flex-direction: column;
+
+				& label {
+					width: 30%;
+					color: $brown;
+				}
+
+				& input,
+				& select {
+					padding: 5px 10px;
+					border: 1px solid $input-border;
+
+					@include form-input;
+				}
+
+				& button {
+					align-self: end;
+					width: 25%;
+					margin-top: 50px;
+					padding: 10px 30px;
+
+					@include form-button;
+				}
+			}
+
+			&__input,
+			&__input-area {
+				margin-top: 30px;
+
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+
+				& input,
+				& textarea {
+					width: 65%;
+					padding: 10px 15px;
+					border: 1px solid $input-border;
+
+					@include form-input;
+				}
+			}
+
+			&__input-area label {
+				align-self: flex-start;
+			}
+
+			&__set {
+				margin-top: 30px;
+
+				display: grid;
+				grid-template: 30px / 30px 25% 30px 25% 30px 25%;
+				justify-content: space-between;
+				row-gap: 30px;
+
+				& svg {
+					justify-self: self-end;
+					align-self: center;
+					text-align: right;
+					fill: $ocean;
+				}
 			}
 		}
 	}
@@ -300,13 +398,15 @@
 }
 
 #enter:checked~.grid-main .pass__enter,
-#registration:checked~.grid-main .pass__registration,
-#project:checked~.grid-main .new__project,
-#task:checked~.grid-main .new__task,
-#event:checked~.grid-main .new__event {
+#registration:checked~.grid-main .pass__registration {
 	display: block;
 }
 
+#project:checked~.grid-main .new__project,
+#task:checked~.grid-main .new__task,
+#event:checked~.grid-main .new__event {
+	display: flex;
+}
 
 // Кнопка Закрыть при управлении мышкой + большие экраны
 .close {
@@ -371,12 +471,12 @@
 
 #frame-pass:checked~.grid-main {
 
-	& .frame__info-title,
-	& .frame__info-illustration {
+	& .frame__art-title,
+	& .frame__art-illustration {
 		opacity: 0.3;
 	}
 
-	& .frame__info-contact {
+	& .frame__art-contact {
 		display: grid;
 	}
 
@@ -397,8 +497,15 @@
 	display: block;
 }
 
-#frame-help:checked~.grid-main .frame__manage-help {
-	display: block;
+#frame-help:checked~.grid-main {
+
+	& .frame__manage-help {
+		display: block;
+	}
+
+	& .frame__art-contact {
+		display: grid;
+	}
 }
 
 #frame-stat:checked~.grid-main .frame__manage-stat {

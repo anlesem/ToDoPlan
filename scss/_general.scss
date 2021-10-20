@@ -16,9 +16,6 @@
 	}
 }
 
-// Настройка подсказок
-@include placeholder-color($brown);
-
 html,
 body {
 	width: 100%;
@@ -105,4 +102,11 @@ body {
 	overflow: hidden;
 	border: 0;
 	clip: rect(0 0 0 0);
+}
+
+select {
+	background-image: url(../img/icon_down.svg);
+	background-position: right 5px center;
+	background-repeat: no-repeat;
+	background-size: 15px 15px;
 }
