@@ -139,6 +139,7 @@ textarea {
 	border: none;
 	border-radius: 0;
 	outline: none; // обводка при клике
+	resize: none; // запрет на изменение размера
 
 	background-image: none;
 	background-color: transparent;

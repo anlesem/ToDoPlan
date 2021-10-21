@@ -343,6 +343,7 @@
 				align-items: center;
 
 				& input,
+				& select,
 				& textarea {
 					width: 65%;
 					padding: 10px 15px;
@@ -360,16 +361,10 @@
 				margin-top: 30px;
 
 				display: grid;
-				grid-template: 30px / 30px 25% 30px 25% 30px 25%;
+				grid-template: 40px / repeat(2, 1fr);
 				justify-content: space-between;
-				row-gap: 30px;
+				gap: 20px 30px;
 
-				& svg {
-					justify-self: self-end;
-					align-self: center;
-					text-align: right;
-					fill: $ocean;
-				}
 			}
 		}
 	}
@@ -470,11 +465,6 @@
 }
 
 #frame-pass:checked~.grid-main {
-
-	& .frame__art-title,
-	& .frame__art-illustration {
-		opacity: 0.3;
-	}
 
 	& .frame__art-contact {
 		display: grid;
