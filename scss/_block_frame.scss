@@ -19,6 +19,7 @@
 		flex-direction: column;
 	}
 
+	//! ----------------------------- Обложка
 	&__art {
 		position: relative;
 		width: 50%;
@@ -86,6 +87,7 @@
 			}
 		}
 
+		// ----------------------------- Обложка заголовок
 		&-title {
 			margin-top: 10%;
 			font-family: mc;
@@ -98,10 +100,13 @@
 				left: 50%;
 				transform: translateX(-50%);
 
+				margin-top: 25px;
+
 				opacity: 0.1;
 			}
 		}
 
+		// ----------------------------- Обложка картинка
 		&-illustration {
 			width: 70%;
 			height: 60%;
@@ -118,6 +123,7 @@
 			}
 		}
 
+		// ----------------------------- Обложка визитка
 		&-contact {
 			position: relative;
 			z-index: 2;
@@ -160,6 +166,7 @@
 		}
 	}
 
+	//! ----------------------------- Управление
 	&__manage {
 		position: relative;
 		width: $width-manage;
@@ -198,10 +205,59 @@
 			text-align: center;
 		}
 
+		// Настройка основных полей форм
+		&-input,
+		&-input-area {
+			margin-top: $margin-frame;
+
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			& label {
+				width: 30%;
+				color: $brown;
+			}
+
+			& input,
+			& select,
+			& textarea {
+				width: 65%;
+				padding: 7px 15px;
+
+				@include form-input;
+			}
+
+
+			&~button {
+				align-self: flex-end;
+				width: 150px;
+				margin-top: $margin-frame;
+				padding: 7px 30px;
+
+				@include form-button;
+			}
+		}
+
+		&-input-area label {
+			align-self: flex-start;
+		}
+
+		& hr {
+			border: 0;
+			width: 100%;
+			height: 1px;
+			margin: 30px auto 0;
+			background: $paper-frame;
+			background-image: linear-gradient(to left, $paper-frame, $ocean, $paper-frame);
+		}
+
+		// Отключение видимости блоков для использования Переключателя
 		&>div {
 			display: none;
 		}
 
+		//? ----------------------------- Управление Вход
 		&-pass {
 			max-width: 450px;
 			margin: 10% auto 0;
@@ -259,9 +315,10 @@
 				& input {
 					width: 100%;
 					padding: 25px 20px 10px;
-					border: 1px solid $brown;
 
 					@include form-input;
+
+					border: 1px solid $brown !important;
 				}
 			}
 
@@ -281,17 +338,18 @@
 			}
 		}
 
-		&-new {
+		//? ----------------------------- Управление Создать
+		&-new,
+		&-profile,
+		&-options,
+		&-help,
+		&-stat {
 			width: 95%;
-			margin: 10% auto 0;
+			margin: 10px auto 0;
 			padding: 25px;
 
 			@include widthMob {
 				width: 100%;
-			}
-
-			@include min-height {
-				margin: 0 auto;
 			}
 		}
 
@@ -307,14 +365,22 @@
 			&__task,
 			&__event {
 				display: none;
-				margin-top: 5%;
+				margin-top: $margin-frame-up;
 				justify-content: space-between;
 				flex-direction: column;
 
-				& label {
-					width: 30%;
-					color: $brown;
+				@include min-height {
+					margin-top: 0;
 				}
+			}
+
+			&__set {
+				margin-top: $margin-frame;
+
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				justify-content: space-between;
+				gap: 20px 30px;
 
 				& input,
 				& select {
@@ -324,50 +390,139 @@
 					@include form-input;
 				}
 
-				& button {
-					align-self: end;
-					width: 25%;
-					margin-top: 50px;
-					padding: 10px 30px;
-
-					@include form-button;
+				& select {
+					@include form-select;
 				}
-			}
-
-			&__input,
-			&__input-area {
-				margin-top: 30px;
-
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-
-				& input,
-				& select,
-				& textarea {
-					width: 65%;
-					padding: 10px 15px;
-					border: 1px solid $input-border;
-
-					@include form-input;
-				}
-			}
-
-			&__input-area label {
-				align-self: flex-start;
-			}
-
-			&__set {
-				margin-top: 30px;
-
-				display: grid;
-				grid-template: 40px / repeat(2, 1fr);
-				justify-content: space-between;
-				gap: 20px 30px;
 
 			}
 		}
+
+		//? ----------------------------- Управление Профиль Данные
+		.profile {
+
+			&__head {
+				width: 100%;
+
+				display: flex;
+				justify-content: space-between;
+			}
+
+			&__data,
+			&__partner,
+			&__person {
+				display: none;
+				border-top: 1px solid transparent; // Убираем схлопывание
+				margin-top: $margin-frame-up;
+
+				@include min-height {
+					margin-top: 0;
+				}
+			}
+
+			&__data>div {
+				position: relative;
+				margin-top: $margin-frame;
+
+				display: flex;
+				justify-content: space-around;
+
+				&>p {
+					width: 200px;
+					align-self: center;
+					color: $brown;
+				}
+
+				& .info {
+					position: absolute;
+					top: 100%;
+					left: 50%; // Центрирование из-за space-around
+					transform: translateX(-50%);
+					width: 90%;
+					@include info-text;
+					text-align: center;
+				}
+
+				&>label,
+				&>button {
+					width: 200px;
+					padding: 7px 20px;
+					text-align: center;
+					@include form-button;
+				}
+
+				&>input {
+					position: absolute;
+					z-index: -10;
+					opacity: 0;
+				}
+			}
+
+			&__data-form {
+
+				&>p {
+					align-self: flex-start !important;
+				}
+
+				& form {
+					width: 200px;
+
+					& div {
+						margin-bottom: 10px;
+
+						display: flex;
+						flex-direction: column-reverse;
+
+						& label {
+							margin-left: 10px;
+							@include info-text;
+						}
+
+						& input {
+							padding: 7px 20px;
+							@include form-input;
+						}
+					}
+
+					& button {
+						width: 100%;
+						padding: 7px 30px;
+						@include form-button;
+					}
+				}
+			}
+
+			//? ----------------------------- Управление Профиль Партнёры, Коллеги
+			&__partner,
+			&__person {
+
+				& form {
+					display: flex;
+					justify-content: space-between;
+					flex-direction: column;
+
+					& legend {
+						margin: $margin-frame 0 20px 30px;
+						font-size: 13px;
+						color: $ocean;
+
+						&+div {
+							margin-top: 0;
+						}
+					}
+
+					& select {
+						@include form-select;
+					}
+
+					& .delete {
+						border: 1px solid $delete;
+						color: $delete;
+					}
+				}
+			}
+		}
 	}
+
 }
 
 // Отключение "закруглённых углов" 
@@ -388,7 +543,10 @@
 #registration:checked~.grid-main .label-registration,
 #project:checked~.grid-main .label-project,
 #task:checked~.grid-main .label-task,
-#event:checked~.grid-main .label-event {
+#event:checked~.grid-main .label-event,
+#data:checked~.grid-main .label-data,
+#partner:checked~.grid-main .label-partner,
+#person:checked~.grid-main .label-person {
 	@include form-label-checked;
 }
 
@@ -401,6 +559,12 @@
 #task:checked~.grid-main .new__task,
 #event:checked~.grid-main .new__event {
 	display: flex;
+}
+
+#data:checked~.grid-main .profile__data,
+#partner:checked~.grid-main .profile__partner,
+#person:checked~.grid-main .profile__person {
+	display: block;
 }
 
 // Кнопка Закрыть при управлении мышкой + большие экраны

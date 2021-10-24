@@ -12,7 +12,15 @@
 	display: block;
 	box-sizing: border-box;
 	border-radius: $border-radius;
+	border: 1px solid $input-border;
 	background: #fff;
+}
+
+@mixin form-select {
+	background-image: url(../img/icon_down.svg);
+	background-position: right 5px center;
+	background-repeat: no-repeat;
+	background-size: 15px 15px;
 }
 
 // Настройки кнопок
@@ -31,6 +39,11 @@
 	}
 }
 
+//* Информационные подписи
+@mixin info-text {
+	font-size: 10px;
+	color: rgba($brown, 0.7);
+}
 
 // Положение дочернего блока
 @mixin position-center {

@@ -40,8 +40,8 @@
 #frame-options:checked~.grid-main .grid-menu__options label,
 #frame-help:checked~.grid-main .grid-menu__help label,
 #frame-stat:checked~.grid-main .grid-menu__stat label {
-	height: calc(#{$height-menu} - 10px);
-	margin: 10px 0 0 0;
+	height: calc(#{$height-menu} - 15px);
+	margin: 15px 0 0 0;
 	border-radius: 0px;
 	border-top-left-radius: $border-radius;
 	border-top-right-radius: $border-radius;

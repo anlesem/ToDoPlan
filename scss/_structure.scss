@@ -59,7 +59,7 @@
 		display: none;
 	}
 
-	&__account {
+	&__partner {
 		display: none;
 	}
 }
@@ -69,7 +69,7 @@
 
 	&__price,
 	&__type,
-	&__account {
+	&__partner {
 		display: block;
 	}
 }
@@ -111,7 +111,7 @@
 		}
 
 		&__type,
-		&__account {
+		&__partner {
 			display: none;
 		}
 	}

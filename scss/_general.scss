@@ -104,54 +104,43 @@ body {
 	clip: rect(0 0 0 0);
 }
 
-select {
-	background-image: url(../img/icon_down.svg);
-	background-position: right 5px center;
-	background-repeat: no-repeat;
-	background-size: 15px 15px;
-}
-
 .input-wrap {
-	display: grid;
-	grid-template-columns: 30px calc(100% - 30px);
-	grid-template-areas: "svg input";
+	position: relative;
+	margin-bottom: 0;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 
 	& svg {
-		grid-area: svg;
-		align-self: center;
 		fill: $ocean;
 	}
 
 	& input,
 	& select {
-		grid-area: input;
-		align-self: center;
-		width: 100%;
+		width: calc(100% - 25px);
 		height: 30px;
 	}
 
 	& p {
-		grid-area: info;
 		display: none;
-		font-size: 10px;
-		color: rgba($brown, 0.7);
+
+		position: absolute;
+		top: 100%;
+		left: 30px;
+
+		@include info-text;
 	}
 }
 
 #info:checked~.grid-main .input-wrap {
-	grid-template-areas: "svg input"
-		". info";
-
-	& svg {
-		grid-area: svg;
-	}
-
-	& input,
-	& select {
-		grid-area: input;
-	}
+	margin-bottom: 15px;
 
 	& p {
 		display: block;
 	}
+}
+
+.delete {
+	color: red;
 }
