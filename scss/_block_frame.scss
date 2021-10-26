@@ -227,16 +227,6 @@
 
 				@include form-input;
 			}
-
-
-			&~button {
-				align-self: flex-end;
-				width: 150px;
-				margin-top: $margin-frame;
-				padding: 7px 30px;
-
-				@include form-button;
-			}
 		}
 
 		&-input-area label {
@@ -250,6 +240,95 @@
 			margin: 30px auto 0;
 			background: $paper-frame;
 			background-image: linear-gradient(to left, $paper-frame, $ocean, $paper-frame);
+		}
+
+		&-form {
+			display: flex;
+			justify-content: space-between;
+			flex-direction: column;
+
+			& .form-select-arrow {
+				@include form-select-arrow;
+			}
+		}
+
+		&-title {
+			margin: $margin-frame 0 20px;
+			font-size: 13px;
+			color: $ocean;
+
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			& span {
+				padding: 0 20px;
+				white-space: nowrap;
+			}
+
+			& .left-line {
+				margin: 0;
+				width: 70px;
+				background: $paper-frame;
+				background-image: linear-gradient(to left, $ocean, $paper-frame);
+
+			}
+
+			& .right-line {
+				margin: 0;
+				flex-grow: 1;
+				background: $paper-frame;
+				background-image: linear-gradient(to left, $paper-frame, $ocean);
+			}
+
+			&+div {
+				margin-top: 0;
+			}
+		}
+
+		&-checkbox {
+			margin-top: 30px;
+			padding: 0 30px;
+
+			&>input {
+				display: none;
+			}
+
+			& input+label {
+				position: relative;
+				color: $brown;
+
+				display: flex;
+				align-items: center;
+
+				&::before {
+					content: "";
+					display: inline-block;
+					width: 15px;
+					height: 15px;
+					margin-right: 30px;
+					border: 1px solid $input-border;
+					border-radius: $border-radius;
+					background-color: $paper-frame;
+				}
+			}
+
+			& input:checked+label::before {
+				border: 1px solid $brown;
+				background-color: $paper-title;
+			}
+
+			& input:checked+label::after {
+				content: "";
+				position: absolute;
+				bottom: 3px;
+				left: 4px;
+				z-index: 3;
+				width: 20px;
+				height: 20px;
+				background: url(../img/icon-check-art.svg) no-repeat;
+				background-size: 15px 18px;
+			}
 		}
 
 		// Отключение видимости блоков для использования Переключателя
@@ -329,12 +408,6 @@
 				margin-top: 50px;
 				padding: 20px;
 				text-transform: uppercase;
-
-				@include form-button;
-
-				&:hover {
-					font-size: 12px;
-				}
 			}
 		}
 
@@ -390,8 +463,8 @@
 					@include form-input;
 				}
 
-				& select {
-					@include form-select;
+				& .form-select-arrow {
+					@include form-select-arrow;
 				}
 
 			}
@@ -442,12 +515,12 @@
 					text-align: center;
 				}
 
-				&>label,
+				&>.like-button,
 				&>button {
 					width: 200px;
+					margin-top: 0;
 					padding: 7px 20px;
 					text-align: center;
-					@include form-button;
 				}
 
 				&>input {
@@ -485,40 +558,89 @@
 
 					& button {
 						width: 100%;
-						padding: 7px 30px;
-						@include form-button;
+						margin-top: 0;
+					}
+				}
+			}
+		}
+
+		//? ----------------------------- Настройки
+		.options {
+			&-pin {
+				margin-top: 5px;
+
+				display: flex;
+				flex-direction: column;
+				align-items: flex-end;
+
+				& input {
+					order: 2;
+					width: 150px;
+					margin-top: 5px;
+					padding: 7px 15px;
+					box-sizing: border-box;
+					border: 1px solid $input-border;
+					border-radius: $border-radius;
+					background: $paper-frame;
+				}
+
+				& label {
+					order: 1;
+					font-size: 12px;
+					color: $brown;
+				}
+
+				& input:disabled {
+					opacity: 0.5;
+
+					&+label {
+						opacity: 0.1;
 					}
 				}
 			}
 
-			//? ----------------------------- Управление Профиль Партнёры, Коллеги
-			&__partner,
-			&__person {
+			&-tabs,
+			&-marks,
+			&-stages {
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
 
-				& form {
-					display: flex;
-					justify-content: space-between;
-					flex-direction: column;
-
-					& legend {
-						margin: $margin-frame 0 20px 30px;
-						font-size: 13px;
-						color: $ocean;
-
-						&+div {
-							margin-top: 0;
-						}
-					}
-
-					& select {
-						@include form-select;
-					}
-
-					& .delete {
-						border: 1px solid $delete;
-						color: $delete;
-					}
+				& label {
+					width: 150px;
+					height: 25px;
+					padding: 0 10px;
+					border-radius: $border-radius;
+					font-size: 12px;
+					line-height: 25px;
+					text-align: center;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					color: $brown;
 				}
+
+				& input {
+					width: 200px;
+					margin: 5px 0;
+					padding: 7px 15px;
+					box-sizing: border-box;
+					border: 1px solid $input-border;
+					border-radius: $border-radius;
+					background: $paper-frame;
+				}
+			}
+
+			&-stages:first-child {
+				margin-top: 20px;
+			}
+		}
+
+		//? ----------------------------- Настройки
+		&-help {
+			& p {
+				padding: 5px 0;
+				line-height: 21px;
 			}
 		}
 	}

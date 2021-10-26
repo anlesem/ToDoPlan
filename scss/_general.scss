@@ -104,7 +104,9 @@ body {
 	clip: rect(0 0 0 0);
 }
 
-.input-wrap {
+
+//* --------------------------- Поля
+.input-set-wrap {
 	position: relative;
 	margin-bottom: 0;
 
@@ -133,7 +135,7 @@ body {
 	}
 }
 
-#info:checked~.grid-main .input-wrap {
+#info:checked~.grid-main .input-set-wrap {
 	margin-bottom: 15px;
 
 	& p {
@@ -141,6 +143,91 @@ body {
 	}
 }
 
+button,
+.like-button {
+	align-self: flex-end;
+	width: 150px;
+	margin-top: $margin-frame;
+	padding: 7px 30px;
+	box-sizing: border-box;
+	border: 1px solid $brown;
+	border-radius: $border-radius;
+	background: $paper-title;
+	color: $brown;
+
+	&:hover {
+		font-size: 12px;
+		cursor: pointer;
+		opacity: 0.5;
+	}
+}
+
+
+//* ---------------------------------- Цвета
 .delete {
-	color: red;
+	border: 1px solid $delete;
+	color: $delete;
+}
+
+// ------------------------------------  Вкладки
+.tab-first-bgcolor {
+	background-color: $tabs-color-first;
+}
+
+.tab-second-bgcolor {
+	background-color: $tabs-color-second;
+}
+
+.tab-third-bgcolor {
+	background-color: $tabs-color-third;
+}
+
+.tab-four-bgcolor {
+	background-color: $tabs-color-four;
+}
+
+.tab-five-bgcolor {
+	background-color: $tabs-color-five;
+}
+
+// ------------------------------------  Закладки
+.mark-first-bgcolor {
+	background-color: $marks-color-first;
+}
+
+.mark-second-bgcolor {
+	background-color: $marks-color-second;
+}
+
+.mark-third-bgcolor {
+	background-color: $marks-color-third;
+}
+
+.mark-four-bgcolor {
+	background-color: $marks-color-four;
+}
+
+.mark-five-bgcolor {
+	background-color: $marks-color-five;
+}
+
+// ------------------------------------  Стадии
+.stage-first-bgcolor {
+	background-color: $stages-color-first;
+}
+
+.stage-second-bgcolor {
+	background-color: $stages-color-second;
+}
+
+.stage-third-bgcolor {
+	background-color: $stages-color-third;
+}
+
+.stage-four-bgcolor {
+	background-color: $stages-color-four;
+}
+
+.stage-five-bgcolor {
+	background-color: $stages-color-five;
 }

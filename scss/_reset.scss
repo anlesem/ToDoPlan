@@ -133,7 +133,8 @@ button,
 input,
 optgroup,
 select,
-textarea {
+textarea,
+datalist {
 	margin: 0;
 	padding: 0;
 	border: none;
@@ -149,4 +150,9 @@ textarea {
 	letter-spacing: inherit;
 	word-spacing: inherit;
 	appearance: none;
+}
+
+// Сброс стрелки datalist
+input::-webkit-calendar-picker-indicator {
+	display: none !important;
 }

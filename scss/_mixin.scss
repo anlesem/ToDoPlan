@@ -16,27 +16,11 @@
 	background: #fff;
 }
 
-@mixin form-select {
-	background-image: url(../img/icon_down.svg);
+@mixin form-select-arrow {
+	background-image: url(../img/icon-down.svg);
 	background-position: right 5px center;
 	background-repeat: no-repeat;
 	background-size: 15px 15px;
-}
-
-// Настройки кнопок
-@mixin form-button {
-	display: block;
-	box-sizing: border-box;
-	border: 1px solid $brown;
-	border-radius: $border-radius;
-	background: $paper-title;
-	color: $brown;
-
-	&:hover {
-		font-size: 12px;
-		cursor: pointer;
-		opacity: 0.5;
-	}
 }
 
 //* Информационные подписи

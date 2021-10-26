@@ -288,21 +288,21 @@
 								<input type="text" name="project-note">
 							</div>
 							<div class="new__set">
-								<div class="input-wrap">
+								<div class="input-set-wrap">
 									<svg class="svg-plan" width="20" height="20" viewBox="0 0 20 20">
 										<use class="svg-plan" href="#icon__plan" />
 									</svg>
 									<input type="text" name="plan">
 									<p>Дата завершения</p>
 								</div>
-								<div class="input-wrap">
+								<div class="input-set-wrap">
 									<svg class="svg-price" width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__price" />
 									</svg>
 									<input type="text" name="price">
 									<p>Стоимость</p>
 								</div>
-								<div class="input-wrap">
+								<div class="input-set-wrap">
 									<svg width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__account" />
 									</svg>
@@ -313,14 +313,14 @@
 									</select>
 									<p>Счёт</p>
 								</div>
-								<div class="input-wrap">
+								<div class="input-set-wrap">
 									<svg width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__partner" />
 									</svg>
 									<input type="text" name="partner">
 									<p>Контрагент</p>
 								</div>
-								<div class="input-wrap">
+								<div class="input-set-wrap">
 									<svg width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__tabs" />
 									</svg>
@@ -334,7 +334,7 @@
 									</select>
 									<p>Вид деятельности</p>
 								</div>
-								<div class="input-wrap">
+								<div class="input-set-wrap">
 									<svg width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__marks" />
 									</svg>
@@ -348,7 +348,7 @@
 									</select>
 									<p>Закладка</p>
 								</div>
-								<div class="input-wrap">
+								<div class="input-set-wrap">
 									<svg width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__person" />
 									</svg>
@@ -381,21 +381,21 @@
 								<input type="text" name="project-note">
 							</div>
 							<div class="new__set">
-								<div class="input-wrap">
+								<div class="input-set-wrap">
 									<svg class="svg-plan" width="20" height="20" viewBox="0 0 20 20">
 										<use class="svg-plan" href="#icon__plan" />
 									</svg>
 									<input type="text" name="plan">
 									<p>Дата завершения</p>
 								</div>
-								<div class="input-wrap">
+								<div class="input-set-wrap">
 									<svg class="svg-price" width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__price" />
 									</svg>
 									<input type="text" name="price">
 									<p>Стоимость</p>
 								</div>
-								<div class="input-wrap">
+								<div class="input-set-wrap">
 									<svg width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__type" />
 									</svg>
@@ -408,7 +408,7 @@
 									</select>
 									<p>Счёт</p>
 								</div>
-								<div class="input-wrap">
+								<div class="input-set-wrap">
 									<svg width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__account" />
 									</svg>
@@ -416,17 +416,18 @@
 										<option></option>
 										<option>ИП</option>
 										<option>Наличные</option>
+										<option>Личные</option>
 									</select>
 									<p>Счёт</p>
 								</div>
-								<div class="input-wrap">
+								<div class="input-set-wrap">
 									<svg width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__partner" />
 									</svg>
 									<input type="text" name="partner">
 									<p>Контрагент</p>
 								</div>
-								<div class="input-wrap">
+								<div class="input-set-wrap">
 									<svg width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__tabs" />
 									</svg>
@@ -440,7 +441,7 @@
 									</select>
 									<p>Вид деятельности</p>
 								</div>
-								<div class="input-wrap">
+								<div class="input-set-wrap">
 									<svg width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__marks" />
 									</svg>
@@ -454,14 +455,14 @@
 									</select>
 									<p>Закладка</p>
 								</div>
-								<div class="input-wrap">
+								<div class="input-set-wrap">
 									<svg width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__project" />
 									</svg>
 									<input type="text" name="project">
 									<p>Проект</p>
 								</div>
-								<div class="input-wrap">
+								<div class="input-set-wrap">
 									<svg width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__person" />
 									</svg>
@@ -503,6 +504,22 @@
 						</div>
 						<!-- ------------------------------------------------------------- Профиль персональные данные -->
 						<div class="profile__data">
+							<div>
+								<p>Сменить пользователя:</p>
+								<button type="button">Выход</button>
+							</div>
+							<hr>
+							<div>
+								<p>Импорт данных:</p>
+								<label for="profile-import" class="like-button">Выберите файл</label>
+								<input type="file" id="profile-import">
+							</div>
+							<hr>
+							<div>
+								<p>Экспорт данных:</p>
+								<button type="button">Скачать</button>
+							</div>
+							<hr>
 							<div class="profile__data-form">
 								<p>Сменить пароль:</p>
 								<form action="">
@@ -518,27 +535,29 @@
 								</form>
 							</div>
 							<hr>
-							<div>
-								<p>Импорт данных:</p>
-								<label for="profile-import">Выберите файл</label>
-								<input type="file" id="profile-import">
-								<p class="info">* Импортируемые данные должны соответствовать требуемому формату.</p>
-							</div>
-							<hr>
-							<div>
-								<p>Экспорт данных:</p>
-								<button type="button">Скачать</button>
-							</div>
-							<hr>
-							<div>
-								<p>Сменить пользователя:</p>
-								<button type="button">Выход</button>
+							<div class="profile__data-form">
+								<p>Установить PIN:</p>
+								<form action="">
+									<div>
+										<label for="pass-now">Текущий пароль</label>
+										<input type="password" name="pass-now" required>
+									</div>
+									<div>
+										<label for="pass-new">Новый PIN</label>
+										<input type="password" name="pass-new" required>
+									</div>
+									<button type="submit">Сохранить</button>
+								</form>
 							</div>
 						</div>
 						<!-- ------------------------------------------------------------- Профиль данные о партнёрах -->
 						<div class="profile__partner">
-							<form action="">
-								<legend>Добавить нового:</legend>
+							<form action="" class="frame__manage-form">
+								<legend class="frame__manage-title">
+									<hr class="left-line">
+									<span>Добавить нового:</span>
+									<hr class="right-line">
+								</legend>
 								<div class="frame__manage-input">
 									<label for="partner-new-name">Наименование:</label>
 									<input type="text" name="partner-new-name" required>
@@ -549,12 +568,15 @@
 								</div>
 								<button type="submit">Создать</button>
 							</form>
-							<hr>
-							<form action="">
-								<legend>Редактировать существующего:</legend>
+							<form action="" class="frame__manage-form">
+								<legend class="frame__manage-title">
+									<hr class="left-line">
+									<span>Редактировать существующего:</span>
+									<hr class="right-line">
+								</legend>
 								<div class="frame__manage-input">
 									<label for="partner-name">Наименование:</label>
-									<select name="partner-name">
+									<select class="form-select-arrow" name="partner-name">
 										<option></option>
 										<option>Воентелеком</option>
 										<option>Рога и Копыта</option>
@@ -573,8 +595,12 @@
 						</div>
 						<!-- ------------------------------------------------------------- Профиль данные о коллегах -->
 						<div class="profile__person">
-							<form action="">
-								<legend>Добавить нового:</legend>
+							<form action="" class="frame__manage-form">
+								<legend class="frame__manage-title">
+									<hr class="left-line">
+									<span>Добавить нового:</span>
+									<hr class="right-line">
+								</legend>
 								<div class="frame__manage-input">
 									<label for="person-new-name">Наименование:</label>
 									<input type="text" name="person-new-name" required>
@@ -585,18 +611,20 @@
 								</div>
 								<button type="submit">Создать</button>
 							</form>
-							<hr>
-							<form action="">
-								<legend>Редактировать существующего:</legend>
+							<form action="" class="frame__manage-form">
+								<legend class="frame__manage-title">
+									<hr class="left-line">
+									<span>Редактировать существующего:</span>
+									<hr class="right-line">
+								</legend>
 								<div class="frame__manage-input">
 									<label for="person-name">Наименование:</label>
-									<select name="person-name">
+									<select class="form-select-arrow" name="person-name">
 										<option></option>
-										<option>Воентелеком</option>
-										<option>Рога и Копыта</option>
-										<option>Ростелеком</option>
-										<option>Солнечный город</option>
-										<option>Прочие</option>
+										<option>Арутюнов</option>
+										<option>Балбуцкая</option>
+										<option>Калинин</option>
+										<option>Коротков</option>
 									</select>
 								</div>
 								<div class="frame__manage-input">
@@ -608,11 +636,229 @@
 							</form>
 						</div>
 					</div>
-					<!-- ?------------------------------------------------------------- Настройки заголовок -->
-					<div class="frame__manage-options">Настройки
+					<!-- ?------------------------------------------------------------- Настройки -->
+					<div class="frame__manage-options">
+						<form action="" class="frame__manage-form">
+							<legend class="frame__manage-title">
+								<hr class="left-line">
+								<span>Общие:</span>
+								<hr class="right-line">
+							</legend>
+							<div class="frame__manage-checkbox">
+								<input type="checkbox" name="pay-off" id="pay-off">
+								<label for="pay-off">- отключить финансовый блок</label>
+							</div>
+							<div class="options-pin">
+								<input type="text" name="pay-pin" id="pay-pin" disabled>
+								<label for="pay-pin">Введите ПИН-код, если ранее его установили:</label>
+							</div>
+							<div class="frame__manage-checkbox">
+								<input type="checkbox" name="aside-on" id="aside-on">
+								<label for="aside-on">- высокий приоритет панели задач для больших экранов</label>
+							</div>
+							<div class="frame__manage-checkbox">
+								<input type="checkbox" name="info-off" id="info-off">
+								<label for="info-off">- отключить подсказки по умолчанию</label>
+							</div>
+							<button type="submit">Применить</button>
+						</form>
+						<!-- ------------------------------------------------------------- Настройки Вкладки -->
+						<form action="" class="frame__manage-form">
+							<legend class="frame__manage-title">
+								<hr class="left-line">
+								<span>Вкладки:</span>
+								<hr class="right-line">
+							</legend>
+							<div class="options-tabs">
+								<label class="tab-first-bgcolor" for="tab-first">Работа</label>
+								<input type="text" name="tab-first" id="tab-first">
+							</div>
+							<div class="options-tabs">
+								<label class="tab-second-bgcolor" for="tab-second">Творчество</label>
+								<input type="text" name="tab-second" id="tab-second">
+							</div>
+							<div class="options-tabs">
+								<label class="tab-third-bgcolor" for="tab-third">Обучение</label>
+								<input type="text" name="tab-third" id="tab-third">
+							</div>
+							<div class="options-tabs">
+								<label class="tab-four-bgcolor" for="tab-four">Личное</label>
+								<input type="text" name="tab-four" id="tab-four">
+							</div>
+							<div class="options-tabs">
+								<label class="tab-five-bgcolor" for="tab-five">Прочее</label>
+								<input type="text" name="tab-five" id="tab-five">
+							</div>
+							<button type="submit">Применить</button>
+						</form>
+						<!-- ------------------------------------------------------------- Настройки Закладки -->
+						<form action="" class="frame__manage-form">
+							<legend class="frame__manage-title">
+								<hr class="left-line">
+								<span>Закладки:</span>
+								<hr class="right-line">
+							</legend>
+							<div class="options-marks">
+								<label class="mark-first-bgcolor" for="mark-first">Срочно</label>
+								<input type="text" name="mark-first" id="mark-first">
+							</div>
+							<div class="options-marks">
+								<label class="mark-second-bgcolor" for="mark-second">Важно</label>
+								<input type="text" name="mark-second" id="mark-second">
+							</div>
+							<div class="options-marks">
+								<label class="mark-third-bgcolor" for="mark-third">На контроле</label>
+								<input type="text" name="mark-third" id="mark-third">
+							</div>
+							<div class="options-marks">
+								<label class="mark-four-bgcolor" for="mark-four">Документы</label>
+								<input type="text" name="mark-four" id="mark-four">
+							</div>
+							<div class="options-marks">
+								<label class="mark-five-bgcolor" for="mark-five">Общение</label>
+								<input type="text" name="mark-five" id="mark-five">
+							</div>
+							<button type="submit">Применить</button>
+						</form>
+						<!-- ------------------------------------------------------------- Настройки Стадии -->
+						<form action="" class="frame__manage-form">
+							<legend class="frame__manage-title">
+								<hr class="left-line">
+								<span>Стадии:</span>
+								<hr class="right-line">
+							</legend>
+							<div class="frame__manage-input">
+								<label for="stage-name">Наименование:</label>
+								<input class="form-select-arrow" type="text" name="stage-name" list="stage-name"
+									autocomplete="off">
+								<datalist id="stage-name">
+									<option>Согласование</option>
+									<option>Уведомление</option>
+									<option>Полевые работы</option>
+									<option>Камеральные работы</option>
+								</datalist>
+							</div>
+							<div class="frame__manage-input">
+								<label for="stage-new-name">Переименовать:</label>
+								<input type="text" name="stage-new-name">
+							</div>
+							<div>
+								<div class="options-stages">
+									<label class="stage-first-bgcolor" for="stage-first"></label>
+									<input type="text" name="stage-first" id="stage-first">
+								</div>
+								<div class="options-stages">
+									<label class="stage-second-bgcolor" for="stage-second"></label>
+									<input type="text" name="stage-second" id="stage-second">
+								</div>
+								<div class="options-stages">
+									<label class="stage-third-bgcolor" for="stage-third"></label>
+									<input type="text" name="stage-third" id="stage-third">
+								</div>
+								<div class="options-stages">
+									<label class="stage-four-bgcolor" for="stage-four"></label>
+									<input type="text" name="stage-four" id="stage-four">
+								</div>
+								<div class="options-stages">
+									<label class="stage-five-bgcolor" for="stage-five"></label>
+									<input type="text" name="stage-five" id="stage-five">
+								</div>
+							</div>
+							<button type="submit">Применить</button>
+							<button class="delete" type="submit">Удалить</button>
+						</form>
+						<!-- ------------------------------------------------------------- Настройки Счета -->
+						<form action="" class="frame__manage-form">
+							<legend class="frame__manage-title">
+								<hr class="left-line">
+								<span>Счета:</span>
+								<hr class="right-line">
+							</legend>
+							<div class="frame__manage-input">
+								<label for="account-name">Наименование:</label>
+								<input class="form-select-arrow" type="text" name="account-name" list="account-name"
+									autocomplete="off">
+								<datalist id="account-name">
+									<option>ИП</option>
+									<option>Наличные</option>
+									<option>Личные</option>
+								</datalist>
+							</div>
+							<div class="frame__manage-input">
+								<label for="account-new-name">Переименовать:</label>
+								<input type="text" name="account-new-name">
+							</div>
+							<button type="submit">Применить</button>
+							<button class="delete" type="submit">Удалить</button>
+						</form>
+						<!-- ------------------------------------------------------------- Настройки Шаблона -->
+						<form action="" class="frame__manage-form">
+							<legend class="frame__manage-title">
+								<hr class="left-line">
+								<span>Шаблоны:</span>
+								<hr class="right-line">
+							</legend>
+							<div class="frame__manage-input">
+								<label for="pattern-name">Наименование:</label>
+								<input class="form-select-arrow" type="text" name="pattern-name" list="pattern-name"
+									autocomplete="off">
+								<datalist id="pattern-name">
+									<option>Москва</option>
+									<option>МО</option>
+								</datalist>
+							</div>
+							<div class="frame__manage-input">
+								<label for="pattern-new-name">Переименовать:</label>
+								<input type="text" name="pattern-new-name">
+							</div>
+							<button type="submit">Применить</button>
+							<button class="delete" type="submit">Удалить</button>
+						</form>
 					</div>
 					<!-- ?------------------------------------------------------------- Помощь -->
-					<div class="frame__manage-help">Помощь</div>
+					<div class="frame__manage-help">
+						<div class="frame__manage-title">
+							<hr class="left-line">
+							<span>Общая информация:</span>
+							<hr class="right-line">
+						</div>
+						<p>Данный сайт носит некоммерческий характер, что сказывается на возможностях и функционале:</p>
+						<p>- в случае отсутствия активности пользователя в течении 6ти месяцев профиль удаляется со всеми
+							данными. Во избежание недоразумений и для возможности восстановления данных рекомендуется делать
+							их Экспорт.</p>
+						<p>- для корректной работы сайта необходимо использовать современные браузеры.</p>
+						<p>- расширение функционала не планируется, чтобы сохранить удобство и простоту использования сайта.
+							Однако, здравые идеи по улучшению сервиса приветствуются.</p>
+						<div class="frame__manage-title">
+							<hr class="left-line">
+							<span>Работа с примечаниями:</span>
+							<hr class="right-line">
+						</div>
+						<p>Функционал сайта ограничен 3мя примечаниями для каждого проекта/задачи. При превышении лимита,
+							каждое новое примечание перезаписывает наиболее раннее. При необходимости сохранять всю историю
+							можно переносить Примечания в поле Информации, оформляя в соответствии с собственными
+							потребностями.</p>
+						<div class="frame__manage-title">
+							<hr class="left-line">
+							<span>Создание и редактирование Стадий и Счётов:</span>
+							<hr class="right-line">
+						</div>
+						<p>Для создания новой категории Стадий или нового Счёта в соответствующем разделе пункта меню
+							"Настройки" в поле "Наименование" введите новое название и нажмите кнопку "Применить".</p>
+						<p>Для переименования категории Стадий, Счёта или Шаблона в соответствующем разделе пункта меню
+							"Настройки" в поле
+							"Наименование" выберите название из списка, введите новое наименование в поле "Переименовать",
+							расположенное ниже и нажмите
+							кнопку "Применить".</p>
+						<div class="frame__manage-title">
+							<hr class="left-line">
+							<span>Использование шаблонов:</span>
+							<hr class="right-line">
+						</div>
+						<p>Выберите проект, на основании которого требуется создать шаблон. В настройках проекта выберите
+							функцию: "Создать шаблон". Создайте новый проект с использованием ранее созданного шаблона. До
+							настройте пустой проект и перезапишите шаблон с нужными изменениями.</p>
+					</div>
 					<!-- ?------------------------------------------------------------- Статистика -->
 					<div class="frame__manage-stat">Статистика доходов и расходов</div>
 					<!-- ?------------------------------------------------------------- Кнопка "Закрыть" -->
