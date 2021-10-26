@@ -281,35 +281,36 @@
 						<form action="" class="new__project">
 							<div class="frame__manage-input">
 								<label for="project-name">Наименование:</label>
-								<input type="text" name="project-name" required>
+								<input type="text" name="project-name" autocomplete="off" required>
 							</div>
 							<div class="frame__manage-input">
 								<label for="project-note">Примечание:</label>
-								<input type="text" name="project-note">
+								<input type="text" name="project-note" autocomplete="off">
 							</div>
 							<div class="new__set">
 								<div class="input-set-wrap">
 									<svg class="svg-plan" width="20" height="20" viewBox="0 0 20 20">
 										<use class="svg-plan" href="#icon__plan" />
 									</svg>
-									<input type="text" name="plan">
+									<input type="text" name="plan" autocomplete="off">
 									<p>Дата завершения</p>
 								</div>
 								<div class="input-set-wrap">
 									<svg class="svg-price" width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__price" />
 									</svg>
-									<input type="text" name="price">
+									<input type="text" name="price" autocomplete="off">
 									<p>Стоимость</p>
 								</div>
 								<div class="input-set-wrap">
 									<svg width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__account" />
 									</svg>
-									<select name="account">
+									<select class="select-arrow" name="account">
 										<option></option>
 										<option>ИП</option>
 										<option>Наличные</option>
+										<option>Личные</option>
 									</select>
 									<p>Счёт</p>
 								</div>
@@ -317,17 +318,25 @@
 									<svg width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__partner" />
 									</svg>
-									<input type="text" name="partner">
+									<input class="select-arrow" type="text" name="partner-name" list="partner-name"
+										autocomplete="off">
+									<datalist id="partner-name">
+										<option>Воентелеком</option>
+										<option>Рога и Копыта</option>
+										<option>Ростелеком</option>
+										<option>Солнечный город</option>
+										<option>Прочие</option>
+									</datalist>
 									<p>Контрагент</p>
 								</div>
 								<div class="input-set-wrap">
 									<svg width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__tabs" />
 									</svg>
-									<select name="tabs">
+									<select class="select-arrow" name="tabs">
 										<option></option>
 										<option>Работа</option>
-										<option>Халтура</option>
+										<option>Творчество</option>
 										<option>Обучение</option>
 										<option>Личные</option>
 										<option>Прочие</option>
@@ -338,7 +347,7 @@
 									<svg width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__marks" />
 									</svg>
-									<select name="marks">
+									<select class="select-arrow" name="marks">
 										<option></option>
 										<option>Срочно</option>
 										<option>Важно</option>
@@ -352,17 +361,24 @@
 									<svg width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__person" />
 									</svg>
-									<input type="text" name="person">
+									<input class="select-arrow" type="text" name="person-name" list="person-name"
+										autocomplete="off">
+									<datalist id="person-name">
+										<option>Арутюнов</option>
+										<option>Балбуцкая</option>
+										<option>Калинин</option>
+										<option>Коротков</option>
+									</datalist>
 									<p>Исполнитель</p>
 								</div>
 							</div>
 							<div class="frame__manage-input-area">
 								<label for="project-comment">Дополнительная информация:</label>
-								<textarea name="project-comment" rows="5"></textarea>
+								<textarea name="project-comment" rows="5" autocomplete="off"></textarea>
 							</div>
 							<div class="frame__manage-input">
 								<label for="pattern">Применить шаблон:</label>
-								<select name="pattern">
+								<select class="select-arrow" name="pattern">
 									<option></option>
 									<option>Москва</option>
 									<option>МО</option>
@@ -373,33 +389,33 @@
 						<!-- ------------------------------------------------------------- Создать задача -->
 						<form action="" class="new__task">
 							<div class="frame__manage-input">
-								<label for="project-name">Наименование:</label>
-								<input type="text" name="project-name" required>
+								<label for="task-name">Наименование:</label>
+								<input type="text" name="task-name" autocomplete="off" required>
 							</div>
 							<div class="frame__manage-input">
-								<label for="project-note">Примечание:</label>
-								<input type="text" name="project-note">
+								<label for="task-note">Примечание:</label>
+								<input type="text" name="task-note" autocomplete="off">
 							</div>
 							<div class="new__set">
 								<div class="input-set-wrap">
 									<svg class="svg-plan" width="20" height="20" viewBox="0 0 20 20">
 										<use class="svg-plan" href="#icon__plan" />
 									</svg>
-									<input type="text" name="plan">
+									<input type="text" name="plan" autocomplete="off">
 									<p>Дата завершения</p>
 								</div>
 								<div class="input-set-wrap">
 									<svg class="svg-price" width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__price" />
 									</svg>
-									<input type="text" name="price">
+									<input type="text" name="price" autocomplete="off">
 									<p>Стоимость</p>
 								</div>
 								<div class="input-set-wrap">
 									<svg width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__type" />
 									</svg>
-									<select name="type">
+									<select class="select-arrow" name="type">
 										<option></option>
 										<option>Доход</option>
 										<option>Расход</option>
@@ -412,7 +428,7 @@
 									<svg width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__account" />
 									</svg>
-									<select name="account">
+									<select class="select-arrow" name="account">
 										<option></option>
 										<option>ИП</option>
 										<option>Наличные</option>
@@ -424,17 +440,25 @@
 									<svg width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__partner" />
 									</svg>
-									<input type="text" name="partner">
+									<input class="select-arrow" type="text" name="partner-name" list="partner-name"
+										autocomplete="off">
+									<datalist id="partner-name">
+										<option>Воентелеком</option>
+										<option>Рога и Копыта</option>
+										<option>Ростелеком</option>
+										<option>Солнечный город</option>
+										<option>Прочие</option>
+									</datalist>
 									<p>Контрагент</p>
 								</div>
 								<div class="input-set-wrap">
 									<svg width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__tabs" />
 									</svg>
-									<select name="tabs">
+									<select class="select-arrow" name="tabs">
 										<option></option>
 										<option>Работа</option>
-										<option>Халтура</option>
+										<option>Творчество</option>
 										<option>Обучение</option>
 										<option>Личные</option>
 										<option>Прочие</option>
@@ -445,7 +469,7 @@
 									<svg width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__marks" />
 									</svg>
-									<select name="marks">
+									<select class="select-arrow" name="marks">
 										<option></option>
 										<option>Срочно</option>
 										<option>Важно</option>
@@ -459,34 +483,81 @@
 									<svg width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__project" />
 									</svg>
-									<input type="text" name="project">
+									<input class="select-arrow" type="text" name="project-name" list="project-name"
+										autocomplete="off">
+									<datalist id="project-name">
+										<option>Бордачок</option>
+										<option>Митино</option>
+										<option>Переделкино</option>
+										<option>Румянцево, 8</option>
+										<option>Ям</option>
+										<option>Стройка</option>
+									</datalist>
 									<p>Проект</p>
 								</div>
 								<div class="input-set-wrap">
 									<svg width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__person" />
 									</svg>
-									<input type="text" name="person">
+									<input class="select-arrow" type="text" name="person-name" list="person-name"
+										autocomplete="off">
+									<datalist id="person-name">
+										<option>Арутюнов</option>
+										<option>Балбуцкая</option>
+										<option>Калинин</option>
+										<option>Коротков</option>
+									</datalist>
 									<p>Исполнитель</p>
 								</div>
 							</div>
 							<div class="frame__manage-input-area">
-								<label for="project-comment">Дополнительная информация:</label>
-								<textarea name="project-comment" rows="5"></textarea>
+								<label for="task-comment">Дополнительная информация:</label>
+								<textarea name="task-comment" rows="5" autocomplete="off"></textarea>
 							</div>
 							<button type="submit">Создать</button>
 						</form>
 						<!-- ------------------------------------------------------------- Создать событие -->
 						<form action="" class="new__event">
+							<legend class="frame__manage-title">
+								<hr class="left-line">
+								<span>Добавить новое:</span>
+								<hr class="right-line">
+							</legend>
 							<div class="frame__manage-input">
-								<label for="project-name">Наименование:</label>
-								<input type="text" name="project-name" required>
+								<label for="event-new-name">Наименование:</label>
+								<input type="text" name="event-new-name" autocomplete="off" required>
 							</div>
 							<div class="frame__manage-input">
-								<label for="project-note">Дата:</label>
-								<input type="text" name="project-note" required>
+								<label for="event-new-date">Дата:</label>
+								<input type="text" name="event-new-date" autocomplete="off" required>
 							</div>
 							<button type="submit">Создать</button>
+						</form>
+						<form action="" class="new__event">
+							<legend class="frame__manage-title">
+								<hr class="left-line">
+								<span>Редактировать существующее:</span>
+								<hr class="right-line">
+							</legend>
+							<div class="frame__manage-input">
+								<label for="event-name">Наименование:</label>
+								<select class="select-arrow" name="event-name">
+									<option></option>
+									<option>Позвонить Васе</option>
+									<option>Купить Болгарку</option>
+									<option>Отправить Акты</option>
+								</select>
+							</div>
+							<div class="frame__manage-input">
+								<label for="event-new-name">Переименовать:</label>
+								<input type="text" name="event-new-name" autocomplete="off" required>
+							</div>
+							<div class="frame__manage-input">
+								<label for="event-date">Дата:</label>
+								<input type="text" name="event-date" autocomplete="off">
+							</div>
+							<button type="submit">Применить</button>
+							<button class="delete" type="submit">Удалить</button>
 						</form>
 					</div>
 					<!-- ?------------------------------------------------------------- Профиль заголовок -->
@@ -543,8 +614,8 @@
 										<input type="password" name="pass-now" required>
 									</div>
 									<div>
-										<label for="pass-new">Новый PIN</label>
-										<input type="password" name="pass-new" required>
+										<label for="pin-new">Новый PIN</label>
+										<input type="password" name="pin-new" required>
 									</div>
 									<button type="submit">Сохранить</button>
 								</form>
@@ -560,11 +631,11 @@
 								</legend>
 								<div class="frame__manage-input">
 									<label for="partner-new-name">Наименование:</label>
-									<input type="text" name="partner-new-name" required>
+									<input type="text" name="partner-new-name" autocomplete="off" required>
 								</div>
 								<div class="frame__manage-input">
 									<label for="partner-new-note">Примечание:</label>
-									<input type="text" name="partner-new-note">
+									<input type="text" name="partner-new-note" autocomplete="off">
 								</div>
 								<button type="submit">Создать</button>
 							</form>
@@ -576,7 +647,7 @@
 								</legend>
 								<div class="frame__manage-input">
 									<label for="partner-name">Наименование:</label>
-									<select class="form-select-arrow" name="partner-name">
+									<select class="select-arrow" name="partner-name">
 										<option></option>
 										<option>Воентелеком</option>
 										<option>Рога и Копыта</option>
@@ -586,8 +657,12 @@
 									</select>
 								</div>
 								<div class="frame__manage-input">
+									<label for="partner-new-name">Переименовать:</label>
+									<input type="text" name="partner-new-name" autocomplete="off">
+								</div>
+								<div class="frame__manage-input">
 									<label for="partner-note">Примечание:</label>
-									<input type="text" name="partner-note">
+									<input type="text" name="partner-note" autocomplete="off">
 								</div>
 								<button type="submit">Применить</button>
 								<button class="delete" type="submit">Удалить</button>
@@ -603,11 +678,11 @@
 								</legend>
 								<div class="frame__manage-input">
 									<label for="person-new-name">Наименование:</label>
-									<input type="text" name="person-new-name" required>
+									<input type="text" name="person-new-name" autocomplete="off" required>
 								</div>
 								<div class="frame__manage-input">
 									<label for="person-new-note">Примечание:</label>
-									<input type="text" name="person-new-note">
+									<input type="text" name="person-new-note" autocomplete="off">
 								</div>
 								<button type="submit">Создать</button>
 							</form>
@@ -619,7 +694,7 @@
 								</legend>
 								<div class="frame__manage-input">
 									<label for="person-name">Наименование:</label>
-									<select class="form-select-arrow" name="person-name">
+									<select class="select-arrow" name="person-name">
 										<option></option>
 										<option>Арутюнов</option>
 										<option>Балбуцкая</option>
@@ -628,8 +703,12 @@
 									</select>
 								</div>
 								<div class="frame__manage-input">
+									<label for="person-new-name">Переименовать:</label>
+									<input type="text" name="person-new-name" autocomplete="off">
+								</div>
+								<div class="frame__manage-input">
 									<label for="person-note">Примечание:</label>
-									<input type="text" name="person-note">
+									<input type="text" name="person-note" autocomplete="off">
 								</div>
 								<button type="submit">Применить</button>
 								<button class="delete" type="submit">Удалить</button>
@@ -648,7 +727,7 @@
 								<input type="checkbox" name="pay-off" id="pay-off">
 								<label for="pay-off">- отключить финансовый блок</label>
 							</div>
-							<div class="options-pin">
+							<div class="options-pin input-disabled">
 								<input type="text" name="pay-pin" id="pay-pin" disabled>
 								<label for="pay-pin">Введите ПИН-код, если ранее его установили:</label>
 							</div>
@@ -729,8 +808,7 @@
 							</legend>
 							<div class="frame__manage-input">
 								<label for="stage-name">Наименование:</label>
-								<input class="form-select-arrow" type="text" name="stage-name" list="stage-name"
-									autocomplete="off">
+								<input class="select-arrow" type="text" name="stage-name" list="stage-name" autocomplete="off">
 								<datalist id="stage-name">
 									<option>Согласование</option>
 									<option>Уведомление</option>
@@ -738,9 +816,9 @@
 									<option>Камеральные работы</option>
 								</datalist>
 							</div>
-							<div class="frame__manage-input">
+							<div class="frame__manage-input input-disabled">
+								<input type="text" name="stage-new-name" disabled>
 								<label for="stage-new-name">Переименовать:</label>
-								<input type="text" name="stage-new-name">
 							</div>
 							<div>
 								<div class="options-stages">
@@ -776,7 +854,7 @@
 							</legend>
 							<div class="frame__manage-input">
 								<label for="account-name">Наименование:</label>
-								<input class="form-select-arrow" type="text" name="account-name" list="account-name"
+								<input class="select-arrow" type="text" name="account-name" list="account-name"
 									autocomplete="off">
 								<datalist id="account-name">
 									<option>ИП</option>
@@ -784,9 +862,9 @@
 									<option>Личные</option>
 								</datalist>
 							</div>
-							<div class="frame__manage-input">
+							<div class="frame__manage-input input-disabled">
+								<input type="text" name="account-new-name" disabled>
 								<label for="account-new-name">Переименовать:</label>
-								<input type="text" name="account-new-name">
 							</div>
 							<button type="submit">Применить</button>
 							<button class="delete" type="submit">Удалить</button>
@@ -800,7 +878,7 @@
 							</legend>
 							<div class="frame__manage-input">
 								<label for="pattern-name">Наименование:</label>
-								<input class="form-select-arrow" type="text" name="pattern-name" list="pattern-name"
+								<input class="select-arrow" type="text" name="pattern-name" list="pattern-name"
 									autocomplete="off">
 								<datalist id="pattern-name">
 									<option>Москва</option>

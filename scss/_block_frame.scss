@@ -223,9 +223,6 @@
 			& select,
 			& textarea {
 				width: 65%;
-				padding: 7px 15px;
-
-				@include form-input;
 			}
 		}
 
@@ -246,10 +243,6 @@
 			display: flex;
 			justify-content: space-between;
 			flex-direction: column;
-
-			& .form-select-arrow {
-				@include form-select-arrow;
-			}
 		}
 
 		&-title {
@@ -394,9 +387,6 @@
 				& input {
 					width: 100%;
 					padding: 25px 20px 10px;
-
-					@include form-input;
-
 					border: 1px solid $brown !important;
 				}
 			}
@@ -458,15 +448,7 @@
 				& input,
 				& select {
 					padding: 5px 10px;
-					border: 1px solid $input-border;
-
-					@include form-input;
 				}
-
-				& .form-select-arrow {
-					@include form-select-arrow;
-				}
-
 			}
 		}
 
@@ -552,7 +534,6 @@
 
 						& input {
 							padding: 7px 20px;
-							@include form-input;
 						}
 					}
 
@@ -574,28 +555,13 @@
 				align-items: flex-end;
 
 				& input {
-					order: 2;
 					width: 150px;
 					margin-top: 5px;
-					padding: 7px 15px;
-					box-sizing: border-box;
-					border: 1px solid $input-border;
-					border-radius: $border-radius;
-					background: $paper-frame;
 				}
 
 				& label {
-					order: 1;
 					font-size: 12px;
 					color: $brown;
-				}
-
-				& input:disabled {
-					opacity: 0.5;
-
-					&+label {
-						opacity: 0.1;
-					}
 				}
 			}
 
@@ -623,11 +589,6 @@
 				& input {
 					width: 200px;
 					margin: 5px 0;
-					padding: 7px 15px;
-					box-sizing: border-box;
-					border: 1px solid $input-border;
-					border-radius: $border-radius;
-					background: $paper-frame;
 				}
 			}
 

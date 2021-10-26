@@ -7,21 +7,6 @@
 	color: $ocean;
 }
 
-// Настройки полей
-@mixin form-input {
-	display: block;
-	box-sizing: border-box;
-	border-radius: $border-radius;
-	border: 1px solid $input-border;
-	background: #fff;
-}
-
-@mixin form-select-arrow {
-	background-image: url(../img/icon-down.svg);
-	background-position: right 5px center;
-	background-repeat: no-repeat;
-	background-size: 15px 15px;
-}
 
 //* Информационные подписи
 @mixin info-text {
