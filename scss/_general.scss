@@ -137,10 +137,14 @@ button,
 }
 
 .select-arrow {
-	background-image: url(../img/icon-down.svg);
+	background-image: url(../img/icon-arrow-down.svg);
 	background-position: right 5px center;
 	background-repeat: no-repeat;
 	background-size: 15px 15px;
+}
+
+input.select-arrow {
+	background-image: url(../img/icon-arrow-down+.svg);
 }
 
 .input-set-wrap {
@@ -151,17 +155,17 @@ button,
 	justify-content: space-between;
 	align-items: center;
 
-	& svg {
+	svg {
 		fill: $ocean;
 	}
 
-	& input,
-	& select {
+	input,
+	select {
 		width: calc(100% - 25px);
 		height: 30px;
 	}
 
-	& p {
+	p {
 		display: none;
 
 		position: absolute;
@@ -175,21 +179,21 @@ button,
 #info:checked~.grid-main .input-set-wrap {
 	margin-bottom: 15px;
 
-	& p {
+	p {
 		display: block;
 	}
 }
 
 .input-disabled {
-	& input {
+	input {
 		order: 2;
 	}
 
-	& label {
+	label {
 		order: 1;
 	}
 
-	& input:disabled {
+	input:disabled {
 		opacity: 0.5;
 
 		&+label {

@@ -9,8 +9,9 @@
 </head>
 
 <body class="container">
-	<!-- ?------------------------------------------------------- Переключатели -------------------------- -->
+	<!-- ?------------------------------------------------------- Переключатели / input -------------------------- -->
 	<!-- ------------------------------------------------------------- Поля -->
+	<input type="checkbox" id="pay-off">
 	<input type="checkbox" id="pay">
 	<input type="checkbox" id="filters">
 	<input type="checkbox" id="set">
@@ -35,9 +36,10 @@
 	<input type="radio" name="profile" id="partner">
 	<input type="radio" name="profile" id="person">
 	<!-- ------------------------------------------------------------- Переключатель панели в мобильной версии -->
+	<input type="checkbox" id="aside-fix">
 	<input type="radio" name="aside" id="aside-table" checked>
 	<input type="radio" name="aside" id="aside-panel">
-	<!-- ?------------------------------------------------------- Иконки -------------------------- -->
+	<!-- ?------------------------------------------------------- Иконки / icon -------------------------- -->
 	<svg class="visually-hidden">
 		<symbol id="logo" viewBox="0 0 352.3 349.9">
 			<path d="M320.8,178.4l18.6-2.8h4.5l0.1-1.4l-23.1-3.5c-2.2-76.4-64.1-138-140.5-139.8l-2.8-18.6V7.9l-1.4-0.1L172.6,31
@@ -110,7 +112,7 @@
 				d="M160,58H64A14.01572,14.01572,0,0,0,50,72V224a5.99995,5.99995,0,0,0,9.48779,4.88184l52.50537-37.50879,52.51954,37.50976A6.00023,6.00023,0,0,0,174,224V72A14.01572,14.01572,0,0,0,160,58Zm2,154.3418-46.52051-33.22461a5.99928,5.99928,0,0,0-6.97461.001L62,212.33984V72a2.0026,2.0026,0,0,1,2-2h96a2.0026,2.0026,0,0,1,2,2ZM206,40V192a6,6,0,0,1-12,0V40a2.0026,2.0026,0,0,0-2-2H88a6,6,0,0,1,0-12H192A14.01572,14.01572,0,0,1,206,40Z" />
 		</symbol>
 	</svg>
-	<!-- ?------------------------------------------------------- Переключение панели в мобильной версии -------------------------- -->
+	<!-- ?------------------------------------------------------- Переключение панели / aside-swap (в мобильной версии) -------------------------- -->
 	<div class="aside-swap">
 		<label class="" for="aside-table">
 			Таблица
@@ -120,9 +122,9 @@
 		</label>
 	</div>
 	<div class="grid-main">
-		<!-- !------------------------------------------------------- Шапка -------------------------- -->
+		<!-- !------------------------------------------------------- Шапка / header -------------------------- -->
 		<header>
-			<!-- ?------------------------------------------------------- Меню -------------------------- -->
+			<!-- ?------------------------------------------------------- Меню / grid-menu -------------------------- -->
 			<ul class="grid-menu">
 				<li class="grid-menu__new">
 					<label for="frame-new">
@@ -150,19 +152,19 @@
 						Итого
 					</label></li>
 			</ul>
-			<!-- ?------------------------------------------------------- Заголовок таблицы -------------------------- -->
+			<!-- ?------------------------------------------------------- Заголовок таблицы / grid-table header -------------------------- -->
 			<div class="grid-table header">
 				<div class="grid-table__status">
-					<label class="" for="filters">
+					<label for="filters">
 						Фил
 					</label>
-					<label class="" for="set">
+					<label for="set">
 						Уст
 					</label>
-					<label class="" for="pay">
+					<label class="filters-pay" for="pay">
 						Фин
 					</label>
-					<label class="" for="info">
+					<label for="info">
 						Инф
 					</label>
 				</div>
@@ -206,9 +208,9 @@
 			</div>
 		</header>
 		<main>
-			<!-- !------------------------------------------------------- Окно -------------------------- -->
+			<!-- !------------------------------------------------------- Окно / frame -------------------------- -->
 			<section class="frame">
-				<!-- ?------------------------------------------------------------- Обложка -->
+				<!-- ?------------------------------------------------------------- Обложка / Art -->
 				<div class="frame__art">
 					<h1 class="frame__art-title">Ежедневник</h1>
 					<img class="frame__art-illustration" src="img/texture-avatar.svg" alt="Рисунок">
@@ -223,9 +225,9 @@
 						<span class="copyright__full">Все права защищены. </span>
 					</div>
 				</div>
-				<!-- ?------------------------------------------------------------- Управление -->
+				<!-- ?------------------------------------------------------------- Управление _ Вход / manage _ pass -->
 				<div class="frame__manage">
-					<!-- ------------------------------------------------------------- Вход заголовок -->
+					<!-- ------------------------------------------------------------- Вход заголовок / pass__head-->
 					<div class="frame__manage-pass">
 						<div class="pass__head">
 							<label class="frame__manage-label label-enter" for="enter">
@@ -235,36 +237,36 @@
 								Регистрация
 							</label>
 						</div>
-						<!-- ------------------------------------------------------------- Вход вход -->
+						<!-- ------------------------------------------------------------- Вход вход / pass__enter -->
 						<form action="" class="pass__enter">
 							<div class="pass__input">
-								<label for="login">Логин</label>
-								<input type="text" name="login" required>
+								<input type="text" name="login" id="pass__enter-login" required>
+								<label for="login">Логин *</label>
 							</div>
 							<div class="pass__input">
-								<label for="password">Пароль</label>
-								<input type="password" name="password" required>
+								<input type="password" name="password" id="pass__enter-password" required>
+								<label for="password">Пароль *</label>
 							</div>
 							<button class="pass__button" type="submit">Войти</button>
 						</form>
-						<!-- ------------------------------------------------------------- Вход регистрация -->
+						<!-- ------------------------------------------------------------- Вход регистрация / pass__registration -->
 						<form action="" class="pass__registration">
 							<div class="pass__input">
-								<label for="new-login">Логин</label>
-								<input type="text" name="new-login" required>
+								<input type="text" name="new-login" id="pass__registration-login" required>
+								<label for="new-login">Логин *</label>
 							</div>
 							<div class="pass__input">
-								<label for="email">E-mail</label>
-								<input type="email" name="email" required>
+								<input type="email" name="email" id="pass__registration-email" required>
+								<label for="email">E-mail *</label>
 							</div>
 							<div class="pass__input">
-								<label for="new-password">Пароль</label>
-								<input type="password" name="new-password" required>
+								<input type="password" name="new-password" id="pass__registration-password" required>
+								<label for="new-password">Пароль *</label>
 							</div>
 							<button class="pass__button" type="submit">Зарегистрироваться</button>
 						</form>
 					</div>
-					<!-- ?------------------------------------------------------------- Создать заголовок -->
+					<!-- ?------------------------------------------------------------- Управление _ Создать заголовок / manage _ new__head -->
 					<div class="frame__manage-new">
 						<div class="new__head">
 							<label class="frame__manage-label label-project" for="project">
@@ -277,10 +279,10 @@
 								Событие
 							</label>
 						</div>
-						<!-- ------------------------------------------------------------- Создать проект -->
+						<!-- ------------------------------------------------------------- Создать проект / new__project -->
 						<form action="" class="new__project">
 							<div class="frame__manage-input">
-								<label for="project-name">Наименование:</label>
+								<label for="project-name">Наименование: *</label>
 								<input type="text" name="project-name" autocomplete="off" required>
 							</div>
 							<div class="frame__manage-input">
@@ -386,10 +388,10 @@
 							</div>
 							<button type="submit">Создать</button>
 						</form>
-						<!-- ------------------------------------------------------------- Создать задача -->
+						<!-- ------------------------------------------------------------- Создать задача / new__task -->
 						<form action="" class="new__task">
 							<div class="frame__manage-input">
-								<label for="task-name">Наименование:</label>
+								<label for="task-name">Наименование: *</label>
 								<input type="text" name="task-name" autocomplete="off" required>
 							</div>
 							<div class="frame__manage-input">
@@ -516,7 +518,7 @@
 							</div>
 							<button type="submit">Создать</button>
 						</form>
-						<!-- ------------------------------------------------------------- Создать событие -->
+						<!-- ------------------------------------------------------------- Создать событие / new__event -->
 						<form action="" class="new__event">
 							<legend class="frame__manage-title">
 								<hr class="left-line">
@@ -524,11 +526,11 @@
 								<hr class="right-line">
 							</legend>
 							<div class="frame__manage-input">
-								<label for="event-new-name">Наименование:</label>
+								<label for="event-new-name">Наименование: *</label>
 								<input type="text" name="event-new-name" autocomplete="off" required>
 							</div>
 							<div class="frame__manage-input">
-								<label for="event-new-date">Дата:</label>
+								<label for="event-new-date">Дата: *</label>
 								<input type="text" name="event-new-date" autocomplete="off" required>
 							</div>
 							<button type="submit">Создать</button>
@@ -550,7 +552,7 @@
 							</div>
 							<div class="frame__manage-input">
 								<label for="event-new-name">Переименовать:</label>
-								<input type="text" name="event-new-name" autocomplete="off" required>
+								<input type="text" name="event-new-name" autocomplete="off">
 							</div>
 							<div class="frame__manage-input">
 								<label for="event-date">Дата:</label>
@@ -560,7 +562,7 @@
 							<button class="delete" type="submit">Удалить</button>
 						</form>
 					</div>
-					<!-- ?------------------------------------------------------------- Профиль заголовок -->
+					<!-- ?------------------------------------------------------------- Управление _ Профиль заголовок / manage _ profile__head -->
 					<div class="frame__manage-profile">
 						<div class="profile__head">
 							<label class="frame__manage-label label-data" for="data">
@@ -573,7 +575,7 @@
 								Коллеги
 							</label>
 						</div>
-						<!-- ------------------------------------------------------------- Профиль персональные данные -->
+						<!-- ------------------------------------------------------------- Профиль персональные данные / profile__data -->
 						<div class="profile__data">
 							<div>
 								<p>Сменить пользователя:</p>
@@ -595,11 +597,11 @@
 								<p>Сменить пароль:</p>
 								<form action="">
 									<div>
-										<label for="pass-now">Текущий пароль</label>
+										<label for="pass-now">Текущий пароль *</label>
 										<input type="password" name="pass-now" required>
 									</div>
 									<div>
-										<label for="pass-new">Новый пароль</label>
+										<label for="pass-new">Новый пароль *</label>
 										<input type="password" name="pass-new" required>
 									</div>
 									<button type="submit">Сохранить</button>
@@ -610,18 +612,18 @@
 								<p>Установить PIN:</p>
 								<form action="">
 									<div>
-										<label for="pass-now">Текущий пароль</label>
+										<label for="pass-now">Текущий пароль *</label>
 										<input type="password" name="pass-now" required>
 									</div>
 									<div>
-										<label for="pin-new">Новый PIN</label>
+										<label for="pin-new">Новый PIN *</label>
 										<input type="password" name="pin-new" required>
 									</div>
 									<button type="submit">Сохранить</button>
 								</form>
 							</div>
 						</div>
-						<!-- ------------------------------------------------------------- Профиль данные о партнёрах -->
+						<!-- ------------------------------------------------------------- Профиль данные о партнёрах / profile__partner -->
 						<div class="profile__partner">
 							<form action="" class="frame__manage-form">
 								<legend class="frame__manage-title">
@@ -630,7 +632,7 @@
 									<hr class="right-line">
 								</legend>
 								<div class="frame__manage-input">
-									<label for="partner-new-name">Наименование:</label>
+									<label for="partner-new-name">Наименование: *</label>
 									<input type="text" name="partner-new-name" autocomplete="off" required>
 								</div>
 								<div class="frame__manage-input">
@@ -667,8 +669,30 @@
 								<button type="submit">Применить</button>
 								<button class="delete" type="submit">Удалить</button>
 							</form>
+							<div class="frame__manage-title">
+								<hr class="left-line">
+								<span>Список всех партнёров:</span>
+								<hr class="right-line">
+							</div>
+							<ul class="list-all">
+								<li>
+									<h3>Воентелеком</h3>
+									<p>тел. 8800900080</p>
+								</li>
+								<li>
+									<h3>Рога и Копыта</h3>
+									<p> Мутные ребята. Держать на контроле</p>
+								</li>
+								<li>
+									<h3>Ростелеком</h3>
+									<p>Приёмные дни</p>
+								</li>
+								<li>
+									<h3>Солнечный город</h3>
+								</li>
+							</ul>
 						</div>
-						<!-- ------------------------------------------------------------- Профиль данные о коллегах -->
+						<!-- ------------------------------------------------------------- Профиль данные о коллегах / profile__person -->
 						<div class="profile__person">
 							<form action="" class="frame__manage-form">
 								<legend class="frame__manage-title">
@@ -677,7 +701,7 @@
 									<hr class="right-line">
 								</legend>
 								<div class="frame__manage-input">
-									<label for="person-new-name">Наименование:</label>
+									<label for="person-new-name">Наименование: *</label>
 									<input type="text" name="person-new-name" autocomplete="off" required>
 								</div>
 								<div class="frame__manage-input">
@@ -713,9 +737,31 @@
 								<button type="submit">Применить</button>
 								<button class="delete" type="submit">Удалить</button>
 							</form>
+							<div class="frame__manage-title">
+								<hr class="left-line">
+								<span>Список всех коллег:</span>
+								<hr class="right-line">
+							</div>
+							<ul class="list-all">
+								<li>
+									<h3>Арутюнов</h3>
+									<p>Арутюнов Георгий Алексеевич. 18.10.1985</p>
+								</li>
+								<li>
+									<h3>Балбуцкая</h3>
+									<p> Держать на контроле</p>
+								</li>
+								<li>
+									<h3>Калинин</h3>
+									<p>Калинин Владимир Павлович. 12.10.1985 </p>
+								</li>
+								<li>
+									<h3>Коротков</h3>
+								</li>
+							</ul>
 						</div>
 					</div>
-					<!-- ?------------------------------------------------------------- Настройки -->
+					<!-- ?------------------------------------------------------------- Управление _ Настройки / manage _ options -->
 					<div class="frame__manage-options">
 						<form action="" class="frame__manage-form">
 							<legend class="frame__manage-title">
@@ -724,24 +770,26 @@
 								<hr class="right-line">
 							</legend>
 							<div class="frame__manage-checkbox">
-								<input type="checkbox" name="pay-off" id="pay-off">
-								<label for="pay-off">- отключить финансовый блок</label>
+								<label class="pay-off-label" for="pay-off">- отключить финансовый блок</label>
 							</div>
 							<div class="options-pin input-disabled">
 								<input type="text" name="pay-pin" id="pay-pin" disabled>
 								<label for="pay-pin">Введите ПИН-код, если ранее его установили:</label>
 							</div>
 							<div class="frame__manage-checkbox">
-								<input type="checkbox" name="aside-on" id="aside-on">
-								<label for="aside-on">- высокий приоритет панели задач для больших экранов</label>
+								<input type="checkbox" id="pay-on">
+								<label for="pay-on">- отображать финансовый блок при старте</label>
 							</div>
 							<div class="frame__manage-checkbox">
-								<input type="checkbox" name="info-off" id="info-off">
-								<label for="info-off">- отключить подсказки по умолчанию</label>
+								<label class="aside-fix-label" for="aside-fix">- отображать боковую панель при старте</label>
+							</div>
+							<div class="frame__manage-checkbox">
+								<input type="checkbox" name="info-off" id="info-on">
+								<label for="info-on">- отображать подсказки при старте</label>
 							</div>
 							<button type="submit">Применить</button>
 						</form>
-						<!-- ------------------------------------------------------------- Настройки Вкладки -->
+						<!-- ------------------------------------------------------------- Настройки Вкладки / options-tabs -->
 						<form action="" class="frame__manage-form">
 							<legend class="frame__manage-title">
 								<hr class="left-line">
@@ -770,7 +818,7 @@
 							</div>
 							<button type="submit">Применить</button>
 						</form>
-						<!-- ------------------------------------------------------------- Настройки Закладки -->
+						<!-- ------------------------------------------------------------- Настройки Закладки / options-marks -->
 						<form action="" class="frame__manage-form">
 							<legend class="frame__manage-title">
 								<hr class="left-line">
@@ -799,7 +847,7 @@
 							</div>
 							<button type="submit">Применить</button>
 						</form>
-						<!-- ------------------------------------------------------------- Настройки Стадии -->
+						<!-- ------------------------------------------------------------- Настройки Стадии / options-stage-->
 						<form action="" class="frame__manage-form">
 							<legend class="frame__manage-title">
 								<hr class="left-line">
@@ -845,7 +893,7 @@
 							<button type="submit">Применить</button>
 							<button class="delete" type="submit">Удалить</button>
 						</form>
-						<!-- ------------------------------------------------------------- Настройки Счета -->
+						<!-- ------------------------------------------------------------- Настройки Счета / account -->
 						<form action="" class="frame__manage-form">
 							<legend class="frame__manage-title">
 								<hr class="left-line">
@@ -869,7 +917,7 @@
 							<button type="submit">Применить</button>
 							<button class="delete" type="submit">Удалить</button>
 						</form>
-						<!-- ------------------------------------------------------------- Настройки Шаблона -->
+						<!-- ------------------------------------------------------------- Настройки Шаблона / pattern -->
 						<form action="" class="frame__manage-form">
 							<legend class="frame__manage-title">
 								<hr class="left-line">
@@ -893,7 +941,7 @@
 							<button class="delete" type="submit">Удалить</button>
 						</form>
 					</div>
-					<!-- ?------------------------------------------------------------- Помощь -->
+					<!-- ?------------------------------------------------------------- Управление _ Помощь / manage _ help -->
 					<div class="frame__manage-help">
 						<div class="frame__manage-title">
 							<hr class="left-line">
@@ -907,6 +955,20 @@
 						<p>- для корректной работы сайта необходимо использовать современные браузеры.</p>
 						<p>- расширение функционала не планируется, чтобы сохранить удобство и простоту использования сайта.
 							Однако, здравые идеи по улучшению сервиса приветствуются.</p>
+						<div class="frame__manage-title">
+							<hr class="left-line">
+							<span>Особенности отображения при работе с полями ввода:</span>
+							<hr class="right-line">
+						</div>
+						<div class="help-img">
+							<span class="help-symbol"> * </span>
+							<p>- поля обязательные для заполнения</p>
+						</div>
+						<div class="help-img">
+							<img src="/img/icon-arrow-down+.svg" alt="Стрелочка со звёздочной" width="20" height="20">
+							<p>- поля, позволяющие создавать новые объекты или выбирать существующие из раскрывающегося списка,
+								оснащённого функцией быстрого поиска</p>
+						</div>
 						<div class="frame__manage-title">
 							<hr class="left-line">
 							<span>Работа с примечаниями:</span>
@@ -937,9 +999,9 @@
 							функцию: "Создать шаблон". Создайте новый проект с использованием ранее созданного шаблона. До
 							настройте пустой проект и перезапишите шаблон с нужными изменениями.</p>
 					</div>
-					<!-- ?------------------------------------------------------------- Статистика -->
+					<!-- ?------------------------------------------------------------- Управление _ Статистика / manage _ stat-->
 					<div class="frame__manage-stat">Статистика доходов и расходов</div>
-					<!-- ?------------------------------------------------------------- Кнопка "Закрыть" -->
+					<!-- ?------------------------------------------------------------- Управление _ Кнопка "Закрыть" / manage _ close-->
 					<label class="close" for="frame-off">
 						<span>Закрыть</span>
 						<svg width="20" height="20" viewBox="0 0 20 20">
@@ -948,7 +1010,7 @@
 					</label>
 				</div>
 			</section>
-			<!-- !------------------------------------------------------- Таблица -------------------------- -->
+			<!-- !------------------------------------------------------- Таблица / grid-table -------------------------- -->
 			<div class="grid-table">
 				<div class="grid-table__status">Иконки</div>
 				<div class="grid-table__name">Наименования</div>
@@ -1086,7 +1148,7 @@
 			</div>
 		</main>
 	</div>
-	<!-- !------------------------------------------------------- Панель -------------------------- -->
+	<!-- !------------------------------------------------------- Панель / aside -------------------------- -->
 	<aside>
 		<section class="date">
 			<div class="date__week">Неделя</div>
@@ -1167,7 +1229,7 @@
 			</ul>
 		</section>
 	</aside>
-	<!-- !------------------------------------------------------- Подвал -------------------------- -->
+	<!-- !------------------------------------------------------- Подвал / footer -------------------------- -->
 	<footer>
 		<div class="ready"></div>
 		<div class="set">

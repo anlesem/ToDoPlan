@@ -7,6 +7,26 @@
 	color: $ocean;
 }
 
+// Глобальные выключатели
+@mixin options-global-before {
+	border: 1px solid $brown;
+	background-color: $paper-title;
+}
+
+@mixin options-global-after {
+	content: "";
+	position: absolute;
+	bottom: 3px;
+	left: 4px;
+	z-index: 3;
+	width: 20px;
+	height: 20px;
+	background: url(../img/icon-check-art.svg) no-repeat;
+	background-size: 15px 18px;
+}
+
+
+
 
 //* Информационные подписи
 @mixin info-text {
