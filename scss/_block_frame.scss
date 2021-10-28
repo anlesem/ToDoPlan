@@ -56,7 +56,7 @@
 			box-shadow: none;
 		}
 
-		@include min-height {
+		@include heightMin {
 			justify-content: space-between;
 		}
 
@@ -90,8 +90,7 @@
 		// ----------------------------- Обложка заголовок
 		&-title {
 			margin-top: 10%;
-			font-family: mc;
-			font-size: 35px;
+			@include text-title;
 			opacity: 0.5;
 
 			@include widthLT {
@@ -111,7 +110,7 @@
 			width: 70%;
 			height: 60%;
 
-			@include min-height {
+			@include heightMin {
 				@include position-center;
 				opacity: 0.5;
 			}
@@ -136,16 +135,17 @@
 			padding: 10px;
 
 			display: grid;
-			place-items: center;
-			grid-template-columns: 1fr 2fr;
 			grid-template-areas: "art about"
 				"art email";
+
+			align-items: center;
 			color: $brown;
 
 			background: url(../img/border-contacts.svg);
 
 			svg {
 				grid-area: art;
+				justify-self: center;
 				fill: $brown;
 			}
 
@@ -166,6 +166,9 @@
 			align-self: end;
 			margin-top: 20px;
 			margin-right: 40px;
+			font-family: cormorant-infant;
+			font-weight: 500;
+			font-size: 18px;
 		}
 	}
 
@@ -198,6 +201,15 @@
 			height: auto;
 			overflow-y: visible;
 
+		}
+
+		&-head {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+
+			font-family: cormorant-infant;
+			font-size: 20px;
 		}
 
 		&-label {
@@ -266,11 +278,13 @@
 
 		&-title {
 			margin: $margin-frame 0 20px;
-			font-size: 13px;
+			font-family: cormorant-infant;
+			font-size: 18px;
+			font-weight: 500;
 			color: $ocean;
 
 			display: grid;
-			grid-template-columns: 70px auto 1fr;
+			grid-template-columns: 50px auto 1fr;
 			justify-content: space-between;
 			align-items: center;
 
@@ -280,7 +294,6 @@
 
 			.left-line {
 				margin: 0;
-				width: 70px;
 				background: $paper-frame;
 				background-image: linear-gradient(to left, $ocean, $paper-frame);
 
@@ -349,18 +362,12 @@
 			margin: 10% auto 0;
 			padding: 25px;
 
-			@include min-height {
+			@include heightMin {
 				margin: 0 auto;
 			}
 		}
 
 		.pass {
-
-			&__head {
-				width: 100%;
-				display: flex;
-				justify-content: space-between;
-			}
 
 			&__enter,
 			&__registration {
@@ -438,12 +445,6 @@
 
 		.new {
 
-			&__head {
-				width: 100%;
-				display: flex;
-				justify-content: space-between;
-			}
-
 			&__project,
 			&__task,
 			&__event {
@@ -452,7 +453,7 @@
 				justify-content: space-between;
 				flex-direction: column;
 
-				@include min-height {
+				@include heightMin {
 					margin-top: 0;
 				}
 			}
@@ -488,13 +489,6 @@
 		//? ----------------------------- Управление Профиль
 		.profile {
 
-			&__head {
-				width: 100%;
-
-				display: flex;
-				justify-content: space-between;
-			}
-
 			&__data,
 			&__partner,
 			&__person {
@@ -502,7 +496,7 @@
 				border-top: 1px solid transparent; // Убираем схлопывание
 				margin-top: $margin-frame-up;
 
-				@include min-height {
+				@include heightMin {
 					margin-top: 0;
 				}
 
@@ -563,7 +557,7 @@
 					left: 50%; // Центрирование из-за space-around
 					transform: translateX(-50%);
 					width: 90%;
-					@include info-text;
+					@include text-info;
 					text-align: center;
 				}
 
@@ -604,7 +598,7 @@
 
 						label {
 							margin-left: 10px;
-							@include info-text;
+							@include text-info;
 						}
 
 						input {
@@ -720,7 +714,10 @@
 #data:checked~.grid-main .label-data,
 #partner:checked~.grid-main .label-partner,
 #person:checked~.grid-main .label-person {
-	@include form-label-checked;
+	border-bottom: 2px solid $ocean;
+	font-size: 22px;
+	font-weight: 700;
+	color: $ocean;
 }
 
 #enter:checked~.grid-main .pass__enter,

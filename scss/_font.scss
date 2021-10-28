@@ -1,17 +1,42 @@
 @font-face {
 	font-family: lato;
-	src: url(../fonts/lato-regular.ttf) format("ttf"),
-		url(../fonts/lato-regular.eot) format("eot"),
-		url(../fonts/lato-regular.woff) format("woff"),
-		url(../fonts/lato-regular.woff2) format("woff2");
+	src: url(../fonts/lato-hairline.ttf) format("ttf"),
+		url(../fonts/lato-hairline.woff) format("woff"),
+		url(../fonts/lato-hairline.woff2) format("woff2");
 	font-style: normal;
-	font-weight: 400;
+	font-weight: 100;
+}
+
+@font-face {
+	font-family: lato;
+	src: url(../fonts/lato-hairline-italic.ttf) format("ttf"),
+		url(../fonts/lato-hairline-italic.woff) format("woff"),
+		url(../fonts/lato-hairline-italic.woff2) format("woff2");
+	font-style: italic;
+	font-weight: 100;
+}
+
+@font-face {
+	font-family: lato;
+	src: url(../fonts/lato-thin.ttf) format("ttf"),
+		url(../fonts/lato-thin.woff) format("woff"),
+		url(../fonts/lato-thin.woff2) format("woff2");
+	font-style: normal;
+	font-weight: 200;
+}
+
+@font-face {
+	font-family: lato;
+	src: url(../fonts/lato-thin-italic.ttf) format("ttf"),
+		url(../fonts/lato-thin-italic.woff) format("woff"),
+		url(../fonts/lato-thin-italic.woff2) format("woff2");
+	font-style: italic;
+	font-weight: 200;
 }
 
 @font-face {
 	font-family: lato;
 	src: url(../fonts/lato-light.ttf) format("ttf"),
-		url(../fonts/lato-light.eot) format("eot"),
 		url(../fonts/lato-light.woff) format("woff"),
 		url(../fonts/lato-light.woff2) format("woff2");
 	font-style: normal;
@@ -20,8 +45,70 @@
 
 @font-face {
 	font-family: lato;
+	src: url(../fonts/lato-light-italic.ttf) format("ttf"),
+		url(../fonts/lato-light-italic.woff) format("woff"),
+		url(../fonts/lato-light-italic.woff2) format("woff2");
+	font-style: italic;
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: lato;
+	src: url(../fonts/lato-regular.ttf) format("ttf"),
+		url(../fonts/lato-regular.woff) format("woff"),
+		url(../fonts/lato-regular.woff2) format("woff2");
+	font-style: normal;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: lato;
+	src: url(../fonts/lato-italic.ttf) format("ttf"),
+		url(../fonts/lato-italic.woff) format("woff"),
+		url(../fonts/lato-italic.woff2) format("woff2");
+	font-style: italic;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: lato;
+	src: url(../fonts/lato-medium.ttf) format("ttf"),
+		url(../fonts/lato-medium.woff) format("woff"),
+		url(../fonts/lato-medium.woff2) format("woff2");
+	font-style: normal;
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: lato;
+	src: url(../fonts/lato-medium-italic.ttf) format("ttf"),
+		url(../fonts/lato-medium-italic.woff) format("woff"),
+		url(../fonts/lato-medium-italic.woff2) format("woff2");
+	font-style: italic;
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: lato;
+	src: url(../fonts/lato-semibold.ttf) format("ttf"),
+		url(../fonts/lato-semibold.woff) format("woff"),
+		url(../fonts/lato-semibold.woff2) format("woff2");
+	font-style: normal;
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: lato;
+	src: url(../fonts/lato-semibold-italic.ttf) format("ttf"),
+		url(../fonts/lato-semibold-italic.woff) format("woff"),
+		url(../fonts/lato-semibold-italic.woff2) format("woff2");
+	font-style: italic;
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: lato;
 	src: url(../fonts/lato-bold.ttf) format("ttf"),
-		url(../fonts/lato-bold.eot) format("eot"),
 		url(../fonts/lato-bold.woff) format("woff"),
 		url(../fonts/lato-bold.woff2) format("woff2");
 	font-style: normal;
@@ -30,8 +117,34 @@
 
 @font-face {
 	font-family: lato;
+	src: url(../fonts/lato-bold-italic.ttf) format("ttf"),
+		url(../fonts/lato-bold-italic.woff) format("woff"),
+		url(../fonts/lato-bold-italic.woff2) format("woff2");
+	font-style: italic;
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: lato;
+	src: url(../fonts/lato-heavy.ttf) format("ttf"),
+		url(../fonts/lato-heavy.woff) format("woff"),
+		url(../fonts/lato-heavy.woff2) format("woff2");
+	font-style: normal;
+	font-weight: 800;
+}
+
+@font-face {
+	font-family: lato;
+	src: url(../fonts/lato-heavy-italic.ttf) format("ttf"),
+		url(../fonts/lato-heavy-italic.woff) format("woff"),
+		url(../fonts/lato-heavy-italic.woff2) format("woff2");
+	font-style: italic;
+	font-weight: 800;
+}
+
+@font-face {
+	font-family: lato;
 	src: url(../fonts/lato-black.ttf) format("ttf"),
-		url(../fonts/lato-black.eot) format("eot"),
 		url(../fonts/lato-black.woff) format("woff"),
 		url(../fonts/lato-black.woff2) format("woff2");
 	font-style: normal;
@@ -39,10 +152,112 @@
 }
 
 @font-face {
-	font-family: mc;
-	src: url(../fonts/monotype-corsiva.ttf) format("ttf"),
-		url(../fonts/monotype-corsiva.eot) format("eot"),
-		url(../fonts/monotype-corsiva.woff) format("woff"),
-		url(../fonts/monotype-corsiva.woff2) format("woff2");
+	font-family: lato;
+	src: url(../fonts/lato-black-italic.ttf) format("ttf"),
+		url(../fonts/lato-black-italic.woff) format("woff"),
+		url(../fonts/lato-black-italic.woff2) format("woff2");
+	font-style: italic;
+	font-weight: 900;
+}
+
+// ----------------------------------------------------------
+
+@font-face {
+	font-family: cormorant-infant;
+	src: url(../fonts/cormorant-infant-light.ttf) format("ttf"),
+		url(../fonts/cormorant-infant-light.woff) format("woff"),
+		url(../fonts/cormorant-infant-light.woff2) format("woff2");
+	font-style: normal;
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: cormorant-infant;
+	src: url(../fonts/cormorant-infant-light-italic.ttf) format("ttf"),
+		url(../fonts/cormorant-infant-light-italic.woff) format("woff"),
+		url(../fonts/cormorant-infant-light-italic.woff2) format("woff2");
+	font-style: italic;
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: cormorant-infant;
+	src: url(../fonts/cormorant-infant-regular.ttf) format("ttf"),
+		url(../fonts/cormorant-infant-regular.woff) format("woff"),
+		url(../fonts/cormorant-infant-regular.woff2) format("woff2");
+	font-style: normal;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: cormorant-infant;
+	src: url(../fonts/cormorant-infant-italic.ttf) format("ttf"),
+		url(../fonts/cormorant-infant-italic.woff) format("woff"),
+		url(../fonts/cormorant-infant-italic.woff2) format("woff2");
+	font-style: italic;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: cormorant-infant;
+	src: url(../fonts/cormorant-infant-medium.ttf) format("ttf"),
+		url(../fonts/cormorant-infant-medium.woff) format("woff"),
+		url(../fonts/cormorant-infant-medium.woff2) format("woff2");
+	font-style: normal;
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: cormorant-infant;
+	src: url(../fonts/cormorant-infant-medium-italic.ttf) format("ttf"),
+		url(../fonts/cormorant-infant-medium-italic.woff) format("woff"),
+		url(../fonts/cormorant-infant-medium-italic.woff2) format("woff2");
+	font-style: italic;
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: cormorant-infant;
+	src: url(../fonts/cormorant-infant-semibold.ttf) format("ttf"),
+		url(../fonts/cormorant-infant-semibold.woff) format("woff"),
+		url(../fonts/cormorant-infant-semibold.woff2) format("woff2");
+	font-style: normal;
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: cormorant-infant;
+	src: url(../fonts/cormorant-infant-semibold-italic.ttf) format("ttf"),
+		url(../fonts/cormorant-infant-semibold-italic.woff) format("woff"),
+		url(../fonts/cormorant-infant-semibold-italic.woff2) format("woff2");
+	font-style: italic;
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: cormorant-infant;
+	src: url(../fonts/cormorant-infant-bold.ttf) format("ttf"),
+		url(../fonts/cormorant-infant-bold.woff) format("woff"),
+		url(../fonts/cormorant-infant-bold.woff2) format("woff2");
+	font-style: normal;
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: cormorant-infant;
+	src: url(../fonts/cormorant-infant-bold-italic.ttf) format("ttf"),
+		url(../fonts/cormorant-infant-bold-italic.woff) format("woff"),
+		url(../fonts/cormorant-infant-bold-italic.woff2) format("woff2");
+	font-style: italic;
+	font-weight: 700;
+}
+
+// ----------------------------------------------------------
+
+@font-face {
+	font-family: marck-script;
+	src: url(../fonts/marck-script.ttf) format("ttf"),
+		url(../fonts/marck-script.woff) format("woff"),
+		url(../fonts/marck-script.woff2) format("woff2");
 	font-style: normal;
 }
