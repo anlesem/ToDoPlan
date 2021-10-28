@@ -121,6 +121,10 @@
 			<path
 				d="M160,58H64A14.01572,14.01572,0,0,0,50,72V224a5.99995,5.99995,0,0,0,9.48779,4.88184l52.50537-37.50879,52.51954,37.50976A6.00023,6.00023,0,0,0,174,224V72A14.01572,14.01572,0,0,0,160,58Zm2,154.3418-46.52051-33.22461a5.99928,5.99928,0,0,0-6.97461.001L62,212.33984V72a2.0026,2.0026,0,0,1,2-2h96a2.0026,2.0026,0,0,1,2,2ZM206,40V192a6,6,0,0,1-12,0V40a2.0026,2.0026,0,0,0-2-2H88a6,6,0,0,1,0-12H192A14.01572,14.01572,0,0,1,206,40Z" />
 		</symbol>
+		<symbol id="icon__panel-fix" viewBox="0 0 256 256">
+			<path
+				d="M127.99414,114a25.99734,25.99734,0,0,0-6,51.29346V184a6,6,0,1,0,12,0V165.29346a25.99734,25.99734,0,0,0-6-51.29346Zm0,40a14,14,0,1,1,14-14A14.01572,14.01572,0,0,1,127.99414,154Zm80-72h-38V52a42,42,0,1,0-84,0V82h-38a14.01572,14.01572,0,0,0-14,14V208a14.01572,14.01572,0,0,0,14,14h160a14.01572,14.01572,0,0,0,14-14V96A14.01572,14.01572,0,0,0,207.99414,82Zm-110-30a30,30,0,1,1,60,0V82h-60Zm112,156a2.002,2.002,0,0,1-2,2h-160a2.002,2.002,0,0,1-2-2V96a2.002,2.002,0,0,1,2-2h160a2.002,2.002,0,0,1,2,2Z" />
+		</symbol>
 	</svg>
 	<!-- ?------------------------------------------------------- Переключение панели / panel-swap (в мобильной версии) -------------------------- -->
 	<div class="panel-swap">
@@ -828,15 +832,16 @@
 								<label for="pay-pin">Введите ПИН-код, если ранее его установили:</label>
 							</div>
 							<div class="frame__manage-checkbox">
-								<input type="checkbox" id="pay-on">
-								<label for="pay-on">- отображать финансовый блок при старте</label>
+								<input type="checkbox" id="pay-on-start">
+								<label for="pay-on-start">- отображать финансовый блок при старте</label>
 							</div>
 							<div class="frame__manage-checkbox">
-								<label class="panel-fix-label" for="panel-fix">- отображать боковую панель при старте</label>
+								<input type="checkbox" id="panel-fix-start">
+								<label for="panel-fix-start">- отображать боковую панель при старте</label>
 							</div>
 							<div class="frame__manage-checkbox">
-								<input type="checkbox" name="info-off" id="info-on">
-								<label for="info-on">- отображать подсказки при старте</label>
+								<input type="checkbox" name="info-off" id="info-on-start">
+								<label for="info-on-start">- отображать подсказки при старте</label>
 							</div>
 							<button type="submit">Применить</button>
 						</form>
@@ -1201,6 +1206,13 @@
 	</div>
 	<!-- !------------------------------------------------------- Панель / panel -------------------------- -->
 	<aside class="panel">
+		<div class="panel-fix-label">
+			<label for="panel-fix">
+				<svg width="25" height="25" viewBox="0 0 25 25">
+					<use href="#icon__panel-fix" />
+				</svg>
+			</label>
+		</div>
 		<section class="date">
 			<div class="date__week">Неделя</div>
 			<div class="date__week">Неделя</div>

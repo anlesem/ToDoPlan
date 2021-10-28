@@ -738,13 +738,11 @@
 }
 
 // Глобальные выключатели в настройках
-#pay-off:checked~.grid-main .pay-off-label::before,
-#aside-fix:checked~.grid-main .aside-fix-label::before {
+#pay-off:checked~.grid-main .pay-off-label::before {
 	@include options-global-before;
 }
 
-#pay-off:checked~.grid-main .pay-off-label::after,
-#aside-fix:checked~.grid-main .aside-fix-label::after {
+#pay-off:checked~.grid-main .pay-off-label::after {
 	@include options-global-after;
 }
 

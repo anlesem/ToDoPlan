@@ -8,7 +8,7 @@
 	bottom: 0;
 	right: 0;
 	z-index: 5;
-	width: 50px;
+	width: 450px;
 	height: 95%;
 	overflow: hidden;
 
@@ -38,21 +38,57 @@
 		border-bottom: $brown dashed 2px;
 		border-left: $brown dashed 2px;
 	}
+
+	&-fix-label {
+		position: absolute;
+		top: 10%;
+		left: 0;
+		width: 40px;
+		height: 100px;
+
+		border-top-right-radius: $border-radius;
+		border-bottom-right-radius: $border-radius;
+		background-color: #ba253c;
+		box-shadow: $shadow;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 10px;
+			right: 0;
+			border-left: $brown dashed 2px;
+		}
+
+		label {
+			display: none;
+			@include position-size-parent;
+			z-index: 5;
+		}
+
+		svg {
+			@include position-center;
+			fill: #751724;
+		}
+	}
+
+	&-swap {
+		position: absolute;
+		bottom: 10%;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 10;
+		display: none;
+	}
 }
 
-.panel-swap {
-	position: absolute;
-	bottom: 10%;
-	left: 50%;
-	transform: translateX(-50%);
-	z-index: 10;
-	display: none;
-}
+
 
 //* -----------------------------------------------
 .date {
 	position: relative;
-	width: 0;
+	width: $width-todo + 10px;
 	height: 210px;
 	margin: 0 auto;
 	padding: 5px;
@@ -60,8 +96,7 @@
 	border: $brown dashed 2px;
 	box-sizing: border-box;
 
-
-	opacity: 0;
+	opacity: 1;
 	overflow: hidden;
 	transition: all $timeout;
 
@@ -83,7 +118,7 @@
 //* -----------------------------------------------
 .todo {
 	position: relative;
-	width: 0;
+	width: $width-todo;
 	height: calc(100% - 200px - 40px);
 	margin: 0 auto;
 	border-radius: $border-radius;
@@ -91,7 +126,7 @@
 	background: $paper-todo;
 	box-shadow: $shadow;
 
-	opacity: 0;
+	opacity: 1;
 	transition: all $timeout;
 
 	&::after {
@@ -129,7 +164,11 @@
 	}
 }
 
-#pay:checked~#frame-off:checked~.panel {
+#panel-fix:checked~.panel .panel-fix-label svg {
+	fill: #ccc;
+}
+
+#pay:checked~.panel {
 
 	width: 50px;
 
@@ -147,6 +186,10 @@
 		opacity: 1;
 	}
 
+	.panel-fix-label label {
+		display: block;
+	}
+
 	& .date,
 	& .todo {
 		width: 0;
@@ -154,7 +197,7 @@
 	}
 }
 
-#frame-off:checked~.panel {
+#panel-fix:checked~.panel {
 	width: 450px;
 
 	& .date {
@@ -168,6 +211,35 @@
 	}
 }
 
+#frame-pass:checked~.panel,
+#frame-new:checked~.panel,
+#frame-profile:checked~.panel,
+#frame-options:checked~.panel,
+#frame-help:checked~.panel,
+#frame-stat:checked~.panel {
+	width: 30px;
+
+	.panel-fix-label label {
+		display: none;
+	}
+
+	&:hover {
+		width: 30px;
+	}
+
+	&:hover .date,
+	&:hover .todo {
+		width: 0;
+		opacity: 0;
+	}
+
+	& .date,
+	& .todo {
+		width: 0;
+		opacity: 0;
+	}
+}
+
 //! ------------------------   Адаптивность
 
 @media (max-width: $widthHD) {
@@ -178,6 +250,10 @@
 
 		&:hover {
 			width: 450px;
+		}
+
+		.panel-fix-label label {
+			display: block;
 		}
 
 		& .date,
@@ -196,15 +272,75 @@
 			opacity: 1;
 		}
 	}
+
+	#panel-fix:checked~.panel {
+		width: 450px;
+
+		& .date {
+			width: $width-todo + 10px;
+			opacity: 1;
+		}
+
+		& .todo {
+			width: $width-todo;
+			opacity: 1;
+		}
+	}
+
+	#frame-pass:checked~.panel,
+	#frame-new:checked~.panel,
+	#frame-profile:checked~.panel,
+	#frame-options:checked~.panel,
+	#frame-help:checked~.panel,
+	#frame-stat:checked~.panel {
+		width: 30px;
+
+		&:hover {
+			width: 30px;
+		}
+
+		&:hover .date,
+		&:hover .todo {
+			width: 0;
+			opacity: 0;
+		}
+
+		& .date,
+		& .todo {
+			width: 0;
+			opacity: 0;
+		}
+	}
 }
 
 //! ------------------------   800
 
 @media (max-width: $widthTab) {
 
-	#pay:checked~#frame-off:checked~.panel,
+	.panel-fix-label label {
+		display: none !important;
+	}
+
+	#pay:checked~.panel,
+	#panel-fix:checked~.panel,
 	.panel {
 		width: 20px;
+
+		&:hover {
+			width: 20px;
+		}
+
+		&:hover .date,
+		&:hover .todo {
+			width: 0;
+			opacity: 0;
+		}
+
+		& .date,
+		& .todo {
+			width: 0;
+			opacity: 0;
+		}
 	}
 
 	#panel-table:checked~.panel {
