@@ -1,0 +1,166 @@
+.tabs {
+	display: none;
+	position: absolute;
+	top: $height-header + $height-menu;
+	right: calc(100% - 5px);
+	z-index: 1;
+
+	div {
+		display: flex;
+		justify-content: flex-end;
+		height: 10vh;
+		margin-bottom: 10px;
+
+		input {
+			display: none;
+		}
+
+		label {
+			position: relative;
+			display: block;
+			width: 30px;
+			height: 100%;
+
+			border-top-left-radius: $border-radius;
+			border-bottom-left-radius: $border-radius;
+			box-shadow: $shadow-frame;
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 99%;
+				left: 3px;
+				right: 0;
+				z-index: 3;
+				height: 20px;
+				clip-path: polygon(0 0, 100% 0, 100% 100%);
+			}
+
+			&::after {
+				content: "";
+				position: absolute;
+				top: 100%;
+				left: 4px;
+				right: 0;
+				z-index: 2;
+				height: 21px;
+				clip-path: polygon(0 0, 100% 0, 100% 100%, 0 10%);
+				background-color: rgba(#aaa, 0.6);
+			}
+
+			&.tab-all-bgcolor::before {
+				background-color: $tabs-color-all;
+			}
+
+			&.tab-first-bgcolor::before {
+				background-color: $tabs-color-first;
+			}
+
+			&.tab-second-bgcolor::before {
+				background-color: $tabs-color-second;
+			}
+
+			&.tab-third-bgcolor::before {
+				background-color: $tabs-color-third;
+			}
+
+			&.tab-four-bgcolor::before {
+				background-color: $tabs-color-four;
+			}
+
+			&.tab-five-bgcolor::before {
+				background-color: $tabs-color-five;
+			}
+		}
+
+		span {
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%) rotate(-90deg);
+
+			width: 10vh;
+			padding-right: 10px;
+
+			font-size: 12px;
+			color: $brown;
+
+			text-align: center;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		input:checked+label {
+			width: 40px;
+			z-index: 5;
+
+			span {
+				font-size: 14px;
+				font-weight: 700;
+			}
+		}
+	}
+}
+
+.tabs-imitation {
+	position: absolute;
+	top: $height-header + $height-menu;
+	left: 100%;
+
+	@include widthLT {
+		display: none;
+	}
+
+	div {
+		position: relative;
+		width: 25px;
+		height: 10vh;
+		margin-bottom: 5px;
+		border-top-right-radius: $border-radius;
+		border-bottom-right-radius: $border-radius;
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 99%;
+			left: 0;
+			right: 3px;
+			height: 15px;
+			clip-path: polygon(0 0, 100% 0, 0 100%);
+		}
+
+		&.tab-all-bgcolor::after {
+			background-color: $tabs-color-all;
+		}
+
+		&.tab-first-bgcolor::after {
+			background-color: $tabs-color-first;
+		}
+
+		&.tab-second-bgcolor::after {
+			background-color: $tabs-color-second;
+		}
+
+		&.tab-third-bgcolor::after {
+			background-color: $tabs-color-third;
+		}
+
+		&.tab-four-bgcolor::after {
+			background-color: $tabs-color-four;
+		}
+
+		&.tab-five-bgcolor::after {
+			background-color: $tabs-color-five;
+		}
+	}
+}
+
+#frame-off:checked~.grid-main .tabs {
+	display: block;
+}
+
+#frame-off:checked~.grid-main .tabs-imitation {
+	display: none;
+}

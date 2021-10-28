@@ -1,4 +1,4 @@
-aside {
+.panel {
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
@@ -40,7 +40,7 @@ aside {
 	}
 }
 
-.aside-swap {
+.panel-swap {
 	position: absolute;
 	bottom: 10%;
 	left: 50%;
@@ -129,7 +129,7 @@ aside {
 	}
 }
 
-#pay:checked~#frame-off:checked~aside {
+#pay:checked~#frame-off:checked~.panel {
 
 	width: 50px;
 
@@ -154,7 +154,7 @@ aside {
 	}
 }
 
-#frame-off:checked~aside {
+#frame-off:checked~.panel {
 	width: 450px;
 
 	& .date {
@@ -172,7 +172,7 @@ aside {
 
 @media (max-width: $widthHD) {
 
-	#frame-off:checked~aside {
+	#frame-off:checked~.panel {
 		right: 0;
 		width: 50px;
 
@@ -202,12 +202,12 @@ aside {
 
 @media (max-width: $widthTab) {
 
-	#pay:checked~#frame-off:checked~aside,
-	aside {
+	#pay:checked~#frame-off:checked~.panel,
+	.panel {
 		width: 20px;
 	}
 
-	#aside-table:checked~aside {
+	#panel-table:checked~.panel {
 		width: 20px;
 		height: 98%;
 
@@ -222,7 +222,7 @@ aside {
 		}
 	}
 
-	#frame-off:checked~#aside-panel:checked~aside {
+	#frame-off:checked~#panel-panel:checked~.panel {
 
 		width: 450px;
 		height: 98%;
@@ -239,7 +239,7 @@ aside {
 
 	}
 
-	#frame-off:checked~.aside-swap {
+	#frame-off:checked~.panel-swap {
 		display: block;
 	}
 }
@@ -248,13 +248,13 @@ aside {
 
 @media (max-width: $widthMob) {
 
-	#aside-table:checked~aside {
+	#panel-table:checked~.panel {
 
 		width: 0;
 		height: 100%;
 	}
 
-	#aside-panel:checked~aside {
+	#panel-panel:checked~.panel {
 
 		width: 100%;
 		height: 100%;

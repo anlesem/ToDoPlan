@@ -210,6 +210,10 @@ input.select-arrow {
 }
 
 // ------------------------------------  Вкладки
+.tab-all-bgcolor {
+	background-color: $tabs-color-all;
+}
+
 .tab-first-bgcolor {
 	background-color: $tabs-color-first;
 }
