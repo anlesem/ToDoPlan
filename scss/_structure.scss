@@ -43,23 +43,26 @@
 	}
 }
 
+#pay-off:checked~.grid-main .grid-menu {
+	grid-template-areas: "new profile options help . find find . . .";
+
+	&__total {
+		display: none;
+	}
+}
+
 // Таблица
 .grid-table {
 	position: relative;
 	display: grid;
+	place-items: center;
 	grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr) repeat(3, 150px);
 	grid-template-areas: "status name name planed set note note . . .";
 
 	@include grid-table;
 
-	&__price {
-		display: none;
-	}
-
-	&__type {
-		display: none;
-	}
-
+	&__price,
+	&__type,
 	&__partner {
 		display: none;
 	}
@@ -75,8 +78,18 @@
 	}
 }
 
+#pay-off:checked~.grid-main .grid-table {
+	grid-template-areas: "status name name planed set note note . . .";
+
+	&__price,
+	&__type,
+	&__partner {
+		display: none;
+	}
+}
+
 // Категории
-.category {
+.group {
 	grid-template-areas: "status name name planed set note note . . .";
 }
 
@@ -96,8 +109,12 @@
 		grid-template-areas: "new profile options help . find find total";
 	}
 
+	#pay-off:checked~.grid-main .grid-menu {
+		grid-template-areas: "new profile options help . find find .";
+	}
+
 	.grid-table,
-	.category {
+	.group {
 		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr) 150px;
 		grid-template-areas: "status name name planed set note note note";
 
@@ -117,8 +134,16 @@
 		}
 	}
 
-	#pay:checked~.grid-main.category {
+	#pay:checked~.grid-main .group {
 		grid-template-areas: "status name name planed set note note note";
+	}
+
+	#pay-off:checked~.grid-main .grid-table {
+		grid-template-areas: "status name name planed set note note note";
+
+		&__price {
+			display: none;
+		}
 	}
 }
 
@@ -142,7 +167,7 @@
 	}
 
 	.grid-table,
-	.category,
+	.group,
 	#pay:checked~.grid-main .grid-table {
 		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr);
 		grid-template-areas: "status name name planed set note note";
@@ -168,7 +193,7 @@
 	}
 
 	.grid-table,
-	.category,
+	.group,
 	#pay:checked~.grid-main .grid-table {
 		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px);
 		grid-template-areas: "status name name planed set";
@@ -197,22 +222,22 @@
 	}
 
 	.grid-table,
-	.category,
+	.group,
 	#pay:checked~.grid-main .grid-table {
-		grid-template-columns: 50px repeat(2, 1fr) 20% 50px;
+		grid-template-columns: $width-status-tab repeat(2, 1fr) 20% 40px;
 		grid-template-areas: "status name name planed set";
 
 		@include grid-table;
 	}
 }
 
-//! ------------------------   600
+//! ------------------------   500
 @media (max-width: $widthMob) {
 
 	.grid-table,
-	.category,
+	.group,
 	#pay:checked~.grid-main .grid-table {
-		grid-template-columns: 50px repeat(2, 1fr) 50px;
+		grid-template-columns: $width-status-tab repeat(2, 1fr) 40px;
 		grid-template-areas: "status name name set";
 
 		@include grid-table;

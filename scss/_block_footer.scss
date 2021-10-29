@@ -32,7 +32,7 @@ footer {
 	background: rgba(#000, 0.2);
 }
 
-.set {
+.properties {
 	position: relative;
 	display: flex;
 	max-width: 900px;
@@ -91,11 +91,11 @@ footer {
 	}
 }
 
-#set:checked~#frame-off:checked~footer {
+#properties:checked~#frame-off:checked~footer {
 
 	height: auto;
 
-	& .set {
+	& .properties {
 		overflow: visible;
 		height: 150px;
 	}

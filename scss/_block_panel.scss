@@ -65,6 +65,13 @@
 			display: none;
 			@include position-size-parent;
 			z-index: 5;
+
+			&:hover {
+				cursor: pointer;
+				border-top-right-radius: $border-radius;
+				border-bottom-right-radius: $border-radius;
+				background-color: rgba(#eb9ca8, 0.4);
+			}
 		}
 
 		svg {
@@ -197,6 +204,7 @@
 	}
 }
 
+#pay-off:checked~.panel,
 #panel-fix:checked~.panel {
 	width: 450px;
 
@@ -208,6 +216,12 @@
 	& .todo {
 		width: $width-todo;
 		opacity: 1;
+	}
+}
+
+#pay-off:checked~.panel {
+	.panel-fix-label label {
+		display: none;
 	}
 }
 

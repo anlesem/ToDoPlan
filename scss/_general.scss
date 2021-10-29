@@ -275,3 +275,9 @@ input.select-arrow {
 .stage-five-bgcolor {
 	background-color: $stages-color-five;
 }
+
+
+
+#pay-off:checked~.grid-main .pay-off {
+	display: none;
+}

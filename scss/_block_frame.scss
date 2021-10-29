@@ -746,10 +746,6 @@
 	@include options-global-after;
 }
 
-#pay-off:checked~.grid-main .filters-pay {
-	display: none;
-}
-
 // Кнопка Закрыть при управлении мышкой + большие экраны
 .close {
 	position: fixed;

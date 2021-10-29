@@ -24,7 +24,7 @@
 	<input type="checkbox" id="pay-off">
 	<input type="checkbox" id="pay">
 	<input type="checkbox" id="filters">
-	<input type="checkbox" id="set">
+	<input type="checkbox" id="properties">
 	<input type="checkbox" id="info">
 	<!-- ------------------------------------------------------------- Окна -->
 	<input type="radio" name="frame" id="frame-pass" checked>
@@ -213,10 +213,10 @@
 					<label for="filters">
 						Фил
 					</label>
-					<label for="set">
+					<label for="properties">
 						Уст
 					</label>
-					<label class="filters-pay" for="pay">
+					<label class="pay-off" for="pay">
 						Фин
 					</label>
 					<label for="info">
@@ -352,14 +352,14 @@
 									<input type="text" name="plan" autocomplete="off">
 									<p>Дата завершения</p>
 								</div>
-								<div class="input-set-wrap">
+								<div class="input-set-wrap pay-off">
 									<svg class="svg-price" width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__price" />
 									</svg>
 									<input type="text" name="price" autocomplete="off">
 									<p>Стоимость</p>
 								</div>
-								<div class="input-set-wrap">
+								<div class="input-set-wrap pay-off">
 									<svg width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__account" />
 									</svg>
@@ -461,14 +461,14 @@
 									<input type="text" name="plan" autocomplete="off">
 									<p>Дата завершения</p>
 								</div>
-								<div class="input-set-wrap">
+								<div class="input-set-wrap pay-off">
 									<svg class="svg-price" width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__price" />
 									</svg>
 									<input type="text" name="price" autocomplete="off">
 									<p>Стоимость</p>
 								</div>
-								<div class="input-set-wrap">
+								<div class="input-set-wrap pay-off">
 									<svg width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__type" />
 									</svg>
@@ -481,7 +481,7 @@
 									</select>
 									<p>Счёт</p>
 								</div>
-								<div class="input-set-wrap">
+								<div class="input-set-wrap pay-off">
 									<svg width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__account" />
 									</svg>
@@ -493,7 +493,7 @@
 									</select>
 									<p>Счёт</p>
 								</div>
-								<div class="input-set-wrap">
+								<div class="input-set-wrap pay-off">
 									<svg width="20" height="20" viewBox="0 0 20 20">
 										<use href="#icon__partner" />
 									</svg>
@@ -1112,12 +1112,12 @@
 				<div class="grid-table__set">Управление</div>
 				<div class="grid-table__note">Примечание</div>
 			</div>
-			<div class="grid-table category">
-				<div class="grid-table__status">Категория</div>
-				<div class="grid-table__name">Категория</div>
-				<div class="grid-table__planed">Категория</div>
-				<div class="grid-table__set">Категория</div>
-				<div class="grid-table__note">Категория</div>
+			<div class="grid-table group">
+				<div class="grid-table__status">Группа</div>
+				<div class="grid-table__name">Группа</div>
+				<div class="grid-table__planed">Группа</div>
+				<div class="grid-table__set">Группа</div>
+				<div class="grid-table__note">Группа</div>
 			</div>
 			<div class="grid-table">
 				<div class="grid-table__status">Иконки</div>
@@ -1295,7 +1295,7 @@
 	<!-- !------------------------------------------------------- Подвал / footer -------------------------- -->
 	<footer>
 		<div class="ready"></div>
-		<div class="set">
+		<div class="properties">
 			<div class="grid-table__status">Иконки</div>
 			<div class="grid-table__name">Наименования</div>
 			<div class="grid-table__planed">План</div>

@@ -5,11 +5,22 @@
 	right: calc(100% - 5px);
 	z-index: 1;
 
+	@include widthTab {
+		left: 0;
+		right: auto;
+	}
+
 	div {
 		display: flex;
 		justify-content: flex-end;
 		height: 10vh;
 		margin-bottom: 10px;
+
+		@include widthTab {
+			justify-content: flex-start;
+			height: auto;
+			margin-bottom: 0;
+		}
 
 		input {
 			display: none;
@@ -25,6 +36,20 @@
 			border-bottom-left-radius: $border-radius;
 			box-shadow: $shadow-frame;
 
+			@include widthPC {
+				width: $marginPC - 5px;
+			}
+
+			@include widthTab {
+				height: 8vh;
+				width: 20px;
+
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+				border-top-right-radius: $border-radius;
+				border-bottom-right-radius: $border-radius;
+			}
+
 			&::before {
 				content: "";
 				position: absolute;
@@ -34,6 +59,10 @@
 				z-index: 3;
 				height: 20px;
 				clip-path: polygon(0 0, 100% 0, 100% 100%);
+
+				@include widthTab {
+					content: none;
+				}
 			}
 
 			&::after {
@@ -46,6 +75,11 @@
 				height: 21px;
 				clip-path: polygon(0 0, 100% 0, 100% 100%, 0 10%);
 				background-color: rgba(#aaa, 0.6);
+
+
+				@include widthTab {
+					content: none;
+				}
 			}
 
 			&.tab-all-bgcolor::before {
@@ -71,6 +105,12 @@
 			&.tab-five-bgcolor::before {
 				background-color: $tabs-color-five;
 			}
+
+			&:hover {
+				cursor: pointer;
+				width: 35px;
+				opacity: 0.8;
+			}
 		}
 
 		span {
@@ -95,6 +135,15 @@
 		input:checked+label {
 			width: 40px;
 			z-index: 5;
+
+			@include widthPC {
+				width: $marginPC + 4px;
+			}
+
+			@include widthTab {
+				height: 10vh;
+				width: 30px;
+			}
 
 			span {
 				font-size: 14px;
