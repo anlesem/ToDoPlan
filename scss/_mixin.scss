@@ -1,22 +1,16 @@
 //* Форма. 
 // Настройки нажатых вкладок
 
-// Глобальные выключатели
-@mixin options-global-before {
-	border: 1px solid $brown;
-	background-color: $paper-title;
-}
+// Глобальный выключатель
+@mixin options-global-checkbox {
+	&::before {
+		border: 1px solid $brown;
+		background-color: $paper-title;
+	}
 
-@mixin options-global-after {
-	content: "";
-	position: absolute;
-	bottom: 3px;
-	left: 4px;
-	z-index: 3;
-	width: 20px;
-	height: 20px;
-	background: url(../img/icon-check-art.svg) no-repeat;
-	background-size: 15px 18px;
+	svg {
+		fill: $brown;
+	}
 }
 
 
@@ -25,7 +19,6 @@
 	font-family: cormorant-infant;
 	font-style: italic;
 	font-weight: 700;
-	font-size: 35px;
 	letter-spacing: 1px;
 }
 

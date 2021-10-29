@@ -18,11 +18,25 @@ $paper-frame: rgba(#fff, 0.7);
 $brown: #592800;
 $ocean: #080060;
 $blue: #698ccc;
+$grass: #52ac60;
+$orange: #ff9500;
+
+// Финансы
+$grass-dark: #3d8047;
+$red-dark: #800000;
+$purple-deep: #660066;
+$blue-dark: #4e6899;
 
 $close: #333;
 $delete: #ca0000;
 
+// Окно настроек (frame)
 $input-border: #ddd;
+
+// Таблица
+$input-none: #ddd;
+$input-off: #999;
+
 
 // Вкладки
 $tabs-color-all: #e5df8a;
@@ -47,7 +61,6 @@ $stages-color-four: #cec2f2;
 $stages-color-five: #cbe595;
 
 //* Зависимые переменные
-
 $height-menu: 50px;
 $height-header: 50px;
 $height-footer: 20px;
@@ -61,6 +74,10 @@ $marginPC: 30px;
 $width-status-tab: 70px;
 $width-manage: 40%;
 $widthHD-manage: 600px;
+
+// Таблица
+$margin-table: 40px;
+
 
 // Выравнивание отступов для Frame
 $margin-frame: 30px;

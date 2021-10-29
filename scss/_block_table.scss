@@ -7,7 +7,7 @@
 	box-shadow: $shadow;
 
 	&>div {
-		overflow: hidden;
+		padding: 0 10px;
 		text-overflow: ellipsis;
 	}
 
@@ -27,6 +27,10 @@
 		width: 10px;
 		background: linear-gradient(to left, #ddd 0%, transparent 100%);
 		opacity: 0.5;
+
+		@include widthPC {
+			left: calc(50% + 75px);
+		}
 
 		@include widthLT {
 			left: auto;

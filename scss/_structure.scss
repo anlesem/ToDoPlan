@@ -74,7 +74,7 @@
 	&__price,
 	&__type,
 	&__partner {
-		display: block;
+		display: flex;
 	}
 }
 
@@ -125,7 +125,7 @@
 		grid-template-areas: "status name name planed set note note price";
 
 		&__price {
-			display: block;
+			display: flex;
 		}
 
 		&__type,
@@ -215,8 +215,7 @@
 
 	.grid-menu,
 	#pay:checked~.grid-main .grid-menu {
-		grid-template-columns: repeat(4, 1fr);
-		grid-template-areas: "new profile options help";
+		grid-template-columns: repeat(4, 1fr) 70px;
 
 		@include grid-menu;
 	}

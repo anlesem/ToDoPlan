@@ -6,11 +6,11 @@
 	font-weight: 600;
 	color: $brown;
 
-	& li {
+	li:not(:last-child) {
 		width: 100%;
 		height: $height-menu;
 
-		& label {
+		label {
 			display: block;
 			width: 100%;
 			height: calc(#{$height-menu} - 20px);
@@ -19,6 +19,7 @@
 			line-height: calc(#{$height-menu} - 20px);
 
 			&:hover {
+				cursor: pointer;
 				color: #ccc;
 			}
 		}
@@ -29,6 +30,30 @@
 		height: $height-menu;
 		text-align: right;
 		line-height: $height-menu;
+	}
+
+	&__total {
+
+		label {
+			width: 100%;
+			font-size: 18px;
+			font-weight: 700;
+			color: $ocean;
+
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			&:hover {
+				cursor: pointer;
+				opacity: 0.5;
+			}
+
+			svg {
+				margin-left: 5px;
+				fill: $ocean;
+			}
+		}
 	}
 }
 
@@ -56,6 +81,153 @@
 	height: $height-header;
 	border-top-left-radius: $border-radius;
 	border-top-right-radius: $border-radius;
+
+	&__checkbox {
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+
+		@include widthTab {
+			position: relative;
+			justify-self: start;
+			width: 150px;
+		}
+
+		svg {
+			fill: $input-off;
+		}
+
+		&-pay {
+			@include widthPC {
+				display: none;
+			}
+		}
+	}
+
+	&__title {
+		height: 100%;
+		margin-left: $margin-table;
+		justify-self: self-start;
+		@include text-title;
+		font-size: 22px;
+		line-height: $height-header;
+		color: $ocean;
+	}
+
+	&__date {
+		font-size: 20px;
+	}
+
+	&__marks {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		overflow: visible;
+
+		div {
+			position: absolute;
+			top: -3px;
+			right: 10%;
+			width: 130px;
+			bottom: 0;
+
+			display: flex;
+			justify-content: space-around;
+
+			@include widthHD {
+				right: 120%;
+			}
+
+			@include widthMob {
+				right: 0;
+			}
+
+			svg:hover {
+				opacity: 0.5;
+			}
+		}
+	}
+
+	&__price {
+		position: relative;
+		flex-direction: column;
+		align-items: flex-end;
+
+		&-input {
+			display: none;
+
+			&+label {
+				display: block;
+				position: absolute;
+				top: 50%;
+				right: 100%;
+				transform: translateY(-50%);
+				width: 20px;
+
+				svg {
+					fill: $input-off;
+				}
+			}
+
+			&:checked+label svg {
+				fill: $brown;
+			}
+		}
+
+		div {
+			display: flex;
+			align-items: center;
+
+			p {
+				margin-right: 5px;
+				font-size: 13px;
+			}
+		}
+
+		.total-debt {
+			color: $purple-deep;
+
+			&+svg {
+				fill: $purple-deep;
+			}
+		}
+
+		.total-income {
+			color: $grass-dark;
+
+			&+svg {
+				fill: $grass-dark;
+			}
+		}
+
+		.total-pay {
+			color: $red-dark;
+
+			&+svg {
+				fill: $red-dark;
+			}
+		}
+
+		.total-wages,
+		.middle-wages {
+			color: $blue-dark;
+
+			&+svg {
+				fill: $blue-dark;
+			}
+		}
+	}
+}
+
+#pay:checked~.grid-main .header__checkbox-pay,
+#filters:checked~.grid-main .header__checkbox-filters,
+#properties:checked~.grid-main .header__checkbox-properties,
+#info:checked~.grid-main .header__checkbox-info {
+	background: radial-gradient(circle farthest-corner at center center, $paper-title 0%, transparent 80%);
+
+	svg {
+		fill: $brown;
+	}
 }
 
 // Фильтры
@@ -81,10 +253,10 @@
 
 	.grid-menu li.grid-menu__find {
 		position: absolute;
-		top: $height-header;
-		right: 10px;
+		top: 0;
+		right: 0;
 		z-index: 1;
-		width: 150px;
+		width: 70px;
 	}
 
 	#frame-pass:checked~.grid-main li.grid-menu__find,
@@ -104,7 +276,7 @@
 	.header {
 		background: $paper-title;
 
-		& .grid-table__set {
+		.grid-table__name {
 			display: none;
 		}
 	}
