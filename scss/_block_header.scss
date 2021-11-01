@@ -6,30 +6,137 @@
 	font-weight: 600;
 	color: $brown;
 
-	li:not(:last-child) {
+	li:nth-child(-n+4) {
 		width: 100%;
 		height: $height-menu;
 
 		label {
-			display: block;
 			width: 100%;
 			height: calc(#{$height-menu} - 20px);
 			margin: 10px 0;
-			text-align: center;
-			line-height: calc(#{$height-menu} - 20px);
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
 
 			&:hover {
 				cursor: pointer;
 				color: #ccc;
+
+				svg {
+					fill: #ccc;
+				}
+			}
+
+			p {
+				@include widthMob {
+					display: none;
+				}
+			}
+
+			svg {
+				display: none;
+				fill: $brown;
+
+				@include widthMob {
+					display: block;
+				}
 			}
 		}
 	}
 
 	&__find {
+		position: relative;
 		width: 100%;
 		height: $height-menu;
-		text-align: right;
-		line-height: $height-menu;
+
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+
+		@include widthPC {
+			margin-right: 5%;
+		}
+
+		@include widthTab {
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 1;
+			margin-right: 25px;
+		}
+
+		@include widthMob {
+			margin-right: 10px;
+		}
+
+		&:hover {
+
+			// ------------------ + ниже
+			input {
+				width: 100%;
+				padding: 7px 15px;
+				font-size: 14px;
+				font-weight: 400;
+
+				@include widthTab {
+					width: 90vw;
+					opacity: 1;
+				}
+			}
+
+			svg {
+				position: absolute;
+				top: 50%;
+				right: 3%;
+				transform: translateY(-50%);
+				width: 25px;
+				opacity: 0.4;
+			}
+		}
+
+		input {
+			width: 12vw;
+			margin-right: 5px;
+			padding: 0 10px;
+
+			font-family: lato;
+			font-size: 12px;
+			font-weight: 300;
+
+			background-color: $paper-title;
+
+			@include widthTab {
+				width: 25px;
+				opacity: 0;
+			}
+
+			// ------------------ + выше
+			&:focus {
+				width: 100%;
+				padding: 7px 15px;
+				font-size: 14px;
+				font-weight: 400;
+
+				@include widthTab {
+					width: 90vw;
+					opacity: 1;
+				}
+
+				&+svg {
+					position: absolute;
+					top: 50%;
+					right: 3%;
+					transform: translateY(-50%);
+					width: 25px;
+					opacity: 0.4;
+				}
+			}
+		}
+
+		svg {
+			fill: $ocean;
+		}
 	}
 
 	&__total {
@@ -73,7 +180,11 @@
 	border-top-right-radius: $border-radius;
 	background: $paper-frame;
 	box-shadow: inset $shadow-frame;
-	color: #aaa;
+	color: #ccc;
+
+	svg {
+		fill: #ccc;
+	}
 }
 
 // Заголовок таблицы (высота в структуре)
@@ -97,7 +208,7 @@
 			fill: $input-off;
 		}
 
-		&-pay {
+		&-money {
 			@include widthPC {
 				display: none;
 			}
@@ -219,10 +330,12 @@
 	}
 }
 
-#pay:checked~.grid-main .header__checkbox-pay,
+// Подсветка нажатых иконок в первой строке
+#money:checked~.grid-main .header__checkbox-money,
 #filters:checked~.grid-main .header__checkbox-filters,
 #properties:checked~.grid-main .header__checkbox-properties,
-#info:checked~.grid-main .header__checkbox-info {
+#info:checked~.grid-main .header__checkbox-info,
+#money-all-period:checked+label {
 	background: radial-gradient(circle farthest-corner at center center, $paper-title 0%, transparent 80%);
 
 	svg {
@@ -250,14 +363,6 @@
 
 //! ------------------------   800
 @media (max-width: $widthTab) {
-
-	.grid-menu li.grid-menu__find {
-		position: absolute;
-		top: 0;
-		right: 0;
-		z-index: 1;
-		width: 70px;
-	}
 
 	#frame-pass:checked~.grid-main li.grid-menu__find,
 	#frame-new:checked~.grid-main li.grid-menu__find,

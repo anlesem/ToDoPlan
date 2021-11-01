@@ -7,6 +7,38 @@ $widthMob: 500px; // Минимальный вариант
 $height: 700px;
 $turn-off: 300px;
 
+//* Зависимые переменные
+$height-menu: 50px;
+$height-header: 50px;
+$height-footer: 20px;
+
+$width-todo: 300px;
+$todo-head: 50px;
+
+// Выравнивание ширины правой стороны при адаптации
+$widthBG-frame: 750px;
+$marginPC: 30px;
+$width-status-tab: 70px;
+$width-manage: 40%;
+$widthHD-manage: 600px;
+
+// Таблица
+$margin-table: 40px;
+
+
+// Выравнивание отступов для Frame
+$margin-frame: 30px;
+$margin-frame-mobile: 15px;
+$margin-frame-mobile-bottom: 5px;
+$margin-frame-up: 20px;
+
+
+//* Прочее
+$border-radius: 5px;
+$shadow: -1px 2px 3px 0px #777;
+$shadow-frame: -1px 1px 2px 0px #aaa;
+$timeout: 300ms;
+
 //* Цвета
 
 $paper: #faf9f2;
@@ -59,35 +91,3 @@ $stages-color-second: #c2def2;
 $stages-color-third: #ffcc99;
 $stages-color-four: #cec2f2;
 $stages-color-five: #cbe595;
-
-//* Зависимые переменные
-$height-menu: 50px;
-$height-header: 50px;
-$height-footer: 20px;
-
-$width-todo: 300px;
-$todo-head: 50px;
-
-// Выравнивание ширины правой стороны при адаптации
-$widthBG-frame: 750px;
-$marginPC: 30px;
-$width-status-tab: 70px;
-$width-manage: 40%;
-$widthHD-manage: 600px;
-
-// Таблица
-$margin-table: 40px;
-
-
-// Выравнивание отступов для Frame
-$margin-frame: 30px;
-$margin-frame-mobile: 15px;
-$margin-frame-mobile-bottom: 5px;
-$margin-frame-up: 20px;
-
-
-//* Прочее
-$border-radius: 5px;
-$shadow: -1px 2px 3px 0px #777;
-$shadow-frame: -1px 1px 2px 0px #aaa;
-$timeout: 300ms;

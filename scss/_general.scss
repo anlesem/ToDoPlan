@@ -147,7 +147,7 @@ input.select-arrow {
 	background-image: url(../img/icon-arrow-down+.svg);
 }
 
-.input-set-wrap {
+.input-properties-wrap {
 	position: relative;
 	margin-bottom: 0;
 
@@ -176,7 +176,7 @@ input.select-arrow {
 	}
 }
 
-#info:checked~.grid-main .input-set-wrap {
+#info:checked~.grid-main .input-properties-wrap {
 	margin-bottom: 15px;
 
 	p {
@@ -283,6 +283,6 @@ input.select-arrow {
 
 
 
-#pay-off:checked~.grid-main .pay-off {
+#money-off:checked~.grid-main .money-off {
 	display: none;
 }

@@ -175,7 +175,7 @@
 	fill: #ccc;
 }
 
-#pay:checked~.panel {
+#money:checked~.panel {
 
 	width: 50px;
 
@@ -204,7 +204,7 @@
 	}
 }
 
-#pay-off:checked~.panel,
+#money-off:checked~.panel,
 #panel-fix:checked~.panel {
 	width: 450px;
 
@@ -219,7 +219,7 @@
 	}
 }
 
-#pay-off:checked~.panel {
+#money-off:checked~.panel {
 	.panel-fix-label label {
 		display: none;
 	}
@@ -335,7 +335,7 @@
 		display: none !important;
 	}
 
-	#pay:checked~.panel,
+	#money:checked~.panel,
 	#panel-fix:checked~.panel,
 	.panel {
 		width: 20px;

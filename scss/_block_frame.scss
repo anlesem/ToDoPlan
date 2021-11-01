@@ -747,7 +747,7 @@
 }
 
 // Глобальные выключатели в настройках
-#pay-off:checked~.grid-main .pay-off-label {
+#money-off:checked~.grid-main .money-off-label {
 	@include options-global-checkbox;
 }
 
