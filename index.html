@@ -324,7 +324,7 @@
 					</label>
 				</li>
 				<li class="grid-menu__find">
-					<input type="text">
+					<span><input type="text"></span>
 					<svg width="25" height="25" viewBox="0 0 25 25">
 						<use href="#icon__find" />
 					</svg>
@@ -365,21 +365,36 @@
 				<div class="grid-table__name header__title">Ежедневник</div>
 				<div class="grid-table__set header__marks">
 					<div>
-						<svg class="mark-first-color" width="21" height="35" viewBox="0 0 21 35">
-							<use href="#icon__flag" />
-						</svg>
-						<svg class="mark-second-color" width="21" height="35" viewBox="0 0 21 35">
-							<use href="#icon__flag" />
-						</svg>
-						<svg class="mark-third-color" width="21" height="35" viewBox="0 0 21 35">
-							<use href="#icon__flag" />
-						</svg>
-						<svg class="mark-four-color" width="21" height="35" viewBox="0 0 21 35">
-							<use href="#icon__flag" />
-						</svg>
-						<svg class="mark-five-color" width="21" height="35" viewBox="0 0 21 35">
-							<use href="#icon__flag" />
-						</svg>
+						<input type="checkbox" id="input-mark-first">
+						<label for="input-mark-first">
+							<svg class="mark-first-color" width="21" height="35" viewBox="0 0 21 35">
+								<use href="#icon__flag" />
+							</svg>
+						</label>
+						<input type="checkbox" id="input-mark-second">
+						<label for="input-mark-second">
+							<svg class="mark-second-color" width="21" height="35" viewBox="0 0 21 35">
+								<use href="#icon__flag" />
+							</svg>
+						</label>
+						<input type="checkbox" id="input-mark-third">
+						<label for="input-mark-third">
+							<svg class="mark-third-color" width="21" height="35" viewBox="0 0 21 35">
+								<use href="#icon__flag" />
+							</svg>
+						</label>
+						<input type="checkbox" id="input-mark-four">
+						<label for="input-mark-four">
+							<svg class="mark-four-color" width="21" height="35" viewBox="0 0 21 35">
+								<use href="#icon__flag" />
+							</svg>
+						</label>
+						<input type="checkbox" id="input-mark-five">
+						<label for="input-mark-five">
+							<svg class="mark-five-color" width="21" height="35" viewBox="0 0 21 35">
+								<use href="#icon__flag" />
+							</svg>
+						</label>
 					</div>
 				</div>
 				<div class="grid-table__note header__title header__date">6 ноября 2022г.</div>
@@ -496,7 +511,7 @@
 							</label>
 						</div>
 						<!-- ------------------------------------------------------------- Вход вход / pass__enter -->
-						<form action="" class="pass__enter">
+						<form action="#" class="pass__enter">
 							<div class="pass__input">
 								<input type="text" name="login" id="pass__enter-login" required>
 								<label for="login">Логин *</label>
@@ -508,7 +523,7 @@
 							<button class="pass__button" type="submit">Войти</button>
 						</form>
 						<!-- ------------------------------------------------------------- Вход регистрация / pass__registration -->
-						<form action="" class="pass__registration">
+						<form action="#" class="pass__registration">
 							<div class="pass__input">
 								<input type="text" name="new-login" id="pass__registration-login" required>
 								<label for="new-login">Логин *</label>
@@ -538,7 +553,7 @@
 							</label>
 						</div>
 						<!-- ------------------------------------------------------------- Создать проект / new__project -->
-						<form action="" class="new__project">
+						<form action="#" class="new__project">
 							<div class="frame__manage-input">
 								<label for="project-name">Наименование: *</label>
 								<input type="text" name="project-name" autocomplete="off" required>
@@ -647,7 +662,7 @@
 							<button type="submit">Создать</button>
 						</form>
 						<!-- ------------------------------------------------------------- Создать задача / new__task -->
-						<form action="" class="new__task">
+						<form action="#" class="new__task">
 							<div class="frame__manage-input">
 								<label for="task-name">Наименование: *</label>
 								<input type="text" name="task-name" autocomplete="off" required>
@@ -777,7 +792,7 @@
 							<button type="submit">Создать</button>
 						</form>
 						<!-- ------------------------------------------------------------- Создать событие / new__event -->
-						<form action="" class="new__event">
+						<form action="#" class="new__event">
 							<legend class="frame__manage-title">
 								<hr class="left-line">
 								<span>Добавить новое:</span>
@@ -793,7 +808,7 @@
 							</div>
 							<button type="submit">Создать</button>
 						</form>
-						<form action="" class="new__event">
+						<form action="#" class="new__event">
 							<legend class="frame__manage-title">
 								<hr class="left-line">
 								<span>Редактировать существующее:</span>
@@ -853,7 +868,7 @@
 							<hr>
 							<div class="profile__data-form">
 								<p>Сменить пароль:</p>
-								<form action="">
+								<form action="#">
 									<div>
 										<label for="pass-now">Текущий пароль *</label>
 										<input type="password" name="pass-now" required>
@@ -868,7 +883,7 @@
 							<hr>
 							<div class="profile__data-form">
 								<p>Установить PIN:</p>
-								<form action="">
+								<form action="#">
 									<div>
 										<label for="pass-now">Текущий пароль *</label>
 										<input type="password" name="pass-now" required>
@@ -883,7 +898,7 @@
 						</div>
 						<!-- ------------------------------------------------------------- Профиль данные о партнёрах / profile__partner -->
 						<div class="profile__partner">
-							<form action="" class="frame__manage-form">
+							<form action="#" class="frame__manage-form">
 								<legend class="frame__manage-title">
 									<hr class="left-line">
 									<span>Добавить нового:</span>
@@ -899,7 +914,7 @@
 								</div>
 								<button type="submit">Создать</button>
 							</form>
-							<form action="" class="frame__manage-form">
+							<form action="#" class="frame__manage-form">
 								<legend class="frame__manage-title">
 									<hr class="left-line">
 									<span>Редактировать существующего:</span>
@@ -952,7 +967,7 @@
 						</div>
 						<!-- ------------------------------------------------------------- Профиль данные о коллегах / profile__person -->
 						<div class="profile__person">
-							<form action="" class="frame__manage-form">
+							<form action="#" class="frame__manage-form">
 								<legend class="frame__manage-title">
 									<hr class="left-line">
 									<span>Добавить нового:</span>
@@ -968,7 +983,7 @@
 								</div>
 								<button type="submit">Создать</button>
 							</form>
-							<form action="" class="frame__manage-form">
+							<form action="#" class="frame__manage-form">
 								<legend class="frame__manage-title">
 									<hr class="left-line">
 									<span>Редактировать существующего:</span>
@@ -1021,7 +1036,7 @@
 					</div>
 					<!-- ?------------------------------------------------------------- Управление _ Настройки / manage _ options -->
 					<div class="frame__manage-options">
-						<form action="" class="frame__manage-form">
+						<form action="#" class="frame__manage-form">
 							<legend class="frame__manage-title">
 								<hr class="left-line">
 								<span>Общие:</span>
@@ -1069,7 +1084,7 @@
 							<button type="submit">Применить</button>
 						</form>
 						<!-- ------------------------------------------------------------- Настройки Вкладки / options-tabs -->
-						<form action="" class="frame__manage-form">
+						<form action="#" class="frame__manage-form">
 							<legend class="frame__manage-title">
 								<hr class="left-line">
 								<span>Вкладки:</span>
@@ -1098,7 +1113,7 @@
 							<button type="submit">Применить</button>
 						</form>
 						<!-- ------------------------------------------------------------- Настройки Закладки / options-marks -->
-						<form action="" class="frame__manage-form">
+						<form action="#" class="frame__manage-form">
 							<legend class="frame__manage-title">
 								<hr class="left-line">
 								<span>Закладки:</span>
@@ -1127,7 +1142,7 @@
 							<button type="submit">Применить</button>
 						</form>
 						<!-- ------------------------------------------------------------- Настройки Стадии / options-stage-->
-						<form action="" class="frame__manage-form">
+						<form action="#" class="frame__manage-form">
 							<legend class="frame__manage-title">
 								<hr class="left-line">
 								<span>Стадии:</span>
@@ -1173,7 +1188,7 @@
 							<button class="delete" type="submit">Удалить</button>
 						</form>
 						<!-- ------------------------------------------------------------- Настройки Счета / account -->
-						<form action="" class="frame__manage-form">
+						<form action="#" class="frame__manage-form">
 							<legend class="frame__manage-title">
 								<hr class="left-line">
 								<span>Счета:</span>
@@ -1197,7 +1212,7 @@
 							<button class="delete" type="submit">Удалить</button>
 						</form>
 						<!-- ------------------------------------------------------------- Настройки Шаблона / pattern -->
-						<form action="" class="frame__manage-form">
+						<form action="#" class="frame__manage-form">
 							<legend class="frame__manage-title">
 								<hr class="left-line">
 								<span>Шаблоны:</span>

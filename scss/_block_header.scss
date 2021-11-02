@@ -12,12 +12,13 @@
 
 		label {
 			width: 100%;
-			height: calc(#{$height-menu} - 20px);
+			height: calc(#{$height-menu} - 10px);
 			margin: 10px 0;
+			line-height: calc(#{$height-menu} - 20px);
+
 
 			display: flex;
 			justify-content: center;
-			align-items: center;
 
 			&:hover {
 				cursor: pointer;
@@ -26,6 +27,10 @@
 				svg {
 					fill: #ccc;
 				}
+			}
+
+			@include widthTab {
+				align-items: flex-start;
 			}
 
 			p {
@@ -62,7 +67,7 @@
 			position: absolute;
 			top: 0;
 			right: 0;
-			z-index: 1;
+			width: 70px;
 			margin-right: 25px;
 		}
 
@@ -83,15 +88,6 @@
 					width: 90vw;
 					opacity: 1;
 				}
-			}
-
-			svg {
-				position: absolute;
-				top: 50%;
-				right: 3%;
-				transform: translateY(-50%);
-				width: 25px;
-				opacity: 0.4;
 			}
 		}
 
@@ -121,15 +117,6 @@
 				@include widthTab {
 					width: 90vw;
 					opacity: 1;
-				}
-
-				&+svg {
-					position: absolute;
-					top: 50%;
-					right: 3%;
-					transform: translateY(-50%);
-					width: 25px;
-					opacity: 0.4;
 				}
 			}
 		}
@@ -182,6 +169,10 @@
 	box-shadow: inset $shadow-frame;
 	color: #ccc;
 
+	@include widthTab {
+		align-items: center;
+	}
+
 	svg {
 		fill: #ccc;
 	}
@@ -195,6 +186,8 @@
 
 	&__checkbox {
 		width: 100%;
+		height: 100%;
+
 		display: flex;
 		justify-content: space-around;
 
@@ -204,7 +197,18 @@
 			width: 150px;
 		}
 
+		label {
+			position: relative;
+			flex-grow: 1;
+
+			&:hover {
+				cursor: pointer;
+				opacity: 0.5;
+			}
+		}
+
 		svg {
+			@include position-center;
 			fill: $input-off;
 		}
 
@@ -252,10 +256,24 @@
 			@include widthMob {
 				right: 0;
 			}
+		}
 
-			svg:hover {
-				opacity: 0.5;
-			}
+		input {
+			display: none;
+		}
+
+		label:hover {
+			cursor: pointer;
+			opacity: 0.5;
+		}
+
+		svg {
+			filter: drop-shadow(-1px 1px 1px #777);
+		}
+
+		input:checked+label svg {
+			transform-origin: top;
+			transform: scaleY(1.3);
 		}
 	}
 

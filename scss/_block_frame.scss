@@ -312,7 +312,6 @@
 		}
 
 		&-checkbox {
-			margin-top: 30px;
 			padding: 0 30px;
 
 			@include widthMob {
@@ -325,7 +324,7 @@
 
 			label {
 				position: relative;
-				padding-left: 30px;
+				padding: 15px 0 15px 30px;
 				color: $brown;
 
 				display: flex;
@@ -333,9 +332,9 @@
 				&::before {
 					content: "";
 					position: absolute;
-					top: 0;
-					bottom: 0;
+					top: 50%;
 					left: 0;
+					transform: translateY(-50%);
 					width: 15px;
 					height: 15px;
 					border: 1px solid $input-border;
@@ -343,9 +342,14 @@
 					background-color: $paper-frame;
 				}
 
+				&:hover {
+					cursor: pointer;
+					opacity: 0.5;
+				}
+
 				svg {
 					position: absolute;
-					top: 15%;
+					top: 40%;
 					left: 5px;
 					transform: translateY(-50%);
 					width: 15px;
