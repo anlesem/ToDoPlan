@@ -65,12 +65,12 @@
 	}
 }
 
-#frame-pass:checked~.grid-main .grid-table,
-#frame-new:checked~.grid-main .grid-table,
-#frame-profile:checked~.grid-main .grid-table,
-#frame-options:checked~.grid-main .grid-table,
-#frame-help:checked~.grid-main .grid-table,
-#frame-stat:checked~.grid-main .grid-table {
+#frame-pass:checked~.container .grid-table,
+#frame-new:checked~.container .grid-table,
+#frame-profile:checked~.container .grid-table,
+#frame-options:checked~.container .grid-table,
+#frame-help:checked~.container .grid-table,
+#frame-stat:checked~.container .grid-table {
 	display: none;
 }
 

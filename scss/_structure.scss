@@ -1,6 +1,6 @@
 //* Сетка
 // Структура
-.grid-main {
+.container {
 	position: relative;
 	max-width: 1800px;
 	width: 90%;
@@ -11,7 +11,7 @@
 	grid-template-areas: "header"
 		"main";
 
-	@include grid-main;
+	@include container;
 
 	header {
 		overflow-y: scroll;
@@ -35,7 +35,7 @@
 	}
 }
 
-#money:checked~.grid-main .grid-menu {
+#money:checked~.container .grid-menu {
 	grid-template-areas: "new profile options help .  find find . . total";
 
 	&__total {
@@ -43,7 +43,7 @@
 	}
 }
 
-#money-off:checked~.grid-main .grid-menu {
+#money-off:checked~.container .grid-menu {
 	grid-template-areas: "new profile options help . find find . . .";
 
 	&__total {
@@ -68,7 +68,7 @@
 	}
 }
 
-#money:checked~.grid-main .grid-table {
+#money:checked~.container .grid-table {
 	grid-template-areas: "status name name planed set note note price type partner";
 
 	&__price,
@@ -78,7 +78,7 @@
 	}
 }
 
-#money-off:checked~.grid-main .grid-table {
+#money-off:checked~.container .grid-table {
 	grid-template-areas: "status name name planed set note note . . .";
 
 	&__price,
@@ -105,11 +105,11 @@
 		@include grid-menu;
 	}
 
-	#money:checked~.grid-main .grid-menu {
+	#money:checked~.container .grid-menu {
 		grid-template-areas: "new profile options help . find find total";
 	}
 
-	#money-off:checked~.grid-main .grid-menu {
+	#money-off:checked~.container .grid-menu {
 		grid-template-areas: "new profile options help . find find .";
 	}
 
@@ -121,7 +121,7 @@
 		@include grid-table;
 	}
 
-	#money:checked~.grid-main .grid-table {
+	#money:checked~.container .grid-table {
 		grid-template-areas: "status name name planed set note note price";
 
 		&__price {
@@ -134,11 +134,11 @@
 		}
 	}
 
-	#money:checked~.grid-main .group {
+	#money:checked~.container .group {
 		grid-template-areas: "status name name planed set note note note";
 	}
 
-	#money-off:checked~.grid-main .grid-table {
+	#money-off:checked~.container .grid-table {
 		grid-template-areas: "status name name planed set note note note";
 
 		&__price {
@@ -150,12 +150,12 @@
 //! ------------------------   1350
 @media (max-width: $widthPC) {
 
-	.grid-main {
+	.container {
 		width: calc(100% - #{$marginPC} - #{$marginPC});
 	}
 
 	.grid-menu,
-	#money:checked~.grid-main .grid-menu {
+	#money:checked~.container .grid-menu {
 		grid-template-columns: repeat(5, 150px) repeat(2, 1fr);
 		grid-template-areas: "new profile options help . find find";
 
@@ -168,7 +168,7 @@
 
 	.grid-table,
 	.group,
-	#money:checked~.grid-main .grid-table {
+	#money:checked~.container .grid-table {
 		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr);
 		grid-template-areas: "status name name planed set note note";
 
@@ -185,7 +185,7 @@
 @media (max-width: $widthLT) {
 
 	.grid-menu,
-	#money:checked~.grid-main .grid-menu {
+	#money:checked~.container .grid-menu {
 		grid-template-columns: repeat(4, 150px) 1fr;
 		grid-template-areas: "new profile options help find";
 
@@ -194,7 +194,7 @@
 
 	.grid-table,
 	.group,
-	#money:checked~.grid-main .grid-table {
+	#money:checked~.container .grid-table {
 		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px);
 		grid-template-areas: "status name name planed set";
 
@@ -209,12 +209,12 @@
 //! ------------------------   800
 @media (max-width: $widthTab) {
 
-	.grid-main {
+	.container {
 		width: 100%;
 	}
 
 	.grid-menu,
-	#money:checked~.grid-main .grid-menu {
+	#money:checked~.container .grid-menu {
 		grid-template-columns: repeat(4, 1fr) 70px;
 
 		@include grid-menu;
@@ -222,7 +222,7 @@
 
 	.grid-table,
 	.group,
-	#money:checked~.grid-main .grid-table {
+	#money:checked~.container .grid-table {
 		grid-template-columns: $width-status-tab repeat(2, 1fr) 20% 40px;
 		grid-template-areas: "status name name planed set";
 
@@ -235,7 +235,7 @@
 
 	.grid-table,
 	.group,
-	#money:checked~.grid-main .grid-table {
+	#money:checked~.container .grid-table {
 		grid-template-columns: $width-status-tab repeat(2, 1fr) 40px;
 		grid-template-areas: "status name name set";
 

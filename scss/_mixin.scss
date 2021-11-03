@@ -83,7 +83,7 @@
 }
 
 // Во избежание предупреждения SCSS
-@mixin grid-main {
+@mixin container {
 	header {
 		grid-area: header;
 	}

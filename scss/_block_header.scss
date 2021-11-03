@@ -100,7 +100,7 @@
 			font-size: 12px;
 			font-weight: 300;
 
-			background-color: $paper-title;
+			background-color: $paper-todo;
 
 			@include widthTab {
 				width: 25px;
@@ -123,6 +123,10 @@
 
 		svg {
 			fill: $ocean;
+
+			@include widthMob {
+				margin-bottom: 5px;
+			}
 		}
 	}
 
@@ -151,15 +155,15 @@
 	}
 }
 
-#frame-pass:checked~.grid-main .grid-menu {
+#frame-pass:checked~.container .grid-menu {
 	display: none;
 }
 
-#frame-new:checked~.grid-main .grid-menu__new label,
-#frame-profile:checked~.grid-main .grid-menu__profile label,
-#frame-options:checked~.grid-main .grid-menu__options label,
-#frame-help:checked~.grid-main .grid-menu__help label,
-#frame-stat:checked~.grid-main .grid-menu__stat label {
+#frame-new:checked~.container .grid-menu__new label,
+#frame-profile:checked~.container .grid-menu__profile label,
+#frame-options:checked~.container .grid-menu__options label,
+#frame-help:checked~.container .grid-menu__help label,
+#frame-stat:checked~.container .grid-menu__stat label {
 	height: calc(#{$height-menu} - 15px);
 	margin: 15px 0 0 0;
 	border-radius: 0px;
@@ -277,12 +281,12 @@
 		}
 	}
 
-	&__price {
+	&__money {
 		position: relative;
 		flex-direction: column;
 		align-items: flex-end;
 
-		&-input {
+		&-all-period {
 			display: none;
 
 			&+label {
@@ -349,10 +353,10 @@
 }
 
 // Подсветка нажатых иконок в первой строке
-#money:checked~.grid-main .header__checkbox-money,
-#filters:checked~.grid-main .header__checkbox-filters,
-#properties:checked~.grid-main .header__checkbox-properties,
-#info:checked~.grid-main .header__checkbox-info,
+#money:checked~.container .header__checkbox-money,
+#filters:checked~.container .header__checkbox-filters,
+#properties:checked~.container .header__checkbox-properties,
+#info:checked~.container .header__checkbox-info,
 #money-all-period:checked+label {
 	background: radial-gradient(circle farthest-corner at center center, $paper-title 0%, transparent 80%);
 
@@ -369,7 +373,7 @@
 	transition: height $timeout;
 }
 
-#filters:checked~.grid-main .filters {
+#filters:checked~.container .filters {
 	height: 40px;
 	border-bottom: 1px solid #698ccc;
 }
@@ -382,17 +386,17 @@
 //! ------------------------   800
 @media (max-width: $widthTab) {
 
-	#frame-pass:checked~.grid-main li.grid-menu__find,
-	#frame-new:checked~.grid-main li.grid-menu__find,
-	#frame-profile:checked~.grid-main li.grid-menu__find,
-	#frame-options:checked~.grid-main li.grid-menu__find,
-	#frame-help:checked~.grid-main li.grid-menu__find,
-	#frame-stat:checked~.grid-main li.grid-menu__find {
+	#frame-pass:checked~.container li.grid-menu__find,
+	#frame-new:checked~.container li.grid-menu__find,
+	#frame-profile:checked~.container li.grid-menu__find,
+	#frame-options:checked~.container li.grid-menu__find,
+	#frame-help:checked~.container li.grid-menu__find,
+	#frame-stat:checked~.container li.grid-menu__find {
 		display: none;
 	}
 
 
-	#filters:checked~.grid-main .filters {
+	#filters:checked~.container .filters {
 		border-bottom: none;
 	}
 

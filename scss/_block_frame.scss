@@ -706,52 +706,52 @@
 }
 
 // Отключение "закруглённых углов" 
-#frame-new:checked~.grid-main .frame,
-#frame-new:checked~.grid-main .frame__manage {
+#frame-new:checked~.container .frame,
+#frame-new:checked~.container .frame__manage {
 	border-top-left-radius: 0;
 }
 
-#frame-help:checked~.grid-main .frame,
-#frame-help:checked~.grid-main .frame__manage {
+#frame-help:checked~.container .frame,
+#frame-help:checked~.container .frame__manage {
 
 	@include widthHD {
 		border-top-right-radius: 0;
 	}
 }
 
-#enter:checked~.grid-main .label-enter,
-#registration:checked~.grid-main .label-registration,
-#project:checked~.grid-main .label-project,
-#task:checked~.grid-main .label-task,
-#event:checked~.grid-main .label-event,
-#data:checked~.grid-main .label-data,
-#partner:checked~.grid-main .label-partner,
-#person:checked~.grid-main .label-person {
+#enter:checked~.container .label-enter,
+#registration:checked~.container .label-registration,
+#project:checked~.container .label-project,
+#task:checked~.container .label-task,
+#event:checked~.container .label-event,
+#data:checked~.container .label-data,
+#partner:checked~.container .label-partner,
+#person:checked~.container .label-person {
 	border-bottom: 2px solid $ocean;
 	font-size: 22px;
 	font-weight: 700;
 	color: $ocean;
 }
 
-#enter:checked~.grid-main .pass__enter,
-#registration:checked~.grid-main .pass__registration {
+#enter:checked~.container .pass__enter,
+#registration:checked~.container .pass__registration {
 	display: block;
 }
 
-#project:checked~.grid-main .new__project,
-#task:checked~.grid-main .new__task,
-#event:checked~.grid-main .new__event {
+#project:checked~.container .new__project,
+#task:checked~.container .new__task,
+#event:checked~.container .new__event {
 	display: flex;
 }
 
-#data:checked~.grid-main .profile__data,
-#partner:checked~.grid-main .profile__partner,
-#person:checked~.grid-main .profile__person {
+#data:checked~.container .profile__data,
+#partner:checked~.container .profile__partner,
+#person:checked~.container .profile__person {
 	display: block;
 }
 
 // Глобальные выключатели в настройках
-#money-off:checked~.grid-main .money-off-label {
+#money-off:checked~.container .money-off-label {
 	@include options-global-checkbox;
 }
 
@@ -812,11 +812,11 @@
 	}
 }
 
-#frame-off:checked~.grid-main .frame {
+#frame-off:checked~.container .frame {
 	display: none;
 }
 
-#frame-pass:checked~.grid-main {
+#frame-pass:checked~.container {
 
 	.frame__art-contact {
 		display: grid;
@@ -827,19 +827,19 @@
 	}
 }
 
-#frame-new:checked~.grid-main .frame__manage-new {
+#frame-new:checked~.container .frame__manage-new {
 	display: block;
 }
 
-#frame-profile:checked~.grid-main .frame__manage-profile {
+#frame-profile:checked~.container .frame__manage-profile {
 	display: block;
 }
 
-#frame-options:checked~.grid-main .frame__manage-options {
+#frame-options:checked~.container .frame__manage-options {
 	display: block;
 }
 
-#frame-help:checked~.grid-main {
+#frame-help:checked~.container {
 
 	.frame__manage-help {
 		display: block;
@@ -850,6 +850,6 @@
 	}
 }
 
-#frame-stat:checked~.grid-main .frame__manage-stat {
+#frame-stat:checked~.container .frame__manage-stat {
 	display: block;
 }

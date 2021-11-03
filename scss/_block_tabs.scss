@@ -205,10 +205,10 @@
 	}
 }
 
-#frame-off:checked~.grid-main .tabs {
+#frame-off:checked~.container .tabs {
 	display: block;
 }
 
-#frame-off:checked~.grid-main .tabs-imitation {
+#frame-off:checked~.container .tabs-imitation {
 	display: none;
 }
