@@ -1,6 +1,4 @@
 //* Форма. 
-// Настройки нажатых вкладок
-
 // Глобальный выключатель
 @mixin options-global-checkbox {
 	&::before {
@@ -13,13 +11,18 @@
 	}
 }
 
-
 //* Подписи
 @mixin text-title {
 	font-family: cormorant-infant;
 	font-style: italic;
 	font-weight: 700;
 	letter-spacing: 1px;
+}
+
+@mixin text-hide-overflow {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 // Информационные подписи

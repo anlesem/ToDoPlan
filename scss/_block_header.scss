@@ -371,6 +371,147 @@
 	border-bottom: none;
 	overflow: hidden;
 	transition: height $timeout;
+
+	&>div {
+		width: 100%;
+	}
+
+	&-wrap {
+		position: relative;
+		width: 100%;
+		height: 25px;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		p {
+			display: none;
+
+			position: absolute;
+			bottom: -15px;
+			left: 3px;
+
+			@include text-info;
+
+			@include text-hide-overflow;
+		}
+	}
+
+	&__checkbox {
+		height: 100%;
+		margin-bottom: 0;
+		box-sizing: border-box;
+		border-radius: 3px;
+		border: 1px solid $input-border;
+		background-color: #fff;
+
+		display: flex;
+		justify-content: space-between;
+
+		&-full {
+			width: 100%;
+		}
+
+		input {
+			display: none;
+		}
+
+		label {
+			position: relative;
+			display: block;
+			width: 30px;
+			height: 100%;
+
+			&.filters__checkbox-one {
+				width: 25px;
+			}
+
+			&:hover {
+				cursor: pointer;
+				opacity: 0.5;
+			}
+		}
+
+		input:checked+label {
+			background: radial-gradient(circle farthest-corner at center center, #faf6e1 0%, transparent 100%);
+
+			svg {
+				fill: $blue;
+
+				&.filters__checkbox-save {
+					fill: $input-none;
+				}
+			}
+
+			span {
+				color: $blue;
+			}
+		}
+
+		svg {
+			@include position-center;
+			fill: $input-none;
+
+			&.filters__checkbox-save {
+				fill: $grass-dark;
+			}
+		}
+
+		span {
+			@include position-center;
+			font-size: 13px;
+			color: $input-none;
+		}
+	}
+
+	&__select,
+	&__select-money {
+
+		justify-content: flex-start;
+
+		svg {
+			width: 25px;
+			fill: $ocean;
+		}
+
+		select {
+			width: 75%;
+			height: 100%;
+			padding: 0 15px;
+			border-radius: 3px;
+			font-size: 13px;
+		}
+
+		p {
+			left: 28px;
+		}
+	}
+
+	&__select-money {
+		justify-content: space-between;
+
+		select {
+			width: calc(100% - 25px);
+		}
+	}
+
+	&__alone {
+		justify-content: center;
+
+		p {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+}
+
+#info:checked~.container .filters-wrap {
+	margin-bottom: 12px;
+
+	p {
+		display: block;
+	}
 }
 
 #filters:checked~.container .filters {
