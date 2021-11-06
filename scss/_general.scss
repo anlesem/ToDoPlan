@@ -278,6 +278,7 @@ input.select-arrow {
 
 
 
-#money-off:checked~.container .money-off {
+#money-off:checked~.container .header__money-off,
+#money-off:checked~.table__swap .table__swap-money-off {
 	display: none;
 }

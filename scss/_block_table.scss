@@ -33,8 +33,7 @@
 		}
 
 		@include widthLT {
-			left: auto;
-			right: 150px;
+			content: none;
 		}
 
 		@include widthTab {
@@ -54,13 +53,13 @@
 		content: "";
 		position: absolute;
 		top: 0;
+		bottom: 0;
 		left: 150px;
-		height: 100%;
 		width: 1px;
 		background: #ff7f7f;
 
 		@include widthTab {
-			left: $width-status-tab;
+			content: none;
 		}
 	}
 }
@@ -76,4 +75,13 @@
 
 main .grid-table:hover {
 	background: $paper-hover;
+}
+
+//! ------------------------   600
+@media (max-width: $widthMob) {
+
+	#table__swap-set:checked~.container .grid-table__name,
+	#table__swap-note:checked~.container .grid-table__name {
+		position: absolute;
+	}
 }

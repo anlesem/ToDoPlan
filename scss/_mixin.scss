@@ -86,16 +86,6 @@
 }
 
 // Во избежание предупреждения SCSS
-@mixin container {
-	header {
-		grid-area: header;
-	}
-
-	main {
-		grid-area: main;
-	}
-}
-
 @mixin grid-menu {
 	&__new {
 		grid-area: new;
@@ -131,12 +121,12 @@
 		grid-area: name;
 	}
 
-	&__planed {
-		grid-area: planed;
-	}
-
 	&__set {
 		grid-area: set;
+	}
+
+	&__planed {
+		grid-area: planed;
 	}
 
 	&__note {

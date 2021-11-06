@@ -45,10 +45,12 @@
 	<input type="radio" name="profile" id="data" checked>
 	<input type="radio" name="profile" id="partner">
 	<input type="radio" name="profile" id="person">
-	<!-- ------------------------------------------------------------- Переключатель панели в мобильной версии -->
+	<!-- ------------------------------------------------------------- Переключатель столбцов таблицы -->
+	<input type="radio" name="table__swap" id="table__swap-name" checked>
+	<input type="radio" name="table__swap" id="table__swap-set">
+	<input type="radio" name="table__swap" id="table__swap-note">
+	<input type="radio" name="table__swap" id="table__swap-money">
 	<input type="checkbox" id="panel-fix">
-	<input type="radio" name="panel" id="panel-table" checked>
-	<input type="radio" name="panel" id="panel-panel">
 	<!-- ?------------------------------------------------------- Иконки / icon -------------------------- -->
 	<svg class="visually-hidden">
 		<symbol id="logo" viewBox="0 0 352.3 349.9">
@@ -305,18 +307,25 @@
 		<!-- ------------------------------------------------------ Иконки прочие --------------- -->
 
 		<symbol id="icon__panel-fix" viewBox="0 0 256 256">
-			<path
-				d="M127.99414,114a25.99734,25.99734,0,0,0-6,51.29346V184a6,6,0,1,0,12,0V165.29346a25.99734,25.99734,0,0,0-6-51.29346Zm0,40a14,14,0,1,1,14-14A14.01572,14.01572,0,0,1,127.99414,154Zm80-72h-38V52a42,42,0,1,0-84,0V82h-38a14.01572,14.01572,0,0,0-14,14V208a14.01572,14.01572,0,0,0,14,14h160a14.01572,14.01572,0,0,0,14-14V96A14.01572,14.01572,0,0,0,207.99414,82Zm-110-30a30,30,0,1,1,60,0V82h-60Zm112,156a2.002,2.002,0,0,1-2,2h-160a2.002,2.002,0,0,1-2-2V96a2.002,2.002,0,0,1,2-2h160a2.002,2.002,0,0,1,2,2Z" />
+			<path d="M196,82h-26V52c0-23.2-18.8-42-42-42S86,28.8,86,52v30H60c-7.7,0-14,6.3-14,14v112c0,7.7,6.3,14,14,14h136
+			c7.7,0,14-6.3,14-14V96C210,88.3,203.7,82,196,82z M98,52c0-16.6,13.4-30,30-30s30,13.4,30,30v30H98V52z M198,208c0,1.1-0.9,2-2,2
+			H60c-1.1,0-2-0.9-2-2V96c0-1.1,0.9-2,2-2h136c1.1,0,2,0.9,2,2V208z" />
 		</symbol>
 
 	</svg>
 	<!-- ?------------------------------------------------------- Переключение панели panel-swap (в мобильной версии) -------------------------- -->
-	<div class="panel-swap">
-		<label class="" for="panel-table">
-			Таблица
+	<div class="table__swap">
+		<label class="" for="table__swap-name">
+			Наименование
 		</label>
-		<label class="" for="panel-panel">
-			Панель
+		<label class="" for="table__swap-set">
+			Управление
+		</label>
+		<label class="" for="table__swap-note">
+			Примечание
+		</label>
+		<label class="table__swap-money-off" for="table__swap-money">
+			Финансы
 		</label>
 	</div>
 	<div class="container">
@@ -1235,7 +1244,7 @@
 				</li>
 				<li class="grid-menu__total">
 					<label for="frame-stat">
-						<p>1 225 000</p>
+						<p>150 225 000</p>
 						<svg width="15" height="15" viewBox="0 0 15 15">
 							<use href="#icon__money" />
 						</svg>
@@ -1260,7 +1269,7 @@
 							<use href="#icon__properties" />
 						</svg>
 					</label>
-					<label class="money-off header__checkbox-money" for="money">
+					<label class="header__money-off header__checkbox-money" for="money">
 						<svg width="20" height="20" viewBox="0 0 20 20">
 							<use href="#icon__money" />
 						</svg>
@@ -1301,7 +1310,7 @@
 						</label>
 					</div>
 				</div>
-				<div class="grid-table__note header__title header__date">6 ноября 2022г.</div>
+				<div class="grid-table__note header__title"><span class="header__date"> 6 ноября 2022г.</span></div>
 				<div class="grid-table__price header__money">
 					<input class="header__money-all-period" type="checkbox" id="money-all-period">
 					<label for="money-all-period">
@@ -1399,19 +1408,6 @@
 						<p>Источник (заказчик)</p>
 					</div>
 				</div>
-				<div class="grid-table__planed">
-					<div class="filters-wrap filters__alone">
-						<div class="filters__checkbox">
-							<input type="checkbox" id="filters__checkbox-warning">
-							<label class="filters__checkbox-one" for="filters__checkbox-warning">
-								<svg width="16" height="16" viewBox="0 0 16 16">
-									<use href="#icon__warning" />
-								</svg>
-							</label>
-						</div>
-						<p>Срок на исходе</p>
-					</div>
-				</div>
 				<div class="grid-table__set">
 					<div class="filters-wrap">
 						<div class="filters__checkbox filters__checkbox-full">
@@ -1441,6 +1437,19 @@
 							</label>
 						</div>
 						<p>Варианты отображения</p>
+					</div>
+				</div>
+				<div class="grid-table__planed">
+					<div class="filters-wrap filters__alone">
+						<div class="filters__checkbox">
+							<input type="checkbox" id="filters__checkbox-warning">
+							<label class="filters__checkbox-one" for="filters__checkbox-warning">
+								<svg width="16" height="16" viewBox="0 0 16 16">
+									<use href="#icon__warning" />
+								</svg>
+							</label>
+						</div>
+						<p>Срок на исходе</p>
 					</div>
 				</div>
 				<div class="grid-table__note">
@@ -1634,8 +1643,10 @@
 			<div class="grid-table title">
 				<div class="grid-table__status">Статус</div>
 				<div class="grid-table__name">Наименование</div>
+				<div class="grid-table__set">
+					Управление
+				</div>
 				<div class="grid-table__planed">План</div>
-				<div class="grid-table__set">Управление</div>
 				<div class="grid-table__note">Примечание</div>
 				<div class="grid-table__price">Стоимость</div>
 				<div class="grid-table__type">Операция</div>
@@ -1647,8 +1658,10 @@
 			<div class="grid-table">
 				<div class="grid-table__status">Иконки</div>
 				<div class="grid-table__name">Наименования</div>
+				<div class="grid-table__set">
+					<div class="grid-table__set-wrap">Управление</div>
+				</div>
 				<div class="grid-table__planed">План</div>
-				<div class="grid-table__set">Управление</div>
 				<div class="grid-table__note">Примечание</div>
 				<div class="grid-table__price">Стоимость</div>
 				<div class="grid-table__type">Операция</div>
@@ -1657,7 +1670,9 @@
 			<div class="grid-table">
 				<div class="grid-table__status">Иконки</div>
 				<div class="grid-table__name">Наименования</div>
-				<div class="grid-table__set">Управление</div>
+				<div class="grid-table__set">
+					<div class="grid-table__set-wrap">Управление</div>
+				</div>
 				<div class="grid-table__note">Примечание</div>
 				<div class="grid-table__price">Стоимость</div>
 				<div class="grid-table__type">Операция</div>
@@ -1666,7 +1681,9 @@
 			<div class="grid-table">
 				<div class="grid-table__status">Иконки</div>
 				<div class="grid-table__name">Наименования</div>
-				<div class="grid-table__set">Управление</div>
+				<div class="grid-table__set">
+					<div class="grid-table__set-wrap">Управление</div>
+				</div>
 				<div class="grid-table__note">Примечание</div>
 				<div class="grid-table__price">Стоимость</div>
 				<div class="grid-table__type">Операция</div>
@@ -1675,8 +1692,10 @@
 			<div class="grid-table">
 				<div class="grid-table__status">Иконки</div>
 				<div class="grid-table__name">Наименования</div>
+				<div class="grid-table__set">
+					<div class="grid-table__set-wrap">Управление</div>
+				</div>
 				<div class="grid-table__planed">План</div>
-				<div class="grid-table__set">Управление</div>
 				<div class="grid-table__note">Примечание</div>
 				<div class="grid-table__price">Стоимость</div>
 				<div class="grid-table__type">Операция</div>
@@ -1685,22 +1704,28 @@
 			<div class="grid-table">
 				<div class="grid-table__status">Иконки</div>
 				<div class="grid-table__name">Наименования</div>
+				<div class="grid-table__set">
+					<div class="grid-table__set-wrap">Управление</div>
+				</div>
 				<div class="grid-table__planed">План</div>
-				<div class="grid-table__set">Управление</div>
 				<div class="grid-table__note">Примечание</div>
 			</div>
 			<div class="grid-table group">
 				<div class="grid-table__status">Группа</div>
 				<div class="grid-table__name">Группа</div>
 				<div class="grid-table__planed">Группа</div>
-				<div class="grid-table__set">Группа</div>
+				<div class="grid-table__set">
+					<div class="grid-table__set-wrap">Управление</div>
+				</div>
 				<div class="grid-table__note">Группа</div>
 			</div>
 			<div class="grid-table">
 				<div class="grid-table__status">Иконки</div>
 				<div class="grid-table__name">Наименования</div>
+				<div class="grid-table__set">
+					<div class="grid-table__set-wrap">Управление</div>
+				</div>
 				<div class="grid-table__planed">План</div>
-				<div class="grid-table__set">Управление</div>
 				<div class="grid-table__price">Стоимость</div>
 				<div class="grid-table__type">Операция</div>
 				<div class="grid-table__partner">Контрагент</div>
@@ -1708,8 +1733,10 @@
 			<div class="grid-table">
 				<div class="grid-table__status">Иконки</div>
 				<div class="grid-table__name">Наименования</div>
+				<div class="grid-table__set">
+					<div class="grid-table__set-wrap">Управление</div>
+				</div>
 				<div class="grid-table__planed">План</div>
-				<div class="grid-table__set">Управление</div>
 				<div class="grid-table__note">Примечание</div>
 				<div class="grid-table__price">Стоимость</div>
 				<div class="grid-table__partner">Контрагент</div>
@@ -1717,18 +1744,10 @@
 			<div class="grid-table">
 				<div class="grid-table__status">Иконки</div>
 				<div class="grid-table__name">Наименования</div>
+				<div class="grid-table__set">
+					<div class="grid-table__set-wrap">Управление</div>
+				</div>
 				<div class="grid-table__planed">План</div>
-				<div class="grid-table__set">Управление</div>
-				<div class="grid-table__note">Примечание</div>
-				<div class="grid-table__price">Стоимость</div>
-				<div class="grid-table__type">Операция</div>
-				<div class="grid-table__partner">Контрагент</div>
-			</div>
-			<div class="grid-table">
-				<div class="grid-table__status">Иконки</div>
-				<div class="grid-table__name">Наименования</div>
-				<div class="grid-table__planed">План</div>
-				<div class="grid-table__set">Управление</div>
 				<div class="grid-table__note">Примечание</div>
 				<div class="grid-table__price">Стоимость</div>
 				<div class="grid-table__type">Операция</div>
@@ -1737,8 +1756,22 @@
 			<div class="grid-table">
 				<div class="grid-table__status">Иконки</div>
 				<div class="grid-table__name">Наименования</div>
+				<div class="grid-table__set">
+					<div class="grid-table__set-wrap">Управление</div>
+				</div>
 				<div class="grid-table__planed">План</div>
-				<div class="grid-table__set">Управление</div>
+				<div class="grid-table__note">Примечание</div>
+				<div class="grid-table__price">Стоимость</div>
+				<div class="grid-table__type">Операция</div>
+				<div class="grid-table__partner">Контрагент</div>
+			</div>
+			<div class="grid-table">
+				<div class="grid-table__status">Иконки</div>
+				<div class="grid-table__name">Наименования</div>
+				<div class="grid-table__set">
+					<div class="grid-table__set-wrap">Управление</div>
+				</div>
+				<div class="grid-table__planed">План</div>
 				<div class="grid-table__note">Примечание</div>
 				<div class="grid-table__price">Стоимость</div>
 				<div class="grid-table__partner">Контрагент</div>
@@ -1876,7 +1909,9 @@
 			<div class="grid-table__status">Иконки</div>
 			<div class="grid-table__name">Наименования</div>
 			<div class="grid-table__planed">План</div>
-			<div class="grid-table__set">Управление</div>
+			<div class="grid-table__set">
+				<div class="grid-table__set-wrap">Управление</div>
+			</div>
 			<div class="grid-table__note">Примечание</div>
 			<div class="grid-table__price">Стоимость</div>
 			<div class="grid-table__type">Операция</div>

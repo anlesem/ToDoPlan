@@ -131,15 +131,29 @@
 	}
 
 	&__total {
+		width: 100%;
+		height: 100%;
+		padding-right: 30px;
+
+		@include widthLT {
+			justify-self: flex-end;
+		}
+
+		@include widthTab {
+			p {
+				display: none;
+			}
+		}
 
 		label {
 			width: 100%;
+			height: 100%;
 			font-size: 18px;
 			font-weight: 700;
 			color: $ocean;
 
 			display: flex;
-			justify-content: space-between;
+			justify-content: flex-end;
 			align-items: center;
 
 			&:hover {
@@ -150,6 +164,11 @@
 			svg {
 				margin-left: 5px;
 				fill: $ocean;
+
+				@include widthTab {
+					width: 20px;
+					height: 20px;
+				}
 			}
 		}
 	}
@@ -215,12 +234,6 @@
 			@include position-center;
 			fill: $input-off;
 		}
-
-		&-money {
-			@include widthPC {
-				display: none;
-			}
-		}
 	}
 
 	&__title {
@@ -235,6 +248,10 @@
 
 	&__date {
 		font-size: 20px;
+
+		@include widthLT {
+			display: none;
+		}
 	}
 
 	&__marks {
@@ -246,7 +263,7 @@
 		div {
 			position: absolute;
 			top: -3px;
-			right: 10%;
+			left: 100%;
 			width: 130px;
 			bottom: 0;
 
@@ -254,7 +271,8 @@
 			justify-content: space-around;
 
 			@include widthHD {
-				right: 120%;
+				left: auto;
+				right: 10%;
 			}
 
 			@include widthMob {
@@ -550,6 +568,19 @@
 	}
 
 	.title {
+		display: none;
+	}
+}
+
+//! ------------------------   600
+@media (max-width: $widthMob) {
+
+	.grid-table__status .filters__checkbox:first-child {
+		display: none;
+	}
+
+	#table__swap-set:checked~.container .filters .grid-table__name .filters-wrap,
+	#table__swap-note:checked~.container .filters .grid-table__name .filters-wrap {
 		display: none;
 	}
 }

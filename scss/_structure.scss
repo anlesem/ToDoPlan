@@ -11,15 +11,24 @@
 	grid-template-areas: "header"
 		"main";
 
-	@include container;
-
 	header {
+		grid-area: header;
 		overflow-y: scroll;
 	}
 
 	main {
+		grid-area: main;
 		overflow-y: scroll;
 	}
+}
+
+.table__swap {
+	position: absolute;
+	bottom: 10%;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 7;
+	display: none;
 }
 
 // Меню
@@ -52,12 +61,13 @@
 }
 
 // Таблица
-.grid-table {
+.grid-table,
+.group {
 	position: relative;
 	display: grid;
 	place-items: center;
 	grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr) repeat(3, 150px);
-	grid-template-areas: "status name name planed set note note . . .";
+	grid-template-areas: "status name name set planed note note . . .";
 
 	@include grid-table;
 
@@ -69,7 +79,7 @@
 }
 
 #money:checked~.container .grid-table {
-	grid-template-areas: "status name name planed set note note price type partner";
+	grid-template-areas: "status name name set planed note note price type partner";
 
 	&__price,
 	&__type,
@@ -78,19 +88,8 @@
 	}
 }
 
-#money-off:checked~.container .grid-table {
-	grid-template-areas: "status name name planed set note note . . .";
-
-	&__price,
-	&__type,
-	&__partner {
-		display: none;
-	}
-}
-
-// Категории
-.group {
-	grid-template-areas: "status name name planed set note note . . .";
+#money:checked~.container .group {
+	grid-template-areas: "status name name set planed note note note note note";
 }
 
 
@@ -109,42 +108,30 @@
 		grid-template-areas: "new profile options help . find find total";
 	}
 
-	#money-off:checked~.container .grid-menu {
-		grid-template-areas: "new profile options help . find find .";
-	}
-
 	.grid-table,
 	.group {
-		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr) 150px;
-		grid-template-areas: "status name name planed set note note note";
+		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(3, 1fr);
+		grid-template-areas: "status name name set planed note note note";
 
 		@include grid-table;
 	}
 
 	#money:checked~.container .grid-table {
-		grid-template-areas: "status name name planed set note note price";
+		grid-template-areas: "status name name set planed price type partner";
 
-		&__price {
-			display: flex;
-		}
-
-		&__type,
-		&__partner {
+		&__note {
 			display: none;
 		}
 	}
 
 	#money:checked~.container .group {
-		grid-template-areas: "status name name planed set note note note";
-	}
+		grid-template-areas: "status name name set planed note note note";
 
-	#money-off:checked~.container .grid-table {
-		grid-template-areas: "status name name planed set note note note";
-
-		&__price {
-			display: none;
+		.grid-table__note {
+			display: flex;
 		}
 	}
+
 }
 
 //! ------------------------   1350
@@ -154,10 +141,47 @@
 		width: calc(100% - #{$marginPC} - #{$marginPC});
 	}
 
-	.grid-menu,
-	#money:checked~.container .grid-menu {
+	.grid-menu {
 		grid-template-columns: repeat(5, 150px) repeat(2, 1fr);
 		grid-template-areas: "new profile options help . find find";
+
+		@include grid-menu;
+	}
+
+	#money:checked~.container .grid-menu {
+		grid-template-areas: "new profile options help find find total";
+	}
+
+	.grid-table,
+	.group {
+		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr);
+		grid-template-areas: "status name name set planed note note ";
+
+		@include grid-table;
+	}
+
+	#money:checked~.container .grid-table {
+		grid-template-columns: 150px repeat(2, 1fr) 150px repeat(3, 1fr);
+		grid-template-areas: "status name name set price type partner";
+
+		&__planed {
+			display: none;
+		}
+	}
+
+	#money:checked~.container .group {
+		grid-template-columns: 150px repeat(2, 1fr) 150px repeat(3, 1fr);
+		grid-template-areas: "status name name set note note note";
+	}
+}
+
+//! ------------------------   1100
+
+@media (max-width: $widthLT) {
+
+	.grid-menu {
+		grid-template-columns: repeat(4, 150px) 1fr;
+		grid-template-areas: "new profile options help find";
 
 		@include grid-menu;
 
@@ -166,42 +190,145 @@
 		}
 	}
 
-	.grid-table,
-	.group,
-	#money:checked~.container .grid-table {
-		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr);
-		grid-template-areas: "status name name planed set note note";
+	#money:checked~.container .grid-menu,
+	#table__swap-money:checked~.container .grid-menu {
+		grid-template-areas: "new profile options help total";
 
-		@include grid-table;
+		&__total {
+			display: flex;
+		}
 
-		&__price {
+		&__find {
 			display: none;
 		}
 	}
-}
 
-//! ------------------------   1100
-
-@media (max-width: $widthLT) {
-
-	.grid-menu,
-	#money:checked~.container .grid-menu {
-		grid-template-columns: repeat(4, 150px) 1fr;
-		grid-template-areas: "new profile options help find";
-
-		@include grid-menu;
+	.table__swap {
+		display: block;
 	}
 
-	.grid-table,
-	.group,
-	#money:checked~.container .grid-table {
+	#frame-pass:checked~.table__swap,
+	#frame-new:checked~.table__swap,
+	#frame-profile:checked~.table__swap,
+	#frame-options:checked~.table__swap,
+	#frame-help:checked~.table__swap,
+	#frame-stat:checked~.table__swap {
+		display: none;
+	}
+
+	.header__money-off {
+		display: none;
+	}
+
+	#table__swap-name:checked~.container .group,
+	#table__swap-name:checked~.container .grid-table {
 		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px);
-		grid-template-areas: "status name name planed set";
+		grid-template-areas: "status name name set planed";
 
 		@include grid-table;
 
+		&__set,
+		&__planed {
+			display: flex;
+		}
+
 		&__note {
 			display: none;
+		}
+
+		&__price,
+		&__type,
+		&__partner {
+			display: none;
+		}
+	}
+
+	#table__swap-name:checked~.container .group {
+		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px);
+		grid-template-areas: "status name name set planed";
+
+		.grid-table__note {
+			display: none;
+		}
+	}
+
+	#table__swap-set:checked~.container .group,
+	#table__swap-set:checked~.container .grid-table {
+		grid-template-columns: 150px 1fr repeat(2, 150px) 1fr;
+		grid-template-areas: "status name set planed note";
+
+		&__set,
+		&__planed {
+			display: flex;
+		}
+
+		&__note {
+			display: flex;
+		}
+
+		&__price,
+		&__type,
+		&__partner {
+			display: none;
+		}
+	}
+
+	#table__swap-note:checked~.container .grid-table {
+		grid-template-columns: 150px repeat(4, 1fr);
+		grid-template-areas: "status name name note note";
+
+		&__set,
+		&__planed {
+			display: none;
+		}
+
+		&__note {
+			display: flex;
+		}
+
+		&__price,
+		&__type,
+		&__partner {
+			display: none;
+		}
+	}
+
+	#table__swap-note:checked~.container .group {
+		grid-template-columns: 150px repeat(4, 1fr);
+		grid-template-areas: "status name name note note";
+
+		.grid-table__planed {
+			display: none;
+		}
+	}
+
+	#table__swap-money:checked~.container .group {
+		grid-template-columns: 150px repeat(4, 1fr);
+		grid-template-areas: "status name . . .";
+
+		.grid-table__note,
+		.grid-table__planed {
+			display: none;
+		}
+	}
+
+	#table__swap-money:checked~.container .grid-table {
+		grid-template-columns: 150px 1fr repeat(3, 150px);
+		grid-template-areas: "status name price type partner";
+
+		&__set,
+		&__planed {
+			display: none;
+		}
+
+		&__note {
+			display: none;
+		}
+
+		&__price,
+		&__type,
+		&__partner {
+			display: flex;
 		}
 	}
 }
@@ -213,36 +340,240 @@
 		width: 100%;
 	}
 
-	.grid-menu,
-	#money:checked~.container .grid-menu {
+	.grid-menu {
 		grid-template-columns: repeat(4, 1fr) 70px;
+		grid-template-areas: "new profile options help find";
 
 		@include grid-menu;
+
+		&__total {
+			display: none;
+		}
 	}
 
-	.grid-table,
-	.group,
-	#money:checked~.container .grid-table {
-		grid-template-columns: $width-status-tab repeat(2, 1fr) 20% 40px;
-		grid-template-areas: "status name name planed set";
-
-		@include grid-table;
+	#money:checked~.container .grid-menu,
+	#table__swap-money:checked~.container .grid-menu {
+		grid-template-areas: "new profile options help total";
 	}
-}
 
-//! ------------------------   500
-@media (max-width: $widthMob) {
-
-	.grid-table,
-	.group,
-	#money:checked~.container .grid-table {
-		grid-template-columns: $width-status-tab repeat(2, 1fr) 40px;
+	#table__swap-name:checked~.container .group,
+	#table__swap-name:checked~.container .grid-table {
+		grid-template-columns: 150px repeat(2, 1fr) 150px;
 		grid-template-areas: "status name name set";
 
 		@include grid-table;
 
+		&__set {
+			display: flex;
+		}
+
 		&__planed {
 			display: none;
+		}
+
+		&__note {
+			display: none;
+		}
+
+		&__price,
+		&__type,
+		&__partner {
+			display: none;
+		}
+	}
+
+	#table__swap-name:checked~.container .group {
+		grid-template-columns: 150px repeat(2, 1fr) 150px;
+		grid-template-areas: "status name name set";
+
+		.grid-table__planed {
+			display: none;
+		}
+	}
+
+	#table__swap-set:checked~.container .group,
+	#table__swap-set:checked~.container .grid-table {
+		grid-template-columns: repeat(3, 150px) 1fr;
+		grid-template-areas: "name set planed note";
+
+		&__status {
+			display: none;
+		}
+
+		&__set,
+		&__planed {
+			display: flex;
+		}
+
+		&__note {
+			display: flex;
+		}
+
+		&__price,
+		&__type,
+		&__partner {
+			display: none;
+		}
+	}
+
+
+	#table__swap-note:checked~.container .group,
+	#table__swap-note:checked~.container .grid-table {
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-areas: "name name note note";
+
+		&__status {
+			display: none;
+		}
+
+		&__set,
+		&__planed {
+			display: none;
+		}
+
+		&__note {
+			display: flex;
+		}
+
+		&__price,
+		&__type,
+		&__partner {
+			display: none;
+		}
+	}
+
+	#table__swap-money:checked~.container .grid-table {
+		grid-template-columns: 1fr repeat(3, 150px);
+		grid-template-areas: "name price type partner";
+
+		&__status {
+			display: none;
+		}
+
+		&__set,
+		&__planed {
+			display: none;
+		}
+
+		&__note {
+			display: none;
+		}
+
+		&__price,
+		&__type,
+		&__partner {
+			display: flex;
+		}
+	}
+}
+
+//! ------------------------   600
+@media (max-width: $widthMob) {
+
+	#table__swap-name:checked~.container .group,
+	#table__swap-name:checked~.container .grid-table {
+		grid-template-columns: 100px repeat(2, 1fr) 1px;
+		grid-template-areas: "status name name set";
+
+		@include grid-table;
+
+		&__set-wrap {
+			display: none;
+		}
+
+		&__planed {
+			display: none;
+		}
+
+		&__note {
+			display: none;
+		}
+
+		&__price,
+		&__type,
+		&__partner {
+			display: none;
+		}
+	}
+
+	#table__swap-set:checked~.container .grid-table {
+		grid-template-columns: 1fr repeat(2, 150px);
+		grid-template-areas: "name set planed";
+
+		&__status {
+			display: none;
+		}
+
+		&__set,
+		&__planed {
+			display: flex;
+		}
+
+		&__note {
+			display: none;
+		}
+
+		&__price,
+		&__type,
+		&__partner {
+			display: none;
+		}
+	}
+
+	#table__swap-set:checked~.container .group {
+		grid-template-columns: 1fr repeat(2, 150px);
+		grid-template-areas: "name set planed";
+
+		.grid-table__note {
+			display: none;
+		}
+	}
+
+
+	#table__swap-note:checked~.container .group,
+	#table__swap-note:checked~.container .grid-table {
+		grid-template-columns: 100px repeat(2, 1fr);
+		grid-template-areas: "name note note";
+
+		&__status {
+			display: none;
+		}
+
+		&__set,
+		&__planed {
+			display: none;
+		}
+
+		&__note {
+			display: flex;
+		}
+
+		&__price,
+		&__type,
+		&__partner {
+			display: none;
+		}
+	}
+
+	#table__swap-money:checked~.container .grid-table {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-areas: "price type partner";
+
+		&__status,
+		&__name,
+		&__set,
+		&__planed {
+			display: none;
+		}
+
+		&__note {
+			display: none;
+		}
+
+		&__price,
+		&__type,
+		&__partner {
+			display: flex;
 		}
 	}
 }
@@ -255,7 +586,7 @@
 	main,
 	footer,
 	aside,
-	.panel-swap,
+	.table__swap,
 	.frame {
 		display: none !important;
 
