@@ -18,6 +18,8 @@
 		box-shadow: none;
 	}
 
+	// Art - разделитель блокнота
+	// Связано с header__marks
 	&::before {
 		content: "";
 		position: absolute;
@@ -61,6 +63,10 @@
 		@include widthTab {
 			content: none;
 		}
+	}
+
+	&__name {
+		width: 100%;
 	}
 }
 

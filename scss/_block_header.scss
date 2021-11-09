@@ -203,22 +203,24 @@
 
 // Заголовок таблицы (высота в структуре)
 .header {
+	position: relative;
 	height: $height-header;
 	border-top-left-radius: $border-radius;
 	border-top-right-radius: $border-radius;
+	user-select: none;
+
+	@include widthTab {
+		background: $paper-title;
+	}
 
 	&__checkbox {
-		width: 100%;
+		position: absolute;
+		left: 0;
+		width: 150px;
 		height: 100%;
 
 		display: flex;
 		justify-content: space-around;
-
-		@include widthTab {
-			position: relative;
-			justify-self: start;
-			width: 150px;
-		}
 
 		label {
 			position: relative;
@@ -236,48 +238,30 @@
 		}
 	}
 
-	&__title {
+	// Связано с grid-table::before
+	&__marks {
+		position: absolute;
+		top: -3px;
+		left: 48%;
+		transform: translateX(-100%);
+		width: 150px;
 		height: 100%;
-		margin-left: $margin-table;
-		justify-self: self-start;
-		@include text-title;
-		font-size: 22px;
-		line-height: $height-header;
-		color: $ocean;
-	}
 
-	&__date {
-		font-size: 20px;
+		display: flex;
+		justify-content: space-between;
+
+		@include widthPC {
+			transform: translateX(-50%);
+		}
 
 		@include widthLT {
-			display: none;
+			left: auto;
+			transform: translateX(0);
+			right: 45px;
 		}
-	}
 
-	&__marks {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		overflow: visible;
-
-		div {
-			position: absolute;
-			top: -3px;
-			left: 100%;
-			width: 130px;
-			bottom: 0;
-
-			display: flex;
-			justify-content: space-around;
-
-			@include widthHD {
-				left: auto;
-				right: 10%;
-			}
-
-			@include widthMob {
-				right: 0;
-			}
+		@include widthMob {
+			right: 20px;
 		}
 
 		input {
@@ -296,6 +280,28 @@
 		input:checked+label svg {
 			transform-origin: top;
 			transform: scaleY(1.3);
+		}
+	}
+
+	&__title {
+		height: 100%;
+		margin-left: $margin-table;
+		@include text-title;
+		font-size: 22px;
+		line-height: $height-header;
+
+		color: $ocean;
+
+		@include widthMob {
+			display: none;
+		}
+	}
+
+	&__date {
+		font-size: 20px;
+
+		@include widthLT {
+			display: none;
 		}
 	}
 
@@ -389,6 +395,7 @@
 	border-bottom: none;
 	overflow: hidden;
 	transition: height $timeout;
+	user-select: none;
 
 	&>div {
 		width: 100%;
@@ -540,6 +547,10 @@
 // Заголовок внутри таблицы
 .title {
 	background: $paper-title;
+
+	@include widthTab {
+		display: none;
+	}
 }
 
 //! ------------------------   800
@@ -557,18 +568,6 @@
 
 	#filters:checked~.container .filters {
 		border-bottom: none;
-	}
-
-	.header {
-		background: $paper-title;
-
-		.grid-table__name {
-			display: none;
-		}
-	}
-
-	.title {
-		display: none;
 	}
 }
 

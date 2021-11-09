@@ -312,6 +312,11 @@
 		}
 	}
 
+	#table__swap-money:checked~.container .header__marks,
+	#table__swap-money:checked~.container .header__title {
+		display: none;
+	}
+
 	#table__swap-money:checked~.container .grid-table {
 		grid-template-columns: 150px 1fr repeat(3, 150px);
 		grid-template-areas: "status name price type partner";
@@ -465,6 +470,11 @@
 			display: flex;
 		}
 	}
+
+	#table__swap-set:checked~.container .header__title,
+	#table__swap-note:checked~.container .header__title {
+		display: none;
+	}
 }
 
 //! ------------------------   600
@@ -472,15 +482,12 @@
 
 	#table__swap-name:checked~.container .group,
 	#table__swap-name:checked~.container .grid-table {
-		grid-template-columns: 100px repeat(2, 1fr) 1px;
-		grid-template-areas: "status name name set";
+		grid-template-columns: 100px repeat(2, 1fr);
+		grid-template-areas: "status name name";
 
 		@include grid-table;
 
-		&__set-wrap {
-			display: none;
-		}
-
+		&__set,
 		&__planed {
 			display: none;
 		}
@@ -553,6 +560,11 @@
 		&__partner {
 			display: none;
 		}
+	}
+
+
+	#table__swap-money:checked~.container .header__checkbox {
+		display: none;
 	}
 
 	#table__swap-money:checked~.container .grid-table {
