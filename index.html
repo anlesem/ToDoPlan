@@ -23,7 +23,7 @@
 	<!-- ------------------------------------------------------------- Поля -->
 	<input type="checkbox" id="money-off">
 	<input type="checkbox" id="money">
-	<input type="checkbox" id="filters" checked>
+	<input type="checkbox" id="filters">
 	<input type="checkbox" id="properties">
 	<input type="checkbox" id="info">
 	<!-- ------------------------------------------------------------- Окна -->
@@ -1311,52 +1311,58 @@
 					<span class="header__title">Ежедневник</span>
 				</div>
 				<div class="grid-table__note header__title"><span class="header__date"> 6 ноября 2022г.</span></div>
-				<div class="grid-table__price header__money">
-					<input class="header__money-all-period" type="checkbox" id="money-all-period">
-					<label for="money-all-period">
-						<svg width="20" height="20" viewBox="0 0 20 20">
-							<use href="#icon__period" />
-						</svg>
-					</label>
-					<div>
-						<p class="total-price">2 500 000</p>
-						<svg width="13" height="13" viewBox="0 0 13 13">
-							<use href="#icon__money" />
-						</svg>
-					</div>
-					<div>
-						<p class="total-debt">125 000</p>
-						<svg width="13" height="13" viewBox="0 0 13 13">
-							<use href="#icon__money" />
-						</svg>
-					</div>
-				</div>
-				<div class="grid-table__type header__money">
-					<div>
-						<p class="total-income">2 300 000 </p>
-						<svg width="13" height="13" viewBox="0 0 13 13">
-							<use href="#icon__money" />
-						</svg>
-					</div>
-					<div>
-						<p class="total-pay">1 225 000</p>
-						<svg width="13" height="13" viewBox="0 0 13 13">
-							<use href="#icon__money" />
-						</svg>
+				<div class="grid-table__price">
+					<div class="header__money">
+						<input class="header__money-all-period" type="checkbox" id="money-all-period">
+						<label for="money-all-period">
+							<svg width="20" height="20" viewBox="0 0 20 20">
+								<use href="#icon__period" />
+							</svg>
+						</label>
+						<div>
+							<p class="total-price">122 500 000</p>
+							<svg width="13" height="13" viewBox="0 0 13 13">
+								<use href="#icon__money" />
+							</svg>
+						</div>
+						<div>
+							<p class="total-debt">125 000</p>
+							<svg width="13" height="13" viewBox="0 0 13 13">
+								<use href="#icon__money" />
+							</svg>
+						</div>
 					</div>
 				</div>
-				<div class="grid-table__partner header__money">
-					<div>
-						<p class="total-wages">435 000</p>
-						<svg width="13" height="13" viewBox="0 0 13 13">
-							<use href="#icon__money" />
-						</svg>
+				<div class="grid-table__type">
+					<div class="header__money">
+						<div>
+							<p class="total-income">2 300 000 </p>
+							<svg width="13" height="13" viewBox="0 0 13 13">
+								<use href="#icon__money" />
+							</svg>
+						</div>
+						<div>
+							<p class="total-pay">925 000</p>
+							<svg width="13" height="13" viewBox="0 0 13 13">
+								<use href="#icon__money" />
+							</svg>
+						</div>
 					</div>
-					<div>
-						<p class="middle-wages">125 000</p>
-						<svg width="13" height="13" viewBox="0 0 13 13">
-							<use href="#icon__money" />
-						</svg>
+				</div>
+				<div class="grid-table__partner">
+					<div class="header__money">
+						<div>
+							<p class="total-wages">435 000</p>
+							<svg width="13" height="13" viewBox="0 0 13 13">
+								<use href="#icon__money" />
+							</svg>
+						</div>
+						<div>
+							<p class="middle-wages">25 000</p>
+							<svg width="13" height="13" viewBox="0 0 13 13">
+								<use href="#icon__money" />
+							</svg>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -1468,27 +1474,29 @@
 					</div>
 				</div>
 				<div class="grid-table__price">
-					<div class="filters-wrap filters__alone">
-						<div class="filters__checkbox">
-							<input type="checkbox" id="filters__checkbox-money">
-							<label class="filters__checkbox-one" for="filters__checkbox-money">
-								<svg width="18" height="18" viewBox="0 0 18 18">
-									<use href="#icon__money" />
-								</svg>
-							</label>
+					<div class="filters-wrap-price">
+						<div class="filters-wrap filters__alone">
+							<div class="filters__checkbox">
+								<input type="checkbox" id="filters__checkbox-money">
+								<label class="filters__checkbox-one" for="filters__checkbox-money">
+									<svg width="18" height="18" viewBox="0 0 18 18">
+										<use href="#icon__money" />
+									</svg>
+								</label>
+							</div>
+							<p>Финансы</p>
 						</div>
-						<p>Финансы</p>
-					</div>
-					<div class="filters-wrap filters__alone">
-						<div class="filters__checkbox">
-							<input type="checkbox" id="filters__checkbox-debt">
-							<label class="filters__checkbox-one" for="filters__checkbox-debt">
-								<svg width="16" height="16" viewBox="0 0 16 16">
-									<use href="#icon__debt" />
-								</svg>
-							</label>
+						<div class="filters-wrap filters__alone">
+							<div class="filters__checkbox">
+								<input type="checkbox" id="filters__checkbox-debt">
+								<label class="filters__checkbox-one" for="filters__checkbox-debt">
+									<svg width="16" height="16" viewBox="0 0 16 16">
+										<use href="#icon__debt" />
+									</svg>
+								</label>
+							</div>
+							<p>Долги</p>
 						</div>
-						<p>Долги</p>
 					</div>
 				</div>
 				<div class="grid-table__type">
@@ -1642,16 +1650,36 @@
 			</div>
 			<!-- ------------------------------------------------------- Заголовок таблицы - Заголовок / grid-table header - title	-------------------------- -->
 			<div class="grid-table title">
-				<div class="grid-table__status">Статус</div>
-				<div class="grid-table__name">Наименование</div>
-				<div class="grid-table__set">
-					Управление
+				<div class="grid-table__status">
+					<p class="title__main">Статус</p>
 				</div>
-				<div class="grid-table__planed">План</div>
-				<div class="grid-table__note">Примечание</div>
-				<div class="grid-table__price">Стоимость</div>
-				<div class="grid-table__type">Операция</div>
-				<div class="grid-table__partner">Контрагент</div>
+				<div class="grid-table__name">
+					<p class="title__main">Наименование</p>
+					<p class="title__secondary">(Источник / Стадия)</p>
+				</div>
+				<div class="grid-table__set">
+					<p class="title__main">Управление</p>
+				</div>
+				<div class="grid-table__planed">
+					<p class="title__main">План</p>
+					<p class="title__secondary">(Создано)</p>
+				</div>
+				<div class="grid-table__note">
+					<p class="title__main">Примечание</p>
+					<p class="title__secondary">(Ярлык / Коллега)</p>
+				</div>
+				<div class="grid-table__price">
+					<p class="title__main">Стоимость</p>
+					<p class="title__secondary">(Сумма)</p>
+				</div>
+				<div class="grid-table__type">
+					<p class="title__main">Тип операции</p>
+					<p class="title__secondary">(Счёт)</p>
+				</div>
+				<div class="grid-table__partner">
+					<p class="title__main">Контрагент</p>
+					<p class="title__secondary">(Прибыль / Убытки)</p>
+				</div>
 			</div>
 		</header>
 		<main>

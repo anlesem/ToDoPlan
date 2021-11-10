@@ -307,6 +307,8 @@
 
 	&__money {
 		position: relative;
+
+		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
 
@@ -317,7 +319,7 @@
 				display: block;
 				position: absolute;
 				top: 50%;
-				right: 100%;
+				right: 110%;
 				transform: translateY(-50%);
 				width: 20px;
 
@@ -421,6 +423,11 @@
 
 			@include text-hide-overflow;
 		}
+	}
+
+	&-wrap-price {
+		display: flex;
+		justify-content: space-around;
 	}
 
 	&__checkbox {
@@ -547,9 +554,25 @@
 // Заголовок внутри таблицы
 .title {
 	background: $paper-title;
+	color: $ocean;
 
 	@include widthTab {
 		display: none;
+	}
+
+	& .grid-table__name {
+		width: auto;
+	}
+
+	&__main {
+		font-weight: 700;
+		text-align: center;
+	}
+
+	&__secondary {
+		font-size: 12px;
+		font-style: italic;
+		text-align: center;
 	}
 }
 
