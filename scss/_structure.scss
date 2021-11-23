@@ -28,7 +28,40 @@
 	left: 50%;
 	transform: translateX(-50%);
 	z-index: 7;
+	width: 150px;
+	height: 40px;
+	background-color: rgba($paper, 0.8);
+
 	display: none;
+	justify-content: space-between;
+
+
+	label {
+		position: relative;
+		height: 100%;
+		flex-grow: 1;
+
+		&:hover {
+			opacity: 0.5;
+			cursor: pointer;
+		}
+	}
+
+	svg {
+		@include position-center;
+		fill: $ocean;
+	}
+}
+
+#table__swap-name:checked~.table__swap .table__swap-name,
+#table__swap-set:checked~.table__swap .table__swap-set,
+#table__swap-note:checked~.table__swap .table__swap-note,
+#table__swap-money:checked~.table__swap .table__swap-money {
+	background: radial-gradient(circle farthest-corner at center center, $paper-title 0%, transparent 60%);
+
+	svg {
+		fill: $brown;
+	}
 }
 
 // Меню
@@ -204,7 +237,7 @@
 	}
 
 	.table__swap {
-		display: block;
+		display: flex;
 	}
 
 	#frame-pass:checked~.table__swap,
