@@ -65,19 +65,19 @@
 }
 
 // Меню
-.grid-menu {
+.menu {
 	display: grid;
 	grid-template-columns: repeat(5, 150px) repeat(2, 1fr) repeat(3, 150px);
 	grid-template-areas: "new profile options help . find find . . .";
 
-	@include grid-menu;
+	@include menu;
 
 	&__total {
 		display: none;
 	}
 }
 
-#money:checked~.container .grid-menu {
+#money:checked~.container .menu {
 	grid-template-areas: "new profile options help .  find find . . total";
 
 	&__total {
@@ -85,7 +85,7 @@
 	}
 }
 
-#money-off:checked~.container .grid-menu {
+#money-off:checked~.container .menu {
 	grid-template-areas: "new profile options help . find find . . .";
 
 	&__total {
@@ -94,7 +94,7 @@
 }
 
 // Таблица
-.grid-table,
+.table,
 .group {
 	position: relative;
 	display: grid;
@@ -102,7 +102,7 @@
 	grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr) repeat(3, 150px);
 	grid-template-areas: "status name name set planed note note . . .";
 
-	@include grid-table;
+	@include table;
 
 	&__price,
 	&__type,
@@ -111,7 +111,7 @@
 	}
 }
 
-#money:checked~.container .grid-table {
+#money:checked~.container .table {
 	grid-template-areas: "status name name set planed note note price type partner";
 
 	&__price,
@@ -130,26 +130,26 @@
 
 @media (max-width: $widthHD) {
 
-	.grid-menu {
+	.menu {
 		grid-template-columns: repeat(5, 150px) repeat(2, 1fr) 150px;
 		grid-template-areas: "new profile options help . find find .";
 
-		@include grid-menu;
+		@include menu;
 	}
 
-	#money:checked~.container .grid-menu {
+	#money:checked~.container .menu {
 		grid-template-areas: "new profile options help . find find total";
 	}
 
-	.grid-table,
+	.table,
 	.group {
 		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(3, 1fr);
 		grid-template-areas: "status name name set planed note note note";
 
-		@include grid-table;
+		@include table;
 	}
 
-	#money:checked~.container .grid-table {
+	#money:checked~.container .table {
 		grid-template-areas: "status name name set planed price type partner";
 
 		&__note {
@@ -160,7 +160,7 @@
 	#money:checked~.container .group {
 		grid-template-areas: "status name name set planed note note note";
 
-		.grid-table__note {
+		.table__note {
 			display: block;
 		}
 	}
@@ -174,26 +174,26 @@
 		width: calc(100% - #{$marginPC} - #{$marginPC});
 	}
 
-	.grid-menu {
+	.menu {
 		grid-template-columns: repeat(5, 150px) repeat(2, 1fr);
 		grid-template-areas: "new profile options help . find find";
 
-		@include grid-menu;
+		@include menu;
 	}
 
-	#money:checked~.container .grid-menu {
+	#money:checked~.container .menu {
 		grid-template-areas: "new profile options help find find total";
 	}
 
-	.grid-table,
+	.table,
 	.group {
 		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px) repeat(2, 1fr);
 		grid-template-areas: "status name name set planed note note ";
 
-		@include grid-table;
+		@include table;
 	}
 
-	#money:checked~.container .grid-table {
+	#money:checked~.container .table {
 		grid-template-columns: 150px repeat(2, 1fr) 150px repeat(3, 1fr);
 		grid-template-areas: "status name name set price type partner";
 
@@ -212,19 +212,19 @@
 
 @media (max-width: $widthLT) {
 
-	.grid-menu {
+	.menu {
 		grid-template-columns: repeat(4, 150px) 1fr;
 		grid-template-areas: "new profile options help find";
 
-		@include grid-menu;
+		@include menu;
 
 		&__total {
 			display: none;
 		}
 	}
 
-	#money:checked~.container .grid-menu,
-	#table__swap-money:checked~.container .grid-menu {
+	#money:checked~.container .menu,
+	#table__swap-money:checked~.container .menu {
 		grid-template-areas: "new profile options help total";
 
 		&__total {
@@ -254,11 +254,11 @@
 	}
 
 	#table__swap-name:checked~.container .group,
-	#table__swap-name:checked~.container .grid-table {
+	#table__swap-name:checked~.container .table {
 		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px);
 		grid-template-areas: "status name name set planed";
 
-		@include grid-table;
+		@include table;
 
 		&__set,
 		&__planed {
@@ -280,13 +280,13 @@
 		grid-template-columns: 150px repeat(2, 1fr) repeat(2, 150px);
 		grid-template-areas: "status name name set planed";
 
-		.grid-table__note {
+		.table__note {
 			display: none;
 		}
 	}
 
 	#table__swap-set:checked~.container .group,
-	#table__swap-set:checked~.container .grid-table {
+	#table__swap-set:checked~.container .table {
 		grid-template-columns: 150px 1fr repeat(2, 150px) 1fr;
 		grid-template-areas: "status name set planed note";
 
@@ -306,7 +306,7 @@
 		}
 	}
 
-	#table__swap-note:checked~.container .grid-table {
+	#table__swap-note:checked~.container .table {
 		grid-template-columns: 150px repeat(4, 1fr);
 		grid-template-areas: "status name name note note";
 
@@ -330,7 +330,7 @@
 		grid-template-columns: 150px repeat(4, 1fr);
 		grid-template-areas: "status name name note note";
 
-		.grid-table__planed {
+		.table__planed {
 			display: none;
 		}
 	}
@@ -339,8 +339,8 @@
 		grid-template-columns: 150px repeat(4, 1fr);
 		grid-template-areas: "status name . . .";
 
-		.grid-table__note,
-		.grid-table__planed {
+		.table__note,
+		.table__planed {
 			display: none;
 		}
 	}
@@ -350,7 +350,7 @@
 		display: none;
 	}
 
-	#table__swap-money:checked~.container .grid-table {
+	#table__swap-money:checked~.container .table {
 		grid-template-columns: 150px 1fr repeat(3, 150px);
 		grid-template-areas: "status name price type partner";
 
@@ -378,28 +378,28 @@
 		width: 100%;
 	}
 
-	.grid-menu {
+	.menu {
 		grid-template-columns: repeat(4, 1fr) 70px;
 		grid-template-areas: "new profile options help find";
 
-		@include grid-menu;
+		@include menu;
 
 		&__total {
 			display: none;
 		}
 	}
 
-	#money:checked~.container .grid-menu,
-	#table__swap-money:checked~.container .grid-menu {
+	#money:checked~.container .menu,
+	#table__swap-money:checked~.container .menu {
 		grid-template-areas: "new profile options help total";
 	}
 
 	#table__swap-name:checked~.container .group,
-	#table__swap-name:checked~.container .grid-table {
+	#table__swap-name:checked~.container .table {
 		grid-template-columns: 150px repeat(2, 1fr) 150px;
 		grid-template-areas: "status name name set";
 
-		@include grid-table;
+		@include table;
 
 		&__set {
 			display: block;
@@ -424,13 +424,13 @@
 		grid-template-columns: 150px repeat(2, 1fr) 150px;
 		grid-template-areas: "status name name set";
 
-		.grid-table__planed {
+		.table__planed {
 			display: none;
 		}
 	}
 
 	#table__swap-set:checked~.container .group,
-	#table__swap-set:checked~.container .grid-table {
+	#table__swap-set:checked~.container .table {
 		grid-template-columns: repeat(3, 150px) 1fr;
 		grid-template-areas: "name set planed note";
 
@@ -456,7 +456,7 @@
 
 
 	#table__swap-note:checked~.container .group,
-	#table__swap-note:checked~.container .grid-table {
+	#table__swap-note:checked~.container .table {
 		grid-template-columns: repeat(4, 1fr);
 		grid-template-areas: "name name note note";
 
@@ -480,7 +480,7 @@
 		}
 	}
 
-	#table__swap-money:checked~.container .grid-table {
+	#table__swap-money:checked~.container .table {
 		grid-template-columns: 1fr repeat(3, 150px);
 		grid-template-areas: "name price type partner";
 
@@ -514,11 +514,11 @@
 @media (max-width: $widthMob) {
 
 	#table__swap-name:checked~.container .group,
-	#table__swap-name:checked~.container .grid-table {
+	#table__swap-name:checked~.container .table {
 		grid-template-columns: 100px repeat(2, 1fr);
 		grid-template-areas: "status name name";
 
-		@include grid-table;
+		@include table;
 
 		&__set,
 		&__planed {
@@ -536,7 +536,7 @@
 		}
 	}
 
-	#table__swap-set:checked~.container .grid-table {
+	#table__swap-set:checked~.container .table {
 		grid-template-columns: 1fr repeat(2, 150px);
 		grid-template-areas: "name set planed";
 
@@ -564,14 +564,14 @@
 		grid-template-columns: 1fr repeat(2, 150px);
 		grid-template-areas: "name set planed";
 
-		.grid-table__note {
+		.table__note {
 			display: none;
 		}
 	}
 
 
 	#table__swap-note:checked~.container .group,
-	#table__swap-note:checked~.container .grid-table {
+	#table__swap-note:checked~.container .table {
 		grid-template-columns: 100px repeat(2, 1fr);
 		grid-template-areas: "name note note";
 
@@ -600,7 +600,7 @@
 		display: none;
 	}
 
-	#table__swap-money:checked~.container .grid-table {
+	#table__swap-money:checked~.container .table {
 		grid-template-columns: repeat(3, 1fr);
 		grid-template-areas: "price type partner";
 

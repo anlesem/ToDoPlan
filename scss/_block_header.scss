@@ -1,4 +1,4 @@
-.grid-menu {
+.menu {
 	height: $height-menu;
 	place-items: center;
 	font-family: cormorant-infant;
@@ -174,15 +174,15 @@
 	}
 }
 
-#frame-pass:checked~.container .grid-menu {
+#frame-pass:checked~.container .menu {
 	display: none;
 }
 
-#frame-new:checked~.container .grid-menu__new label,
-#frame-profile:checked~.container .grid-menu__profile label,
-#frame-options:checked~.container .grid-menu__options label,
-#frame-help:checked~.container .grid-menu__help label,
-#frame-stat:checked~.container .grid-menu__stat label {
+#frame-new:checked~.container .menu__new label,
+#frame-profile:checked~.container .menu__profile label,
+#frame-options:checked~.container .menu__options label,
+#frame-help:checked~.container .menu__help label,
+#frame-stat:checked~.container .menu__stat label {
 	height: calc(#{$height-menu} - 15px);
 	margin: 15px 0 0 0;
 	border-radius: 0px;
@@ -238,7 +238,7 @@
 		}
 	}
 
-	// Связано с grid-table::before
+	// Связано с table::before
 	&__marks {
 		position: absolute;
 		top: -3px;
@@ -285,8 +285,8 @@
 
 	&__title {
 		height: 100%;
-		margin-left: $margin-table;
 		@include text-title;
+		padding-left: $padding-table-name;
 		font-size: 22px;
 		line-height: $height-header;
 
@@ -560,7 +560,7 @@
 		display: none;
 	}
 
-	& .grid-table__name {
+	& .table__name {
 		width: auto;
 	}
 
@@ -579,12 +579,12 @@
 //! ------------------------   800
 @media (max-width: $widthTab) {
 
-	#frame-pass:checked~.container li.grid-menu__find,
-	#frame-new:checked~.container li.grid-menu__find,
-	#frame-profile:checked~.container li.grid-menu__find,
-	#frame-options:checked~.container li.grid-menu__find,
-	#frame-help:checked~.container li.grid-menu__find,
-	#frame-stat:checked~.container li.grid-menu__find {
+	#frame-pass:checked~.container li.menu__find,
+	#frame-new:checked~.container li.menu__find,
+	#frame-profile:checked~.container li.menu__find,
+	#frame-options:checked~.container li.menu__find,
+	#frame-help:checked~.container li.menu__find,
+	#frame-stat:checked~.container li.menu__find {
 		display: none;
 	}
 
@@ -597,12 +597,12 @@
 //! ------------------------   600
 @media (max-width: $widthMob) {
 
-	.grid-table__status .filters__checkbox:first-child {
+	.table__status .filters__checkbox:first-child {
 		display: none;
 	}
 
-	#table__swap-set:checked~.container .filters .grid-table__name .filters-wrap,
-	#table__swap-note:checked~.container .filters .grid-table__name .filters-wrap {
+	#table__swap-set:checked~.container .filters .table__name .filters-wrap,
+	#table__swap-note:checked~.container .filters .table__name .filters-wrap {
 		display: none;
 	}
 }

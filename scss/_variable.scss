@@ -22,7 +22,7 @@ $width-manage: 40%;
 $widthHD-manage: 600px;
 
 // Таблица
-$margin-table: 40px;
+$padding-table-name: 30px;
 
 
 // Выравнивание отступов для Frame
@@ -40,23 +40,25 @@ $timeout: 300ms;
 
 //* Цвета
 
-$paper: #faf9f2;
-$paper-todo: #faf6e1;
-$paper-title: #faf4d4;
+$paper: #fcfcf8;
+$paper-title: #faf7e6;
 $paper-hover: #fff;
+$paper-todo: $paper-title;
+$paper-todo-title: #faf4d4;
 $paper-frame: rgba(#fff, 0.7);
 
 $brown: #592800;
 $ocean: #080060;
 $blue: #698ccc;
 $grass: #52ac60;
-$orange: #ff9500;
+$orange: #ff9500; // warning
+$red: #ff0000; // attention
 
 // Финансы
-$grass-dark: #3d8047;
-$red-dark: #800000;
-$purple-deep: #660066;
-$blue-dark: #4e6899;
+$grass-dark: #3d8047; // income
+$red-dark: #800000; // loss
+$purple-deep: #660066; // remittance
+$blue-dark: #4e6899; // payment
 
 $close: #333;
 $delete: #ca0000;
@@ -67,6 +69,8 @@ $input-border: #ddd;
 // Таблица
 $input-none: #ddd;
 $input-off: #999;
+$input-set: #999;
+$input-set-disable: #ddd;
 
 
 // Вкладки

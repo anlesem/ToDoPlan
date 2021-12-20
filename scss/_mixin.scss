@@ -86,7 +86,7 @@
 }
 
 // Во избежание предупреждения SCSS
-@mixin grid-menu {
+@mixin menu {
 	&__new {
 		grid-area: new;
 	}
@@ -112,7 +112,7 @@
 	}
 }
 
-@mixin grid-table {
+@mixin table {
 	&__status {
 		grid-area: status;
 	}

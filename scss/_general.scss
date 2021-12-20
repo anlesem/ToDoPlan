@@ -37,7 +37,7 @@ body {
 	background: url(../img/texture-skin.svg) rgba(#d4be94, 0.9);
 
 	@include widthLT {
-		background: url(../img/texture-wood.svg) #fff6e5;
+		background: url(../img/texture-wood.svg) #fffaf1;
 		background-size: contain;
 	}
 
@@ -49,7 +49,7 @@ body {
 		width: 45%;
 		height: 100%;
 		z-index: -1;
-		background: url(../img/texture-wood.svg) #fff6e5;
+		background: url(../img/texture-wood.svg) #fffaf1;
 		background-size: contain;
 
 		@include widthLT {
@@ -229,7 +229,8 @@ input.select-arrow {
 	background-color: $tabs-color-five;
 }
 
-// ------------------------------------  Закладки
+// ---------------------------  Закладки
+// ---------------------------  Таблица header
 .mark-first-color {
 	color: $marks-color-first;
 	fill: $red-dark;
@@ -255,7 +256,32 @@ input.select-arrow {
 	fill: $grass;
 }
 
+// ---------------------------  Закладки настройки
+.mark-first-bgcolor {
+	background-color: $marks-color-first;
+}
+
+.mark-second-bgcolor {
+	background-color: $marks-color-second;
+}
+
+.mark-third-bgcolor {
+	background-color: $marks-color-third;
+}
+
+.mark-four-bgcolor {
+	background-color: $marks-color-four;
+}
+
+.mark-five-bgcolor {
+	background-color: $marks-color-five;
+}
+
 // ------------------------------------  Стадии
+.stage-none-bgcolor {
+	background-color: $input-off;
+}
+
 .stage-first-bgcolor {
 	background-color: $stages-color-first;
 }
