@@ -257,23 +257,23 @@ input.select-arrow {
 
 // ---------------------------  Закладки настройки
 .mark-first-bgcolor {
-	background-color: $marks-color-first;
+	background-color: rgba($marks-color-first, $opacity-bgc);
 }
 
 .mark-second-bgcolor {
-	background-color: $marks-color-second;
+	background-color: rgba($marks-color-second, $opacity-bgc);
 }
 
 .mark-third-bgcolor {
-	background-color: $marks-color-third;
+	background-color: rgba($marks-color-third, $opacity-bgc);
 }
 
 .mark-four-bgcolor {
-	background-color: $marks-color-four;
+	background-color: rgba($marks-color-four, $opacity-bgc);
 }
 
 .mark-five-bgcolor {
-	background-color: $marks-color-five;
+	background-color: rgba($marks-color-five, $opacity-bgc);
 }
 
 // ------------------------------------  Стадии
@@ -282,23 +282,23 @@ input.select-arrow {
 }
 
 .stage-first-bgcolor {
-	background-color: $stages-color-first;
+	background-color: rgba($stages-color-first, $opacity-bgc);
 }
 
 .stage-second-bgcolor {
-	background-color: $stages-color-second;
+	background-color: rgba($stages-color-second, $opacity-bgc);
 }
 
 .stage-third-bgcolor {
-	background-color: $stages-color-third;
+	background-color: rgba($stages-color-third, $opacity-bgc);
 }
 
 .stage-four-bgcolor {
-	background-color: $stages-color-four;
+	background-color: rgba($stages-color-four, $opacity-bgc);
 }
 
 .stage-five-bgcolor {
-	background-color: $stages-color-five;
+	background-color: rgba($stages-color-five, $opacity-bgc);
 }
 
 
