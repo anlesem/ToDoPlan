@@ -3192,18 +3192,109 @@
 			</svg>
 		</button>
 		<div class="ready"></div>
-		<div class="properties">
-			<div class="table__status">Иконки</div>
-			<div class="table__name">Наименования</div>
-			<div class="table__planed">План</div>
-			<div class="table__set">
-				Управление
+		<form action="#" class="properties">
+			<div class="frame__manage-input">
+				<label for="project-name">Наименование: *</label>
+				<input type="text" name="project-name" autocomplete="off" required>
 			</div>
-			<div class="table__note">Примечание</div>
-			<div class="table__price">Стоимость</div>
-			<div class="table__type">Операция</div>
-			<div class="table__partner">Контрагент</div>
-		</div>
+			<div class="frame__manage-input">
+				<label for="project-note">Примечание:</label>
+				<input type="text" name="project-note" autocomplete="off">
+			</div>
+			<div class="new__set">
+				<div class="input-properties-wrap">
+					<svg class="svg-plan" width="20" height="20" viewBox="0 0 20 20">
+						<use class="svg-plan" href="#icon__plan" />
+					</svg>
+					<input type="text" name="plan" autocomplete="off">
+					<p>Дата завершения</p>
+				</div>
+				<div class="input-properties-wrap money-off">
+					<svg class="svg-price" width="20" height="20" viewBox="0 0 20 20">
+						<use href="#icon__money" />
+					</svg>
+					<input type="text" name="price" autocomplete="off">
+					<p>Стоимость</p>
+				</div>
+				<div class="input-properties-wrap money-off">
+					<svg width="20" height="20" viewBox="0 0 20 20">
+						<use href="#icon__account" />
+					</svg>
+					<select class="select-arrow" name="account">
+						<option></option>
+						<option>ИП</option>
+						<option>Наличные</option>
+						<option>Личные</option>
+					</select>
+					<p>Счёт</p>
+				</div>
+				<div class="input-properties-wrap">
+					<svg width="20" height="20" viewBox="0 0 20 20">
+						<use href="#icon__source" />
+					</svg>
+					<input class="select-arrow" type="text" name="source-name" list="source-name" autocomplete="off">
+					<datalist id="source-name">
+						<option>Фортуна</option>
+						<option>GeekBrains</option>
+					</datalist>
+					<p>Источник (заказчик)</p>
+				</div>
+				<div class="input-properties-wrap">
+					<svg width="20" height="20" viewBox="0 0 20 20">
+						<use href="#icon__tabs" />
+					</svg>
+					<select class="select-arrow" name="tabs">
+						<option></option>
+						<option>Работа</option>
+						<option>Творчество</option>
+						<option>Обучение</option>
+						<option>Личные</option>
+						<option>Прочие</option>
+					</select>
+					<p>Вид деятельности</p>
+				</div>
+				<div class="input-properties-wrap">
+					<svg width="20" height="20" viewBox="0 0 20 20">
+						<use href="#icon__marks" />
+					</svg>
+					<select class="select-arrow" name="marks">
+						<option></option>
+						<option>Срочно</option>
+						<option>Важно</option>
+						<option>На контроле</option>
+						<option>Документы</option>
+						<option>Общение</option>
+					</select>
+					<p>Закладка</p>
+				</div>
+				<div class="input-properties-wrap">
+					<svg width="20" height="20" viewBox="0 0 20 20">
+						<use href="#icon__person" />
+					</svg>
+					<input class="select-arrow" type="text" name="person-name" list="person-name" autocomplete="off">
+					<datalist id="person-name">
+						<option>Арутюнов</option>
+						<option>Балбуцкая</option>
+						<option>Калинин</option>
+						<option>Коротков</option>
+					</datalist>
+					<p>Исполнитель</p>
+				</div>
+			</div>
+			<div class="frame__manage-input-area">
+				<label for="project-comment">Дополнительная информация:</label>
+				<textarea name="project-comment" rows="5" autocomplete="off"></textarea>
+			</div>
+			<div class="frame__manage-input">
+				<label for="pattern">Применить шаблон:</label>
+				<select class="select-arrow" name="pattern">
+					<option></option>
+					<option>Москва</option>
+					<option>МО</option>
+				</select>
+			</div>
+			<button type="submit">Создать</button>
+		</form>
 	</footer>
 	<script src="./js/scritps.js"></script>
 </body>
