@@ -8,6 +8,24 @@ footer {
 	height: $height-footer;
 }
 
+.scroll-up {
+	display: none;
+	position: absolute;
+	z-index: 10;
+	left: 20px;
+	bottom: 200%;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	border-radius: 50%;
+	background: linear-gradient(to bottom left, $paper-todo-title 40%, $brown 100%);
+
+	svg {
+		@include position-center;
+		fill: $brown;
+	}
+}
+
 .ready {
 	height: 7px;
 	margin: 7px auto;
@@ -95,7 +113,11 @@ footer {
 
 	height: auto;
 
-	& .properties {
+	.scroll-up {
+		bottom: 110%;
+	}
+
+	.properties {
 		overflow: visible;
 		height: 150px;
 	}

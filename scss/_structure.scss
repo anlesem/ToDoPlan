@@ -1,3 +1,86 @@
+.main-logo {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 70px;
+	height: 70px;
+	opacity: 0.3;
+
+	svg {
+		width: 100%;
+		height: 100%;
+		fill: $brown;
+
+		@include widthTab {
+			fill: #999;
+		}
+	}
+
+	p {
+		display: none;
+		font-weight: bold;
+		text-align: center;
+	}
+
+	@include widthHD {
+		width: 4%;
+		height: auto;
+	}
+
+	@include widthPC {
+		top: 5px;
+		width: 40px;
+		height: 40px;
+	}
+
+	@include widthMob {
+		display: none;
+	}
+}
+
+.table__swap {
+	position: absolute;
+	bottom: 10%;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 7;
+	width: 240px;
+	height: 60px;
+	background-color: $paper;
+
+	display: none;
+	justify-content: space-between;
+
+
+	label {
+		position: relative;
+		height: 100%;
+		flex-grow: 1;
+
+		&:hover {
+			opacity: 0.5;
+			cursor: pointer;
+		}
+	}
+
+	svg {
+		@include position-center;
+		fill: $input-off;
+	}
+}
+
+#table__swap-name:checked~.table__swap .table__swap-name,
+#table__swap-set:checked~.table__swap .table__swap-set,
+#table__swap-note:checked~.table__swap .table__swap-note,
+#table__swap-money:checked~.table__swap .table__swap-money {
+	background: radial-gradient(circle farthest-corner at center center, $paper-title 0%, transparent 60%);
+
+	svg {
+		fill: $brown;
+	}
+}
+
+
 //* Сетка
 // Структура
 .container {
@@ -19,48 +102,6 @@
 	main {
 		grid-area: main;
 		overflow-y: scroll;
-	}
-}
-
-.table__swap {
-	position: absolute;
-	bottom: 10%;
-	left: 50%;
-	transform: translateX(-50%);
-	z-index: 7;
-	width: 150px;
-	height: 40px;
-	background-color: rgba($paper, 0.8);
-
-	display: none;
-	justify-content: space-between;
-
-
-	label {
-		position: relative;
-		height: 100%;
-		flex-grow: 1;
-
-		&:hover {
-			opacity: 0.5;
-			cursor: pointer;
-		}
-	}
-
-	svg {
-		@include position-center;
-		fill: $ocean;
-	}
-}
-
-#table__swap-name:checked~.table__swap .table__swap-name,
-#table__swap-set:checked~.table__swap .table__swap-set,
-#table__swap-note:checked~.table__swap .table__swap-note,
-#table__swap-money:checked~.table__swap .table__swap-money {
-	background: radial-gradient(circle farthest-corner at center center, $paper-title 0%, transparent 60%);
-
-	svg {
-		fill: $brown;
 	}
 }
 
@@ -634,6 +675,32 @@
 	.table__swap,
 	.frame {
 		display: none !important;
+	}
 
+	.main-logo {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		padding: 10px;
+		opacity: 1;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+
+		svg {
+			width: 100%;
+			height: auto;
+			fill: $brown;
+			opacity: 0.5;
+		}
+
+		p {
+			display: block;
+		}
 	}
 }

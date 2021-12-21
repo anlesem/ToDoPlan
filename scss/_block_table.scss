@@ -6,6 +6,11 @@
 	background: $paper;
 	box-shadow: $shadow;
 
+	& div,
+	& p {
+		user-select: none;
+	}
+
 	&>div {
 		padding: 0 10px;
 		text-overflow: ellipsis;
@@ -124,7 +129,6 @@
 			width: 30px;
 			height: 40px;
 			font-size: 10px;
-			user-select: none;
 
 			&-ready {
 				padding-right: 15px;
@@ -166,11 +170,18 @@
 	// ------------------ Колонка Наименование 
 	&__name {
 		width: 100%;
-		@include text-hide-overflow;
 		color: #000;
+		@include text-hide-overflow;
 
 		&-main {
+			@include text-hide-overflow;
 			padding-left: $padding-table-name;
+
+			&:focus {
+				font-style: italic;
+				font-weight: bold;
+				color: $brown;
+			}
 		}
 
 		&-study-text {
@@ -212,7 +223,6 @@
 				position: relative;
 				flex-grow: 1;
 				height: 40px;
-				user-select: none;
 
 				&:hover {
 					cursor: pointer;
@@ -278,6 +288,12 @@
 			grid-area: note;
 			@include text-hide-overflow;
 			font-size: 13px;
+
+			&:focus {
+				font-style: italic;
+				font-weight: bold;
+				color: $brown;
+			}
 		}
 
 		&-mark {
@@ -494,8 +510,6 @@
 		fill: $blue-dark;
 	}
 }
-
-
 
 #frame-pass:checked~.container .table,
 #frame-new:checked~.container .table,

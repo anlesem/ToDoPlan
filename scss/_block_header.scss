@@ -554,14 +554,17 @@
 // Заголовок внутри таблицы
 .title {
 	background: $paper-title;
-	color: $ocean;
 
 	@include widthTab {
 		display: none;
 	}
 
-	& .table__name {
+	.table__name,
+	.table__planed {
+		position: relative;
 		width: auto;
+		color: $ocean;
+		overflow: visible;
 	}
 
 	&__main {
@@ -573,6 +576,68 @@
 		font-size: 12px;
 		font-style: italic;
 		text-align: center;
+	}
+
+	&__arrow-up {
+		right: 100%;
+	}
+
+	&__arrow-down {
+		left: 100%;
+	}
+
+	input {
+		display: none;
+	}
+
+	label {
+		position: absolute;
+		top: 0;
+		display: block;
+		width: 40px;
+		height: 38px;
+
+		&:hover {
+			cursor: pointer;
+			opacity: 0.5;
+		}
+	}
+
+	svg {
+		@include position-center;
+		fill: $input-none;
+	}
+
+	input:checked+svg {
+		fill: $blue;
+	}
+
+
+	.table__status,
+	.table__set,
+	.table__note,
+	.table__price,
+	.table__type,
+	.table__partner {
+		color: $ocean;
+	}
+}
+
+//! ------------------------   1100
+@media (max-width: $widthLT) {
+
+	#table__swap-set:checked~.container .title,
+	#table__swap-note:checked~.container .title,
+	#table__swap-money:checked~.container .title {
+
+		.table__name,
+		.table__planed {
+			overflow: hidden;
+		}
+
+		label {
+			display: none;
+		}
 	}
 }
 
