@@ -20,3 +20,32 @@ mainBlock.addEventListener("scroll", function (event) {
 scrollUp.addEventListener("click", function () {
 	mainBlock.scrollTop = 0;
 });
+
+//!---------------------------------------------- Контроль редактируемых полей в Таблице
+document.querySelectorAll('[contenteditable]').forEach(function (input) {
+
+	// Ловим фокус
+	input.addEventListener("focus", function (event) { 
+		
+		// Перекрашиваем цвет при фокусировке (global.js)
+		changeColorText(event.target);
+	});
+	
+	// Ловим нажатие на клавишу
+	input.addEventListener("keydown", function (event) {
+	
+		// Контролируем Enter, Backspace и перекрашиваем при вводе (global.js)
+		controlChangeText(event.target,event);
+	});
+	
+	// Ловим потерю фокуса 
+	input.addEventListener("blur", function (event) { 
+
+		// Сброс окрашивания (global.js)
+		removeColorText(event.target);
+				
+		//todo Отправка локальных изменений
+		
+	});
+});
+
