@@ -384,7 +384,7 @@
 #properties:checked~.container .header__checkbox-properties,
 #info:checked~.container .header__checkbox-info,
 #money-all-period:checked+label {
-	background: radial-gradient(circle farthest-corner at center center, $paper-title 0%, transparent 80%);
+	background: radial-gradient(circle farthest-corner at center center, $paper-todo-title 0%, transparent 80%);
 
 	svg {
 		fill: $brown;

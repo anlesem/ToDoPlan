@@ -30,8 +30,9 @@
 	<input type="checkbox" id="money-off">
 	<input type="checkbox" id="money">
 	<input type="checkbox" id="filters">
-	<input type="checkbox" id="properties">
+	<input type="checkbox" id="properties" checked>
 	<input type="checkbox" id="info">
+	<input type="checkbox" id="archive">
 	<!-- ------------------------------------------------------------- Окна -->
 	<input type="radio" name="frame" id="frame-pass">
 	<input type="radio" name="frame" id="frame-off" checked>
@@ -608,7 +609,20 @@
 			c-0.3,0.1-0.7,0.3-1,0.5c0,0,0,0-0.1,0c-0.3,0.2-0.6,0.5-0.9,0.8l-48,48c-2.3,2.3-2.3,6.1,0,8.5c2.3,2.3,6.1,2.3,8.5,0l37.8-37.8
 			V221c0,3.3,2.7,6,6,6s6-2.7,6-6v-89.5l37.8,37.8c2.3,2.3,6.1,2.3,8.5,0c2.3-2.3,2.3-6.1,0-8.5L132.2,112.8z" />
 		</symbol>
-
+		<symbol id="icon__arhive" viewBox="0 0 256 256">
+			<path d="M216,42H40A14.01572,14.01572,0,0,0,26,56V88a14.01572,14.01572,0,0,0,14,14h2v98a14.01572,14.01572,0,0,0,14,
+			14H200a14.01572,14.01572,0,0,0,14-14V102h2a14.01572,14.01572,0,0,0,14-14V56A14.01572,14.01572,0,0,0,216,42ZM202,
+			200a2.0026,2.0026,0,0,1-2,2H56a2.0026,2.0026,0,0,1-2-2V102H202ZM218,88a2.0026,2.0026,0,0,1-2,2H40a2.0026,2.0026,0,
+			0,1-2-2V56a2.0026,2.0026,0,0,1,2-2H216a2.0026,2.0026,0,0,1,2,2ZM98,136a6.00029,6.00029,0,0,1,6-6h48a6,6,0,0,1,0,
+			12H104A6.00029,6.00029,0,0,1,98,136Z" />
+		</symbol>
+		<symbol id="icon__trash" viewBox="0 0 256 256">
+			<path
+				d="M215.99609,50H174V40a22.02489,22.02489,0,0,0-22-22H104A22.02489,22.02489,0,0,0,82,40V50H39.99609a6,6,0,0,
+			0,0,12h10V208a14.01573,14.01573,0,0,0,14,14h128a14.01572,14.01572,0,0,0,14-14V62h10a6,6,0,0,0,0-12ZM94,40a10.01114,
+			10.01114,0,0,1,10-10h48a10.01114,10.01114,0,0,1,10,10V50H94Zm99.99609,168a2.00229,2.00229,0,0,1-2,2h-128a2.00229,
+			2.00229,0,0,1-2-2V62h132ZM110,104v64a6,6,0,0,1-12,0V104a6,6,0,0,1,12,0Zm48,0v64a6,6,0,0,1-12,0V104a6,6,0,0,1,12,0Z" />
+		</symbol>
 	</svg>
 	<!-- ?------------------------------------------------------- Переключение панели panel-swap (в мобильной версии) -------------------------- -->
 	<div class="main-logo">
@@ -643,6 +657,13 @@
 	<div class="container">
 		<!-- !------------------------------------------------------- Окно / frame -------------------------- -->
 		<section class="frame">
+			<!-- ?------------------------------------------------------------- Управление _ Кнопка "Закрыть" / manage _ close-->
+			<label class="close" for="frame-off">
+				<span>Закрыть</span>
+				<svg width="20" height="20" viewBox="0 0 20 20">
+					<use href="#icon__close" />
+				</svg>
+			</label>
 			<!-- ?------------------------------------------------------------- Обложка / Art -->
 			<div class="frame__art">
 				<h1 class="frame__art-title">Ежедневник</h1>
@@ -724,14 +745,14 @@
 						</div>
 						<div class="new__set">
 							<div class="input-properties-wrap">
-								<svg class="svg-plan" width="20" height="20" viewBox="0 0 20 20">
-									<use class="svg-plan" href="#icon__plan" />
+								<svg width="20" height="20" viewBox="0 0 20 20">
+									<use href="#icon__plan" />
 								</svg>
 								<input type="text" name="plan" autocomplete="off">
 								<p>Дата завершения</p>
 							</div>
 							<div class="input-properties-wrap money-off">
-								<svg class="svg-price" width="20" height="20" viewBox="0 0 20 20">
+								<svg width="20" height="20" viewBox="0 0 20 20">
 									<use href="#icon__money" />
 								</svg>
 								<input type="text" name="price" autocomplete="off">
@@ -830,8 +851,8 @@
 						</div>
 						<div class="new__set">
 							<div class="input-properties-wrap">
-								<svg class="svg-plan" width="20" height="20" viewBox="0 0 20 20">
-									<use class="svg-plan" href="#icon__plan" />
+								<svg width="20" height="20" viewBox="0 0 20 20">
+									<use href="#icon__plan" />
 								</svg>
 								<input type="text" name="plan" autocomplete="off">
 								<p>Дата завершения</p>
@@ -853,7 +874,7 @@
 								<p>Проект</p>
 							</div>
 							<div class="input-properties-wrap money-off">
-								<svg class="svg-price" width="20" height="20" viewBox="0 0 20 20">
+								<svg width="20" height="20" viewBox="0 0 20 20">
 									<use href="#icon__money" />
 								</svg>
 								<input type="text" name="price" autocomplete="off">
@@ -870,7 +891,7 @@
 									<option>Перевод</option>
 									<option>З/П</option>
 								</select>
-								<p>Счёт</p>
+								<p>Тип операции</p>
 							</div>
 							<div class="input-properties-wrap money-off">
 								<svg width="20" height="20" viewBox="0 0 20 20">
@@ -1496,13 +1517,6 @@
 				</div>
 				<!-- ?------------------------------------------------------------- Управление _ Статистика / manage _ stat-->
 				<div class="frame__manage-stat">Статистика доходов и расходов</div>
-				<!-- ?------------------------------------------------------------- Управление _ Кнопка "Закрыть" / manage _ close-->
-				<label class="close" for="frame-off">
-					<span>Закрыть</span>
-					<svg width="20" height="20" viewBox="0 0 20 20">
-						<use href="#icon__close" />
-					</svg>
-				</label>
 			</div>
 		</section>
 
@@ -1616,7 +1630,7 @@
 							<use href="#icon__properties" />
 						</svg>
 					</label>
-					<label class="header__money-off header__checkbox-money" for="money">
+					<label class="header__checkbox-money money-off" for="money">
 						<svg width="20" height="20" viewBox="0 0 20 20">
 							<use href="#icon__money" />
 						</svg>
@@ -3192,115 +3206,228 @@
 	</aside>
 	<!-- !------------------------------------------------------- Подвал / footer -------------------------- -->
 	<footer>
+		<!-- -------------------------------------------------- Кнопка вверх для Таблицы -------------------- -->
 		<button class="scroll-up" type="button">
 			<svg width="18" height="18" viewBox="0 0 18 18">
 				<use href="#icon__scroll-up" />
 			</svg>
 		</button>
-		<div class="ready"></div>
-		<form action="#" class="properties">
-			<div class="frame__manage-input">
-				<label for="project-name">Наименование: *</label>
-				<input type="text" name="project-name" autocomplete="off" required>
+		<div class="ready">
+			<div class="ready__progress"></div>
+		</div>
+		<div class="properties">
+			<!-- -------------------------------------------------- Кнопки области -------------------- -->
+			<div class="properties__view">
+				<svg width="20" height="20" viewBox="0 0 20 20">
+					<use href="#icon__properties" />
+				</svg>
+				<label for="archive">
+					<svg width="24" height="24" viewBox="0 0 24 24">
+						<use href="#icon__arhive" />
+					</svg>
+				</label>
 			</div>
-			<div class="frame__manage-input">
-				<label for="project-note">Примечание:</label>
-				<input type="text" name="project-note" autocomplete="off">
+			<div class="properties__set">
+				<button type="button" class="properties__set-close close">
+					<span>Закрыть</span>
+					<svg width="20" height="20" viewBox="0 0 20 20">
+						<use href="#icon__close" />
+					</svg>
+				</button>
+				<button type="button" class="properties__set-trash">
+					<svg width="24" height="24" viewBox="0 0 24 24">
+						<use href="#icon__trash" />
+					</svg>
+				</button>
 			</div>
-			<div class="new__set">
-				<div class="input-properties-wrap">
-					<svg class="svg-plan" width="20" height="20" viewBox="0 0 20 20">
-						<use class="svg-plan" href="#icon__plan" />
-					</svg>
-					<input type="text" name="plan" autocomplete="off">
-					<p>Дата завершения</p>
+			<!-- -------------------------------------------------- Поля Свойств -------------------- -->
+			<div class="properties__box">
+				<div class="properties__main">
+					<div class="input-properties-wrap">
+						<svg width="17" height="17" viewBox="0 0 17 17">
+							<use href="#icon__plan" />
+						</svg>
+						<input type="text" name="plan" autocomplete="off">
+						<p>Дата завершения</p>
+					</div>
+					<div class="input-properties-wrap date-comment">
+						<svg width="17" height="17" viewBox="0 0 17 17">
+							<use href="#icon__plan" />
+						</svg>
+						<svg width="10" height="10" viewBox="0 0 10 10">
+							<use href="#icon__note" />
+						</svg>
+						<input type="text" name="plan__note" autocomplete="off" disabled>
+						<p>Причина переноса срока</p>
+					</div>
+					<div class="input-properties-wrap">
+						<svg width="18" height="18" viewBox="0 0 18 18">
+							<use href="#icon__source" />
+						</svg>
+						<input class="select-arrow" type="text" name="source-name" list="source-name" autocomplete="off">
+						<datalist id="source-name">
+							<option>Фортуна</option>
+							<option>GeekBrains</option>
+						</datalist>
+						<p>Источник (заказчик)</p>
+					</div>
+					<div class="input-properties-wrap money-off">
+						<svg width="17" height="17" viewBox="0 0 17 17">
+							<use href="#icon__money" />
+						</svg>
+						<input type="text" name="price" autocomplete="off">
+						<p>Стоимость</p>
+					</div>
+					<div class="input-properties-wrap money-off">
+						<svg width="18" height="18" viewBox="0 0 18 18">
+							<use href="#icon__account" />
+						</svg>
+						<select class="select-arrow" name="account">
+							<option></option>
+							<option>ИП</option>
+							<option>Наличные</option>
+							<option>Личные</option>
+						</select>
+						<p>Счёт</p>
+					</div>
+					<div class="input-properties-wrap money-off">
+						<svg width="16" height="16" viewBox="0 0 16 16">
+							<use href="#icon__type" />
+						</svg>
+						<select class="select-arrow" name="type">
+							<option></option>
+							<option>Доход</option>
+							<option>Расход</option>
+							<option>Перевод</option>
+							<option>З/П</option>
+						</select>
+						<p>Тип операции</p>
+					</div>
+					<div class="input-properties-wrap money-off">
+						<svg width="17" height="17" viewBox="0 0 17 17">
+							<use href="#icon__partner" />
+						</svg>
+						<input class="select-arrow" type="text" name="partner-name" list="partner-name" autocomplete="off">
+						<datalist id="partner-name">
+							<option>Воентелеком</option>
+							<option>Рога и Копыта</option>
+							<option>Ростелеком</option>
+							<option>Солнечный город</option>
+							<option>Прочие</option>
+						</datalist>
+						<p>Контрагент</p>
+					</div>
+					<div class="input-properties-wrap">
+						<svg width="17" height="17" viewBox="0 0 17 17">
+							<use href="#icon__tabs" />
+						</svg>
+						<select class="select-arrow" name="tabs">
+							<option></option>
+							<option>Работа</option>
+							<option>Творчество</option>
+							<option>Обучение</option>
+							<option>Личные</option>
+							<option>Прочие</option>
+						</select>
+						<p>Вид деятельности</p>
+					</div>
+					<div class="input-properties-wrap">
+						<svg width="16" height="16" viewBox="0 0 16 16">
+							<use href="#icon__marks" />
+						</svg>
+						<select class="select-arrow" name="marks">
+							<option></option>
+							<option>Срочно</option>
+							<option>Важно</option>
+							<option>На контроле</option>
+							<option>Документы</option>
+							<option>Общение</option>
+						</select>
+						<p>Закладка</p>
+					</div>
+					<div class="input-properties-wrap">
+						<svg width="18" height="18" viewBox="0 0 18 18">
+							<use href="#icon__person" />
+						</svg>
+						<input class="select-arrow" type="text" name="person-name" list="person-name" autocomplete="off">
+						<datalist id="person-name">
+							<option>Арутюнов</option>
+							<option>Балбуцкая</option>
+							<option>Калинин</option>
+							<option>Коротков</option>
+						</datalist>
+						<p>Исполнитель</p>
+					</div>
 				</div>
-				<div class="input-properties-wrap money-off">
-					<svg class="svg-price" width="20" height="20" viewBox="0 0 20 20">
-						<use href="#icon__money" />
-					</svg>
-					<input type="text" name="price" autocomplete="off">
-					<p>Стоимость</p>
-				</div>
-				<div class="input-properties-wrap money-off">
-					<svg width="20" height="20" viewBox="0 0 20 20">
-						<use href="#icon__account" />
-					</svg>
-					<select class="select-arrow" name="account">
-						<option></option>
-						<option>ИП</option>
-						<option>Наличные</option>
-						<option>Личные</option>
-					</select>
-					<p>Счёт</p>
-				</div>
-				<div class="input-properties-wrap">
-					<svg width="20" height="20" viewBox="0 0 20 20">
-						<use href="#icon__source" />
-					</svg>
-					<input class="select-arrow" type="text" name="source-name" list="source-name" autocomplete="off">
-					<datalist id="source-name">
-						<option>Фортуна</option>
-						<option>GeekBrains</option>
-					</datalist>
-					<p>Источник (заказчик)</p>
-				</div>
-				<div class="input-properties-wrap">
-					<svg width="20" height="20" viewBox="0 0 20 20">
-						<use href="#icon__tabs" />
-					</svg>
-					<select class="select-arrow" name="tabs">
-						<option></option>
-						<option>Работа</option>
-						<option>Творчество</option>
-						<option>Обучение</option>
-						<option>Личные</option>
-						<option>Прочие</option>
-					</select>
-					<p>Вид деятельности</p>
-				</div>
-				<div class="input-properties-wrap">
-					<svg width="20" height="20" viewBox="0 0 20 20">
-						<use href="#icon__marks" />
-					</svg>
-					<select class="select-arrow" name="marks">
-						<option></option>
-						<option>Срочно</option>
-						<option>Важно</option>
-						<option>На контроле</option>
-						<option>Документы</option>
-						<option>Общение</option>
-					</select>
-					<p>Закладка</p>
-				</div>
-				<div class="input-properties-wrap">
-					<svg width="20" height="20" viewBox="0 0 20 20">
-						<use href="#icon__person" />
-					</svg>
-					<input class="select-arrow" type="text" name="person-name" list="person-name" autocomplete="off">
-					<datalist id="person-name">
-						<option>Арутюнов</option>
-						<option>Балбуцкая</option>
-						<option>Калинин</option>
-						<option>Коротков</option>
-					</datalist>
-					<p>Исполнитель</p>
+				<!-- -------------------------------------------------- Поля Свойств дополнительно -------------------- -->
+				<div class="properties__other">
+					<div class="properties__other-wrap">
+						<p>Дополнительная информация:</p>
+						<textarea name="project-comment" rows="5" autocomplete="off"></textarea>
+					</div>
+					<div class="properties__other-wrap">
+						<p>История переноса сроков:</p>
+						<div class="properties__other-box">
+							<div class="properties__other-date">
+								<svg width="17" height="17" viewBox="0 0 17 17">
+									<use href="#icon__plan" />
+								</svg>
+								<input type="text" name="plan" autocomplete="off">
+								<input type="text" name="plan" autocomplete="off">
+								<input type="text" name="plan" autocomplete="off">
+								<input type="text" name="plan" autocomplete="off">
+								<input type="text" name="plan" autocomplete="off">
+								<p>Дата переноса срока</p>
+							</div>
+							<div class="properties__other-note">
+								<svg width="17" height="17" viewBox="0 0 17 17">
+									<use href="#icon__plan" />
+								</svg>
+								<svg width="10" height="10" viewBox="0 0 10 10">
+									<use href="#icon__note" />
+								</svg>
+								<input type="text" name="plan__note" autocomplete="off" disabled>
+								<input type="text" name="plan__note" autocomplete="off" disabled>
+								<input type="text" name="plan__note" autocomplete="off" disabled>
+								<input type="text" name="plan__note" autocomplete="off" disabled>
+								<input type="text" name="plan__note" autocomplete="off" disabled>
+								<p>Причина переноса срока</p>
+							</div>
+						</div>
+					</div>
+					<div class="properties__other-wrap">
+						<p>История изменения Примечаний:</p>
+						<div class="properties__other-box">
+							<div class="properties__other-date">
+								<svg width="17" height="17" viewBox="0 0 17 17">
+									<use href="#icon__note" />
+								</svg>
+								<svg width="10" height="10" viewBox="0 0 10 10">
+									<use href="#icon__plan" />
+								</svg>
+								<input type="text" name="plan" autocomplete="off">
+								<input type="text" name="plan" autocomplete="off">
+								<input type="text" name="plan" autocomplete="off">
+								<input type="text" name="plan" autocomplete="off">
+								<input type="text" name="plan" autocomplete="off">
+								<p>Дата изменения примечания</p>
+							</div>
+							<div class="properties__other-note">
+								<svg width="17" height="17" viewBox="0 0 17 17">
+									<use href="#icon__note" />
+								</svg>
+								<input type="text" name="plan__note" autocomplete="off" disabled>
+								<input type="text" name="plan__note" autocomplete="off" disabled>
+								<input type="text" name="plan__note" autocomplete="off" disabled>
+								<input type="text" name="plan__note" autocomplete="off" disabled>
+								<input type="text" name="plan__note" autocomplete="off" disabled>
+								<p>Текст Примечания</p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="frame__manage-input-area">
-				<label for="project-comment">Дополнительная информация:</label>
-				<textarea name="project-comment" rows="5" autocomplete="off"></textarea>
-			</div>
-			<div class="frame__manage-input">
-				<label for="pattern">Применить шаблон:</label>
-				<select class="select-arrow" name="pattern">
-					<option></option>
-					<option>Москва</option>
-					<option>МО</option>
-				</select>
-			</div>
-			<button type="submit">Создать</button>
-		</form>
+		</div>
 	</footer>
 </body>
 

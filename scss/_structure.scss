@@ -80,8 +80,7 @@
 	}
 }
 
-
-//* Сетка
+//! ----------------------- Сетка
 // Структура
 .container {
 	position: relative;
@@ -166,6 +165,13 @@
 	grid-template-areas: "status name name set planed note note note note note";
 }
 
+
+//! ----------------------- Финансовая часть
+#money-off:checked~.table__swap .table__swap-money-off,
+#money-off:checked~.container .money-off,
+#money-off:checked~footer .money-off {
+	display: none;
+}
 
 //! ------------------------   Адаптивность
 

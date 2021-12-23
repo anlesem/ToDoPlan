@@ -111,25 +111,6 @@ textarea {
 	background-color: #fff;
 }
 
-button,
-.like-button {
-	align-self: flex-end;
-	width: 150px;
-	margin-top: $margin-frame;
-	padding: 7px 30px;
-	box-sizing: border-box;
-	border: 1px solid $brown;
-	border-radius: $border-radius;
-	background-color: $paper-title;
-	color: $brown;
-
-	&:hover {
-		font-size: 12px;
-		cursor: pointer;
-		opacity: 0.5;
-	}
-}
-
 .select-arrow {
 	background-image: url(../img/icon-arrow-down.svg);
 	background-position: right 5px center;
@@ -151,6 +132,12 @@ input.select-arrow {
 
 	svg {
 		fill: $ocean;
+	}
+
+	svg+svg {
+		position: absolute;
+		top: 0;
+		right: 100%;
 	}
 
 	input,
@@ -192,6 +179,43 @@ input.select-arrow {
 
 		&+label {
 			opacity: 0.1;
+		}
+	}
+}
+
+// Кнопка Закрыть при управлении мышкой + большие экраны
+.close {
+	border: 1px solid $close;
+	background: none;
+	opacity: 0.3;
+	transition: all $timeout;
+
+	// Надпись "Закрыть" в состоянии наведения
+	span {
+		display: none;
+		overflow: hidden;
+		text-align: center;
+		color: $close;
+	}
+
+	// Х в пассивном режиме
+	svg {
+		@include position-center;
+		fill: $close;
+	}
+
+	&:hover {
+		opacity: 1;
+		cursor: pointer;
+		border: 1px solid $close;
+		background: #fff;
+
+		span {
+			display: block;
+		}
+
+		svg {
+			display: none;
 		}
 	}
 }
@@ -299,11 +323,4 @@ input.select-arrow {
 
 .stage-five-bgcolor {
 	background-color: rgba($stages-color-five, $opacity-bgc);
-}
-
-
-
-#money-off:checked~.container .header__money-off,
-#money-off:checked~.table__swap .table__swap-money-off {
-	display: none;
 }

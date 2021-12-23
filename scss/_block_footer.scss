@@ -1,24 +1,31 @@
 footer {
-	position: fixed;
+	position: absolute;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	z-index: 8;
 	background: rgba(#000, 0.6);
 	height: $height-footer;
+	overflow: hidden;
 }
 
 .scroll-up {
 	display: none;
 	position: absolute;
 	z-index: 10;
-	left: 20px;
+	right: 20px;
 	bottom: 200%;
 	width: 40px;
 	height: 40px;
 	padding: 0;
+	border: 1px solid $brown;
 	border-radius: 50%;
 	background: linear-gradient(to bottom left, $paper-todo-title 40%, $brown 100%);
+
+	&:hover {
+		cursor: pointer;
+		opacity: 0.5;
+	}
 
 	svg {
 		@include position-center;
@@ -27,22 +34,27 @@ footer {
 }
 
 .ready {
+	position: relative;
 	height: 7px;
 	margin: 7px auto;
-	max-width: calc(900px + 80px + 80px);
-	background-color: $blue;
+	max-width: $width-properties;
 
-	@include widthPC {
+	background: rgba(#000, 0.2);
+
+	display: flex;
+	align-items: center;
+
+	@include widthLT {
 		max-width: none;
-		width: calc(70% + 80px + 80px);
+		width: calc(100% - 20px);
+		margin: 7px 10px;
 	}
 
-	@include widthTab {
-		width: calc(100% - 20px - 20px);
-	}
-
-	@include widthMob {
-		width: calc(100% - 10px - 10px);
+	&__progress {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
 	}
 }
 
@@ -51,66 +63,260 @@ footer {
 }
 
 .properties {
-	position: relative;
-	display: flex;
-	max-width: 900px;
-	height: 0;
+	max-width: $width-properties;
 	margin: 0px auto;
-	padding: 20px 10px 0;
-	background-color: #f2efe6;
-	background-image: url(../img/texture-spots.svg);
-	background-position: top center;
-	background-repeat: no-repeat;
-	background-size: 100%;
-	overflow: hidden;
 
-	transition: all $timeout;
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
 
-	@include widthPC {
+	@include widthLT {
 		max-width: none;
-		width: 70%;
+		width: calc(100% - 20px);
+		margin: 0 10px;
 	}
 
-	@include widthTab {
-		width: calc(100% - 20px - 20px - 40px - 80px);
-		margin: 0 100px 0 60px;
-		background-size: contain;
-	}
-
-	@include widthMob {
-		width: calc(100% - 10px - 10px - 40px - 80px);
-		margin: 0 90px 0 50px;
-	}
-
-	&::before {
-		content: "";
-		position: absolute;
-		top: 0;
-		right: 100%;
-		z-index: -1;
+	// -------------------- Иконки / Управление
+	&__view {
+		order: 1;
 		width: 80px;
-		height: 100%;
-		background: url(../img/texture-paper1.svg) top right no-repeat;
+		padding: 20px 0;
+		background: url(../img/texture-paper1.svg) top right repeat-y;
 
-		@include widthTab {
-			transform: translateX(40px);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+
+		@include widthMob {
+			width: 40px;
+		}
+
+		&>svg {
+			fill: $ocean
+		}
+
+		label {
+			position: relative;
+			display: block;
+			width: 40px;
+			height: 40px;
+
+			&:hover {
+				cursor: pointer;
+				opacity: 0.5;
+			}
+
+			svg {
+				@include position-center;
+				fill: $input-off;
+			}
 		}
 	}
 
-	&::after {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 100%;
-		z-index: -1;
+	&__set {
+		order: 3;
 		width: 80px;
+		padding: 20px 0;
+		background: url(../img/texture-paper2.svg) top left repeat-y;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+
+		@include widthMob {
+			width: 40px;
+		}
+
+		// Кнопка Закрыть при управлении мышкой + большие экраны
+		.close {
+			position: relative;
+			z-index: 10;
+			width: 22px;
+			height: 22px;
+			font-size: 12px;
+			line-height: 20px;
+			border-radius: 11px;
+
+			&:hover {
+				width: 70px;
+			}
+		}
+
+		&-trash {
+			position: relative;
+			width: 40px;
+			height: 40px;
+
+			&:hover {
+				cursor: pointer;
+				opacity: 0.5;
+			}
+
+			svg {
+				fill: $delete;
+			}
+		}
+	}
+
+	&__box {
+		order: 2;
+		width: calc(100% - 80px - 80px);
 		height: 100%;
-		background: url(../img/texture-paper2.svg) top left no-repeat;
+		padding: 20px 0;
+		overflow-y: auto;
+
+		background-color: #f2efe6;
+		background-image: url(../img/texture-spots.svg);
+		background-position: top center;
+		background-repeat: no-repeat;
+		background-size: 100%;
+
+		@include widthMob {
+			width: calc(100% - 40px - 40px);
+		}
+	}
+
+
+	// -------------------- Основная часть Свойств
+	&__main {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 10px 20px;
+		justify-content: center;
+		font-size: 12px;
+
+		@include widthTab {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@include widthMob {
+			grid-template-columns: 100%;
+		}
+
+		input,
+		select,
+		option {
+			padding: 3px 10px;
+			height: 25px;
+		}
+	}
+
+	// -------------------- Основная часть Свойств
+	&__other {
+		display: none;
+		font-size: 13px;
+		color: $brown;
+
+		&-wrap {
+			width: 100%;
+			margin-top: 20px;
+
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+
+			@include widthTab {
+				flex-direction: column;
+			}
+
+			&>p {
+				width: 20%;
+
+				@include widthTab {
+					width: 100%;
+				}
+			}
+
+			textarea {
+				width: 75%;
+
+				@include widthTab {
+					width: 100%;
+				}
+			}
+		}
+
+		&-box {
+			width: 75%;
+			overflow: visible;
+
+			display: flex;
+			justify-content: space-between;
+
+			@include widthTab {
+				width: 100%;
+			}
+
+			input {
+				padding: 3px 10px;
+				width: 100%;
+				height: 25px;
+				margin-bottom: 5px;
+			}
+
+			svg {
+				position: absolute;
+				top: 3px;
+				bottom: 0;
+				left: -20px;
+
+				@include widthTab {
+					display: none;
+				}
+			}
+
+			svg+svg {
+				top: 0;
+				left: -30px;
+			}
+
+			p {
+				display: none;
+				font-size: 10px;
+				line-height: 15px;
+			}
+		}
+
+		&-date {
+			position: relative;
+			width: 25%;
+		}
+
+		&-note {
+			position: relative;
+			width: 65%;
+		}
 	}
 }
 
-#properties:checked~#frame-off:checked~footer {
+.date-comment {
+	grid-column: span 2;
 
+	@include widthMob {
+		grid-column: span 1;
+	}
+}
+
+// Отображение информационного модуля (пояснительных подписей)
+#info:checked~footer .input-properties-wrap {
+	margin-bottom: 15px;
+
+	p {
+		display: block;
+		line-height: 15px;
+	}
+}
+
+#info:checked~footer .properties__other-box {
+	p {
+		display: block;
+	}
+}
+
+// Отображение настоящей области
+#properties:checked~#frame-off:checked~footer {
 	height: auto;
 
 	.scroll-up {
@@ -118,7 +324,46 @@ footer {
 	}
 
 	.properties {
-		overflow: visible;
-		height: 150px;
+		height: auto;
+	}
+}
+
+
+// Отображение дополнительной информации
+#archive:checked~footer {
+
+	.properties__view label {
+		background: radial-gradient(circle farthest-corner at center center, $paper-todo-title 0%, transparent 80%);
+
+		svg {
+			fill: $brown;
+		}
+	}
+
+	.properties__other {
+		display: block;
+	}
+}
+
+@media (max-width: $widthMob) and (max-height: $widthMob) {
+	#properties:checked~#frame-off:checked~footer {
+		top: 0;
+		height: 100%;
+
+		.properties {
+			height: calc(100% - 21px);
+		}
+	}
+}
+
+@media (max-width: $widthMob),
+(max-height: $widthTab) {
+	#properties:checked~#archive:checked~#frame-off:checked~footer {
+		top: 0;
+		height: 100%;
+
+		.properties {
+			height: calc(100% - 21px);
+		}
 	}
 }

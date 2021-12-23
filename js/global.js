@@ -15,19 +15,17 @@ function changeColorText(target) {
 }
 
 // Сброс окрашивания текста при завершении редактирования
+// Принимает объект target
 function removeColorText(target) {
 	target.style.color = "";
 }
 
 // Контроль нажатия на Enter, Backspace и перекрашиваем при вводе
-function controlChangeText(target,event) {
-	let inputLength = target.innerText.length;
-
-	// Перекрашиваем цвет при вводе
-	changeColorText(target);
+// Принимает событие event
+function controlChangeText(event) {
 
 	// Ограничение по длине строки 40 символов (больше всё равно не отображается))
-	if (inputLength > 40) {
+	if (event.target.innerText.length > 40) {
 		if (event.key != "Backspace") {
 			event.preventDefault();
 		}

@@ -19,6 +19,53 @@
 		flex-direction: column;
 	}
 
+	button,
+	.like-button {
+		align-self: flex-end;
+		width: 150px;
+		margin-top: $margin-frame;
+		padding: 7px 30px;
+		box-sizing: border-box;
+		border: 1px solid $brown;
+		border-radius: $border-radius;
+		background-color: $paper-title;
+		color: $brown;
+
+		&:hover {
+			font-size: 12px;
+			cursor: pointer;
+			opacity: 0.5;
+		}
+	}
+
+	// Кнопка Закрыть при управлении мышкой + большие экраны
+	.close {
+		position: fixed;
+		top: 20px + $height-header;
+		right: calc(100% - #{$width-manage});
+		z-index: 1;
+		width: 30px;
+		height: 30px;
+		line-height: 25px;
+		border-radius: 15px;
+
+		@include widthHD {
+			right: calc(100% - #{$widthHD-manage} - #{$marginPC});
+		}
+
+		@include widthPC {
+			right: calc(100% - #{$widthHD-manage});
+		}
+
+		@include widthLT {
+			right: 8%;
+		}
+
+		&:hover {
+			width: 80px;
+		}
+	}
+
 	//! ----------------------------- Обложка
 	&__art {
 		position: relative;
@@ -776,63 +823,6 @@
 // Глобальные выключатели в настройках
 #money-off:checked~.container .money-off-label {
 	@include options-global-checkbox;
-}
-
-// Кнопка Закрыть при управлении мышкой + большие экраны
-.close {
-	position: fixed;
-	top: 20px + $height-header;
-	right: calc(100% - #{$width-manage});
-	width: 30px;
-	height: 30px;
-	line-height: 25px;
-	border: 1px solid $close;
-	border-radius: 15px;
-	background: none;
-	opacity: 0.3;
-	transition: all $timeout;
-
-	@include widthHD {
-		right: calc(100% - #{$widthHD-manage} - #{$marginPC});
-	}
-
-	@include widthPC {
-		right: calc(100% - #{$widthHD-manage});
-	}
-
-	@include widthLT {
-		right: 8%;
-	}
-
-	// Надпись "Закрыть" в состоянии наведения
-	span {
-		display: none;
-		overflow: hidden;
-		text-align: center;
-		color: $close;
-	}
-
-	// Х в пассивном режиме
-	svg {
-		@include position-center;
-		fill: $close;
-	}
-
-	&:hover {
-		width: 80px;
-		opacity: 1;
-		cursor: pointer;
-		border: 1px solid $close;
-		background: #fff;
-
-		span {
-			display: block;
-		}
-
-		svg {
-			display: none;
-		}
-	}
 }
 
 #frame-off:checked~.container .frame {
