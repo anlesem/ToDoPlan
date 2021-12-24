@@ -1,17 +1,6 @@
 'use strict';
 
 //!------------------- Переключение отображения полей таблицы при малых размерах экрана
-let initialPoint;				// начало движения
-let finalPoint;				// конец движения
-
-let tableSwap_name = document.getElementById('table__swap-name');
-let tableSwap_set = document.getElementById('table__swap-set');
-let tableSwap_note = document.getElementById('table__swap-note');
-let tableSwap_money = document.getElementById('table__swap-money');
-
-let tableSwapWidth = 1100;
-let tableSwapList = [tableSwap_name, tableSwap_set, tableSwap_note, tableSwap_money]
-
 // Отслеживание
 document.addEventListener('touchstart', start, false);
 document.addEventListener('touchend', end, false);

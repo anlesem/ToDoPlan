@@ -11,6 +11,13 @@
 	}
 }
 
+@mixin like-input {
+	box-sizing: border-box;
+	border-radius: $border-radius;
+	border: 1px solid $input-border;
+}
+
+
 //* Подписи
 @mixin text-title {
 	font-family: cormorant-infant;

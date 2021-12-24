@@ -6,7 +6,7 @@ footer {
 	z-index: 8;
 	background: rgba(#000, 0.6);
 	height: $height-footer;
-	overflow: hidden;
+	transition: height $timeout;
 }
 
 .scroll-up {
@@ -64,11 +64,12 @@ footer {
 
 .properties {
 	max-width: $width-properties;
+	height: 0;
 	margin: 0px auto;
+	overflow: hidden;
 
 	display: flex;
 	justify-content: space-between;
-	align-items: stretch;
 
 	@include widthLT {
 		max-width: none;
@@ -88,7 +89,7 @@ footer {
 		justify-content: space-between;
 		align-items: center;
 
-		@include widthMob {
+		@include widthTab {
 			width: 40px;
 		}
 
@@ -125,7 +126,7 @@ footer {
 		justify-content: space-between;
 		align-items: center;
 
-		@include widthMob {
+		@include widthTab {
 			width: 40px;
 		}
 
@@ -138,9 +139,10 @@ footer {
 			font-size: 12px;
 			line-height: 20px;
 			border-radius: 11px;
+			color: #777;
 
 			&:hover {
-				width: 70px;
+				width: 60px;
 			}
 		}
 
@@ -164,7 +166,6 @@ footer {
 		order: 2;
 		width: calc(100% - 80px - 80px);
 		height: 100%;
-		padding: 20px 0;
 		overflow-y: auto;
 
 		background-color: #f2efe6;
@@ -173,7 +174,11 @@ footer {
 		background-repeat: no-repeat;
 		background-size: 100%;
 
-		@include widthMob {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		@include widthTab {
 			width: calc(100% - 40px - 40px);
 		}
 	}
@@ -184,7 +189,6 @@ footer {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		gap: 10px 20px;
-		justify-content: center;
 		font-size: 12px;
 
 		@include widthTab {
@@ -200,10 +204,14 @@ footer {
 		option {
 			padding: 3px 10px;
 			height: 25px;
+
+			&:disabled {
+				opacity: 0.5;
+			}
 		}
 	}
 
-	// -------------------- Основная часть Свойств
+	// -------------------- Дополнительная часть Свойств
 	&__other {
 		display: none;
 		font-size: 13px;
@@ -232,61 +240,29 @@ footer {
 			textarea {
 				width: 75%;
 
+				&:disabled {
+					opacity: 0.5;
+				}
+
 				@include widthTab {
 					width: 100%;
 				}
 			}
 		}
+	}
 
-		&-box {
-			width: 75%;
-			overflow: visible;
+	// -------------------- Истории
+	&__archive-date,
+	&__archive-note {
+		width: 75%;
+		height: 125px;
+		padding: 3px 10px;
+		@include like-input;
+		background-color: rgba(#fff, 0.5);
+		overflow-y: auto;
 
-			display: flex;
-			justify-content: space-between;
-
-			@include widthTab {
-				width: 100%;
-			}
-
-			input {
-				padding: 3px 10px;
-				width: 100%;
-				height: 25px;
-				margin-bottom: 5px;
-			}
-
-			svg {
-				position: absolute;
-				top: 3px;
-				bottom: 0;
-				left: -20px;
-
-				@include widthTab {
-					display: none;
-				}
-			}
-
-			svg+svg {
-				top: 0;
-				left: -30px;
-			}
-
-			p {
-				display: none;
-				font-size: 10px;
-				line-height: 15px;
-			}
-		}
-
-		&-date {
-			position: relative;
-			width: 25%;
-		}
-
-		&-note {
-			position: relative;
-			width: 65%;
+		@include widthTab {
+			width: 100%;
 		}
 	}
 }
@@ -299,9 +275,53 @@ footer {
 	}
 }
 
+// Отображение настоящей области
+#properties:checked~#frame-off:checked~footer {
+	height: 180px;
+
+	@include widthMob {
+		height: 100%;
+	}
+
+	.scroll-up {
+		bottom: 110%;
+	}
+
+	.properties {
+		height: calc(100% - 20px);
+		overflow: visible;
+	}
+}
+
+// Отображение дополнительной информации
+#properties:checked~#archive:checked~#frame-off:checked~footer {
+	height: 300px;
+
+	@include widthTab {
+		height: 100%;
+	}
+
+	.properties__view label {
+		background: radial-gradient(circle farthest-corner at center center, $paper-todo-title 0%, transparent 80%);
+
+		svg {
+			fill: $brown;
+		}
+	}
+
+	.properties__box {
+		display: block;
+		padding: 20px 0;
+	}
+
+	.properties__other {
+		display: block;
+	}
+}
+
 // Отображение информационного модуля (пояснительных подписей)
 #info:checked~footer .input-properties-wrap {
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 
 	p {
 		display: block;
@@ -312,58 +332,5 @@ footer {
 #info:checked~footer .properties__other-box {
 	p {
 		display: block;
-	}
-}
-
-// Отображение настоящей области
-#properties:checked~#frame-off:checked~footer {
-	height: auto;
-
-	.scroll-up {
-		bottom: 110%;
-	}
-
-	.properties {
-		height: auto;
-	}
-}
-
-
-// Отображение дополнительной информации
-#archive:checked~footer {
-
-	.properties__view label {
-		background: radial-gradient(circle farthest-corner at center center, $paper-todo-title 0%, transparent 80%);
-
-		svg {
-			fill: $brown;
-		}
-	}
-
-	.properties__other {
-		display: block;
-	}
-}
-
-@media (max-width: $widthMob) and (max-height: $widthMob) {
-	#properties:checked~#frame-off:checked~footer {
-		top: 0;
-		height: 100%;
-
-		.properties {
-			height: calc(100% - 21px);
-		}
-	}
-}
-
-@media (max-width: $widthMob),
-(max-height: $widthTab) {
-	#properties:checked~#archive:checked~#frame-off:checked~footer {
-		top: 0;
-		height: 100%;
-
-		.properties {
-			height: calc(100% - 21px);
-		}
 	}
 }

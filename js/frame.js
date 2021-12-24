@@ -17,13 +17,6 @@ function addFillLabel(parent) {
 }
 
 //!---------------------------------------------- Отключение финансового блока
-// Глобальное отключение всего связанного с финансами в настройках
-let moneyOff = document.getElementById('money-off');	
-let moneyPIN = document.getElementById('money-pin');
-
-// Фильтр в header
-let money = document.getElementById('money');
-
 moneyOff.addEventListener('click', function () {
 	if (moneyOff.checked) {
 		money.checked = false;
