@@ -1,546 +1,554 @@
 .table {
-	height: 40px;
-	margin-left: 5px;
-	border-bottom: 1px solid #698ccc;
-	box-sizing: border-box;
-	background: $paper;
-	box-shadow: $shadow;
+  height: 40px;
+  margin-left: 5px;
+  border-bottom: 1px solid #698ccc;
+  box-sizing: border-box;
+  background: $paper;
+  box-shadow: $shadow;
 
-	& div,
-	& p {
-		user-select: none;
-	}
+  & div,
+  & p {
+    user-select: none;
+  }
 
-	&>div {
-		padding: 0 10px;
-		text-overflow: ellipsis;
-	}
+  & > div {
+    padding: 0 10px;
+    text-overflow: ellipsis;
+  }
 
-	@include widthTab {
-		margin: 0;
-		padding: 0 10px;
-		border-bottom: none;
-		box-shadow: none;
-	}
+  @include widthTab {
+    margin: 0;
+    padding: 0 10px;
+    border-bottom: none;
+    box-shadow: none;
+  }
 
-	// Art - разделитель блокнота
-	// Связано с header__marks
-	&::before {
-		content: "";
-		position: absolute;
-		left: 50%;
-		transform: translateX(-100%);
-		height: 100%;
-		width: 10px;
-		background: linear-gradient(to left, #ddd 0%, transparent 100%);
-		opacity: 0.5;
+  // Art - разделитель блокнота
+  // Связано с header__marks
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-100%);
+    height: 100%;
+    width: 10px;
+    background: linear-gradient(to left, #ddd 0%, transparent 100%);
+    opacity: 0.5;
 
-		@include widthPC {
-			left: calc(50% + 75px);
-		}
+    @include widthPC {
+      left: calc(50% + 75px);
+    }
 
-		@include widthLT {
-			content: none;
-		}
+    @include widthLT {
+      content: none;
+    }
 
-		@include widthTab {
-			content: "";
-			position: absolute;
-			bottom: 0;
-			left: 50%;
-			right: auto;
-			transform: translateX(-50%);
-			height: 1px;
-			width: calc(100% - 20px);
-			border-bottom: 1px solid #698ccc;
-		}
-	}
+    @include widthTab {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      right: auto;
+      transform: translateX(-50%);
+      height: 1px;
+      width: calc(100% - 20px);
+      border-bottom: 1px solid #698ccc;
+    }
+  }
 
-	&::after {
-		content: "";
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 150px;
-		width: 1px;
-		background: #ff7f7f;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 150px;
+    width: 1px;
+    background: #ff7f7f;
 
-		@include widthTab {
-			content: none;
-		}
-	}
+    @include widthTab {
+      content: none;
+    }
+  }
 
-	// ------------------ Колонка Статус 
-	&__status {
-		width: 100%;
+  // ------------------ Колонка Статус
+  &__status {
+    width: 100%;
 
-		&-tabs {
-			position: absolute;
-			width: 8px;
-			height: 8px;
-			top: 10px;
-			border-radius: 50%;
-		}
+    &-tabs {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      top: 10px;
+      border-radius: 50%;
+    }
 
-		&-wrap {
-			width: 100%;
-			height: 100%;
+    &-wrap {
+      width: 100%;
+      height: 100%;
 
-			display: flex;
-			justify-content: flex-end;
-			align-items: center;
-		}
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
 
-		&-roll {
-			display: block;
-			position: relative;
-			width: 40px;
-			height: 40px;
+    &-roll {
+      display: block;
+      position: relative;
+      width: 40px;
+      height: 40px;
 
-			&:hover {
-				cursor: pointer;
-				opacity: 0.5;
-			}
+      &:hover {
+        cursor: pointer;
+        opacity: 0.5;
+      }
 
-			input {
-				display: none;
-			}
+      input {
+        display: none;
+      }
 
-			svg {
-				@include position-center;
-				fill: $brown;
-			}
+      svg {
+        @include position-center;
+        fill: $brown;
+      }
 
-			input+svg+svg {
-				display: none;
-			}
+      input + svg + svg {
+        display: none;
+      }
 
-			input:checked+svg {
-				display: none;
-			}
+      input:checked + svg {
+        display: none;
+      }
 
-			input:checked+svg+svg {
-				display: block;
-			}
-		}
+      input:checked + svg + svg {
+        display: block;
+      }
+    }
 
-		&-info {
-			position: relative;
-			width: 30px;
-			height: 40px;
-			font-size: 10px;
+    &-info {
+      position: relative;
+      width: 30px;
+      height: 40px;
+      font-size: 10px;
 
-			&-ready {
-				padding-right: 15px;
-				text-align: right;
-			}
+      &-ready {
+        padding-right: 15px;
+        text-align: right;
+      }
 
-			&-all {
-				text-align: left;
-				padding-left: 15px;
-				line-height: 10px;
-			}
+      &-all {
+        text-align: left;
+        padding-left: 15px;
+        line-height: 10px;
+      }
 
-			svg {
-				@include position-center;
-				fill: $ocean;
-			}
-		}
+      svg {
+        @include position-center;
+        fill: $ocean;
+      }
+    }
 
-		&-icon {
-			position: relative;
-			width: 40px;
-			height: 40px;
-			fill: $ocean;
+    &-icon {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      fill: $ocean;
 
-			svg {
-				@include position-center;
-			}
+      svg {
+        @include position-center;
+      }
 
-			svg.task-money-icon {
-				position: absolute;
-				top: 4px;
-				left: 4px;
-				transform: translate(0, 0);
-			}
+      svg.task-money-icon {
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        transform: translate(0, 0);
+      }
+    }
+  }
 
-		}
-	}
+  // ------------------ Колонка Наименование
+  &__name {
+    width: 100%;
+    color: #000;
+    @include text-hide-overflow;
 
-	// ------------------ Колонка Наименование 
-	&__name {
-		width: 100%;
-		color: #000;
-		@include text-hide-overflow;
+    &-main {
+      @include text-hide-overflow;
+      padding-left: $padding-table-name;
 
-		&-main {
-			@include text-hide-overflow;
-			padding-left: $padding-table-name;
+      &:focus {
+        font-style: italic;
+        font-weight: bold;
+        color: $brown;
+      }
+    }
 
-			&:focus {
-				font-style: italic;
-				font-weight: bold;
-				color: $brown;
-			}
-		}
+    &-study-text {
+      padding-left: $padding-table-name + 20px;
+      font-size: 10px;
+      font-style: italic;
+      line-height: 13px;
 
-		&-study-text {
-			padding-left: $padding-table-name + 20px;
-			font-size: 10px;
-			font-style: italic;
-			line-height: 13px;
+      clip-path: polygon(
+        1% 0,
+        98% 0,
+        98% 30%,
+        96% 30%,
+        96% 50%,
+        99% 50%,
+        99% 70%,
+        99.5% 70%,
+        100% 100%,
+        3% 100%,
+        0 40%,
+        1% 40%
+      );
+    }
 
-			clip-path: polygon(1% 0, 98% 0, 98% 30%, 96% 30%, 96% 50%, 99% 50%, 99% 70%, 99.5% 70%, 100% 100%, 3% 100%, 0 40%, 1% 40%);
-		}
+    &-study {
+      display: flex;
+      justify-content: space-between;
 
-		&-study {
-			display: flex;
-			justify-content: space-between;
+      div {
+        width: 19%;
+        height: 3px;
+      }
+    }
+  }
 
-			div {
-				width: 19%;
-				height: 2px;
-			}
-		}
+  // ------------------ Колонка Управление
+  &__set {
+    width: 100%;
 
-	}
+    &-wrap {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
 
-	// ------------------ Колонка Управление 
-	&__set {
-		width: 100%;
+      input {
+        display: none;
+      }
 
-		&-wrap {
-			display: flex;
-			justify-content: space-around;
-			width: 100%;
+      label {
+        display: block;
+        position: relative;
+        flex-grow: 1;
+        height: 40px;
 
-			input {
-				display: none;
-			}
+        &:hover {
+          cursor: pointer;
+          opacity: 0.8;
+        }
+      }
 
-			label {
-				display: block;
-				position: relative;
-				flex-grow: 1;
-				height: 40px;
+      svg {
+        @include position-center;
+        fill: $input-set;
+      }
 
-				&:hover {
-					cursor: pointer;
-					opacity: 0.5;
-				}
-			}
+      input:disabled + svg,
+      input:disabled + svg + svg {
+        fill: $input-set-disable;
+      }
+    }
 
-			svg {
-				@include position-center;
-				fill: $input-set;
-			}
+    &-ready {
+      input + svg + svg {
+        display: none;
+      }
 
-			input:disabled+svg,
-			input:disabled+svg+svg {
-				fill: $input-set-disable;
-			}
-		}
+      input:checked + svg + svg {
+        display: block;
+      }
+    }
 
-		&-ready {
-			input+svg+svg {
-				display: none;
-			}
+    &-favorite {
+      input:checked + svg {
+        fill: $orange;
+      }
+    }
 
-			input:checked+svg+svg {
-				display: block;
-			}
-		}
+    &-work {
+      input:checked + svg {
+        fill: $blue;
+      }
+    }
+  }
 
-		&-favorite {
-			input:checked+svg {
-				fill: $orange;
-			}
-		}
+  // ------------------ Колонка План
+  &__planed {
+    font-size: 13px;
+    text-align: center;
+    color: #000;
+  }
 
-		&-work {
-			input:checked+svg {
-				fill: $blue;
-			}
-		}
+  // ------------------ Колонка Примечание
+  &__note {
+    width: 100%;
+    color: #000;
 
-	}
+    &-wrap {
+      display: grid;
+      grid-template: 19px / min-content 1fr;
+      grid-template-areas:
+        "note note"
+        "mark person";
+    }
 
-	// ------------------ Колонка План 
-	&__planed {
-		font-size: 13px;
-		text-align: center;
-		color: #000;
-	}
+    &-note {
+      grid-area: note;
+      @include text-hide-overflow;
+      font-size: 13px;
 
-	// ------------------ Колонка Примечание 
-	&__note {
-		width: 100%;
-		color: #000;
+      &:focus {
+        font-style: italic;
+        font-weight: bold;
+        color: $brown;
+      }
+    }
 
-		&-wrap {
-			display: grid;
-			grid-template: 19px / min-content 1fr;
-			grid-template-areas: "note note"
-				"mark person";
-		}
+    &-mark {
+      grid-area: mark;
+      margin: 2px 0 2px 10px;
+      padding: 0 40px;
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+      clip-path: polygon(0 0, 100% 0, 90% 50%, 100% 100%, 0 100%);
+      line-height: 14px;
+      font-size: 10px;
+      white-space: nowrap;
+    }
 
-		&-note {
-			grid-area: note;
-			@include text-hide-overflow;
-			font-size: 13px;
+    &-person {
+      grid-area: person;
+      margin-right: 20px;
+      @include text-hide-overflow;
+      font-size: 10px;
+      text-align: right;
+      color: $blue;
+    }
+  }
 
-			&:focus {
-				font-style: italic;
-				font-weight: bold;
-				color: $brown;
-			}
-		}
+  // ------------------ Колонка Стоимость и Тип Операции
+  &__type,
+  &__price {
+    font-size: 13px;
+    text-align: center;
+  }
 
-		&-mark {
-			grid-area: mark;
-			margin: 2px 0 2px 10px;
-			padding: 0 40px;
-			border-top-left-radius: $border-radius;
-			border-bottom-left-radius: $border-radius;
-			clip-path: polygon(0 0, 100% 0, 90% 50%, 100% 100%, 0 100%);
-			line-height: 14px;
-			font-size: 10px;
-			white-space: nowrap;
-		}
+  // ------------------ Колонка Контрагент +
+  &__partner {
+    @include text-hide-overflow;
+    text-align: center;
+    color: #000;
 
-		&-person {
-			grid-area: person;
-			margin-right: 20px;
-			@include text-hide-overflow;
-			font-size: 10px;
-			text-align: right;
-			color: $blue;
-		}
+    &-balance {
+      font-size: 13px;
+    }
 
-	}
+    &-name {
+      font-size: 10px;
+    }
+  }
 
-	// ------------------ Колонка Стоимость и Тип Операции 
-	&__type,
-	&__price {
-		font-size: 13px;
-		text-align: center;
-	}
-
-	// ------------------ Колонка Контрагент +  
-	&__partner {
-		@include text-hide-overflow;
-		text-align: center;
-		color: #000;
-
-		&-balance {
-			font-size: 13px;
-		}
-
-		&-name {
-			font-size: 10px;
-		}
-	}
-
-	&-text-small {
-		font-size: 10px;
-		color: #777;
-	}
+  &-text-small {
+    font-size: 10px;
+    color: $second-text;
+  }
 }
 
-// ------------------ Раздел Проект 
+// ------------------ Раздел Проект
 .project {
-	.table__name {
-		font-weight: bold;
+  .table__name {
+    font-weight: bold;
 
-		&-main {
-			padding-left: 0;
-			@include text-hide-overflow;
-		}
+    &-main {
+      padding-left: 0;
+      @include text-hide-overflow;
+    }
 
-		&-other {
-			padding-left: $padding-table-name;
-			@include text-hide-overflow;
-			font-style: italic;
-		}
-	}
+    &-other {
+      padding-left: $padding-table-name;
+      @include text-hide-overflow;
+      font-style: italic;
+    }
+  }
 }
 
-// ------------------ Раздел Группа 
+// ------------------ Раздел Группа
 .group {
-	.table__name {
-		position: relative;
-		font-style: italic;
-		font-weight: 600;
-		color: $ocean;
+  .table__name {
+    position: relative;
+    font-style: italic;
+    font-weight: 600;
+    color: $ocean;
 
-		&-main {
-			padding-left: 0;
-			@include text-hide-overflow;
-		}
+    &-main {
+      padding-left: 0;
+      @include text-hide-overflow;
+    }
 
-		&-view-task {
-			display: block;
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			right: 0;
-			width: 40px;
+    &-view-task {
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 40px;
 
-			&:hover {
-				cursor: pointer;
-				opacity: 0.5;
-			}
+      &:hover {
+        cursor: pointer;
+        opacity: 0.5;
+      }
 
-			input {
-				display: none;
-			}
+      input {
+        display: none;
+      }
 
-			svg {
-				@include position-center;
-				fill: $blue;
-			}
+      svg {
+        @include position-center;
+        fill: $blue;
+      }
 
-			input+svg+svg {
-				display: none;
-			}
+      input + svg + svg {
+        display: none;
+      }
 
-			input:checked+svg {
-				display: none;
-			}
+      input:checked + svg {
+        display: none;
+      }
 
-			input:checked+svg+svg {
-				display: block;
-			}
-		}
+      input:checked + svg + svg {
+        display: block;
+      }
+    }
+  }
 
-	}
+  .table__status-info {
+    width: 40px;
+    margin-right: 5px;
 
-	.table__status-info {
-		width: 40px;
-		margin-right: 5px;
+    &-ready {
+      padding-right: 20px;
+    }
 
-		&-ready {
-			padding-right: 20px;
-		}
+    &-all {
+      padding-left: 20px;
+    }
+  }
 
-		&-all {
-			padding-left: 20px;
-		}
-	}
+  .table__note-box {
+    display: grid;
+    height: 39px;
+    grid-template: 16px / repeat(auto-fit, minmax(45px, 1fr));
+    grid-auto-rows: 16px;
+    gap: 2px;
+    justify-content: center;
+    overflow-y: auto;
 
-	.table__note-box {
-		display: grid;
-		height: 39px;
-		grid-template: 16px / repeat(auto-fit, minmax(45px, 1fr));
-		grid-auto-rows: 16px;
-		gap: 2px;
-		justify-content: center;
-		overflow-y: auto;
+    P {
+      width: 100%;
+      @include text-hide-overflow;
+      padding: 0 2px;
+      border-radius: 3px;
 
-		P {
-			width: 100%;
-			@include text-hide-overflow;
-			padding: 0 2px;
-			border-radius: 3px;
+      font-size: 10px;
+      line-height: 16px;
+      text-align: center;
+    }
 
-			font-size: 10px;
-			line-height: 16px;
-			text-align: center;
-		}
-
-		.stage-ready {
-			text-decoration: line-through;
-		}
-	}
+    .stage-ready {
+      text-decoration: line-through;
+    }
+  }
 }
 
 // Цвет прочих иконок в Статусе
 .status-grey {
-	fill: $input-set;
+  fill: $input-set;
 }
 
 .status-green {
-	fill: $grass;
+  fill: $grass;
 }
 
-// Цвет предупреждения 
+// Цвет предупреждения
 // Просрочено
 .attention {
-	color: $red;
-	fill: $red;
+  color: $red;
+  fill: $red;
 }
 
 // Внимание
 .warning {
-	color: $orange;
-	fill: $orange;
+  color: $orange;
+  fill: $orange;
 }
 
 // Цвета финансовых операций
 // Доход/Прибыль income
 .money-income {
-	color: $grass-dark;
+  color: $grass-dark;
 
-	.task-money-icon {
-		fill: $grass-dark;
-	}
+  .task-money-icon {
+    fill: $grass-dark;
+  }
 }
 
 // Расход/Убытки loss
 .money-loss {
-	color: $red-dark;
+  color: $red-dark;
 
-	.task-money-icon {
-		fill: $red-dark;
-	}
+  .task-money-icon {
+    fill: $red-dark;
+  }
 }
 
 // Перевод remittance
 .money-remittance {
-	color: $purple-deep;
+  color: $purple-deep;
 
-	.task-money-icon {
-		fill: $purple-deep;
-	}
+  .task-money-icon {
+    fill: $purple-deep;
+  }
 }
 
 // Выплата payment
 .money-payment {
-	color: $blue-dark;
+  color: $blue-dark;
 
-	.task-money-icon {
-		fill: $blue-dark;
-	}
+  .task-money-icon {
+    fill: $blue-dark;
+  }
 }
 
-#frame-pass:checked~.container .table,
-#frame-new:checked~.container .table,
-#frame-profile:checked~.container .table,
-#frame-options:checked~.container .table,
-#frame-help:checked~.container .table,
-#frame-stat:checked~.container .table {
-	display: none;
+#frame-pass:checked ~ .container .table,
+#frame-new:checked ~ .container .table,
+#frame-profile:checked ~ .container .table,
+#frame-options:checked ~ .container .table,
+#frame-help:checked ~ .container .table,
+#frame-stat:checked ~ .container .table {
+  display: none;
 }
 
 main .table:hover {
-	background: $paper-hover;
+  background: $paper-hover;
 }
 
 // Цвета статуса
 main use[href="#icon__status-enter"],
 main use[href="#icon__status-pause"] {
-	fill: $input-set;
+  fill: $input-set;
 }
 
 main use[href="#icon__status-ready"] {
-	fill: $grass;
+  fill: $grass;
 }
 
 //! ------------------------   600
 @media (max-width: $widthMob) {
-
-	#table__swap-set:checked~.container .table__name,
-	#table__swap-note:checked~.container .table__name {
-		position: absolute;
-	}
+  #table__swap-set:checked ~ .container .table__name,
+  #table__swap-note:checked ~ .container .table__name {
+    position: absolute;
+  }
 }

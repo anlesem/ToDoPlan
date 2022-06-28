@@ -1,102 +1,150 @@
 // Настройка полосы прокрутки
 * {
-	scrollbar-width: thin;
-	scrollbar-color: rgba(0, 0, 0, .1) transparent;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.1) transparent;
 
-	&::-webkit-scrollbar {
-		width: 4px;
-	}
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
 
-	&::-webkit-scrollbar-track {
-		background: transparent;
-	}
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
 
-	&::-webkit-scrollbar-thumb {
-		background-color: rgba(0, 0, 0, .1);
-	}
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Убрать стрелки у числового поля ввода
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+  margin: 0;
+}
+
+// Исчезновение значения в
+input::-webkit-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+input::-moz-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+input:-moz-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+input:-ms-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+input:focus::-webkit-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+input:focus::-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+input:focus:-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+input:focus:-ms-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 html,
 body {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 body {
-	font-family: lato, Arial, Helvetica, sans-serif;
-	font-size: 14px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: 19px;
+  font-family: lato, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19px;
 
-	position: relative;
-	z-index: -5;
+  position: relative;
+  z-index: -5;
 
-	overflow: hidden;
+  overflow: hidden;
 
-	background: url(../img/texture-skin.svg) rgba(#d4be94, 0.9);
+  background: url(../img/texture-skin.svg) rgba(#d4be94, 0.9);
 
-	@include widthLT {
-		background: url(../img/texture-wood.svg) #fffaf1;
-		background-size: contain;
-	}
+  @include widthLT {
+    background: url(../img/texture-wood.svg) #fffaf1;
+    background-size: contain;
+  }
 
-	&::before,
-	&::after {
-		content: "";
-		position: absolute;
-		top: 0;
-		width: 45%;
-		height: 100%;
-		z-index: -1;
-		background: url(../img/texture-wood.svg) #fffaf1;
-		background-size: contain;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 45%;
+    height: 100%;
+    z-index: -1;
+    background: url(../img/texture-wood.svg) #fffaf1;
+    background-size: contain;
 
-		@include widthLT {
-			content: none;
-		}
-	}
+    @include widthLT {
+      content: none;
+    }
+  }
 
-	&::before {
-		left: 0;
-		border-top-right-radius: $height-menu;
+  &::before {
+    left: 0;
+    border-top-right-radius: $height-menu;
 
-		@include widthHD {
-			width: $widthBG-frame;
-		}
+    @include widthHD {
+      width: $widthBG-frame;
+    }
 
-		@include widthPC {
-			width: $widthBG-frame - 2 * $marginPC;
-		}
-	}
+    @include widthPC {
+      width: $widthBG-frame - 2 * $marginPC;
+    }
+  }
 
-	&::after {
-		right: 0;
-		border-top-left-radius: $height-menu;
+  &::after {
+    right: 0;
+    border-top-left-radius: $height-menu;
 
-		@include widthHD {
-			width: calc(90% - #{$widthBG-frame});
-		}
+    @include widthHD {
+      width: calc(90% - #{$widthBG-frame});
+    }
 
-		@include widthHD {
-			width: calc(90% - #{$widthBG-frame} - 2 * #{$marginPC});
-		}
-	}
+    @include widthHD {
+      width: calc(90% - #{$widthBG-frame} - 2 * #{$marginPC});
+    }
+  }
 
-	&>input {
-		display: none;
-	}
+  & > input {
+    display: none;
+  }
 }
 
 .visually-hidden {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	padding: 0;
-	overflow: hidden;
-	border: 0;
-	clip: rect(0 0 0 0);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
 }
 
 //* --------------------------- Поля
@@ -104,223 +152,222 @@ body {
 input,
 select,
 textarea {
-	padding: 7px 15px;
-	box-sizing: border-box;
-	border-radius: $border-radius;
-	border: 1px solid $input-border;
-	background-color: #fff;
+  padding: 7px 15px;
+  box-sizing: border-box;
+  border-radius: $border-radius;
+  border: 1px solid $input-border;
+  background-color: #fff;
 }
 
 .select-arrow {
-	background-image: url(../img/icon-arrow-down.svg);
-	background-position: right 5px center;
-	background-repeat: no-repeat;
-	background-size: 15px 15px;
+  background-image: url(../img/icon-arrow-down.svg);
+  background-position: right 5px center;
+  background-repeat: no-repeat;
+  background-size: 15px 15px;
 }
 
 input.select-arrow {
-	background-image: url(../img/icon-arrow-down+.svg);
+  background-image: url(../img/icon-arrow-down+.svg);
 }
 
 .input-properties-wrap {
-	position: relative;
-	margin-bottom: 0;
+  position: relative;
+  margin-bottom: 0;
 
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-	svg {
-		fill: $ocean;
-	}
+  svg {
+    fill: $ocean;
+  }
 
-	svg+svg {
-		position: absolute;
-		top: 0;
-		right: 100%;
-	}
+  svg + svg {
+    position: absolute;
+    top: 0;
+    right: 100%;
+  }
 
-	input,
-	select {
-		width: calc(100% - 25px);
-		height: 30px;
-	}
+  input,
+  select {
+    width: calc(100% - 25px);
+    height: 30px;
+  }
 
-	p {
-		display: none;
+  p {
+    display: none;
 
-		position: absolute;
-		top: 100%;
-		left: 30px;
+    position: absolute;
+    top: 100%;
+    left: 30px;
 
-		@include text-info;
-	}
+    @include text-info;
+  }
 }
 
-#info:checked~.container .input-properties-wrap {
-	margin-bottom: 15px;
+#info:checked ~ .container .input-properties-wrap {
+  margin-bottom: 15px;
 
-	p {
-		display: block;
-	}
+  p {
+    display: block;
+  }
 }
 
 .input-disabled {
-	input {
-		order: 2;
-	}
+  input {
+    order: 2;
+  }
 
-	label {
-		order: 1;
-	}
+  label {
+    order: 1;
+  }
 
-	input:disabled {
-		opacity: 0.5;
+  input:disabled {
+    opacity: 0.5;
 
-		&+label {
-			opacity: 0.1;
-		}
-	}
+    & + label {
+      opacity: 0.1;
+    }
+  }
 }
 
 // Кнопка Закрыть при управлении мышкой + большие экраны
 .close {
-	border: 1px solid $close;
-	background: none;
-	opacity: 0.3;
-	transition: all $timeout;
+  border: 1px solid $close;
+  background: none;
+  opacity: 0.3;
+  transition: all $timeout;
 
-	// Надпись "Закрыть" в состоянии наведения
-	span {
-		display: none;
-		overflow: hidden;
-		text-align: center;
-		color: $close;
-	}
+  // Надпись "Закрыть" в состоянии наведения
+  span {
+    display: none;
+    overflow: hidden;
+    text-align: center;
+    color: $close;
+  }
 
-	// Х в пассивном режиме
-	svg {
-		@include position-center;
-		fill: $close;
-	}
+  // Х в пассивном режиме
+  svg {
+    @include position-center;
+    fill: $close;
+  }
 
-	&:hover {
-		opacity: 1;
-		cursor: pointer;
-		border: 1px solid $close;
-		background: #fff;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+    border: 1px solid $close;
+    background: #fff;
 
-		span {
-			display: block;
-		}
+    span {
+      display: block;
+    }
 
-		svg {
-			display: none;
-		}
-	}
+    svg {
+      display: none;
+    }
+  }
 }
-
 
 //* ---------------------------------- Цвета
 .delete {
-	border: 1px solid $delete;
-	color: $delete;
+  border: 1px solid $delete;
+  color: $delete;
 }
 
 // ------------------------------------  Вкладки
 .tab-all-bgcolor {
-	background-color: $tabs-color-all;
+  background-color: $tabs-color-all;
 }
 
 .tab-first-bgcolor {
-	background-color: $tabs-color-first;
+  background-color: $tabs-color-first;
 }
 
 .tab-second-bgcolor {
-	background-color: $tabs-color-second;
+  background-color: $tabs-color-second;
 }
 
 .tab-third-bgcolor {
-	background-color: $tabs-color-third;
+  background-color: $tabs-color-third;
 }
 
 .tab-four-bgcolor {
-	background-color: $tabs-color-four;
+  background-color: $tabs-color-four;
 }
 
 .tab-five-bgcolor {
-	background-color: $tabs-color-five;
+  background-color: $tabs-color-five;
 }
 
 // ---------------------------  Закладки
 // ---------------------------  Таблица header
 .mark-first-color {
-	color: $marks-color-first;
-	fill: $red-dark;
+  color: $marks-color-first;
+  fill: $red-dark;
 }
 
 .mark-second-color {
-	color: $marks-color-second;
-	fill: $orange;
+  color: $marks-color-second;
+  fill: $orange;
 }
 
 .mark-third-color {
-	color: $marks-color-third;
-	fill: $blue;
+  color: $marks-color-third;
+  fill: $blue;
 }
 
 .mark-four-color {
-	color: $marks-color-four;
-	fill: $blue;
+  color: $marks-color-four;
+  fill: $blue;
 }
 
 .mark-five-color {
-	color: $marks-color-five;
-	fill: $grass;
+  color: $marks-color-five;
+  fill: $grass;
 }
 
 // ---------------------------  Закладки настройки
 .mark-first-bgcolor {
-	background-color: rgba($marks-color-first, $opacity-bgc);
+  background-color: rgba($marks-color-first, $opacity-bgc);
 }
 
 .mark-second-bgcolor {
-	background-color: rgba($marks-color-second, $opacity-bgc);
+  background-color: rgba($marks-color-second, $opacity-bgc);
 }
 
 .mark-third-bgcolor {
-	background-color: rgba($marks-color-third, $opacity-bgc);
+  background-color: rgba($marks-color-third, $opacity-bgc);
 }
 
 .mark-four-bgcolor {
-	background-color: rgba($marks-color-four, $opacity-bgc);
+  background-color: rgba($marks-color-four, $opacity-bgc);
 }
 
 .mark-five-bgcolor {
-	background-color: rgba($marks-color-five, $opacity-bgc);
+  background-color: rgba($marks-color-five, $opacity-bgc);
 }
 
 // ------------------------------------  Стадии
 .stage-none-bgcolor {
-	background-color: $input-off;
+  background-color: $input-none;
 }
 
 .stage-first-bgcolor {
-	background-color: rgba($stages-color-first, $opacity-bgc);
+  background-color: rgba($stages-color-first, $opacity-bgc);
 }
 
 .stage-second-bgcolor {
-	background-color: rgba($stages-color-second, $opacity-bgc);
+  background-color: rgba($stages-color-second, $opacity-bgc);
 }
 
 .stage-third-bgcolor {
-	background-color: rgba($stages-color-third, $opacity-bgc);
+  background-color: rgba($stages-color-third, $opacity-bgc);
 }
 
 .stage-four-bgcolor {
-	background-color: rgba($stages-color-four, $opacity-bgc);
+  background-color: rgba($stages-color-four, $opacity-bgc);
 }
 
 .stage-five-bgcolor {
-	background-color: rgba($stages-color-five, $opacity-bgc);
+  background-color: rgba($stages-color-five, $opacity-bgc);
 }

@@ -25,13 +25,11 @@ $widthHD-manage: 600px;
 // Таблица
 $padding-table-name: 30px;
 
-
 // Выравнивание отступов для Frame
 $margin-frame: 30px;
 $margin-frame-mobile: 15px;
 $margin-frame-mobile-bottom: 5px;
 $margin-frame-up: 20px;
-
 
 //* Прочее
 $border-radius: 5px;
@@ -73,6 +71,7 @@ $input-off: #999;
 $input-set: #999;
 $input-set-disable: #ddd;
 
+$second-text: #777;
 
 // Вкладки
 $tabs-color-all: #e5df8a;
@@ -83,7 +82,7 @@ $tabs-color-four: #c2def2;
 $tabs-color-five: #cec2f2;
 
 // Прозрачность к маркерам
-$opacity-bgc: 0.6;
+$opacity-bgc: 0.8;
 // Закладки
 $marks-color-first: #ff9999;
 $marks-color-second: #fff266;

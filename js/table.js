@@ -19,30 +19,30 @@ scrollUp.addEventListener("click", function () {
 document.querySelectorAll('[contenteditable]').forEach(function (NameNote) {
 
 	// Ловим фокус
-	NameNote.addEventListener("focus", function (event) { 
-		
+	NameNote.addEventListener("focus", function (event) {
+
 		// Перекрашиваем цвет при фокусировке (global.js)
 		changeColorText(event.target);
 	});
-	
+
 	// Ловим нажатие на клавишу
 	NameNote.addEventListener("keydown", function (event) {
-		
+
 		// Перекрашиваем цвет при вводе
 		changeColorText(event.target);
-	
+
 		// Контролируем Enter и длину строки 40 символов (global.js) / Порядок имеет значение
 		controlChangeText(event);
 	});
-	
+
 	// Ловим потерю фокуса 
-	NameNote.addEventListener("blur", function (event) { 
+	NameNote.addEventListener("blur", function (event) {
 
 		// Сброс окрашивания (global.js)
 		removeColorText(event.target);
-				
+
 		//todo Отправка локальных изменений
-		
+
 	});
 });
 

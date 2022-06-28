@@ -1,0 +1,258 @@
+.todo {
+  // ! ------------------------- Цвета
+  .warning,
+  .favorit {
+    fill: $orange;
+    color: $orange;
+  }
+
+  .attention {
+    fill: $red;
+    color: $red;
+  }
+
+  .work {
+    fill: $blue;
+    color: $blue;
+  }
+
+  // ! ------------------------- Заголовок
+  &__head {
+    height: $todo-head;
+    padding: 0 20px;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    border-bottom: 1px solid #b8b8cc;
+    background: $paper-todo-title;
+
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      font-family: cormorant-infant;
+      font-style: italic;
+      font-weight: 700;
+      letter-spacing: 1px;
+      font-size: 22px;
+      line-height: 40px;
+      color: $ocean;
+    }
+
+    &-filters {
+      width: 60%;
+      display: flex;
+      justify-content: space-between;
+
+      input {
+        display: none;
+      }
+
+      label {
+        position: relative;
+        height: 100%;
+        flex-grow: 1;
+
+        &:hover {
+          cursor: pointer;
+          opacity: 0.5;
+        }
+      }
+
+      svg {
+        @include position-center;
+        fill: $input-off;
+      }
+
+      input:checked + label svg {
+        fill: $brown;
+      }
+
+      #todo__filters-period:checked + label + input {
+        display: block;
+        align-self: center;
+        width: 30px;
+        height: 30px;
+        padding: 5px 7px;
+        font-size: 12px;
+        text-align: center;
+      }
+    }
+  }
+
+  // ! ------------------------- Список задач
+  &__list {
+    margin: 0 10px;
+    height: calc(100% - #{$todo-head});
+    overflow-y: scroll;
+  }
+
+  &__task {
+    position: relative;
+    height: 40px;
+    border-bottom: 1px solid #b8b8cc;
+
+    display: grid;
+    grid-template-rows: repeat(2, 19px);
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: #dadae9;
+    }
+
+    &-main {
+      height: 100%;
+      padding: 0 10px;
+
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      figure {
+        position: absolute;
+        left: 0;
+        width: 18px;
+        height: 15px;
+        clip-path: polygon(0 0, 0 100%, 100% 100%, 60% 50%, 100% 0);
+      }
+    }
+
+    &-info {
+      fill: $ocean;
+      color: $ocean;
+      width: 20px;
+    }
+
+    &-title {
+      flex-grow: 1;
+      padding-left: 10px;
+      font-size: 13px;
+    }
+
+    &-icon {
+      width: 35px;
+      fill: $input-off;
+      opacity: 0.5;
+
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    &-note {
+      padding: 0 10px;
+      font-size: 10px;
+      font-style: italic;
+      color: $second-text;
+
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+
+      &-days {
+        width: 20px;
+        font-size: 10px;
+        font-style: normal;
+        text-align: center;
+      }
+
+      &-info {
+        padding-left: 10px;
+        flex-grow: 1;
+      }
+    }
+
+    &-study {
+      position: absolute;
+      top: -1px;
+      left: 0;
+      right: 0;
+      z-index: 5;
+      height: 3px;
+
+      display: grid;
+      grid-template: 3px / repeat(5, 1fr);
+      column-gap: 4px;
+    }
+
+    &-hover {
+      display: none;
+    }
+
+    &:hover {
+      display: block;
+      background: $paper-hover;
+
+      &::after {
+        content: none;
+      }
+
+      .todo__task-main,
+      .todo__task-note {
+        display: none;
+      }
+
+      .todo__task-hover {
+        width: 100%;
+        height: 100%;
+        padding: 0 10px;
+        font-size: 13px;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        &-plan {
+          width: 100px;
+          text-align: center;
+        }
+
+        &-set {
+          height: 100%;
+
+          display: flex;
+          justify-content: space-around;
+
+          label {
+            width: 40px;
+            height: 100%;
+
+            position: relative;
+
+            &:hover {
+              cursor: pointer;
+              opacity: 0.8;
+            }
+
+            input,
+            input + svg + svg {
+              display: none;
+            }
+
+            input:checked + svg + svg {
+              display: block;
+            }
+
+            svg {
+              @include position-center;
+              fill: $input-set;
+            }
+
+            input:checked + svg.favorite {
+              fill: $orange;
+            }
+
+            input:checked + svg.work {
+              fill: $blue;
+            }
+          }
+        }
+      }
+    }
+  }
+}
